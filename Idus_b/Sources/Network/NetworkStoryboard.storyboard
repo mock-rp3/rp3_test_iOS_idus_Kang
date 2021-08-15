@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adv-Ba-hlc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Network 메인-->
+        <scene sceneID="1lM-KP-8vA">
+            <objects>
+                <viewController storyboardIdentifier="NetworkViewController" id="WCo-pE-iNd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CAS-lL-ZXB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eiq-zG-onU">
+                                <rect key="frame" x="164" y="408" width="86" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt9-ac-UHE">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
+                                        <state key="normal" title="로그인"/>
+                                        <connections>
+                                            <segue destination="XTo-NP-GN8" kind="show" id="Q7a-at-Kj5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riP-fV-ozn">
+                                        <rect key="frame" x="0.0" y="50" width="86" height="30"/>
+                                        <state key="normal" title="영화 정보 조회"/>
+                                        <connections>
+                                            <segue destination="QTl-69-I3o" kind="show" id="QtS-d9-1Yk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u6k-Bg-nAx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eiq-zG-onU" firstAttribute="centerX" secondItem="CAS-lL-ZXB" secondAttribute="centerX" id="JWa-1s-F4P"/>
+                            <constraint firstItem="eiq-zG-onU" firstAttribute="centerY" secondItem="CAS-lL-ZXB" secondAttribute="centerY" id="cve-f4-KGM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Network 메인" id="rFe-Bc-niq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nwl-E9-ma9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162.3188405797102" y="113.83928571428571"/>
+        </scene>
+        <!--영화 박스오피스-->
+        <scene sceneID="SOT-12-B0r">
+            <objects>
+                <viewController storyboardIdentifier="BoxOfficeViewController" id="QTl-69-I3o" customClass="BoxOfficeViewController" customModule="EduTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z1l-66-wQM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-EN-GUJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BoxOfficeTableViewCell" textLabel="Nhf-CT-Zlr" detailTextLabel="BPc-hI-m5I" style="IBUITableViewCellStyleSubtitle" id="lkw-EE-GO6">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lkw-EE-GO6" id="bgd-cK-E6i">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="1. 290,024명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nhf-CT-Zlr">
+                                                    <rect key="frame" x="20" y="10" width="95" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="2016-06-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BPc-hI-m5I">
+                                                    <rect key="frame" x="20" y="31.5" width="68" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pvk-hM-Okn" kind="show" identifier="BoxOfficeTableViewCellSegue" id="zom-Yv-Ype"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DNd-Zz-fBA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DNd-Zz-fBA" firstAttribute="bottom" secondItem="mx0-EN-GUJ" secondAttribute="bottom" id="64o-Ew-zit"/>
+                            <constraint firstItem="DNd-Zz-fBA" firstAttribute="trailing" secondItem="mx0-EN-GUJ" secondAttribute="trailing" id="7Ey-pj-EEc"/>
+                            <constraint firstItem="mx0-EN-GUJ" firstAttribute="leading" secondItem="DNd-Zz-fBA" secondAttribute="leading" id="ND6-gT-3EK"/>
+                            <constraint firstItem="mx0-EN-GUJ" firstAttribute="top" secondItem="DNd-Zz-fBA" secondAttribute="top" id="jBV-3Y-XB2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="영화 박스오피스" id="FRE-HI-SOV"/>
+                    <connections>
+                        <outlet property="boxOfficeTableView" destination="mx0-EN-GUJ" id="cPO-Rd-ren"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Srl-Jv-c2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2161" y="509"/>
+        </scene>
+        <!--영화 상세정보-->
+        <scene sceneID="rxz-2x-qSe">
+            <objects>
+                <viewController storyboardIdentifier="MovieInfoViewController" id="pvk-hM-Okn" customClass="MovieViewController" customModule="EduTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JWl-xC-8OV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtO-Yl-qJP">
+                                <rect key="frame" x="175" y="437.5" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fH8-rt-Sji"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GtO-Yl-qJP" firstAttribute="centerY" secondItem="JWl-xC-8OV" secondAttribute="centerY" id="i3r-N4-gAi"/>
+                            <constraint firstItem="GtO-Yl-qJP" firstAttribute="centerX" secondItem="JWl-xC-8OV" secondAttribute="centerX" id="tgh-Mu-nPT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="영화 상세정보" id="mos-QY-lBR"/>
+                    <connections>
+                        <outlet property="movieNameLabel" destination="GtO-Yl-qJP" id="csZ-6b-STi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="92i-qu-g1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3032" y="509"/>
+        </scene>
+        <!--로그인-->
+        <scene sceneID="nyY-jI-JrY">
+            <objects>
+                <viewController storyboardIdentifier="SignInViewController" title="로그인" id="XTo-NP-GN8" customClass="SignInViewController" customModule="EduTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UcV-iy-0Fk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcc-pa-Qsf">
+                                <rect key="frame" x="187.5" y="226" width="39" height="30"/>
+                                <state key="normal" title="로그인"/>
+                                <connections>
+                                    <action selector="loginButtonTaapped:" destination="XTo-NP-GN8" eventType="touchUpInside" id="ob3-xw-kEr"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8P-oz-ayo">
+                                <rect key="frame" x="30" y="162" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctg-gB-Zb6">
+                                <rect key="frame" x="30" y="108" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1n-8D-awn">
+                                <rect key="frame" x="20" y="286" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8WU-gj-amU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yUI-rB-mpa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j8P-oz-ayo" firstAttribute="top" secondItem="ctg-gB-Zb6" secondAttribute="bottom" constant="20" id="7nR-E8-zso"/>
+                            <constraint firstItem="j8P-oz-ayo" firstAttribute="trailing" secondItem="ctg-gB-Zb6" secondAttribute="trailing" id="EBM-Cb-9SI"/>
+                            <constraint firstItem="ctg-gB-Zb6" firstAttribute="leading" secondItem="yUI-rB-mpa" secondAttribute="leading" constant="30" id="Kaf-sZ-86X"/>
+                            <constraint firstItem="tcc-pa-Qsf" firstAttribute="top" secondItem="j8P-oz-ayo" secondAttribute="bottom" constant="30" id="Lmv-Gb-RhJ"/>
+                            <constraint firstItem="q1n-8D-awn" firstAttribute="top" secondItem="tcc-pa-Qsf" secondAttribute="bottom" constant="30" id="P9e-fd-ZhY"/>
+                            <constraint firstItem="ctg-gB-Zb6" firstAttribute="top" secondItem="yUI-rB-mpa" secondAttribute="top" constant="20" id="RCK-uS-fly"/>
+                            <constraint firstItem="yUI-rB-mpa" firstAttribute="trailing" secondItem="ctg-gB-Zb6" secondAttribute="trailing" constant="30" id="RM0-Wb-ZWI"/>
+                            <constraint firstItem="tcc-pa-Qsf" firstAttribute="centerX" secondItem="j8P-oz-ayo" secondAttribute="centerX" id="WeA-4j-0R2"/>
+                            <constraint firstItem="yUI-rB-mpa" firstAttribute="trailing" secondItem="q1n-8D-awn" secondAttribute="trailing" constant="20" id="bkW-GY-7o5"/>
+                            <constraint firstItem="q1n-8D-awn" firstAttribute="leading" secondItem="yUI-rB-mpa" secondAttribute="leading" constant="20" id="q5l-SJ-gv9"/>
+                            <constraint firstItem="j8P-oz-ayo" firstAttribute="leading" secondItem="ctg-gB-Zb6" secondAttribute="leading" id="zcz-HD-55w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="USN-te-89G"/>
+                    <connections>
+                        <outlet property="appleLoginView" destination="q1n-8D-awn" id="3Nq-vj-Z6V"/>
+                        <outlet property="idTextField" destination="ctg-gB-Zb6" id="KiY-dg-1kP"/>
+                        <outlet property="passwordTextField" destination="j8P-oz-ayo" id="jE4-yM-65n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5u-gg-PGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2161" y="-227"/>
+        </scene>
+        <!--Network Navigation-->
+        <scene sceneID="9cW-6e-lK6">
+            <objects>
+                <navigationController storyboardIdentifier="NetworkNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="adv-Ba-hlc" userLabel="Network Navigation" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Network" image="network" catalog="system" id="CMY-Jf-IFy"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IyI-nh-H9C">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WCo-pE-iNd" kind="relationship" relationship="rootViewController" id="dDl-OL-buf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgy-zx-2Sh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252.17391304347828" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="network" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

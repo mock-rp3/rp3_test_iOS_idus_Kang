@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BxN-UL-ML1">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="4HR-Lh-Adw">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="BxN-UL-ML1" customClass="SplashViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dmG-hD-Ez3">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="8H5-kb-Pij">
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8T-6K-cu7">
+                                <rect key="frame" x="148" y="282" width="94" height="30"/>
+                                <state key="normal" title="메인화면으로 가기"/>
+                                <connections>
+                                    <action selector="presentMainButtonTouchUpInside:" destination="BxN-UL-ML1" eventType="touchUpInside" id="6xC-I3-gpq"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_event" translatesAutoresizingMaskIntoConstraints="NO" id="NKl-3v-YDg">
+                                <rect key="frame" x="16" y="54" width="358" height="258"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ih-Pd-m0s">
+                                <rect key="frame" x="126" y="780" width="138" height="30"/>
+                                <state key="normal" title="회원가입 없이 둘러보기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wY-iK-jJf">
+                                <rect key="frame" x="126" y="484" width="138" height="30"/>
+                                <state key="normal" title="다른 방법으로 가입하기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-e5-Y9y">
+                                <rect key="frame" x="145.66666666666666" y="623" width="99" height="30"/>
+                                <state key="normal" title="기존 회원 로그인"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----------------------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFI-A9-7jv">
+                                <rect key="frame" x="62" y="561" width="266" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwb-xr-tGt">
+                                <rect key="frame" x="115" y="407" width="160" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fZO-Bg-M2e"/>
+                                </constraints>
+                                <state key="normal" title="카카오로 3초만에 시작하기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbE-gK-aq1">
+                                <rect key="frame" x="137" y="685" width="116" height="30"/>
+                                <state key="normal" title="네이버로 로그인"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F53-vh-YJH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="top" secondItem="O8T-6K-cu7" secondAttribute="bottom" constant="95" id="9u9-0o-zil"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="9Ih-Pd-m0s" secondAttribute="centerX" id="AxF-yv-fZS"/>
+                            <constraint firstItem="wbE-gK-aq1" firstAttribute="leading" secondItem="F53-vh-YJH" secondAttribute="leading" constant="137" id="B8G-z4-ZYk"/>
+                            <constraint firstItem="wbE-gK-aq1" firstAttribute="top" secondItem="JoK-e5-Y9y" secondAttribute="bottom" constant="32" id="Exf-J8-iG0"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="wbE-gK-aq1" secondAttribute="centerX" id="GFT-by-keW"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="0wY-iK-jJf" secondAttribute="centerX" id="Ll4-C4-a3V"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="centerY" secondItem="dmG-hD-Ez3" secondAttribute="centerY" id="MxL-Lo-koE"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="top" secondItem="NKl-3v-YDg" secondAttribute="bottom" constant="95" id="QP3-nh-cWW"/>
+                            <constraint firstItem="wbE-gK-aq1" firstAttribute="trailing" secondItem="O8T-6K-cu7" secondAttribute="trailing" constant="11" id="SkD-a1-xvU"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="JoK-e5-Y9y" secondAttribute="centerX" id="UHd-Tw-JZu"/>
+                            <constraint firstItem="NKl-3v-YDg" firstAttribute="top" secondItem="F53-vh-YJH" secondAttribute="top" constant="10" id="Woo-jU-oEB"/>
+                            <constraint firstAttribute="bottom" secondItem="wbE-gK-aq1" secondAttribute="bottom" constant="129" id="dRr-on-VLu"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="NKl-3v-YDg" secondAttribute="centerX" id="eSn-VW-vKr"/>
+                            <constraint firstItem="0wY-iK-jJf" firstAttribute="top" secondItem="gwb-xr-tGt" secondAttribute="bottom" constant="47" id="elG-Oc-Xcw"/>
+                            <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="WFI-A9-7jv" secondAttribute="centerX" id="f32-JP-37u"/>
+                            <constraint firstItem="O8T-6K-cu7" firstAttribute="centerX" secondItem="dmG-hD-Ez3" secondAttribute="centerX" id="fSS-Yg-d3p"/>
+                            <constraint firstItem="9Ih-Pd-m0s" firstAttribute="top" secondItem="wbE-gK-aq1" secondAttribute="bottom" constant="65" id="gGq-0w-mmV"/>
+                            <constraint firstItem="F53-vh-YJH" firstAttribute="trailing" secondItem="NKl-3v-YDg" secondAttribute="trailing" constant="16" id="iVC-0l-2Bc"/>
+                            <constraint firstItem="NKl-3v-YDg" firstAttribute="leading" secondItem="F53-vh-YJH" secondAttribute="leading" constant="16" id="iie-YJ-JY7"/>
+                            <constraint firstItem="JoK-e5-Y9y" firstAttribute="top" secondItem="WFI-A9-7jv" secondAttribute="bottom" constant="41" id="rZc-gL-FZX"/>
+                            <constraint firstItem="NKl-3v-YDg" firstAttribute="centerX" secondItem="dmG-hD-Ez3" secondAttribute="centerX" id="yIH-1V-RW3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ac-Y2-F1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="995.38461538461536" y="119.43127962085308"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login&amp;SIgnupPage_background0" width="918" height="1358.3333740234375"/>
+        <image name="login&amp;SIgnupPage_event" width="200.33332824707031" height="194"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
