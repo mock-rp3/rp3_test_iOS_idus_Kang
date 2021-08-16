@@ -1,5 +1,5 @@
 //
-//  SplashViewController.swift
+//  LoginViewController.swift
 //  EduTemplate - storyboard
 //
 //  Created by Zero Yoon on 2022/02/23.
@@ -11,7 +11,7 @@ import KakaoSDKUser
 import NaverThirdPartyLogin
 import Alamofire
 
-class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDelegate {
+class LoginViewController: BaseViewController {
     
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
@@ -20,8 +20,6 @@ class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDe
         let vc = BaseViewController()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
-        
-        loginInstance?.delegate = self
     }
     
     // MARK: - 카카오 로그인
@@ -93,32 +91,8 @@ class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDe
     // MARK: - 네이버 로그인
     
     @IBAction func naverLoginBtn(_ sender: UIButton) {
+        loginInstance?.delegate = self
         loginInstance?.requestThirdPartyLogin()
-    }
-    
-    // 로그인에 성공한 경우 호출
-    @objc func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-        
-        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
-        changeRootViewController(loginedMainTabBarController)
-        
-        print("Success login")
-        getInfo()
-    }
-    
-    // referesh token
-    @objc func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        loginInstance?.accessToken
-    }
-    
-    // 로그아웃
-    @objc func oauth20ConnectionDidFinishDeleteToken() {
-        print("log out")
-    }
-    
-    // 모든 error
-    @objc func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-        print("error = \(error.localizedDescription)")
     }
         
     @IBAction func logout(_ sender: Any) {
@@ -148,14 +122,16 @@ class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDe
         guard let object = result["response"] as? [String: Any] else { return }
         guard let name = object["name"] as? String else { return }
         guard let email = object["email"] as? String else { return }
+        guard let nickname = object["nickname"] as? String else { return }
         
         print(email)
         
         // 이름
 //        self.nameLabel.text = "\(name)"
-        
         // 이메일
 //        self.emailLabel.text = "\(email)"
+        // 닉네임
+//        self.nicknameLabel.text = "\(nickname)"
       }
     }
     
@@ -168,4 +144,33 @@ class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDe
         
     }
     
+}
+
+// MARK: - 네이버 로그인 프로토콜 채택
+extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
+    
+    // 로그인에 성공한 경우 호출
+    @objc func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        
+        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+        changeRootViewController(loginedMainTabBarController)
+        
+        print("Success login")
+        getInfo()
+    }
+    
+    // 접근 토큰 갱신
+    @objc func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+        loginInstance?.accessToken
+    }
+    
+    // 로그아웃
+    @objc func oauth20ConnectionDidFinishDeleteToken() {
+        print("log out")
+    }
+    
+    // 모든 error
+    @objc func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+        print("error = \(error.localizedDescription)")
+    }
 }

@@ -53,8 +53,8 @@ class LoginedMypageDetailViewController: BaseViewController, NaverThirdPartyLogi
                 else {
                     print("logout() success.")
                     
-                    let spalshViewController = UIStoryboard(name: "SplashStoryboard", bundle: nil).instantiateViewController(identifier: "SplashStoryboard")
-                    self.changeRootViewController(spalshViewController)
+                    let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
+                    self.changeRootViewController(loginViewController)
                 }
             }
         }

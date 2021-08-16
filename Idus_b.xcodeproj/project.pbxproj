@@ -26,8 +26,8 @@
 		ACC597D626C94C2900E2630B /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = ACC597C526C94C2900E2630B /* NotoSansCJKkr-Regular.otf */; };
 		ACC597D726C94C2900E2630B /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = ACC597C626C94C2900E2630B /* NotoSansCJKkr-Bold.otf */; };
 		ACC597D826C94C2900E2630B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597C826C94C2900E2630B /* BaseViewController.swift */; };
-		ACC597F826C94C5800E2630B /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC597DB26C94C5700E2630B /* SplashStoryboard.storyboard */; };
-		ACC597F926C94C5800E2630B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597DC26C94C5700E2630B /* SplashViewController.swift */; };
+		ACC597F826C94C5800E2630B /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC597DB26C94C5700E2630B /* LoginStoryboard.storyboard */; };
+		ACC597F926C94C5800E2630B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597DC26C94C5700E2630B /* LoginViewController.swift */; };
 		ACC597FA26C94C5800E2630B /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC597DE26C94C5700E2630B /* SearchStoryboard.storyboard */; };
 		ACC597FB26C94C5800E2630B /* SignInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597E026C94C5700E2630B /* SignInDataManager.swift */; };
 		ACC597FC26C94C5800E2630B /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597E226C94C5700E2630B /* SignInResponse.swift */; };
@@ -77,8 +77,8 @@
 		ACC597C526C94C2900E2630B /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
 		ACC597C626C94C2900E2630B /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		ACC597C826C94C2900E2630B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		ACC597DB26C94C5700E2630B /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
-		ACC597DC26C94C5700E2630B /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		ACC597DB26C94C5700E2630B /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		ACC597DC26C94C5700E2630B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACC597DE26C94C5700E2630B /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
 		ACC597E026C94C5700E2630B /* SignInDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInDataManager.swift; sourceTree = "<group>"; };
 		ACC597E226C94C5700E2630B /* SignInResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			children = (
 				ACC597F726C94C5800E2630B /* LoginedMainStoryboard.storyboard */,
 				ACC6AA4026CA903E0048D22C /* MainStoryboard.storyboard */,
-				ACC597DA26C94C5700E2630B /* Splash */,
+				ACC597DA26C94C5700E2630B /* LoginPage */,
 				ACC597EE26C94C5700E2630B /* MainPage */,
 				ACC597DD26C94C5700E2630B /* Search */,
 				ACC6AA3626CA77640048D22C /* Mypage */,
@@ -249,13 +249,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		ACC597DA26C94C5700E2630B /* Splash */ = {
+		ACC597DA26C94C5700E2630B /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
-				ACC597DB26C94C5700E2630B /* SplashStoryboard.storyboard */,
-				ACC597DC26C94C5700E2630B /* SplashViewController.swift */,
+				ACC597DB26C94C5700E2630B /* LoginStoryboard.storyboard */,
+				ACC597DC26C94C5700E2630B /* LoginViewController.swift */,
 			);
-			path = Splash;
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
 		ACC597DD26C94C5700E2630B /* Search */ = {
@@ -441,7 +441,7 @@
 				ACC597D726C94C2900E2630B /* NotoSansCJKkr-Bold.otf in Resources */,
 				ACC597D626C94C2900E2630B /* NotoSansCJKkr-Regular.otf in Resources */,
 				ACC5975226C9464600E2630B /* Assets.xcassets in Resources */,
-				ACC597F826C94C5800E2630B /* SplashStoryboard.storyboard in Resources */,
+				ACC597F826C94C5800E2630B /* LoginStoryboard.storyboard in Resources */,
 				ACC6AA4126CA903E0048D22C /* MainStoryboard.storyboard in Resources */,
 				ACC5980926C94C5800E2630B /* LoginedMainStoryboard.storyboard in Resources */,
 				ACC5980826C94C5800E2630B /* MainPageStoryboard.storyboard in Resources */,
@@ -520,7 +520,7 @@
 				ACC597FC26C94C5800E2630B /* SignInResponse.swift in Sources */,
 				ACC5980626C94C5800E2630B /* MainPageViewController.swift in Sources */,
 				ACC6AA3A26CA77AD0048D22C /* MypageViewController.swift in Sources */,
-				ACC597F926C94C5800E2630B /* SplashViewController.swift in Sources */,
+				ACC597F926C94C5800E2630B /* LoginViewController.swift in Sources */,
 				ACC6AA4326CA948F0048D22C /* LoginedMypageDetailViewController.swift in Sources */,
 				ACC597CE26C94C2900E2630B /* String.swift in Sources */,
 				ACC597CA26C94C2900E2630B /* Constant.swift in Sources */,

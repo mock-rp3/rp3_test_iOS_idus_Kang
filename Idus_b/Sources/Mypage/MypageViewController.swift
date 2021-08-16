@@ -10,7 +10,7 @@ import UIKit
 class MypageViewController: BaseViewController {
     
     @IBAction func loginBtn(_ sender: UIButton) {
-        let spalshViewController = UIStoryboard(name: "SplashStoryboard", bundle: nil).instantiateViewController(identifier: "SplashStoryboard")
-        changeRootViewController(spalshViewController)
+        let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
+        changeRootViewController(loginViewController)
     }
 }

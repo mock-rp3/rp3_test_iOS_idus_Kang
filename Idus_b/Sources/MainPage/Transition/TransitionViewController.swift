@@ -15,8 +15,8 @@ class TransitionViewController: BaseViewController {
     
     // MARK: 새로운 window로 화면전환
     @IBAction func changeWindowButtonTouchUpInside(_ sender: UIButton) {
-        let splashStoryboard = UIStoryboard(name: "SplashStoryboard", bundle: nil)
-        let splashViewController = splashStoryboard.instantiateViewController(identifier: "SplashViewController")
-        self.changeRootViewController(splashViewController)
+        let loginStoryboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+        let loginViewController = loginStoryboard.instantiateViewController(identifier: "LoginViewController")
+        self.changeRootViewController(loginViewController)
     }
 }
