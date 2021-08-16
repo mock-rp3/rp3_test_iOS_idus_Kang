@@ -12,7 +12,7 @@
         <!--Splash View Controller-->
         <scene sceneID="4HR-Lh-Adw">
             <objects>
-                <viewController storyboardIdentifier="SplashViewController" modalPresentationStyle="fullScreen" id="BxN-UL-ML1" customClass="SplashViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashStoryboard" modalPresentationStyle="fullScreen" id="BxN-UL-ML1" customClass="SplashViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dmG-hD-Ez3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,13 +20,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="8H5-kb-Pij">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8T-6K-cu7">
-                                <rect key="frame" x="133.5" y="193.5" width="108" height="30"/>
-                                <state key="normal" title="메인화면으로 가기"/>
-                                <connections>
-                                    <action selector="presentMainButtonTouchUpInside:" destination="BxN-UL-ML1" eventType="touchUpInside" id="6xC-I3-gpq"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_event" translatesAutoresizingMaskIntoConstraints="NO" id="NKl-3v-YDg">
                                 <rect key="frame" x="16" y="10" width="343" height="297"/>
                             </imageView>
@@ -35,6 +28,9 @@
                                 <state key="normal" title="회원가입 없이 둘러보기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="noLoginBtn:" destination="BxN-UL-ML1" eventType="touchUpInside" id="zZD-QT-3ie"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wY-iK-jJf">
                                 <rect key="frame" x="118.5" y="389" width="138" height="30"/>
@@ -98,7 +94,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wbE-gK-aq1" firstAttribute="leading" secondItem="F53-vh-YJH" secondAttribute="leading" constant="50" id="0lf-fZ-0m3"/>
-                            <constraint firstItem="gwb-xr-tGt" firstAttribute="top" secondItem="O8T-6K-cu7" secondAttribute="bottom" constant="107.5" id="9u9-0o-zil"/>
                             <constraint firstItem="wbE-gK-aq1" firstAttribute="top" secondItem="JoK-e5-Y9y" secondAttribute="bottom" constant="34" id="ArW-J8-62S"/>
                             <constraint firstItem="8H5-kb-Pij" firstAttribute="bottom" secondItem="F53-vh-YJH" secondAttribute="bottom" id="AsI-Wf-gp7"/>
                             <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="9Ih-Pd-m0s" secondAttribute="centerX" id="AxF-yv-fZS"/>
@@ -116,7 +111,6 @@
                             <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="NKl-3v-YDg" secondAttribute="centerX" id="eSn-VW-vKr"/>
                             <constraint firstItem="0wY-iK-jJf" firstAttribute="top" secondItem="gwb-xr-tGt" secondAttribute="bottom" constant="8" id="elG-Oc-Xcw"/>
                             <constraint firstItem="gwb-xr-tGt" firstAttribute="centerX" secondItem="WFI-A9-7jv" secondAttribute="centerX" id="f32-JP-37u"/>
-                            <constraint firstItem="O8T-6K-cu7" firstAttribute="centerX" secondItem="dmG-hD-Ez3" secondAttribute="centerX" id="fSS-Yg-d3p"/>
                             <constraint firstItem="F53-vh-YJH" firstAttribute="trailing" secondItem="NKl-3v-YDg" secondAttribute="trailing" constant="16" id="iVC-0l-2Bc"/>
                             <constraint firstItem="NKl-3v-YDg" firstAttribute="leading" secondItem="F53-vh-YJH" secondAttribute="leading" constant="16" id="iie-YJ-JY7"/>
                             <constraint firstItem="wbE-gK-aq1" firstAttribute="top" secondItem="YHn-w4-L18" secondAttribute="bottom" constant="24" id="kot-YQ-EWq"/>

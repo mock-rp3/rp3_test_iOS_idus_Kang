@@ -62,6 +62,9 @@ class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDe
                 
             //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
             self.setUserInfo()
+                
+            let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+                self.changeRootViewController(loginedMainTabBarController)
             }
         }
     }
@@ -95,6 +98,10 @@ class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDe
     
     // 로그인에 성공한 경우 호출
     @objc func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        
+        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+        changeRootViewController(loginedMainTabBarController)
+        
         print("Success login")
         getInfo()
     }
@@ -152,11 +159,13 @@ class SplashViewController: BaseViewController, NaverThirdPartyLoginConnectionDe
       }
     }
     
-    // MARK: - 템플릿 버튼
-    @IBAction func presentMainButtonTouchUpInside(_ sender: UIButton) {
+    // MARK: - 회원가입 없이 둘러보기
+    
+    @IBAction func noLoginBtn(_ sender: UIButton) {
+        
         let mainTabBarController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "MainTabBarController")
         changeRootViewController(mainTabBarController)
+        
     }
-    
     
 }

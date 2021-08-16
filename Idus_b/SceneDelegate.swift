@@ -31,15 +31,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
         
-        // 네이버 로그인 화면이 새로 등장 -> 토큰을 요청하는 코드
+        // 네이버 로그인 화면이 새로 등장 -> 인스턴스를 생성하여 토큰을 요청하는 코드
         NaverThirdPartyLoginConnection
         .getSharedInstance()?
         .receiveAccessToken(URLContexts.first?.url)
         
     }
     
-
-
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

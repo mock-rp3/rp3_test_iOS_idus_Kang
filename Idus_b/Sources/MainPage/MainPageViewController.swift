@@ -1,13 +1,13 @@
 //
-//  ActionViewController.swift
-//  EduTemplate - storyboard
+//  MainPageViewController.swift
+//  Idus_b
 //
-//  Created by Zero Yoon on 2022/02/23.
+//  Created by 강성수 on 2021/08/16.
 //
 
 import UIKit
 
-class ActionViewController: BaseViewController {
+class MainPageViewController: BaseViewController {
     // MARK: 인디케이터 (로딩)
     @IBAction func indicatorButtonTapped(_ sender: UIButton) {
         showIndicator()

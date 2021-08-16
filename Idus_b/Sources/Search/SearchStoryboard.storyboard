@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adv-Ba-hlc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adv-Ba-hlc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,20 +53,20 @@
         <!--영화 박스오피스-->
         <scene sceneID="SOT-12-B0r">
             <objects>
-                <viewController storyboardIdentifier="BoxOfficeViewController" id="QTl-69-I3o" customClass="BoxOfficeViewController" customModule="EduTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BoxOfficeViewController" id="QTl-69-I3o" customClass="BoxOfficeViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z1l-66-wQM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-EN-GUJ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BoxOfficeTableViewCell" textLabel="Nhf-CT-Zlr" detailTextLabel="BPc-hI-m5I" style="IBUITableViewCellStyleSubtitle" id="lkw-EE-GO6">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lkw-EE-GO6" id="bgd-cK-E6i">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="1. 290,024명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nhf-CT-Zlr">
@@ -113,7 +113,7 @@
         <!--영화 상세정보-->
         <scene sceneID="rxz-2x-qSe">
             <objects>
-                <viewController storyboardIdentifier="MovieInfoViewController" id="pvk-hM-Okn" customClass="MovieViewController" customModule="EduTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieInfoViewController" id="pvk-hM-Okn" customClass="MovieViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JWl-xC-8OV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,30 +144,30 @@
         <!--로그인-->
         <scene sceneID="nyY-jI-JrY">
             <objects>
-                <viewController storyboardIdentifier="SignInViewController" title="로그인" id="XTo-NP-GN8" customClass="SignInViewController" customModule="EduTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" title="로그인" id="XTo-NP-GN8" customClass="SignInViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UcV-iy-0Fk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcc-pa-Qsf">
-                                <rect key="frame" x="187.5" y="226" width="39" height="30"/>
+                                <rect key="frame" x="187.5" y="182" width="39" height="30"/>
                                 <state key="normal" title="로그인"/>
                                 <connections>
                                     <action selector="loginButtonTaapped:" destination="XTo-NP-GN8" eventType="touchUpInside" id="ob3-xw-kEr"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8P-oz-ayo">
-                                <rect key="frame" x="30" y="162" width="354" height="34"/>
+                                <rect key="frame" x="30" y="118" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctg-gB-Zb6">
-                                <rect key="frame" x="30" y="108" width="354" height="34"/>
+                                <rect key="frame" x="30" y="64" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1n-8D-awn">
-                                <rect key="frame" x="20" y="286" width="374" height="50"/>
+                                <rect key="frame" x="20" y="242" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8WU-gj-amU"/>
@@ -201,15 +201,14 @@
             </objects>
             <point key="canvasLocation" x="2161" y="-227"/>
         </scene>
-        <!--Network Navigation-->
+        <!--Search Navigation-->
         <scene sceneID="9cW-6e-lK6">
             <objects>
-                <navigationController storyboardIdentifier="NetworkNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="adv-Ba-hlc" userLabel="Network Navigation" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Network" image="network" catalog="system" id="CMY-Jf-IFy"/>
+                <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="adv-Ba-hlc" userLabel="Search Navigation" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="tapBar_검색" id="CMY-Jf-IFy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IyI-nh-H9C">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -223,7 +222,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="network" catalog="system" width="128" height="121"/>
+        <image name="tapBar_검색" width="32" height="49"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

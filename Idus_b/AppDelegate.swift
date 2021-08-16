@@ -29,19 +29,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 네이버 간편로그인 init
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
         
-        // 네이버앱으로 로그인
-//        instance?.isNaverAppOauthEnable = true
+        // 네이버앱으로 인증하는 방식 활성화
+        instance?.isNaverAppOauthEnable = true
         
-        // 사파리(웹 브라우저)로 로그인
+        // 사파리(웹 브라우저)로 인증하는 방식 활성화
         instance?.isInAppOauthEnable = true
         
         // 인증 화면을 아이폰의 세로모드에서만 적용
         instance?.isOnlyPortraitSupportedInIphone()
 
-        instance?.serviceUrlScheme = kServiceAppUrlScheme // 앱을 등록할 때 입력한 URL Scheme
-        instance?.consumerKey = kConsumerKey // 상수 - client id
-        instance?.consumerSecret = kConsumerSecret // pw
-        instance?.appName = kServiceAppName // app name
+        // 애플리케이션을 등록할 때 입력한 URL Scheme
+        instance?.serviceUrlScheme = kServiceAppUrlScheme
+        // 애플리케이션 등록 후 발급받은 클라이언트 아이디
+        instance?.consumerKey = kConsumerKey
+        // 애플리케이션 등록 후 발급받은 클라이언트 시크릿
+        instance?.consumerSecret = kConsumerSecret
+        // 애플리케이션 이름
+        instance?.appName = kServiceAppName
         
         return true
     }

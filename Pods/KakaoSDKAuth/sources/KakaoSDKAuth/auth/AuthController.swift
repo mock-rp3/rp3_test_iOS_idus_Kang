@@ -210,7 +210,7 @@ public class AuthController {
                         completion(nil, SdkError(reason: .Unknown, message: "An error occurred on executing authentication session."))
                         return
                     }
-                } else if let error = error as? SFAuthenticationError, error.code == SFAuthenticationError.canceledLogin {
+                } else if let error = error as? ASWebAuthenticationSessionError, error.code == ASWebAuthenticationSessionError.canceledLogin {
                     SdkLog.e("The authentication session has been canceled by user.")
                     completion(nil, SdkError(reason: .Cancelled, message: "The authentication session has been canceled by user."))
                     return
