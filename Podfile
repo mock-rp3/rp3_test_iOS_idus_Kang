@@ -9,5 +9,7 @@ target 'Idus_b' do
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'SnapKit'
+  pod 'KakaoSDK'
+  pod 'naveridlogin-sdk-ios'
 
 end

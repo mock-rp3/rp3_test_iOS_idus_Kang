@@ -37,13 +37,13 @@
 		ACC5980026C94C5800E2630B /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597E826C94C5700E2630B /* BoxOfficeViewController.swift */; };
 		ACC5980126C94C5800E2630B /* BoxOfficeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597EA26C94C5700E2630B /* BoxOfficeResponse.swift */; };
 		ACC5980226C94C5800E2630B /* BoxOfficeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597EB26C94C5700E2630B /* BoxOfficeDataManager.swift */; };
-		ACC5980326C94C5800E2630B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC597EC26C94C5700E2630B /* Main.storyboard */; };
 		ACC5980426C94C5800E2630B /* TransitionNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F126C94C5800E2630B /* TransitionNextViewController.swift */; };
 		ACC5980526C94C5800E2630B /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F226C94C5800E2630B /* TransitionViewController.swift */; };
 		ACC5980626C94C5800E2630B /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F326C94C5800E2630B /* ActionViewController.swift */; };
 		ACC5980726C94C5800E2630B /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F526C94C5800E2630B /* AlertViewController.swift */; };
 		ACC5980826C94C5800E2630B /* ActionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC597F626C94C5800E2630B /* ActionStoryboard.storyboard */; };
 		ACC5980926C94C5800E2630B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC597F726C94C5800E2630B /* MainStoryboard.storyboard */; };
+		ACC6AA3526CA39F60048D22C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA3426CA39F60048D22C /* UIView.swift */; };
 		C29B0B7882D76C8082548C06 /* Pods_Idus_b.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB0D371C8E627B1D4D44BB /* Pods_Idus_b.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,13 +82,13 @@
 		ACC597E826C94C5700E2630B /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		ACC597EA26C94C5700E2630B /* BoxOfficeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeResponse.swift; sourceTree = "<group>"; };
 		ACC597EB26C94C5700E2630B /* BoxOfficeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeDataManager.swift; sourceTree = "<group>"; };
-		ACC597ED26C94C5700E2630B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACC597F126C94C5800E2630B /* TransitionNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionNextViewController.swift; sourceTree = "<group>"; };
 		ACC597F226C94C5800E2630B /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		ACC597F326C94C5800E2630B /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		ACC597F526C94C5800E2630B /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		ACC597F626C94C5800E2630B /* ActionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActionStoryboard.storyboard; sourceTree = "<group>"; };
 		ACC597F726C94C5800E2630B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		ACC6AA3426CA39F60048D22C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D3FB9131987660A50F2E9E8B /* Pods-Idus_b.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus_b.release.xcconfig"; path = "Target Support Files/Pods-Idus_b/Pods-Idus_b.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +186,7 @@
 				ACC597BE26C94C2800E2630B /* UINavigationBar.swift */,
 				ACC597BF26C94C2800E2630B /* UIFont.swift */,
 				ACC597C026C94C2800E2630B /* Color.swift */,
+				ACC6AA3426CA39F60048D22C /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -226,11 +227,10 @@
 		ACC597D926C94C5700E2630B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ACC597F726C94C5800E2630B /* MainStoryboard.storyboard */,
 				ACC597DA26C94C5700E2630B /* Splash */,
 				ACC597DD26C94C5700E2630B /* Network */,
-				ACC597EC26C94C5700E2630B /* Main.storyboard */,
 				ACC597EE26C94C5700E2630B /* Action */,
-				ACC597F726C94C5800E2630B /* MainStoryboard.storyboard */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -398,7 +398,6 @@
 				ACC5975526C9464600E2630B /* LaunchScreen.storyboard in Resources */,
 				ACC597D726C94C2900E2630B /* NotoSansCJKkr-Bold.otf in Resources */,
 				ACC597D626C94C2900E2630B /* NotoSansCJKkr-Regular.otf in Resources */,
-				ACC5980326C94C5800E2630B /* Main.storyboard in Resources */,
 				ACC5975226C9464600E2630B /* Assets.xcassets in Resources */,
 				ACC597F826C94C5800E2630B /* SplashStoryboard.storyboard in Resources */,
 				ACC5980926C94C5800E2630B /* MainStoryboard.storyboard in Resources */,
@@ -481,6 +480,7 @@
 				ACC5980026C94C5800E2630B /* BoxOfficeViewController.swift in Sources */,
 				ACC5980726C94C5800E2630B /* AlertViewController.swift in Sources */,
 				ACC597D126C94C2900E2630B /* UINavigationBar.swift in Sources */,
+				ACC6AA3526CA39F60048D22C /* UIView.swift in Sources */,
 				ACC597D426C94C2900E2630B /* KobisKey.swift in Sources */,
 				ACC5980426C94C5800E2630B /* TransitionNextViewController.swift in Sources */,
 				ACC597FB26C94C5800E2630B /* SignInDataManager.swift in Sources */,
@@ -496,14 +496,6 @@
 				ACC5975426C9464600E2630B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		ACC597EC26C94C5700E2630B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACC597ED26C94C5700E2630B /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

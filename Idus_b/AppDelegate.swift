@@ -7,6 +7,10 @@
 
 import UIKit
 import AlamofireNetworkActivityIndicator
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
+import NaverThirdPartyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,9 +23,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // StatusBar에 Alamofire 시도 중 Indicator 띄워주기 위한 옵션 설정
         NetworkActivityIndicatorManager.shared.isEnabled = true
         
+        // 네이티브 앱 키를 사용해 iOS SDK를 초기화하는 과정(Kakao SDK를 초기화)
+        KakaoSDKCommon.initSDK(appKey: "e8f0040c3b5ae27eb7d0e404ac07781d") // NATIVE_APP_KEY
+        
+        // 네이버 간편로그인 init
+        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
+        
+        // 네이버앱으로 로그인
+//        instance?.isNaverAppOauthEnable = true
+        
+        // 사파리(웹 브라우저)로 로그인
+        instance?.isInAppOauthEnable = true
+        
+        // 인증 화면을 아이폰의 세로모드에서만 적용
+        instance?.isOnlyPortraitSupportedInIphone()
+
+        instance?.serviceUrlScheme = kServiceAppUrlScheme // 앱을 등록할 때 입력한 URL Scheme
+        instance?.consumerKey = kConsumerKey // 상수 - client id
+        instance?.consumerSecret = kConsumerSecret // pw
+        instance?.appName = kServiceAppName // app name
+        
         return true
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        NaverThirdPartyLoginConnection.getSharedInstance()?.application(app, open: url, options: options)
+            return true
+      }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
