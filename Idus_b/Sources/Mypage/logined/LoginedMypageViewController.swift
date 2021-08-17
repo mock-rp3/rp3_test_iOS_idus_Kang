@@ -174,6 +174,7 @@ class LoginedMypageViewController: BaseViewController {
         loginInstance?.requestDeleteToken()
         
     }
+    
 }
 
 // MARK: - 네이버 로그인 프로토콜 채택

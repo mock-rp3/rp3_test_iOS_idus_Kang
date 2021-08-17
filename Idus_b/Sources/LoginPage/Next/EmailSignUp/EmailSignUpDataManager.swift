@@ -15,7 +15,8 @@ class EmailSignUpDataManager {
                 switch response.result {
                 case .success(let response):
                     // 성공했을 때
-                    if response.isSuccess, let result = response.result as? String{
+                    if response.isSuccess {
+                        let result = response.result
                         delegate.didSuccessSignUp(result)
                     }
                     // 실패했을 때

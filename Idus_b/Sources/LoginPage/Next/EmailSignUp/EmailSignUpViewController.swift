@@ -63,7 +63,8 @@ class EmailSignUpViewController: BaseViewController {
         let input = EmailSignUpRequest(email: email, name: name, password: password, tel: tel, pushAgreement: pushAgreement)
         dataManager.postSignUp(input, delegate: self)
         
-        self.dismiss(animated: true, completion: nil)
+        // 모달 내리기
+//        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: modal 내리기
@@ -75,7 +76,9 @@ class EmailSignUpViewController: BaseViewController {
 
 extension EmailSignUpViewController {
     func didSuccessSignUp(_ result: String) {
-        self.presentAlert(title: "회원가입에 성공하였습니다", message: result)
+        self.presentAlert(title: "회원가입에 성공하였습니다", message: result) { action in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     func failedToRequest(message: String) {

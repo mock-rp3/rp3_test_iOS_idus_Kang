@@ -14,12 +14,14 @@ import Alamofire
 class LoginViewController: BaseViewController {
     
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
-    
+        
+    // status bar 숨겨 풀스크린 만들기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = BaseViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
     }
     
     // MARK: - 카카오 로그인
