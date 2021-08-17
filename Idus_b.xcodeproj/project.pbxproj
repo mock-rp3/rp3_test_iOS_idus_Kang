@@ -50,6 +50,14 @@
 		ACC6AA3F26CA80BC0048D22C /* LoginedMypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA3E26CA80BC0048D22C /* LoginedMypageViewController.swift */; };
 		ACC6AA4126CA903E0048D22C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC6AA4026CA903E0048D22C /* MainStoryboard.storyboard */; };
 		ACC6AA4326CA948F0048D22C /* LoginedMypageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA4226CA948F0048D22C /* LoginedMypageDetailViewController.swift */; };
+		ACC6AA4726CAD72A0048D22C /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA4626CAD72A0048D22C /* EmailSignUpViewController.swift */; };
+		ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA4826CAD7450048D22C /* EmailLoginViewController.swift */; };
+		ACC6AA4F26CB45E80048D22C /* EmailSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA4E26CB45E80048D22C /* EmailSignUpResponse.swift */; };
+		ACC6AA5126CB46020048D22C /* EmailSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5026CB46010048D22C /* EmailSignUpRequest.swift */; };
+		ACC6AA5326CB46660048D22C /* EmailSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5226CB46660048D22C /* EmailSignUpDataManager.swift */; };
+		ACC6AA5526CB46830048D22C /* EmailLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5426CB46830048D22C /* EmailLoginDataManager.swift */; };
+		ACC6AA5726CB46990048D22C /* EmailLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5626CB46990048D22C /* EmailLoginResponse.swift */; };
+		ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5826CB46AA0048D22C /* EmailLoginRequest.swift */; };
 		C29B0B7882D76C8082548C06 /* Pods_Idus_b.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB0D371C8E627B1D4D44BB /* Pods_Idus_b.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +109,14 @@
 		ACC6AA3E26CA80BC0048D22C /* LoginedMypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginedMypageViewController.swift; sourceTree = "<group>"; };
 		ACC6AA4026CA903E0048D22C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		ACC6AA4226CA948F0048D22C /* LoginedMypageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginedMypageDetailViewController.swift; sourceTree = "<group>"; };
+		ACC6AA4626CAD72A0048D22C /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		ACC6AA4826CAD7450048D22C /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		ACC6AA4E26CB45E80048D22C /* EmailSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpResponse.swift; sourceTree = "<group>"; };
+		ACC6AA5026CB46010048D22C /* EmailSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpRequest.swift; sourceTree = "<group>"; };
+		ACC6AA5226CB46660048D22C /* EmailSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpDataManager.swift; sourceTree = "<group>"; };
+		ACC6AA5426CB46830048D22C /* EmailLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginDataManager.swift; sourceTree = "<group>"; };
+		ACC6AA5626CB46990048D22C /* EmailLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginResponse.swift; sourceTree = "<group>"; };
+		ACC6AA5826CB46AA0048D22C /* EmailLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginRequest.swift; sourceTree = "<group>"; };
 		D3FB9131987660A50F2E9E8B /* Pods-Idus_b.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus_b.release.xcconfig"; path = "Target Support Files/Pods-Idus_b/Pods-Idus_b.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +270,7 @@
 			children = (
 				ACC597DB26C94C5700E2630B /* LoginStoryboard.storyboard */,
 				ACC597DC26C94C5700E2630B /* LoginViewController.swift */,
+				ACC6AA4526CAD6F60048D22C /* Next */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -376,6 +393,53 @@
 				ACC6AA4226CA948F0048D22C /* LoginedMypageDetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		ACC6AA4526CAD6F60048D22C /* Next */ = {
+			isa = PBXGroup;
+			children = (
+				ACC6AA4A26CB44D60048D22C /* EmailSignUp */,
+				ACC6AA4B26CB458E0048D22C /* EmailLogin */,
+			);
+			path = Next;
+			sourceTree = "<group>";
+		};
+		ACC6AA4A26CB44D60048D22C /* EmailSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				ACC6AA5226CB46660048D22C /* EmailSignUpDataManager.swift */,
+				ACC6AA4C26CB45BE0048D22C /* Entity */,
+				ACC6AA4626CAD72A0048D22C /* EmailSignUpViewController.swift */,
+			);
+			path = EmailSignUp;
+			sourceTree = "<group>";
+		};
+		ACC6AA4B26CB458E0048D22C /* EmailLogin */ = {
+			isa = PBXGroup;
+			children = (
+				ACC6AA5426CB46830048D22C /* EmailLoginDataManager.swift */,
+				ACC6AA4D26CB45C70048D22C /* Entity */,
+				ACC6AA4826CAD7450048D22C /* EmailLoginViewController.swift */,
+			);
+			path = EmailLogin;
+			sourceTree = "<group>";
+		};
+		ACC6AA4C26CB45BE0048D22C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				ACC6AA4E26CB45E80048D22C /* EmailSignUpResponse.swift */,
+				ACC6AA5026CB46010048D22C /* EmailSignUpRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		ACC6AA4D26CB45C70048D22C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				ACC6AA5626CB46990048D22C /* EmailLoginResponse.swift */,
+				ACC6AA5826CB46AA0048D22C /* EmailLoginRequest.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,12 +565,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
+				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,
+				ACC6AA5326CB46660048D22C /* EmailSignUpDataManager.swift in Sources */,
 				ACC5980226C94C5800E2630B /* BoxOfficeDataManager.swift in Sources */,
+				ACC6AA4F26CB45E80048D22C /* EmailSignUpResponse.swift in Sources */,
 				ACC597CD26C94C2900E2630B /* Date.swift in Sources */,
 				ACC5980526C94C5800E2630B /* TransitionViewController.swift in Sources */,
 				ACC597D026C94C2900E2630B /* UIViewController.swift in Sources */,
 				ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */,
+				ACC6AA4726CAD72A0048D22C /* EmailSignUpViewController.swift in Sources */,
 				ACC597CF26C94C2900E2630B /* UIButton.swift in Sources */,
 				ACC597D826C94C2900E2630B /* BaseViewController.swift in Sources */,
 				ACC5980126C94C5800E2630B /* BoxOfficeResponse.swift in Sources */,
@@ -514,6 +583,8 @@
 				ACC597FD26C94C5800E2630B /* SignInRequest.swift in Sources */,
 				ACC597CB26C94C2900E2630B /* IndicatorView.swift in Sources */,
 				ACC597FE26C94C5800E2630B /* SignInViewController.swift in Sources */,
+				ACC6AA5726CB46990048D22C /* EmailLoginResponse.swift in Sources */,
+				ACC6AA5126CB46020048D22C /* EmailSignUpRequest.swift in Sources */,
 				ACC597D226C94C2900E2630B /* UIFont.swift in Sources */,
 				ACC597FF26C94C5800E2630B /* MovieViewController.swift in Sources */,
 				ACC6AA3F26CA80BC0048D22C /* LoginedMypageViewController.swift in Sources */,
@@ -523,6 +594,7 @@
 				ACC597F926C94C5800E2630B /* LoginViewController.swift in Sources */,
 				ACC6AA4326CA948F0048D22C /* LoginedMypageDetailViewController.swift in Sources */,
 				ACC597CE26C94C2900E2630B /* String.swift in Sources */,
+				ACC6AA5526CB46830048D22C /* EmailLoginDataManager.swift in Sources */,
 				ACC597CA26C94C2900E2630B /* Constant.swift in Sources */,
 				ACC597CC26C94C2900E2630B /* Device.swift in Sources */,
 				ACC5980026C94C5800E2630B /* BoxOfficeViewController.swift in Sources */,

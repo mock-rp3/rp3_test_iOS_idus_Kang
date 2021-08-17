@@ -56,36 +56,47 @@ class LoginViewController: BaseViewController {
                 _ = oauthToken
                 
             // 엑세스토큰
-            let accessToken = oauthToken?.accessToken
+//            let accessToken = oauthToken?.accessToken
                 
             //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
-            self.setUserInfo()
-                
+//            self.
+            
+            // 로그인 메인화면으로 이동
             let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
                 self.changeRootViewController(loginedMainTabBarController)
             }
         }
     }
     
-    func setUserInfo() {
-        UserApi.shared.me() {(user, error) in
-            if let error = error {
-                print(error)
-            }
-            else {
-                print("me() success.")
-                //do something
-                _ = user
-                // 닉네임
-//                self.infoLabel.text = user?.kakaoAccount?.profile?.nickname
-                
-                if let url = user?.kakaoAccount?.profile?.profileImageUrl,
-                    let data = try? Data(contentsOf: url) {
-                    // 프로필 이미지
-//                    self.profileImageView.image = UIImage(data: data)
-                }
-            }
+    // MARK: - 다른 방법으로 가입하기:
+    // 커스텀 UIAlertAction들이 있는 Action Sheet
+    @IBAction func actionSheetWithCustomActionsButtonTouchUpInside(_ sender: UIButton) {
+        let actionR = UIAlertAction(title: "이메일", style: .default) { action in
+            
+            //nextVC : popover 될 뷰
+            let nextVC = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "EmailSignUpStoryboard")
+            
+            nextVC.modalTransitionStyle = .coverVertical
+            nextVC.modalPresentationStyle = .fullScreen
+
+            self.present(nextVC, animated: true, completion: nil)
+                   
         }
+        
+        let actionG = UIAlertAction(title: "네이버", style: .default) { action in
+            self.loginInstance?.delegate = self
+            self.loginInstance?.requestThirdPartyLogin()
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { action in
+            
+        }
+        
+        self.presentAlert(
+            title: "다른 방법으로 가입하기",
+            preferredStyle: .actionSheet,
+            with: actionR, actionG, cancelAction
+        )
     }
     
     // MARK: - 네이버 로그인
@@ -93,46 +104,6 @@ class LoginViewController: BaseViewController {
     @IBAction func naverLoginBtn(_ sender: UIButton) {
         loginInstance?.delegate = self
         loginInstance?.requestThirdPartyLogin()
-    }
-        
-    @IBAction func logout(_ sender: Any) {
-        loginInstance?.requestDeleteToken()
-    }
-    
-    // RESTful API, id가져오기
-    func getInfo() {
-      guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
-      
-      if !isValidAccessToken {
-        return
-      }
-      
-      guard let tokenType = loginInstance?.tokenType else { return }
-      guard let accessToken = loginInstance?.accessToken else { return }
-        
-      let urlStr = "https://openapi.naver.com/v1/nid/me"
-      let url = URL(string: urlStr)!
-      
-      let authorization = "\(tokenType) \(accessToken)"
-      
-      let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
-      
-      req.responseJSON { response in
-        guard let result = response.value as? [String: Any] else { return }
-        guard let object = result["response"] as? [String: Any] else { return }
-        guard let name = object["name"] as? String else { return }
-        guard let email = object["email"] as? String else { return }
-        guard let nickname = object["nickname"] as? String else { return }
-        
-        print(email)
-        
-        // 이름
-//        self.nameLabel.text = "\(name)"
-        // 이메일
-//        self.emailLabel.text = "\(email)"
-        // 닉네임
-//        self.nicknameLabel.text = "\(nickname)"
-      }
     }
     
     // MARK: - 회원가입 없이 둘러보기
@@ -143,7 +114,6 @@ class LoginViewController: BaseViewController {
         changeRootViewController(mainTabBarController)
         
     }
-    
 }
 
 // MARK: - 네이버 로그인 프로토콜 채택
@@ -156,7 +126,6 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
         changeRootViewController(loginedMainTabBarController)
         
         print("Success login")
-        getInfo()
     }
     
     // 접근 토큰 갱신
