@@ -18,6 +18,7 @@ class EmailSignUpViewController: BaseViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var telTextField: UITextField!
     @IBOutlet var pushAgreementTextField: UITextField!
+    
     @IBOutlet weak var AllCheckBtn: UIButton!
     @IBOutlet weak var agreeBtn2: UIButton!
     @IBOutlet weak var agreeBtn3: UIButton!
@@ -37,16 +38,21 @@ class EmailSignUpViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Dismiss Keyboard When Tapped Arround
         self.dismissKeyboardWhenTappedAround()
         
         // 배경 애니메이션
         backgroundImageView.animationImages = animatedImages(for: "login&SIgnupPage_background_gif")
-        backgroundImageView.animationDuration = 15
+        backgroundImageView.animationDuration = 10
         backgroundImageView.image = backgroundImageView.animationImages?.first
         backgroundImageView.startAnimating()
-        
+
+        AllCheckBtn.tag = 1
+        agreeBtn2.tag = 2
+        agreeBtn3.tag = 3
+        agreeBtn4.tag = 4
+
     }
 
     // MARK: - 배경 애니메이션
@@ -68,98 +74,78 @@ class EmailSignUpViewController: BaseViewController {
     }
     
     // MARK: - 약관 체크
-    @IBAction func allCheckBtn(_ sender: UIButton) {
+    @IBAction func CheckBtn(_ sender: UIButton) {
         
-        if allChecked == false {
-            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            agreeBtn2.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            agreeBtn3.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            agreeBtn4.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            allChecked = true
-            mustChecked = true
-            agreeBtn2Checked = true
-            agreeBtn3Checked = true
-            agreeBtn4Checked = true
-        } else {
-            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
-            agreeBtn2.setImage(UIImage(systemName: "square"), for: .normal)
-            agreeBtn3.setImage(UIImage(systemName: "square"), for: .normal)
-            agreeBtn4.setImage(UIImage(systemName: "square"), for: .normal)
-            allChecked = false
-            mustChecked = false
-            agreeBtn2Checked = false
-            agreeBtn3Checked = false
-            agreeBtn4Checked = false
-        }
-    }
- 
-    
-    @IBAction func agreeBtn2(_ sender: UIButton) {
-        
-        if agreeBtn2Checked == false {
-            agreeBtn2.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            agreeBtn2Checked = true
-        } else {
-            agreeBtn2.setImage(UIImage(systemName: "square"), for: .normal)
-            agreeBtn2Checked = false
+        if sender.tag == 1 {
+            if allChecked == false {
+                AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                agreeBtn2.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                agreeBtn3.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                agreeBtn4.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                allChecked = true
+                mustChecked = true
+                agreeBtn2Checked = true
+                agreeBtn3Checked = true
+                agreeBtn4Checked = true
+            } else {
+                AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
+                agreeBtn2.setImage(UIImage(systemName: "square"), for: .normal)
+                agreeBtn3.setImage(UIImage(systemName: "square"), for: .normal)
+                agreeBtn4.setImage(UIImage(systemName: "square"), for: .normal)
+                allChecked = false
+                mustChecked = false
+                agreeBtn2Checked = false
+                agreeBtn3Checked = false
+                agreeBtn4Checked = false
+            }
         }
         
-        if agreeBtn2Checked == true && agreeBtn3Checked == true {
-            mustChecked = true
-        } else {
-            mustChecked = false
+        if sender.tag == 2 {
+            if agreeBtn2Checked == false {
+                agreeBtn2.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                agreeBtn2Checked = true
+            } else {
+                agreeBtn2.setImage(UIImage(systemName: "square"), for: .normal)
+                agreeBtn2Checked = false
+            }
         }
         
-        if agreeBtn2Checked == true && agreeBtn3Checked == true && agreeBtn4Checked == true {
-            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            allChecked = true
-        } else {
-            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
-            allChecked = false
-        }
-    }
-
-    @IBAction func agreeBtn3(_ sender: UIButton) {
-        
-        if agreeBtn3Checked == false {
-            agreeBtn3.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            agreeBtn3Checked = true
-        } else {
-            agreeBtn3.setImage(UIImage(systemName: "square"), for: .normal)
-            agreeBtn3Checked = false
+        if sender.tag == 3 {
+            if agreeBtn3Checked == false {
+                agreeBtn3.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                agreeBtn3Checked = true
+            } else {
+                agreeBtn3.setImage(UIImage(systemName: "square"), for: .normal)
+                agreeBtn3Checked = false
+            }
         }
         
-        if agreeBtn2Checked == true && agreeBtn3Checked == true {
-            mustChecked = true
-        } else {
-            mustChecked = false
+        if sender.tag == 2 || sender.tag == 3  {
+            if agreeBtn2Checked == true && agreeBtn3Checked == true {
+                mustChecked = true
+            } else {
+                mustChecked = false
+            }
         }
         
-        if agreeBtn2Checked == true && agreeBtn3Checked == true && agreeBtn4Checked == true {
-            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            allChecked = true
-        } else {
-            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
-            allChecked = false
+        if sender.tag == 4 {
+            if agreeBtn4Checked == false {
+                agreeBtn4.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                agreeBtn4Checked = true
+            } else {
+                agreeBtn4.setImage(UIImage(systemName: "square"), for: .normal)
+                agreeBtn4Checked = false
+            }
         }
-    }
-    
-    @IBAction func agreeBtn4(_ sender: UIButton) {
-        
-        if agreeBtn4Checked == false {
-            agreeBtn4.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            agreeBtn4Checked = true
-        } else {
-            agreeBtn4.setImage(UIImage(systemName: "square"), for: .normal)
-            agreeBtn4Checked = false
-        }
-        
-        if agreeBtn2Checked == true && agreeBtn3Checked == true && agreeBtn4Checked == true {
-            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            allChecked = true
-        } else {
-            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
-            allChecked = false
+         
+        if sender.tag == 2 || sender.tag == 3 || sender.tag == 4 {
+            if agreeBtn2Checked == true && agreeBtn3Checked == true && agreeBtn4Checked == true {
+                AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                allChecked = true
+            } else {
+                AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
+                allChecked = false
+            }
         }
     }
     

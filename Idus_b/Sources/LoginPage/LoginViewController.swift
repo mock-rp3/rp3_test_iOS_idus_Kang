@@ -14,6 +14,10 @@ import Alamofire
 class LoginViewController: BaseViewController {
     
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    let timeSelector: Selector = #selector(LoginViewController.updateTime)
+    var index = 0
+    var i = 0
+    var images = [UIImage]()
         
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -21,29 +25,33 @@ class LoginViewController: BaseViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 배경 애니메이션
-        backgroundImageView.animationImages = animatedImages(for: "login&SIgnupPage_background_gif")
-        backgroundImageView.animationDuration = 15
-        backgroundImageView.image = backgroundImageView.animationImages?.first
-        backgroundImageView.startAnimating()
-        
-    }
-    
-    // MARK: - 배경 애니메이션
-    func animatedImages(for name: String) -> [UIImage] {
-        
-        var i = 0
-        var images = [UIImage]()
-        
-        while let image = UIImage(named: "\(name)/login&SIgnupPage_background\(i)") {
+                
+        // 배경 이미지 배열
+        while let image = UIImage(named: "login&SIgnupPage_background_gif/login&SIgnupPage_background\(i)") {
             images.append(image)
             i += 1
         }
-        return images
+        
+        // 배경 애니메이션
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: timeSelector, userInfo: nil, repeats: true)
+    }
+    
+    // MARK: - 배경 애니메이션 초별 업데이트
+    @objc func updateTime(){
+        self.index += 1
+        if index >= images.count {
+            index = 0
+        }
+        
+        backgroundImageView.image = images[index]
+        UIView.transition(with: self.backgroundImageView,
+                          duration: 3.0,
+                           options: [.allowAnimatedContent, .transitionCrossDissolve],
+                           animations: { self.backgroundImageView.image = self.images[self.index] },
+                           completion: nil)
     }
     
     // MARK: - 카카오 로그인

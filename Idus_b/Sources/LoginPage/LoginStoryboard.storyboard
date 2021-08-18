@@ -384,7 +384,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="allCheckBtn:" destination="niV-kp-qaY" eventType="touchUpInside" id="tAm-4e-mbj"/>
+                                    <action selector="CheckBtn:" destination="niV-kp-qaY" eventType="touchUpInside" id="nco-aT-4ad"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLF-Co-AUN" userLabel="TagBox Line">
@@ -404,7 +404,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="agreeBtn2:" destination="niV-kp-qaY" eventType="touchUpInside" id="OpB-Vj-Bvp"/>
+                                    <action selector="CheckBtn:" destination="niV-kp-qaY" eventType="touchUpInside" id="ZIk-wX-GIl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzW-jl-UfW">
@@ -416,7 +416,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="agreeBtn3:" destination="niV-kp-qaY" eventType="touchUpInside" id="sEM-eY-5QT"/>
+                                    <action selector="CheckBtn:" destination="niV-kp-qaY" eventType="touchUpInside" id="s9M-c8-WCA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rs-mG-Tjw">
@@ -428,7 +428,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="agreeBtn4:" destination="niV-kp-qaY" eventType="touchUpInside" id="JlK-ks-L6x"/>
+                                    <action selector="CheckBtn:" destination="niV-kp-qaY" eventType="touchUpInside" id="6Bx-2Y-I2z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SMS, 이메일을 통해 쿠폰 및 이벤트 정보를 받아보실 수 있습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPq-dJ-sgp">

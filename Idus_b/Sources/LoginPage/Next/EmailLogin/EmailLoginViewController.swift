@@ -29,7 +29,7 @@ class EmailLoginViewController: BaseViewController {
         
         // 배경 애니메이션
         backgroundImageView.animationImages = animatedImages(for: "login&SIgnupPage_background_gif")
-        backgroundImageView.animationDuration = 15
+        backgroundImageView.animationDuration = 10
         backgroundImageView.image = backgroundImageView.animationImages?.first
         backgroundImageView.startAnimating()
     }
