@@ -15,6 +15,8 @@ class LoginViewController: BaseViewController {
     
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
         
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     // status bar 숨겨 풀스크린 만들기
     override var prefersStatusBarHidden: Bool {
         return true
@@ -22,6 +24,26 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 배경 애니메이션
+        backgroundImageView.animationImages = animatedImages(for: "login&SIgnupPage_background_gif")
+        backgroundImageView.animationDuration = 15
+        backgroundImageView.image = backgroundImageView.animationImages?.first
+        backgroundImageView.startAnimating()
+        
+    }
+    
+    // MARK: - 배경 애니메이션
+    func animatedImages(for name: String) -> [UIImage] {
+        
+        var i = 0
+        var images = [UIImage]()
+        
+        while let image = UIImage(named: "\(name)/login&SIgnupPage_background\(i)") {
+            images.append(image)
+            i += 1
+        }
+        return images
     }
     
     // MARK: - 카카오 로그인

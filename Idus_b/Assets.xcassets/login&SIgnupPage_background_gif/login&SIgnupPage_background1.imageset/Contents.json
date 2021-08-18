@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "login&SIgnupPage_background3.jpg",
+      "filename" : "login&SIgnupPage_background2.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "login&SIgnupPage_background3-1.jpg",
+      "filename" : "login&SIgnupPage_background2-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "login&SIgnupPage_background3-2.jpg",
+      "filename" : "login&SIgnupPage_background2-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -12,20 +12,158 @@ class EmailSignUpViewController: BaseViewController {
   
     lazy var dataManager: EmailSignUpDataManager = EmailSignUpDataManager()
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var telTextField: UITextField!
     @IBOutlet var pushAgreementTextField: UITextField!
+    @IBOutlet weak var AllCheckBtn: UIButton!
+    @IBOutlet weak var agreeBtn2: UIButton!
+    @IBOutlet weak var agreeBtn3: UIButton!
+    @IBOutlet weak var agreeBtn4: UIButton!
+    @IBOutlet weak var signupBtn: UIButton!
+    
+    var allChecked: Bool = false
+    var mustChecked: Bool = false
+    var agreeBtn2Checked:Bool = false
+    var agreeBtn3Checked:Bool = false
+    var agreeBtn4Checked:Bool = false
+    
+    // status bar 숨겨 풀스크린 만들기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Dismiss Keyboard When Tapped Arround
         self.dismissKeyboardWhenTappedAround()
         
+        // 배경 애니메이션
+        backgroundImageView.animationImages = animatedImages(for: "login&SIgnupPage_background_gif")
+        backgroundImageView.animationDuration = 15
+        backgroundImageView.image = backgroundImageView.animationImages?.first
+        backgroundImageView.startAnimating()
+        
+    }
+
+    // MARK: - 배경 애니메이션
+    func animatedImages(for name: String) -> [UIImage] {
+        
+        var i = 0
+        var images = [UIImage]()
+        
+        while let image = UIImage(named: "\(name)/login&SIgnupPage_background\(i)") {
+            images.append(image)
+            i += 1
+        }
+        return images
+    }
+
+    // MARK: - modal 내리기
+    @IBAction func dismissModalBtn(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - 약관 체크
+    @IBAction func allCheckBtn(_ sender: UIButton) {
+        
+        if allChecked == false {
+            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            agreeBtn2.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            agreeBtn3.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            agreeBtn4.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            allChecked = true
+            mustChecked = true
+            agreeBtn2Checked = true
+            agreeBtn3Checked = true
+            agreeBtn4Checked = true
+        } else {
+            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
+            agreeBtn2.setImage(UIImage(systemName: "square"), for: .normal)
+            agreeBtn3.setImage(UIImage(systemName: "square"), for: .normal)
+            agreeBtn4.setImage(UIImage(systemName: "square"), for: .normal)
+            allChecked = false
+            mustChecked = false
+            agreeBtn2Checked = false
+            agreeBtn3Checked = false
+            agreeBtn4Checked = false
+        }
+    }
+ 
+    
+    @IBAction func agreeBtn2(_ sender: UIButton) {
+        
+        if agreeBtn2Checked == false {
+            agreeBtn2.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            agreeBtn2Checked = true
+        } else {
+            agreeBtn2.setImage(UIImage(systemName: "square"), for: .normal)
+            agreeBtn2Checked = false
+        }
+        
+        if agreeBtn2Checked == true && agreeBtn3Checked == true {
+            mustChecked = true
+        } else {
+            mustChecked = false
+        }
+        
+        if agreeBtn2Checked == true && agreeBtn3Checked == true && agreeBtn4Checked == true {
+            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            allChecked = true
+        } else {
+            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
+            allChecked = false
+        }
+    }
+
+    @IBAction func agreeBtn3(_ sender: UIButton) {
+        
+        if agreeBtn3Checked == false {
+            agreeBtn3.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            agreeBtn3Checked = true
+        } else {
+            agreeBtn3.setImage(UIImage(systemName: "square"), for: .normal)
+            agreeBtn3Checked = false
+        }
+        
+        if agreeBtn2Checked == true && agreeBtn3Checked == true {
+            mustChecked = true
+        } else {
+            mustChecked = false
+        }
+        
+        if agreeBtn2Checked == true && agreeBtn3Checked == true && agreeBtn4Checked == true {
+            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            allChecked = true
+        } else {
+            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
+            allChecked = false
+        }
+    }
+    
+    @IBAction func agreeBtn4(_ sender: UIButton) {
+        
+        if agreeBtn4Checked == false {
+            agreeBtn4.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            agreeBtn4Checked = true
+        } else {
+            agreeBtn4.setImage(UIImage(systemName: "square"), for: .normal)
+            agreeBtn4Checked = false
+        }
+        
+        if agreeBtn2Checked == true && agreeBtn3Checked == true && agreeBtn4Checked == true {
+            AllCheckBtn.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            allChecked = true
+        } else {
+            AllCheckBtn.setImage(UIImage(systemName: "square"), for: .normal)
+            allChecked = false
+        }
+    }
+    
+    // MARK: - 회원가입 버튼
     @IBAction func signUpButtonTaapped(_ sender: UIButton) {
         // Email validation
         guard let email = emailTextField.text?.trim, email.isExists else {
@@ -63,17 +201,17 @@ class EmailSignUpViewController: BaseViewController {
         let input = EmailSignUpRequest(email: email, name: name, password: password, tel: tel, pushAgreement: pushAgreement)
         dataManager.postSignUp(input, delegate: self)
         
-        // 모달 내리기
-//        self.dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: modal 내리기
-    @IBAction func dismissModalBtn(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        if mustChecked == false {
+            // 회원가입 버튼 비활성화
+            self.presentAlert(title: "필수 약관에 동의해주세요")
+            return
+        }
+       
     }
     
 }
 
+// 이메일 회원가입 성공 메시지
 extension EmailSignUpViewController {
     func didSuccessSignUp(_ result: String) {
         self.presentAlert(title: "회원가입에 성공하였습니다", message: result) { action in
@@ -84,4 +222,17 @@ extension EmailSignUpViewController {
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
     }
+}
+
+// 텍스트필드 키보드 관리
+extension EmailSignUpViewController: UITextFieldDelegate {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.emailTextField.becomeFirstResponder()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.emailTextField.resignFirstResponder()
+    }
+
 }

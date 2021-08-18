@@ -12,17 +12,42 @@ class EmailLoginViewController: BaseViewController {
       
     lazy var dataManager: EmailLoginDataManager = EmailLoginDataManager()
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
+    // status bar 숨겨 풀스크린 만들기
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Dismiss Keyboard When Tapped Arround
         self.dismissKeyboardWhenTappedAround()
         
+        // 배경 애니메이션
+        backgroundImageView.animationImages = animatedImages(for: "login&SIgnupPage_background_gif")
+        backgroundImageView.animationDuration = 15
+        backgroundImageView.image = backgroundImageView.animationImages?.first
+        backgroundImageView.startAnimating()
     }
 
+    // MARK: - 배경 애니메이션
+    func animatedImages(for name: String) -> [UIImage] {
+        
+        var i = 0
+        var images = [UIImage]()
+        
+        while let image = UIImage(named: "\(name)/login&SIgnupPage_background\(i)") {
+            images.append(image)
+            i += 1
+        }
+        return images
+    }
+
+    // MARK: - 텍스트 필드
     @IBAction func loginButtonTaapped(_ sender: UIButton) {
         // Email validation
         guard let email = emailTextField.text?.trim, email.isExists else {
