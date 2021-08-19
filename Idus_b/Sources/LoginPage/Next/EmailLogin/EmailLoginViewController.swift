@@ -35,7 +35,7 @@ class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
         setKeyboardEvent()
         
         // 배경 이미지 배열
-        while let image = UIImage(named: "login&SIgnupPage_background_gif/login&SIgnupPage_background\(i)") {
+        while let image = UIImage(named: "login&SIgnupPage_background\(i)") {
             images.append(image)
             i += 1
         }

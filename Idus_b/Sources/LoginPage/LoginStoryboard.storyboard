@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_background_gif/login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="8H5-kb-Pij">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="8H5-kb-Pij">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_event" translatesAutoresizingMaskIntoConstraints="NO" id="NKl-3v-YDg">
@@ -151,7 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login&amp;SIgnupPage_background_gif/login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="FJS-92-2ox">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="FJS-92-2ox">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -366,7 +366,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_background_gif/login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="7Dr-bN-c9J">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login&amp;SIgnupPage_background0" translatesAutoresizingMaskIntoConstraints="NO" id="7Dr-bN-c9J">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJx-hc-JEe">
@@ -675,7 +675,7 @@
     <resources>
         <image name="kakaoLogin_Image" width="275" height="45"/>
         <image name="kakao_mark" width="26" height="22.5"/>
-        <image name="login&amp;SIgnupPage_background_gif/login&amp;SIgnupPage_background0" width="1377" height="2037.5"/>
+        <image name="login&amp;SIgnupPage_background0" width="1377" height="2037.5"/>
         <image name="login&amp;SIgnupPage_event" width="300.5" height="291"/>
         <image name="naverLogin_image" width="1418.5" height="225.5"/>
         <image name="naver_mark" width="26" height="25"/>

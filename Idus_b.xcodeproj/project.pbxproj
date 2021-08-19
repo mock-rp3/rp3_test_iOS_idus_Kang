@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC3D9BF926CE429D00E94F21 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D9BF826CE429C00E94F21 /* BannerCell.swift */; };
 		ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974826C9463F00E2630B /* AppDelegate.swift */; };
 		ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974A26C9463F00E2630B /* SceneDelegate.swift */; };
 		ACC5975226C9464600E2630B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC5975126C9464600E2630B /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		6D5B05F8A193EEE8E520B79A /* Pods-Idus_b.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus_b.debug.xcconfig"; path = "Target Support Files/Pods-Idus_b/Pods-Idus_b.debug.xcconfig"; sourceTree = "<group>"; };
 		70AB0D371C8E627B1D4D44BB /* Pods_Idus_b.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Idus_b.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3D9BF826CE429C00E94F21 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		ACC5974526C9463F00E2630B /* Idus_b.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idus_b.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC5974826C9463F00E2630B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC5974A26C9463F00E2630B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 				70AB0D371C8E627B1D4D44BB /* Pods_Idus_b.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC3D9BF726CE427B00E94F21 /* BannerCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D9BF826CE429C00E94F21 /* BannerCell.swift */,
+			);
+			path = BannerCell;
 			sourceTree = "<group>";
 		};
 		ACC5973C26C9463F00E2630B = {
@@ -334,6 +344,7 @@
 		ACC597EE26C94C5700E2630B /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				AC3D9BF726CE427B00E94F21 /* BannerCell */,
 				ACC597EF26C94C5800E2630B /* Transition */,
 				ACC597F426C94C5800E2630B /* Alert */,
 				ACC597F626C94C5800E2630B /* MainPageStoryboard.storyboard */,
@@ -565,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3D9BF926CE429D00E94F21 /* BannerCell.swift in Sources */,
 				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,

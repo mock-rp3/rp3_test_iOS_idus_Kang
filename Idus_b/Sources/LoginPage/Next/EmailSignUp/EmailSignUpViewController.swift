@@ -47,12 +47,14 @@ class EmailSignUpViewController: BaseViewController {
         // Dismiss Keyboard When Tapped Arround
         self.dismissKeyboardWhenTappedAround()
 
+        // 약관 태그
         AllCheckBtn.tag = 1
         agreeBtn2.tag = 2
         agreeBtn3.tag = 3
         agreeBtn4.tag = 4
+        
         // 배경 이미지 배열
-        while let image = UIImage(named: "login&SIgnupPage_background_gif/login&SIgnupPage_background\(i)") {
+        while let image = UIImage(named: "login&SIgnupPage_background\(i)") {
             images.append(image)
             i += 1
         }
