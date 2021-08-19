@@ -81,19 +81,26 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>Pods-Idus_b.xcscheme</key>
+		<key>PagingKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>SnapKit.xcscheme</key>
+		<key>Pods-Idus_b.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
+		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
 		</dict>
 		<key>naveridlogin-sdk-ios.xcscheme</key>
 		<dict>

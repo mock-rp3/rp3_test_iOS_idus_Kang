@@ -11,5 +11,7 @@ target 'Idus_b' do
   pod 'SnapKit'
   pod 'KakaoSDK'
   pod 'naveridlogin-sdk-ios'
+  pod "PagingKit"
+
 
 end

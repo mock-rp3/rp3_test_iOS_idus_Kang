@@ -6,112 +6,99 @@
 //
 
 import UIKit
+import PagingKit
 
 class MainPageViewController: BaseViewController {
 
-    var images = [UIImage]()
-    var i = 1
-    var pageViews: [UIImageView?] = []
-    var scrollTimer = Timer()
-    @IBOutlet weak var bannerCollectionView: UICollectionView!
-    var nowPage: Int = 0 // 현재페이지 체크 변수 (자동 스크롤할 때 필요)
+    var menuViewController: PagingMenuViewController!
+    var contentViewController: PagingContentViewController!
+    static var viewController: (UIColor) -> UIViewController = { (color) in
+       let vc = UIViewController()
+        vc.view.backgroundColor = color
+        return vc
+    }
+
+    var dataSource = [(menuTitle: "투데이", vc: viewController(.red)), (menuTitle: "실시간", vc: viewController(.blue)), (menuTitle: "NEW", vc: viewController(.yellow))]
+    
     
     // MARK: -생명주기
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 광고 이미지 배열
-        while let image = UIImage(named: "main_banner\(i)") {
-            images.append(image)
-            i += 1
-        }
+        // 메뉴 셀 & 포커스 셀 자체 등록
+//        menuViewController.register(nib: UINib(nibName: "MenuCell", bundle: nil), forCellWithReuseIdentifier: "MenuCell")
+        menuViewController.registerFocusView(nib: UINib(nibName: "FocusView", bundle: nil))
         
-        bannerCollectionView.delegate = self
-        bannerCollectionView.dataSource = self
-        bannerTimer()
+        // 기존 메뉴 셀 & 포커스 셀 등록
+        menuViewController.register(type: TitleLabelMenuViewCell.self, forCellWithReuseIdentifier: "TitleMenuCell")
+//        menuViewController.registerFocusView(view: UnderlineFocusView())
+        
+        // 메뉴&컨텐츠 데이터 리로드
+        menuViewController.reloadData()
+        contentViewController.reloadData()
         
     }
     
-    // MARK: - 2초마다 실행되는 타이머
-    func bannerTimer() {
-        let _: Timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in
-            self.bannerMove()
+    // Paging Kit 세그웨이 준비
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? PagingMenuViewController {
+            menuViewController = vc
+            menuViewController.dataSource = self // <- set menu data source
+            menuViewController.delegate = self // <- set menu delegate
+        } else if let vc = segue.destination as? PagingContentViewController {
+            contentViewController = vc
+            contentViewController.dataSource = self // <- set content data source
+            contentViewController.delegate = self // <- set content delegate
         }
     }
     
-    // MARK: - 배너 움직이는 매서드
-    func bannerMove() {
-        // 현재페이지가 마지막 페이지일 경우
-        if nowPage == images.count-1 {
-        // 맨 처음 페이지로 돌아감
-            bannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
-            nowPage = 0
-            return
-        }
-        // 다음 페이지로 전환
-        nowPage += 1
-        bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
+}
+
+// MARK: - 메뉴 데이터 소스_Paging Kit
+extension MainPageViewController: PagingMenuViewControllerDataSource {
+    func numberOfItemsForMenuViewController(viewController: PagingMenuViewController) -> Int {
+        return dataSource.count
     }
     
-    // MARK: - 인디케이터 (로딩)
-    func indicatorButtonTapped() {
-        showIndicator()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.dismissIndicator()
-        }
+    func menuViewController(viewController: PagingMenuViewController, widthForItemAt index: Int) -> CGFloat {
+        return 100
     }
     
-    // MARK: - 인디케이터 (커스텀 gif)
-    func gifIndicatorButtonTapped() {
-        let containerView = UIView(frame: UIScreen.main.bounds)
-        let activityIndicator = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 191.8, height: 85.2)))
-        let images: [UIImage] = Array(0..<12).map{ UIImage(named: "bts\($0)")! }
+    func menuViewController(viewController: PagingMenuViewController, cellForItemAt index: Int) -> PagingMenuViewCell {
+        // 메뉴 셀 & 포커스 셀 자체 등록
+//        let cell = viewController.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: index) as! MenuCell
+        // 기존 메뉴 셀 & 포커스 셀 등록
+        let cell = viewController.dequeueReusableCell(withReuseIdentifier: "TitleMenuCell", for: index) as! TitleLabelMenuViewCell
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        containerView.frame = window.frame
-        containerView.center = window.center
-        containerView.backgroundColor = .clear
-        containerView.addSubview(activityIndicator)
-        UIApplication.shared.windows.first?.addSubview(containerView)
-        
-        containerView.backgroundColor = UIColor(hex: 0x000000, alpha: 0.4)
-        activityIndicator.center = containerView.center
-        activityIndicator.animationImages = images
-        activityIndicator.animationDuration = Double(activityIndicator.animationImages?.count ?? 0) / 12
-        activityIndicator.animationRepeatCount = 0
-        activityIndicator.startAnimating()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            activityIndicator.stopAnimating()
-            containerView.removeFromSuperview()
-        }
+        // 메뉴 셀 작업
+        cell.titleLabel.text = dataSource[index].menuTitle
+//        cell.menu1.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        return cell
     }
 }
 
-// BannerCollectionView
-extension MainPageViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - 컨텐츠 데이터 소스_Paging Kit
+extension MainPageViewController: PagingContentViewControllerDataSource {
+    func numberOfItemsForContentViewController(viewController: PagingContentViewController) -> Int {
+        return dataSource.count
+    }
+    
+    func contentViewController(viewController: PagingContentViewController, viewControllerAt index: Int) -> UIViewController {
+        return dataSource[index].vc
+    }
+}
 
-    //컬렉션뷰 개수 설정
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+// MARK: - 메뉴 컨트롤러 델리게이트_Paging Kit
+extension MainPageViewController: PagingMenuViewControllerDelegate {
+    func menuViewController(viewController: PagingMenuViewController, didSelect page: Int, previousPage: Int) {
+        contentViewController.scroll(to: page, animated: true)
     }
-    
-    //컬렉션뷰 셀 설정
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = bannerCollectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
-        cell.imgView.image = images[indexPath.row]
-        return cell
+}
+
+// MARK: - 컨텐츠 컨트롤러 델리게이트_Paging Kit
+extension MainPageViewController: PagingContentViewControllerDelegate {
+    // 컨텐츠 컨트롤러 스크롤하면, 메뉴 컨트롤러도 함께 움직임
+    func contentViewController(viewController: PagingContentViewController, didManualScrollOn index: Int, percent: CGFloat) {
+        menuViewController.scroll(index: index, percent: percent, animated: false)
     }
-    
-    // UICollectionViewDelegateFlowLayout 상속
-    //컬렉션뷰 사이즈 설정
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bannerCollectionView.frame.size.width  , height:  bannerCollectionView.frame.height)
-    }
-    
-    //컬렉션뷰 감속 끝났을 때 현재 페이지 체크
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        nowPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-    }
-    
 }
