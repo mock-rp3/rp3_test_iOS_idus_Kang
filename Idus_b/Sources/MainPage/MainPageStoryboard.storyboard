@@ -17,39 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="STH-xl-NlG">
-                                <rect key="frame" x="117" y="243.5" width="141" height="180"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzJ-fR-0Ub">
-                                        <rect key="frame" x="0.0" y="0.0" width="141" height="30"/>
-                                        <state key="normal" title="화면 전환"/>
-                                        <connections>
-                                            <segue destination="kkl-jh-5Yt" kind="show" id="cqW-7R-gEJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3k-4P-807">
-                                        <rect key="frame" x="0.0" y="50" width="141" height="30"/>
-                                        <state key="normal" title="인디케이터 (로딩)"/>
-                                        <connections>
-                                            <action selector="indicatorButtonTapped:" destination="YLU-QT-GuU" eventType="touchUpInside" id="N2g-mT-C9r"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-fp-yrH">
-                                        <rect key="frame" x="0.0" y="100" width="141" height="30"/>
-                                        <state key="normal" title="인디케이터 (커스텀 gif)"/>
-                                        <connections>
-                                            <action selector="gifIndicatorButtonTapped:" destination="YLU-QT-GuU" eventType="touchUpInside" id="h71-kl-Qcx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otS-Nq-xWd">
-                                        <rect key="frame" x="0.0" y="150" width="141" height="30"/>
-                                        <state key="normal" title="경고창, 팝업 띄우기"/>
-                                        <connections>
-                                            <segue destination="IBP-hQ-Kt2" kind="show" id="fzt-N0-hWx"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-Lw-Om6">
                                 <rect key="frame" x="151" y="16" width="73" height="31.5"/>
                                 <constraints>
@@ -76,8 +43,8 @@
                                 <rect key="frame" x="325" y="60" width="26" height="24"/>
                                 <state key="normal" title="Button" image="main_검색"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="main_캡쳐" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-vN-ses">
-                                <rect key="frame" x="0.0" y="92" width="375" height="526"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="main_캡쳐" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-vN-ses">
+                                <rect key="frame" x="0.0" y="431" width="375" height="526"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="526" id="5VE-Ya-RgT"/>
                                 </constraints>
@@ -88,14 +55,12 @@
                         <constraints>
                             <constraint firstItem="99n-Us-GfU" firstAttribute="centerY" secondItem="lbq-Xu-s30" secondAttribute="centerY" id="00b-6k-X0q"/>
                             <constraint firstItem="I6x-bM-t36" firstAttribute="trailing" secondItem="Hy4-Kk-bKz" secondAttribute="trailing" constant="16" id="Dkg-Ne-Eb9"/>
-                            <constraint firstItem="STH-xl-NlG" firstAttribute="centerY" secondItem="LXe-bL-VCk" secondAttribute="centerY" id="ENb-Tr-bqL"/>
                             <constraint firstItem="lbq-Xu-s30" firstAttribute="centerX" secondItem="VkA-Lw-Om6" secondAttribute="centerX" id="Gu9-wp-Cp2"/>
                             <constraint firstItem="Vin-vN-ses" firstAttribute="top" secondItem="lbq-Xu-s30" secondAttribute="bottom" constant="3" id="JBe-V7-Kwj"/>
                             <constraint firstItem="lbq-Xu-s30" firstAttribute="trailing" secondItem="Hy4-Kk-bKz" secondAttribute="trailing" id="Kdj-ms-T5d"/>
                             <constraint firstItem="I6x-bM-t36" firstAttribute="trailing" secondItem="Vin-vN-ses" secondAttribute="trailing" id="UXI-UA-AtZ"/>
                             <constraint firstItem="lbq-Xu-s30" firstAttribute="top" secondItem="Hy4-Kk-bKz" secondAttribute="bottom" constant="5" id="Wwi-3a-4VC"/>
                             <constraint firstItem="99n-Us-GfU" firstAttribute="leading" secondItem="lbq-Xu-s30" secondAttribute="trailing" constant="-34" id="X9f-65-3rO"/>
-                            <constraint firstItem="STH-xl-NlG" firstAttribute="centerX" secondItem="LXe-bL-VCk" secondAttribute="centerX" id="aCt-Ov-rBC"/>
                             <constraint firstItem="I6x-bM-t36" firstAttribute="trailing" secondItem="99n-Us-GfU" secondAttribute="trailing" constant="24" id="ht5-Eq-Dea"/>
                             <constraint firstItem="VkA-Lw-Om6" firstAttribute="top" secondItem="I6x-bM-t36" secondAttribute="top" constant="16" id="o1O-UX-UjM"/>
                             <constraint firstItem="VkA-Lw-Om6" firstAttribute="centerX" secondItem="LXe-bL-VCk" secondAttribute="centerX" id="qrB-3e-dcF"/>
@@ -261,11 +226,11 @@
             <objects>
                 <viewController storyboardIdentifier="TransitionNextViewController" id="MQY-on-pfb" customClass="TransitionNextViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vse-aN-iuR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vXK-uP-N5F">
-                                <rect key="frame" x="71" y="293.5" width="233" height="80"/>
+                                <rect key="frame" x="71" y="283.5" width="233" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vZ-VU-SXb">
                                         <rect key="frame" x="0.0" y="0.0" width="233" height="30"/>
@@ -318,7 +283,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aD9-dx-ZMP"/>
+        <segue reference="494-vg-PLm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="main_cart" width="28" height="28"/>

@@ -8,13 +8,19 @@
 import UIKit
 import SnapKit
 
-class EmailLoginViewController: BaseViewController {
+class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
       
     lazy var dataManager: EmailLoginDataManager = EmailLoginDataManager()
+    
+    let timeSelector: Selector = #selector(LoginViewController.updateTime)
+    var index = 0
+    var i = 0
+    var images = [UIImage]()
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+
 
     // status bar 숨겨 풀스크린 만들기
     override var prefersStatusBarHidden: Bool {
@@ -26,25 +32,31 @@ class EmailLoginViewController: BaseViewController {
         
         // Dismiss Keyboard When Tapped Arround
         self.dismissKeyboardWhenTappedAround()
+        setKeyboardEvent()
         
-        // 배경 애니메이션
-        backgroundImageView.animationImages = animatedImages(for: "login&SIgnupPage_background_gif")
-        backgroundImageView.animationDuration = 10
-        backgroundImageView.image = backgroundImageView.animationImages?.first
-        backgroundImageView.startAnimating()
-    }
-
-    // MARK: - 배경 애니메이션
-    func animatedImages(for name: String) -> [UIImage] {
-        
-        var i = 0
-        var images = [UIImage]()
-        
-        while let image = UIImage(named: "\(name)/login&SIgnupPage_background\(i)") {
+        // 배경 이미지 배열
+        while let image = UIImage(named: "login&SIgnupPage_background_gif/login&SIgnupPage_background\(i)") {
             images.append(image)
             i += 1
         }
-        return images
+        
+        // 배경 애니메이션
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: timeSelector, userInfo: nil, repeats: true)
+    }
+    
+    // MARK: - 배경 애니메이션 초별 업데이트
+    @objc func updateTime(){
+        self.index += 1
+        if index >= images.count {
+            index = 0
+        }
+        
+        backgroundImageView.image = images[index]
+        UIView.transition(with: self.backgroundImageView,
+                          duration: 3.0,
+                           options: [.allowAnimatedContent, .transitionCrossDissolve],
+                           animations: { self.backgroundImageView.image = self.images[self.index] },
+                           completion: nil)
     }
 
     // MARK: - 텍스트 필드
@@ -87,4 +99,29 @@ extension EmailLoginViewController {
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
     }
+}
+
+// 텍스트필드 키보드 관리
+extension EmailLoginViewController {
+    
+    func setKeyboardEvent() {
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisAppear(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillAppear(_ senderr: NotificationCenter) {
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y = -150
+        }
+    }
+    @objc func keyboardWillDisAppear(_ senderr: NotificationCenter) {
+        if self.view.frame.origin.y == -150 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
 }
