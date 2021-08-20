@@ -12,16 +12,28 @@ class MainPageViewController: BaseViewController {
 
     var menuViewController: PagingMenuViewController!
     var contentViewController: PagingContentViewController!
-    static var viewController: (UIColor) -> UIViewController = { (color) in
-       let vc = UIViewController()
-        vc.view.backgroundColor = color
-        return vc
-    }
-
-    var dataSource = [(menuTitle: "투데이", vc: viewController(.red)), (menuTitle: "실시간", vc: viewController(.blue)), (menuTitle: "NEW", vc: viewController(.yellow))]
     
+    // 데이터 소스 정의
+    var dataSource = [(menuTitle: String, content: UIViewController)]() {
+        didSet {
+            menuViewController.reloadData()
+            contentViewController.reloadData()
+        }
+    }
+    
+    // 메뉴&컨텐츠 데이터 리로드
+    lazy var firstLoad: (() -> Void)? = { [weak self, menuViewController, contentViewController] in
+        menuViewController?.reloadData()
+        contentViewController?.reloadData()
+        self?.firstLoad = nil
+    }
     
     // MARK: -생명주기
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        firstLoad?()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +45,16 @@ class MainPageViewController: BaseViewController {
         menuViewController.register(type: TitleLabelMenuViewCell.self, forCellWithReuseIdentifier: "TitleMenuCell")
 //        menuViewController.registerFocusView(view: UnderlineFocusView())
         
-        // 메뉴&컨텐츠 데이터 리로드
-        menuViewController.reloadData()
-        contentViewController.reloadData()
+        menuViewController.cellAlignment = .center
+        
+        dataSource = makeDataSource()
+        
+        // Dismiss Keyboard When Tapped Arround
+        self.dismissKeyboardWhenTappedAround()
         
     }
     
-    // Paging Kit 세그웨이 준비
+    // MARK: - Paging Kit 세그웨이 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PagingMenuViewController {
             menuViewController = vc
@@ -50,6 +65,30 @@ class MainPageViewController: BaseViewController {
             contentViewController.dataSource = self // <- set content data source
             contentViewController.delegate = self // <- set content delegate
         }
+    }
+    
+    fileprivate func makeDataSource() -> [(menuTitle: String, content: UIViewController)] {
+        let myMenuArray = ["투데이", "실시간", "NEW"]
+        return myMenuArray.map {
+            let title = $0
+            
+            switch title {
+            case "투데이":
+                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "FirstVC") as! FirstVC
+                return (menuTitle: title, content: vc)
+            case "실시간":
+                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "SecondVC") as! SecondVC
+                return (menuTitle: title, content: vc)
+            case "NEW":
+                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "ThirdVC") as! ThirdVC
+                return (menuTitle: title, content: vc)
+                
+            default:
+                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "FirstVC") as! FirstVC
+                return (menuTitle: title, content: vc)
+            }
+        }
+        
     }
     
 }
@@ -84,7 +123,7 @@ extension MainPageViewController: PagingContentViewControllerDataSource {
     }
     
     func contentViewController(viewController: PagingContentViewController, viewControllerAt index: Int) -> UIViewController {
-        return dataSource[index].vc
+        return dataSource[index].content
     }
 }
 
