@@ -17,6 +17,22 @@
 		AC6AD4DF26CF9911005538FC /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD4DD26CF9911005538FC /* BannerCell.xib */; };
 		AC6AD50C26CFEC98005538FC /* FirstVCTableBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD50A26CFEC98005538FC /* FirstVCTableBannerCell.swift */; };
 		AC6AD50D26CFEC98005538FC /* FirstVCTableBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD50B26CFEC98005538FC /* FirstVCTableBannerCell.xib */; };
+		AC6AD51126CFF6F4005538FC /* CategoryScrollVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51026CFF6F4005538FC /* CategoryScrollVeiw.swift */; };
+		AC6AD51526CFF952005538FC /* FirstVCTableCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51326CFF952005538FC /* FirstVCTableCategoryCell.swift */; };
+		AC6AD51626CFF952005538FC /* FirstVCTableCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD51426CFF952005538FC /* FirstVCTableCategoryCell.xib */; };
+		AC6AD51826D00AEE005538FC /* MyCellControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51726D00AED005538FC /* MyCellControllerFactory.swift */; };
+		AC6AD51A26D01217005538FC /* BannerTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51926D01217005538FC /* BannerTableCellController.swift */; };
+		AC6AD51C26D01280005538FC /* CategoryTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51B26D01280005538FC /* CategoryTableCellController.swift */; };
+		AC6AD52026D013F4005538FC /* FirstVCTableGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51E26D013F4005538FC /* FirstVCTableGoodsCell.swift */; };
+		AC6AD52126D013F4005538FC /* FirstVCTableGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD51F26D013F4005538FC /* FirstVCTableGoodsCell.xib */; };
+		AC6AD52326D0144C005538FC /* GoodsTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52226D0144C005538FC /* GoodsTableCellController.swift */; };
+		AC6AD52626D03B2F005538FC /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52526D03B2F005538FC /* BaseScrollView.swift */; };
+		AC6AD52826D03B4C005538FC /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52726D03B4B005538FC /* HorizontalScrollView.swift */; };
+		AC6AD52A26D03B8F005538FC /* SomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52926D03B8F005538FC /* SomeDataModel.swift */; };
+		AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52C26D03DE2005538FC /* CategoryCell.swift */; };
+		AC6AD52F26D03DE2005538FC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD52D26D03DE2005538FC /* CategoryCell.xib */; };
+		AC6AD53226D048BB005538FC /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD53126D048BB005538FC /* DataModels.swift */; };
+		AC6AD53426D05471005538FC /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD53326D05471005538FC /* UICollectionViewCell.swift */; };
 		ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974826C9463F00E2630B /* AppDelegate.swift */; };
 		ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974A26C9463F00E2630B /* SceneDelegate.swift */; };
 		ACC5975226C9464600E2630B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC5975126C9464600E2630B /* Assets.xcassets */; };
@@ -84,6 +100,22 @@
 		AC6AD4DD26CF9911005538FC /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
 		AC6AD50A26CFEC98005538FC /* FirstVCTableBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVCTableBannerCell.swift; sourceTree = "<group>"; };
 		AC6AD50B26CFEC98005538FC /* FirstVCTableBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVCTableBannerCell.xib; sourceTree = "<group>"; };
+		AC6AD51026CFF6F4005538FC /* CategoryScrollVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScrollVeiw.swift; sourceTree = "<group>"; };
+		AC6AD51326CFF952005538FC /* FirstVCTableCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVCTableCategoryCell.swift; sourceTree = "<group>"; };
+		AC6AD51426CFF952005538FC /* FirstVCTableCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVCTableCategoryCell.xib; sourceTree = "<group>"; };
+		AC6AD51726D00AED005538FC /* MyCellControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellControllerFactory.swift; sourceTree = "<group>"; };
+		AC6AD51926D01217005538FC /* BannerTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableCellController.swift; sourceTree = "<group>"; };
+		AC6AD51B26D01280005538FC /* CategoryTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableCellController.swift; sourceTree = "<group>"; };
+		AC6AD51E26D013F4005538FC /* FirstVCTableGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVCTableGoodsCell.swift; sourceTree = "<group>"; };
+		AC6AD51F26D013F4005538FC /* FirstVCTableGoodsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVCTableGoodsCell.xib; sourceTree = "<group>"; };
+		AC6AD52226D0144C005538FC /* GoodsTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsTableCellController.swift; sourceTree = "<group>"; };
+		AC6AD52526D03B2F005538FC /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
+		AC6AD52726D03B4B005538FC /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
+		AC6AD52926D03B8F005538FC /* SomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeDataModel.swift; sourceTree = "<group>"; };
+		AC6AD52C26D03DE2005538FC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		AC6AD52D26D03DE2005538FC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		AC6AD53126D048BB005538FC /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		AC6AD53326D05471005538FC /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		ACC5974526C9463F00E2630B /* Idus_b.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idus_b.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC5974826C9463F00E2630B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC5974A26C9463F00E2630B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,8 +224,11 @@
 		AC6AD4CB26CEB465005538FC /* FirstVC */ = {
 			isa = PBXGroup;
 			children = (
+				AC6AD53026D04898005538FC /* DataModel */,
 				AC6AD4CF26CEB507005538FC /* TableCell */,
 				AC3D9BF726CE427B00E94F21 /* BannerCollectionCell */,
+				AC6AD50E26CFF636005538FC /* CategoryScrollVeiw */,
+				AC6AD52B26D03D6A005538FC /* CategoryColletionCell */,
 				AC6AD4C326CE907C005538FC /* FirstVC.swift */,
 			);
 			path = FirstVC;
@@ -228,10 +263,78 @@
 		AC6AD4CF26CEB507005538FC /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				AC6AD51726D00AED005538FC /* MyCellControllerFactory.swift */,
+				AC6AD50F26CFF68A005538FC /* Banner */,
+				AC6AD51226CFF90B005538FC /* Category */,
+				AC6AD51D26D013C2005538FC /* Goods */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		AC6AD50E26CFF636005538FC /* CategoryScrollVeiw */ = {
+			isa = PBXGroup;
+			children = (
+				AC6AD52426D03B0F005538FC /* Components */,
+				AC6AD51026CFF6F4005538FC /* CategoryScrollVeiw.swift */,
+			);
+			path = CategoryScrollVeiw;
+			sourceTree = "<group>";
+		};
+		AC6AD50F26CFF68A005538FC /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				AC6AD51926D01217005538FC /* BannerTableCellController.swift */,
 				AC6AD50A26CFEC98005538FC /* FirstVCTableBannerCell.swift */,
 				AC6AD50B26CFEC98005538FC /* FirstVCTableBannerCell.xib */,
 			);
-			path = TableCell;
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		AC6AD51226CFF90B005538FC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AC6AD51B26D01280005538FC /* CategoryTableCellController.swift */,
+				AC6AD51326CFF952005538FC /* FirstVCTableCategoryCell.swift */,
+				AC6AD51426CFF952005538FC /* FirstVCTableCategoryCell.xib */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		AC6AD51D26D013C2005538FC /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				AC6AD52226D0144C005538FC /* GoodsTableCellController.swift */,
+				AC6AD51E26D013F4005538FC /* FirstVCTableGoodsCell.swift */,
+				AC6AD51F26D013F4005538FC /* FirstVCTableGoodsCell.xib */,
+			);
+			path = Goods;
+			sourceTree = "<group>";
+		};
+		AC6AD52426D03B0F005538FC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AC6AD52526D03B2F005538FC /* BaseScrollView.swift */,
+				AC6AD52726D03B4B005538FC /* HorizontalScrollView.swift */,
+				AC6AD52926D03B8F005538FC /* SomeDataModel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AC6AD52B26D03D6A005538FC /* CategoryColletionCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC6AD52C26D03DE2005538FC /* CategoryCell.swift */,
+				AC6AD52D26D03DE2005538FC /* CategoryCell.xib */,
+			);
+			path = CategoryColletionCell;
+			sourceTree = "<group>";
+		};
+		AC6AD53026D04898005538FC /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC6AD53126D048BB005538FC /* DataModels.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		ACC5973C26C9463F00E2630B = {
@@ -300,6 +403,7 @@
 				ACC597BF26C94C2800E2630B /* UIFont.swift */,
 				ACC597C026C94C2800E2630B /* Color.swift */,
 				ACC6AA3426CA39F60048D22C /* UIView.swift */,
+				AC6AD53326D05471005538FC /* UICollectionViewCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -588,7 +692,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC5975526C9464600E2630B /* LaunchScreen.storyboard in Resources */,
+				AC6AD51626CFF952005538FC /* FirstVCTableCategoryCell.xib in Resources */,
 				ACC597D726C94C2900E2630B /* NotoSansCJKkr-Bold.otf in Resources */,
+				AC6AD52126D013F4005538FC /* FirstVCTableGoodsCell.xib in Resources */,
 				ACC597D626C94C2900E2630B /* NotoSansCJKkr-Regular.otf in Resources */,
 				AC6AD4C226CE88F5005538FC /* FocusView.xib in Resources */,
 				ACC5975226C9464600E2630B /* Assets.xcassets in Resources */,
@@ -603,6 +709,7 @@
 				AC6AD4DF26CF9911005538FC /* BannerCell.xib in Resources */,
 				ACC6AA3D26CA80A50048D22C /* LoginedMypageStoryboard.storyboard in Resources */,
 				ACC597FA26C94C5800E2630B /* SearchStoryboard.storyboard in Resources */,
+				AC6AD52F26D03DE2005538FC /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,17 +763,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
+				AC6AD52326D0144C005538FC /* GoodsTableCellController.swift in Sources */,
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
+				AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,
 				ACC6AA5326CB46660048D22C /* EmailSignUpDataManager.swift in Sources */,
 				ACC5980226C94C5800E2630B /* BoxOfficeDataManager.swift in Sources */,
 				ACC6AA4F26CB45E80048D22C /* EmailSignUpResponse.swift in Sources */,
+				AC6AD52026D013F4005538FC /* FirstVCTableGoodsCell.swift in Sources */,
 				AC6AD4C626CE90BC005538FC /* SecondVC.swift in Sources */,
 				ACC597CD26C94C2900E2630B /* Date.swift in Sources */,
+				AC6AD52A26D03B8F005538FC /* SomeDataModel.swift in Sources */,
 				ACC5980526C94C5800E2630B /* TransitionViewController.swift in Sources */,
 				ACC597D026C94C2900E2630B /* UIViewController.swift in Sources */,
+				AC6AD53426D05471005538FC /* UICollectionViewCell.swift in Sources */,
 				ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */,
 				ACC6AA4726CAD72A0048D22C /* EmailSignUpViewController.swift in Sources */,
+				AC6AD51C26D01280005538FC /* CategoryTableCellController.swift in Sources */,
 				ACC597CF26C94C2900E2630B /* UIButton.swift in Sources */,
 				ACC597D826C94C2900E2630B /* BaseViewController.swift in Sources */,
 				ACC5980126C94C5800E2630B /* BoxOfficeResponse.swift in Sources */,
@@ -675,16 +788,22 @@
 				ACC597CB26C94C2900E2630B /* IndicatorView.swift in Sources */,
 				ACC597FE26C94C5800E2630B /* SignInViewController.swift in Sources */,
 				ACC6AA5726CB46990048D22C /* EmailLoginResponse.swift in Sources */,
+				AC6AD51826D00AEE005538FC /* MyCellControllerFactory.swift in Sources */,
 				ACC6AA5126CB46020048D22C /* EmailSignUpRequest.swift in Sources */,
+				AC6AD53226D048BB005538FC /* DataModels.swift in Sources */,
+				AC6AD52826D03B4C005538FC /* HorizontalScrollView.swift in Sources */,
 				ACC597D226C94C2900E2630B /* UIFont.swift in Sources */,
 				ACC597FF26C94C5800E2630B /* MovieViewController.swift in Sources */,
 				ACC6AA3F26CA80BC0048D22C /* LoginedMypageViewController.swift in Sources */,
 				ACC597FC26C94C5800E2630B /* SignInResponse.swift in Sources */,
 				ACC5980626C94C5800E2630B /* MainPageViewController.swift in Sources */,
+				AC6AD51A26D01217005538FC /* BannerTableCellController.swift in Sources */,
 				ACC6AA3A26CA77AD0048D22C /* MypageViewController.swift in Sources */,
+				AC6AD51126CFF6F4005538FC /* CategoryScrollVeiw.swift in Sources */,
 				AC6AD4C826CE90DE005538FC /* ThirdVC.swift in Sources */,
 				ACC597F926C94C5800E2630B /* LoginViewController.swift in Sources */,
 				ACC6AA4326CA948F0048D22C /* LoginedMypageDetailViewController.swift in Sources */,
+				AC6AD52626D03B2F005538FC /* BaseScrollView.swift in Sources */,
 				ACC597CE26C94C2900E2630B /* String.swift in Sources */,
 				ACC6AA5526CB46830048D22C /* EmailLoginDataManager.swift in Sources */,
 				AC6AD4C426CE907C005538FC /* FirstVC.swift in Sources */,
@@ -699,6 +818,7 @@
 				ACC5980426C94C5800E2630B /* TransitionNextViewController.swift in Sources */,
 				ACC597FB26C94C5800E2630B /* SignInDataManager.swift in Sources */,
 				AC6AD50C26CFEC98005538FC /* FirstVCTableBannerCell.swift in Sources */,
+				AC6AD51526CFF952005538FC /* FirstVCTableCategoryCell.swift in Sources */,
 				AC6AD4DE26CF9911005538FC /* BannerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

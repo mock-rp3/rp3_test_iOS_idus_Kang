@@ -17,16 +17,16 @@ class FirstVCTableBannerCell: UITableViewCell {
         return UINib(nibName: "FirstVCTableBannerCell", bundle: nil)
     }
     
-    func configure(with models: [Model]) {
-        self.models = models
-        bannerCollectionView.reloadData()
-    }
-    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
-    var models = [Model]()
+    var models = [imgModel]()
     
     var scrollTimer = Timer()
     var nowPage: Int = 0 // 현재페이지 체크 변수 (자동 스크롤할 때 필요)
+    
+    func configure(with models: [imgModel]) {
+        self.models = models
+        bannerCollectionView.reloadData()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

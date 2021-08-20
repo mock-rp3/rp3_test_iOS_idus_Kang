@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-EV-725">
-                    <rect key="frame" x="173.5" y="0.0" width="28.5" height="45"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-EV-725">
+                    <rect key="frame" x="173.5" y="0.0" width="28" height="45"/>
                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -26,7 +26,10 @@
             <viewLayoutGuide key="safeArea" id="eDE-QM-HDV"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="UO7-EV-725" firstAttribute="leading" secondItem="eDE-QM-HDV" secondAttribute="leading" constant="173.5" id="8Qh-ak-rN7"/>
                 <constraint firstItem="UO7-EV-725" firstAttribute="centerX" secondItem="Fa6-eG-0Fk" secondAttribute="centerX" id="Rqc-Bs-ErW"/>
+                <constraint firstItem="UO7-EV-725" firstAttribute="top" secondItem="eDE-QM-HDV" secondAttribute="top" id="W9n-sc-L91"/>
+                <constraint firstItem="UO7-EV-725" firstAttribute="bottom" secondItem="eDE-QM-HDV" secondAttribute="bottom" id="WoJ-0e-Qgn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

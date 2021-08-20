@@ -57,13 +57,13 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wm-zS-XYe" userLabel="Contents View">
-                                <rect key="frame" x="0.0" y="147" width="375" height="471"/>
+                                <rect key="frame" x="0.0" y="139" width="375" height="479"/>
                                 <connections>
                                     <segue destination="zvu-Al-S6h" kind="embed" id="v7m-gG-v8F"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzU-9x-xpQ" userLabel="PagingKit">
-                                <rect key="frame" x="0.0" y="99" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="40"/>
                                 <connections>
                                     <segue destination="bXz-NI-0Cg" kind="embed" id="7Yc-ha-o3H"/>
                                 </connections>
@@ -82,7 +82,7 @@
                             <constraint firstItem="4Wm-zS-XYe" firstAttribute="bottom" secondItem="I6x-bM-t36" secondAttribute="bottom" id="ffg-7m-tHO"/>
                             <constraint firstItem="UcH-qs-VVT" firstAttribute="top" secondItem="I6x-bM-t36" secondAttribute="top" constant="16" id="hDJ-ht-hou"/>
                             <constraint firstItem="dzU-9x-xpQ" firstAttribute="top" secondItem="UcH-qs-VVT" secondAttribute="bottom" id="lHI-ut-6a1"/>
-                            <constraint firstItem="dzU-9x-xpQ" firstAttribute="height" secondItem="LXe-bL-VCk" secondAttribute="height" multiplier="0.071964" id="m4Y-ja-MeX"/>
+                            <constraint firstItem="dzU-9x-xpQ" firstAttribute="height" secondItem="LXe-bL-VCk" secondAttribute="height" multiplier="0.05997" id="oMy-NL-sfl"/>
                             <constraint firstItem="UcH-qs-VVT" firstAttribute="height" secondItem="LXe-bL-VCk" secondAttribute="height" multiplier="0.113193" constant="7.5" id="yuP-tz-Zok"/>
                         </constraints>
                     </view>
@@ -303,7 +303,7 @@
             <objects>
                 <viewController storyboardIdentifier="MenuCell" id="bXz-NI-0Cg" customClass="PagingMenuViewController" customModule="PagingKit" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DeM-K6-1dq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -317,7 +317,7 @@
             <objects>
                 <viewController id="zvu-Al-S6h" customClass="PagingContentViewController" customModule="PagingKit" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kcP-xe-70A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -365,9 +365,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="main_캡쳐" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-vN-ses">
-                                <rect key="frame" x="0.0" y="60" width="375" height="528"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="523"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHm-HY-Yfw">
+                                <rect key="frame" x="0.0" y="307" width="375" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bA1-Fk-mIS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
