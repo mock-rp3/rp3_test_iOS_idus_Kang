@@ -96,7 +96,6 @@
         <!--화면 전환-->
         <scene sceneID="0Lj-z5-pDA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bZl-uO-iHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TransitionViewController" id="kkl-jh-5Yt" customClass="TransitionViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sgQ-fM-pfk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -152,13 +151,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="화면 전환" id="cnh-Nf-05R"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZl-uO-iHG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3575" y="-1391"/>
         </scene>
         <!--경고창, 팝업 띄우기-->
         <scene sceneID="Kl6-sV-bdE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G6m-NJ-CiQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AlertViewController" id="IBP-hQ-Kt2" customClass="AlertViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mTv-vn-JON">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -235,13 +234,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="경고창, 팝업 띄우기" id="Bk1-S6-k5w"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6m-NJ-CiQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2818" y="-1391"/>
         </scene>
         <!--화면 전환 닫기-->
         <scene sceneID="DtT-NV-zWg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y4p-bE-ifh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TransitionNextViewController" id="MQY-on-pfb" customClass="TransitionNextViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vse-aN-iuR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -276,6 +275,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="화면 전환 닫기" id="1hq-wg-9Uo"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y4p-bE-ifh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4503" y="-1392"/>
         </scene>
@@ -305,6 +305,7 @@
                     <view key="view" contentMode="scaleToFill" id="DeM-K6-1dq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Nk5-FT-Z4W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -319,6 +320,7 @@
                     <view key="view" contentMode="scaleToFill" id="kcP-xe-70A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="b15-5b-tuc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -329,6 +331,7 @@
         <!--FirstVC-->
         <scene sceneID="4lV-5i-JVr">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O86-4T-1HV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="FirstVC" id="IMC-T6-Ibk" customClass="FirstVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fnY-If-whv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -352,7 +355,6 @@
                         <outlet property="table" destination="ynG-Yn-878" id="dLd-Zi-tOZ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O86-4T-1HV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1872.8" y="846.9265367316342"/>
         </scene>

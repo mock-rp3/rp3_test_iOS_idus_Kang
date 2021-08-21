@@ -9,8 +9,10 @@ import UIKit
 
 class FirstVC: BaseViewController {
     
-    fileprivate var cellControllers = [TableCellController]()
-    fileprivate let cellControllerFactory = MyCellControllerFactory()
+    // 셀 컨트롤러
+//    fileprivate var cellControllers = [CellController<UITableView>]() // 축약형
+//    fileprivate var cellControllers = [TableCellController]() // 원본
+//    fileprivate let cellControllerFactory = MyCellControllerFactory()
     
     @IBOutlet var table: UITableView!
     var models = [imgModel]()
@@ -26,17 +28,20 @@ class FirstVC: BaseViewController {
             i += 1
         }
         table.register(FirstVCTableBannerCell.nib(), forCellReuseIdentifier: FirstVCTableBannerCell.identifier)
-        
+
         while let _ = UIImage(named: "main_category\(j)") {
             btnImgModels.append(btnImgModel(btnImageName: "main_category\(j)"))
             j += 1
         }
         table.register(FirstVCTableCategoryCell.nib(), forCellReuseIdentifier: FirstVCTableCategoryCell.identifier)
+
+        table.register(FirstVCTableGoodsCell.nib(), forCellReuseIdentifier: FirstVCTableGoodsCell.identifier)
         
         table.delegate = self
         table.dataSource = self
         
-        cellControllerFactory.registerCells(on: table)
+        // 셀 컨트롤러 셀 등록
+//        cellControllerFactory.registerCells(on: table)
     }
     
 }
@@ -44,23 +49,31 @@ class FirstVC: BaseViewController {
 // MARK: - Table
 extension FirstVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         if indexPath.row == 0 {
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableBannerCell.identifier, for: indexPath) as! FirstVCTableBannerCell
             cell.configure(with: models)
             return cell
-        } else {
+        } else if indexPath.row == 1{
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableCategoryCell.identifier, for: indexPath) as! FirstVCTableCategoryCell
             cell.configure2(with: btnImgModels)
             return cell
+        } else {
+            let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableGoodsCell.identifier, for: indexPath) as! FirstVCTableGoodsCell
+            cell.configure3(with: btnImgModels)
+            return cell
         }
-        
-        // 셀 컨트롤러 활용
-//        cellControllers[indexPath.row].cellFromTableView(tableView, forIndexPath: indexPath)
+
+        // 셀 컨트롤러 활용 축약형
+//        return cellControllers[indexPath.row].cellFromReusableCellHolder(table, forIndexPath: indexPath)
+      
+        // 셀 컨트롤러 활용 원본
+//        return cellControllers[indexPath.row].cellFromTableView(table, forIndexPath: indexPath)
+
     }
     
     // 셀 컨트롤러 활용
@@ -70,8 +83,13 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
     
     // 테이블뷰 셀 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return tableView.rowHeight
-        return 190
+        if indexPath.row == 0 {
+            return 190
+        } else if indexPath.row == 1 {
+            return 84
+        } else {
+            return 150
+        }
     }
     
 }

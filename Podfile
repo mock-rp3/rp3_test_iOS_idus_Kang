@@ -12,6 +12,8 @@ target 'Idus_b' do
   pod 'KakaoSDK'
   pod 'naveridlogin-sdk-ios'
   pod "PagingKit"
-
+  pod 'RxSwift'
+  pod 'RxGesture'
+  pod 'RxCocoa'
 
 end

@@ -95,6 +95,6 @@ extension FirstVCTableCategoryCell: UICollectionViewDelegate, UICollectionViewDa
     
     // height값을 collectionView의 height만큼 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 84, height: 84)
+        return CGSize(width: 84, height: categoryCollectionView.frame.height)
     }
 }
