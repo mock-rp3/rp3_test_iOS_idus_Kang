@@ -8,20 +8,6 @@
 import Foundation
 import UIKit
 
-// MARK: -cell 이 어떤 셀인지
-protocol ListItem {
-    var isBanner: Bool {get}
-    var isCategory: Bool {get}
-    var isGoods: Bool {get}
-}
-
-// MARK: -테이블 뷰 셀 프로토콜
-protocol TableCellController {
-    static func registerCell(on tableView: UITableView)
-    func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell
-    func didSelectCell()
-}
-
 // MARK: - ReusableCell
 protocol ReusableCell: AnyObject {
     associatedtype CellHolder: ReusableCellHolder

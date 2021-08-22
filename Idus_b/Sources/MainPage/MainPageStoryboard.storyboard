@@ -328,79 +328,6 @@
             </objects>
             <point key="canvasLocation" x="2674" y="119"/>
         </scene>
-        <!--FirstVC-->
-        <scene sceneID="4lV-5i-JVr">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O86-4T-1HV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="FirstVC" id="IMC-T6-Ibk" customClass="FirstVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fnY-If-whv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ynG-Yn-878">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="olL-KJ-frd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ynG-Yn-878" firstAttribute="leading" secondItem="olL-KJ-frd" secondAttribute="leading" id="1b3-sg-dVM"/>
-                            <constraint firstItem="ynG-Yn-878" firstAttribute="bottom" secondItem="olL-KJ-frd" secondAttribute="bottom" id="9bj-eS-m0k"/>
-                            <constraint firstItem="ynG-Yn-878" firstAttribute="trailing" secondItem="olL-KJ-frd" secondAttribute="trailing" id="TLd-eS-52R"/>
-                            <constraint firstItem="ynG-Yn-878" firstAttribute="top" secondItem="olL-KJ-frd" secondAttribute="top" id="aBu-WX-fcm"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="table" destination="ynG-Yn-878" id="dLd-Zi-tOZ"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1872.8" y="846.9265367316342"/>
-        </scene>
-        <!--SecondVC-->
-        <scene sceneID="bqI-oK-xca">
-            <objects>
-                <viewController storyboardIdentifier="SecondVC" id="p9g-ju-50J" customClass="SecondVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rRL-27-kHH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="main_캡쳐" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-vN-ses">
-                                <rect key="frame" x="0.0" y="72" width="375" height="523"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHm-HY-Yfw">
-                                <rect key="frame" x="0.0" y="307" width="375" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bA1-Fk-mIS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ljs-Fl-K7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2644" y="846.9265367316342"/>
-        </scene>
-        <!--ThirdVC-->
-        <scene sceneID="05a-pA-ZMX">
-            <objects>
-                <viewController storyboardIdentifier="ThirdVC" id="hkL-uG-15V" customClass="ThirdVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xyg-g6-TfK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="AnC-a9-njQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nf6-VY-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3471" y="847"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aD9-dx-ZMP"/>
@@ -409,7 +336,6 @@
         <image name="main_cart" width="28" height="28"/>
         <image name="main_logo" width="73" height="31.5"/>
         <image name="main_검색" width="25.5" height="24"/>
-        <image name="main_캡쳐" width="370.5" height="512"/>
         <image name="tapBar_작품" width="41" height="47.5"/>
         <image name="tapBar_작품_선택" width="35" height="48.5"/>
         <systemColor name="systemBackgroundColor">

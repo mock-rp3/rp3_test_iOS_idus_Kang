@@ -37,6 +37,8 @@ class FirstVC: BaseViewController {
 
         table.register(FirstVCTableGoodsCell.nib(), forCellReuseIdentifier: FirstVCTableGoodsCell.identifier)
         
+        table.register(TodayGoodsTableViewCell.nib(), forCellReuseIdentifier: TodayGoodsTableViewCell.identifier)
+        
         table.delegate = self
         table.dataSource = self
         
@@ -49,7 +51,7 @@ class FirstVC: BaseViewController {
 // MARK: - Table
 extension FirstVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,14 +59,22 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableBannerCell.identifier, for: indexPath) as! FirstVCTableBannerCell
             cell.configure(with: models)
+            cell.delegate = self
             return cell
         } else if indexPath.row == 1{
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableCategoryCell.identifier, for: indexPath) as! FirstVCTableCategoryCell
             cell.configure2(with: btnImgModels)
+            cell.delegate = self
             return cell
-        } else {
+        } else if indexPath.row == 2{
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableGoodsCell.identifier, for: indexPath) as! FirstVCTableGoodsCell
             cell.configure3(with: btnImgModels)
+            cell.delegate = self
+            return cell
+        } else {
+            let cell = table.dequeueReusableCell(withIdentifier: TodayGoodsTableViewCell.identifier, for: indexPath) as! TodayGoodsTableViewCell
+            cell.configure4(with: models)
+            cell.delegate = self
             return cell
         }
 
@@ -92,4 +102,47 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+}
+
+// MARK: - 배너 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
+extension FirstVC: BannerDelegate {
+    func didSelectedBanner(_ index: Int) {
+        print("\(index)번째 셀")
+    }
+}
+
+// MARK: - 카테고리 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
+extension FirstVC: CategoryDelegate {
+    func didSelectedCategory(_ index: Int) {
+        print("\(index)번째 셀")
+    }
+}
+
+// MARK: - 작품 컬렉션뷰 이미지 버튼 클릭 이벤트 델리게이트 채택
+extension FirstVC: GoodsViewDelegate {
+    func didSelectedGoodsBtn(_ index: Int) {
+        
+        print("\(index)번째 셀")
+        
+        // 텝바 컨트롤러 루트 뷰 전환
+//        let goodsBtnController = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(identifier: "GoodsPageViewController")
+//        changeRootViewController(goodsBtnController)
+        
+        //nextVC : popover 될 뷰
+//        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController")
+//
+//        nextVC.modalTransitionStyle = .partialCurl
+//        nextVC.modalPresentationStyle = .fullScreen
+//
+//        self.present(nextVC, animated: true, completion: nil)
+        
+    }
+}
+
+// MARK: - 오늘의 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
+extension FirstVC: TodayGoodsViewDelegate {
+    func didSelectedGoods(_ index: Int) {
+        
+        print("\(index)번째 셀")
+    }
 }

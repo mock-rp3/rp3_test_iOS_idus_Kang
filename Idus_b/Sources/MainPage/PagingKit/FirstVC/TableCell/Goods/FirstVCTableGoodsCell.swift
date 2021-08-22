@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol GoodsViewDelegate: AnyObject { // class로 타입 제한
+    func didSelectedGoodsBtn(_ index: Int)
+}
+
 class FirstVCTableGoodsCell: UITableViewCell {
+    
+    var delegate: GoodsViewDelegate? // 의존성 주입할 프로퍼티 선언
     
     // 코드로 식별자 부여
     static let identifier = "FirstVCTableGoodsCell"
@@ -58,5 +64,12 @@ extension FirstVCTableGoodsCell: UICollectionViewDelegate, UICollectionViewDataS
     // height값을 collectionView의 height만큼 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 84, height: goodsCollectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        delegate?.didSelectedGoodsBtn(indexPath.item)
+        if let delegate = delegate {
+            delegate.didSelectedGoodsBtn(indexPath.item)
+        }
     }
 }

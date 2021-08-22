@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol BannerDelegate: AnyObject { // class로 타입 제한
+    func didSelectedBanner(_ index: Int)
+}
+
 class FirstVCTableBannerCell: UITableViewCell {
+    
+    var delegate: BannerDelegate?
     
     // 코드로 식별자 부여
     static let identifier = "FirstVCTableBannerCell"
@@ -94,6 +100,13 @@ extension FirstVCTableBannerCell: UICollectionViewDelegate, UICollectionViewData
     //컬렉션뷰 감속 끝났을 때 현재 페이지 체크
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         nowPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        delegate?.didSelectedBanner(indexPath.item)
+        if let delegate = delegate {
+            delegate.didSelectedBanner(indexPath.item)
+        }
     }
     
 }

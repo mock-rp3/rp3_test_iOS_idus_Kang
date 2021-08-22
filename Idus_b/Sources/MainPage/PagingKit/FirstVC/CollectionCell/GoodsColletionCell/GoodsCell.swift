@@ -20,8 +20,9 @@ class GoodsCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
-
+    
     public func configure3(with model: btnImgModel) {
         self.GoodsBtn.setImage(UIImage(named: model.btnImageName), for: .normal)
     }

@@ -74,17 +74,17 @@ class MainPageViewController: BaseViewController {
             
             switch title {
             case "투데이":
-                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "FirstVC") as! FirstVC
+                let vc = UIStoryboard(name: "FirstVCStoryboard", bundle: nil).instantiateViewController(identifier: "FirstVC") as! FirstVC
                 return (menuTitle: title, content: vc)
             case "실시간":
-                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "SecondVC") as! SecondVC
+                let vc = UIStoryboard(name: "SecondVCStoryboard", bundle: nil).instantiateViewController(identifier: "SecondVC") as! SecondVC
                 return (menuTitle: title, content: vc)
             case "NEW":
-                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "ThirdVC") as! ThirdVC
+                let vc = UIStoryboard(name: "ThirdVCStoryboard", bundle: nil).instantiateViewController(identifier: "ThirdVC") as! ThirdVC
                 return (menuTitle: title, content: vc)
                 
             default:
-                let vc = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(identifier: "FirstVC") as! FirstVC
+                let vc = UIStoryboard(name: "FirstVCStoryboard", bundle: nil).instantiateViewController(identifier: "FirstVC") as! FirstVC
                 return (menuTitle: title, content: vc)
             }
         }

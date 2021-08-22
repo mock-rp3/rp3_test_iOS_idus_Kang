@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol CategoryDelegate: AnyObject {
+    func didSelectedCategory(_ index: Int)
+}
+
 class FirstVCTableCategoryCell: UITableViewCell {
+    
+    var delegate: CategoryDelegate?
     
     // 코드로 식별자 부여
     static let identifier = "FirstVCTableCategoryCell"
@@ -96,5 +102,11 @@ extension FirstVCTableCategoryCell: UICollectionViewDelegate, UICollectionViewDa
     // height값을 collectionView의 height만큼 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 84, height: categoryCollectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let delegate = delegate {
+            delegate.didSelectedCategory(indexPath.item)
+        }
     }
 }

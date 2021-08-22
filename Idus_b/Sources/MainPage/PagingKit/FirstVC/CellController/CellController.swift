@@ -5,7 +5,7 @@
 //  Created by 강성수 on 2021/08/21.
 //
 
-import Foundation
+
 import UIKit
 
 class CellController<T: ReusableCellHolder>: CellControllerType {
