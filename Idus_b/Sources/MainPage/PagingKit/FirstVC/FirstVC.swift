@@ -15,35 +15,51 @@ class FirstVC: BaseViewController {
 //    fileprivate let cellControllerFactory = MyCellControllerFactory()
     
     @IBOutlet var table: UITableView!
-    var models = [imgModel]()
+    var bannerImgs = [imgModel]()
     var i = 1
-    var btnImgModels = [btnImgModel]()
+    var categoryImgs = [btnImgModel]()
     var j = 1
+    var GoodsImgs = [btnImgModel]()
+    var k = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        while let _ = UIImage(named: "main_banner\(i)") {
-            models.append(imgModel(imageName: "main_banner\(i)"))
-            i += 1
-        }
-        table.register(FirstVCTableBannerCell.nib(), forCellReuseIdentifier: FirstVCTableBannerCell.identifier)
-
-        while let _ = UIImage(named: "main_category\(j)") {
-            btnImgModels.append(btnImgModel(btnImageName: "main_category\(j)"))
-            j += 1
-        }
-        table.register(FirstVCTableCategoryCell.nib(), forCellReuseIdentifier: FirstVCTableCategoryCell.identifier)
-
-        table.register(FirstVCTableGoodsCell.nib(), forCellReuseIdentifier: FirstVCTableGoodsCell.identifier)
-        
-        table.register(TodayGoodsTableViewCell.nib(), forCellReuseIdentifier: TodayGoodsTableViewCell.identifier)
+        setDataSource()
+        registTableCell()
         
         table.delegate = self
         table.dataSource = self
         
         // 셀 컨트롤러 셀 등록
 //        cellControllerFactory.registerCells(on: table)
+    }
+    
+    private func setDataSource() {
+        while let _ = UIImage(named: "main_banner\(i)") {
+            bannerImgs.append(imgModel(imageName: "main_banner\(i)"))
+            i += 1
+        }
+        
+        while let _ = UIImage(named: "main_category\(j)") {
+            categoryImgs.append(btnImgModel(btnImageName: "main_category\(j)"))
+            j += 1
+        }
+        
+        while let _ = UIImage(named: "main_banner\(k)") {
+            GoodsImgs.append(btnImgModel(btnImageName: "main_banner\(k)"))
+            k += 1
+        }
+    }
+    
+    private func registTableCell() {
+        table.register(FirstVCTableBannerCell.nib(), forCellReuseIdentifier: FirstVCTableBannerCell.identifier)
+
+        table.register(FirstVCTableCategoryCell.nib(), forCellReuseIdentifier: FirstVCTableCategoryCell.identifier)
+
+        table.register(FirstVCTableGoodsCell.nib(), forCellReuseIdentifier: FirstVCTableGoodsCell.identifier)
+        
+        table.register(TodayGoodsTableViewCell.nib(), forCellReuseIdentifier: TodayGoodsTableViewCell.identifier)
     }
     
 }
@@ -58,22 +74,22 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
 
         if indexPath.row == 0 {
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableBannerCell.identifier, for: indexPath) as! FirstVCTableBannerCell
-            cell.configure(with: models)
+            cell.configure(with: bannerImgs)
             cell.delegate = self
             return cell
         } else if indexPath.row == 1{
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableCategoryCell.identifier, for: indexPath) as! FirstVCTableCategoryCell
-            cell.configure2(with: btnImgModels)
+            cell.configure2(with: categoryImgs)
             cell.delegate = self
             return cell
         } else if indexPath.row == 2{
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableGoodsCell.identifier, for: indexPath) as! FirstVCTableGoodsCell
-            cell.configure3(with: btnImgModels)
+            cell.configure3(with: GoodsImgs)
             cell.delegate = self
             return cell
         } else {
             let cell = table.dequeueReusableCell(withIdentifier: TodayGoodsTableViewCell.identifier, for: indexPath) as! TodayGoodsTableViewCell
-            cell.configure4(with: models)
+            cell.configure4(with: categoryImgs)
             cell.delegate = self
             return cell
         }
@@ -122,19 +138,13 @@ extension FirstVC: CategoryDelegate {
 extension FirstVC: GoodsViewDelegate {
     func didSelectedGoodsBtn(_ index: Int) {
         
-        print("\(index)번째 셀")
-        
-        // 텝바 컨트롤러 루트 뷰 전환
-//        let goodsBtnController = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(identifier: "GoodsPageViewController")
-//        changeRootViewController(goodsBtnController)
-        
         //nextVC : popover 될 뷰
-//        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController")
-//
+        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController")
+
 //        nextVC.modalTransitionStyle = .partialCurl
-//        nextVC.modalPresentationStyle = .fullScreen
-//
-//        self.present(nextVC, animated: true, completion: nil)
+        nextVC.modalPresentationStyle = .fullScreen
+
+        self.present(nextVC, animated: true, completion: nil)
         
     }
 }

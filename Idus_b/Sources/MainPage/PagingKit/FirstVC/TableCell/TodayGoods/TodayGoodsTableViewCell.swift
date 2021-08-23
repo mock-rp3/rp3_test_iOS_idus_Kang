@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TodayGoodsViewDelegate: AnyObject { // class로 타입 제한
-    func didSelectedGoods(_ index: Int)
+    func didSelectedGoodsBtn(_ index: Int)
 }
 
 class TodayGoodsTableViewCell: UITableViewCell {
@@ -21,9 +21,9 @@ class TodayGoodsTableViewCell: UITableViewCell {
     }
     
     @IBOutlet weak var todayGoodsCollectionView: UICollectionView!
-    var models = [imgModel]()
+    var models = [btnImgModel]()
     
-    func configure4(with models: [imgModel]) {
+    func configure4(with models: [btnImgModel]) {
         self.models = models
         todayGoodsCollectionView.reloadData()
     }
@@ -57,6 +57,11 @@ extension TodayGoodsTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = todayGoodsCollectionView.dequeueReusableCell(withReuseIdentifier: TodayGoodsCell.identifier, for: indexPath) as! TodayGoodsCell
         cell.configure4(with: models[indexPath.row])
+        cell.click = { [unowned self] in
+            if let delegate = delegate {
+                delegate.didSelectedGoodsBtn(indexPath.item)
+            }
+        }
         return cell
     }
     
@@ -64,12 +69,6 @@ extension TodayGoodsTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     //컬렉션뷰 사이즈 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: todayGoodsCollectionView.frame.size.width, height:  todayGoodsCollectionView.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let delegate = delegate {
-            delegate.didSelectedGoods(indexPath.item)
-        }
     }
     
 }

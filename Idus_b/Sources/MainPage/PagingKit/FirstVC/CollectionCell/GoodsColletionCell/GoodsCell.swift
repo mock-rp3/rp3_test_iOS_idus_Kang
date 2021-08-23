@@ -17,10 +17,16 @@ class GoodsCell: UICollectionViewCell {
 
     @IBOutlet weak var GoodsBtn: UIButton!
     
+    // input이 없고 void를 반환하는 클로저 타입 변수 선언
+    var click : (() -> ()) = {}
+    
+    @IBAction func clickGoodsBtn(_ sender: UIButton) {
+       //Call your closure here
+        click()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
     }
     
     public func configure3(with model: btnImgModel) {

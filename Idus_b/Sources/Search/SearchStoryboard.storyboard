@@ -12,7 +12,7 @@
         <!--Network 메인-->
         <scene sceneID="1lM-KP-8vA">
             <objects>
-                <viewController storyboardIdentifier="NetworkViewController" id="WCo-pE-iNd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NetworkViewController" id="WCo-pE-iNd" customClass="SearchVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CAS-lL-ZXB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,19 +39,30 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_캡쳐" translatesAutoresizingMaskIntoConstraints="NO" id="830-kT-VNc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-kw-897">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u6k-Bg-nAx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="u6k-Bg-nAx" firstAttribute="bottom" secondItem="Ksi-kw-897" secondAttribute="bottom" id="Ahh-mD-EnJ"/>
+                            <constraint firstItem="Ksi-kw-897" firstAttribute="leading" secondItem="u6k-Bg-nAx" secondAttribute="leading" id="Bgk-X2-0KC"/>
                             <constraint firstItem="eiq-zG-onU" firstAttribute="centerX" secondItem="CAS-lL-ZXB" secondAttribute="centerX" id="JWa-1s-F4P"/>
+                            <constraint firstItem="Ksi-kw-897" firstAttribute="top" secondItem="u6k-Bg-nAx" secondAttribute="top" id="RtU-hS-DfL"/>
                             <constraint firstItem="830-kT-VNc" firstAttribute="bottom" secondItem="u6k-Bg-nAx" secondAttribute="bottom" id="Y49-hq-Mof"/>
                             <constraint firstItem="eiq-zG-onU" firstAttribute="centerY" secondItem="CAS-lL-ZXB" secondAttribute="centerY" id="cve-f4-KGM"/>
+                            <constraint firstItem="u6k-Bg-nAx" firstAttribute="trailing" secondItem="Ksi-kw-897" secondAttribute="trailing" id="d1M-do-dCY"/>
                             <constraint firstItem="830-kT-VNc" firstAttribute="leading" secondItem="u6k-Bg-nAx" secondAttribute="leading" id="f9W-OL-g3S"/>
                             <constraint firstItem="830-kT-VNc" firstAttribute="top" secondItem="u6k-Bg-nAx" secondAttribute="top" id="iBH-SH-mgS"/>
                             <constraint firstItem="830-kT-VNc" firstAttribute="trailing" secondItem="u6k-Bg-nAx" secondAttribute="trailing" id="jg0-IJ-nrM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Network 메인" id="rFe-Bc-niq"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ksi-kw-897" id="8Nu-X6-u1x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nwl-E9-ma9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

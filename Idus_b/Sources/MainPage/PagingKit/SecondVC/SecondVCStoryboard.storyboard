@@ -12,34 +12,35 @@
         <!--SecondVC-->
         <scene sceneID="2vf-hn-jKP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W8F-fx-ovI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SecondVC" id="GpC-vs-iOZ" customClass="SecondVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lzo-w2-Di9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="main_캡쳐" translatesAutoresizingMaskIntoConstraints="NO" id="CwM-eU-UpL">
-                                <rect key="frame" x="0.0" y="72" width="375" height="523"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vf-JQ-kmL">
-                                <rect key="frame" x="0.0" y="307" width="375" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BA3-bR-p9M">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5WA-Pi-ZeL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BA3-bR-p9M" firstAttribute="top" secondItem="5WA-Pi-ZeL" secondAttribute="top" id="4BV-cw-h2e"/>
+                            <constraint firstItem="5WA-Pi-ZeL" firstAttribute="bottom" secondItem="BA3-bR-p9M" secondAttribute="bottom" id="CrX-AE-U7J"/>
+                            <constraint firstItem="BA3-bR-p9M" firstAttribute="leading" secondItem="5WA-Pi-ZeL" secondAttribute="leading" id="hHk-sd-mft"/>
+                            <constraint firstItem="5WA-Pi-ZeL" firstAttribute="trailing" secondItem="BA3-bR-p9M" secondAttribute="trailing" id="v7L-kV-Ihw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="BA3-bR-p9M" id="R62-Jf-pa3"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8F-fx-ovI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2644" y="846.9265367316342"/>
         </scene>
     </scenes>
     <resources>
-        <image name="main_캡쳐" width="370.5" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

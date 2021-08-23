@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Goods Page View Controller-->
+        <scene sceneID="cNv-MH-ikF">
+            <objects>
+                <viewController storyboardIdentifier="GoodsPageViewController" id="KBX-Bf-dFZ" customClass="GoodsPageViewController" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bPY-5e-ntb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGG-tE-fob">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="tWW-qE-FIS">
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="1av-Lc-37r">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem image="mypage_cart" landscapeImage="mypage_cart" largeContentSizeImage="mypage_cart" id="UN7-0k-FpK"/>
+                                            <barButtonItem image="mypage_message" landscapeImage="mypage_message" largeContentSizeImage="mypage_message" id="HfX-z5-rWK"/>
+                                            <barButtonItem image="main_검색" landscapeImage="main_검색" largeContentSizeImage="main_검색" id="tAt-Zh-VIp"/>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ed-hd-8RZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X3H-Sf-7Dl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AGG-tE-fob" firstAttribute="top" secondItem="X3H-Sf-7Dl" secondAttribute="top" id="43T-MO-KmW"/>
+                            <constraint firstItem="X3H-Sf-7Dl" firstAttribute="bottom" secondItem="9ed-hd-8RZ" secondAttribute="bottom" id="QeW-xs-3wj"/>
+                            <constraint firstItem="AGG-tE-fob" firstAttribute="centerX" secondItem="bPY-5e-ntb" secondAttribute="centerX" id="byy-kX-rQR"/>
+                            <constraint firstItem="9ed-hd-8RZ" firstAttribute="top" secondItem="AGG-tE-fob" secondAttribute="bottom" id="oPz-pJ-Q66"/>
+                            <constraint firstItem="9ed-hd-8RZ" firstAttribute="leading" secondItem="X3H-Sf-7Dl" secondAttribute="leading" id="qzo-WF-eIw"/>
+                            <constraint firstItem="X3H-Sf-7Dl" firstAttribute="trailing" secondItem="9ed-hd-8RZ" secondAttribute="trailing" id="rB2-zk-aI0"/>
+                            <constraint firstItem="AGG-tE-fob" firstAttribute="leading" secondItem="X3H-Sf-7Dl" secondAttribute="leading" id="uFL-Yq-F7k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="9ed-hd-8RZ" id="glH-Y8-9cx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RxA-33-08E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2071.0144927536235" y="1648.3695652173915"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="main_검색" width="17" height="16"/>
+        <image name="mypage_cart" width="25.666666030883789" height="27"/>
+        <image name="mypage_message" width="27.333333969116211" height="25.666666030883789"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

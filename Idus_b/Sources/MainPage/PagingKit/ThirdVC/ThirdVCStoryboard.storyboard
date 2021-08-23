@@ -31,6 +31,9 @@
                             <constraint firstItem="vBJ-49-40t" firstAttribute="top" secondItem="dQL-aS-mQ1" secondAttribute="top" id="oeG-0O-aHM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="vBJ-49-40t" id="jRm-zm-56q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6M-4r-ECM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -58,18 +58,17 @@ extension FirstVCTableGoodsCell: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = goodsCollectionView.dequeueReusableCell(withReuseIdentifier: GoodsCell.identifier, for: indexPath) as! GoodsCell
         cell.configure3(with: models[indexPath.row])
+        cell.click = { [unowned self] in
+            if let delegate = delegate {
+                delegate.didSelectedGoodsBtn(indexPath.item)
+            }
+        }
         return cell
     }
     
     // height값을 collectionView의 height만큼 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 84, height: goodsCollectionView.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        delegate?.didSelectedGoodsBtn(indexPath.item)
-        if let delegate = delegate {
-            delegate.didSelectedGoodsBtn(indexPath.item)
-        }
-    }
+    }    
+
 }

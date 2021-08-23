@@ -9,8 +9,40 @@ import UIKit
 
 class SecondVC: BaseViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tableViewNib = UINib(nibName: "NowGoodsTableViewCell", bundle: nil)
+        tableView.register(tableViewNib, forCellReuseIdentifier: "NowGoodsTableViewCell")
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+}
+extension SecondVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NowGoodsTableViewCell.identifier) as? NowGoodsTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.setCell()
+        cell.delegate = self
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+}
+
+extension SecondVC: CVCellDelegate {
+    func selectedCVCell(_ index: Int) {
+        print("\(index)번째 셀")
     }
 }
