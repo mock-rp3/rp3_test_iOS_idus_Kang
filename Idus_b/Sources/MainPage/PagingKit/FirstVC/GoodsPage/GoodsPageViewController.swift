@@ -15,7 +15,7 @@ class GoodsPageViewController: BaseViewController {
     @IBOutlet var table: UITableView!
         
     var smallGoodsImgs = [btnImgModel]()
-    var k = 1
+    var k = 0
     
     // MARK: - 생명주기
     override func viewDidLoad() {
@@ -30,10 +30,14 @@ class GoodsPageViewController: BaseViewController {
        super.viewDidAppear(animated)
    }
     
+    // MARK: - 전 화면으로 가기
+    @IBAction func dismiss(_ sender: UIBarButtonItem) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     // MARK: - CollectionViewCell에 사용될 dataSource 정의
     private func setupDataSource() {
-        while let _ = UIImage(named: "main_banner\(k)") {
-            smallGoodsImgs.append(btnImgModel(btnImageName: "main_banner\(k)"))
+        while let _ = UIImage(named: "goodsDummy\(k)") {
+            smallGoodsImgs.append(btnImgModel(btnImageName: "goodsDummy\(k)"))
             k += 1
         }
     }
@@ -46,26 +50,48 @@ class GoodsPageViewController: BaseViewController {
     }
 
     private func registerCell() {
-        table.register(GoodsPageTableViewCell.nib(), forCellReuseIdentifier: GoodsPageTableViewCell.identifier)
+        table.register(GoodsPageImgTableViewCell.nib(), forCellReuseIdentifier: GoodsPageImgTableViewCell.identifier)
+        table.register(GoodsPageMainInfoTableViewCell.nib(), forCellReuseIdentifier: GoodsPageMainInfoTableViewCell.identifier)
+        table.register(GoodsPageDeliveryTableViewCell.nib(), forCellReuseIdentifier: GoodsPageDeliveryTableViewCell.identifier)
+        table.register(GoodsPageTextTableViewCell.nib(), forCellReuseIdentifier: GoodsPageTextTableViewCell.identifier)
     }
         
 }
 
 extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageTableViewCell.identifier, for: indexPath) as? GoodsPageTableViewCell else { return UITableViewCell()}
-        cell.configureGoodsPageImg(with: smallGoodsImgs)
-        cell.delegate = self
-        return cell
+        if indexPath.row == 0 {
+            guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageImgTableViewCell.identifier, for: indexPath) as? GoodsPageImgTableViewCell else { return UITableViewCell()}
+            cell.configureGoodsPageImg(with: smallGoodsImgs)
+            cell.delegate = self
+            return cell
+        } else if indexPath.row == 1 {
+            guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageMainInfoTableViewCell.identifier, for: indexPath) as? GoodsPageMainInfoTableViewCell else { return UITableViewCell()}
+            return cell
+        } else if indexPath.row == 2 {
+            guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageDeliveryTableViewCell.identifier, for: indexPath) as? GoodsPageDeliveryTableViewCell else { return UITableViewCell()}
+            return cell
+        } else {
+            guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageTextTableViewCell.identifier, for: indexPath) as? GoodsPageTextTableViewCell else { return UITableViewCell()}
+            return cell
+        }
     }
     
     // 테이블뷰 셀 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        if indexPath.row == 0 {
+            return 450
+        } else if indexPath.row == 1 {
+            return 350
+        } else if indexPath.row == 2 {
+            return 300
+        } else {
+            return 450
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  GoodsPageTableViewCell.swift
+//  GoodsPageImgTableViewCell.swift
 //  Idus_b
 //
 //  Created by 강성수 on 2021/08/23.
@@ -14,13 +14,13 @@ protocol GoodsImgDelegate: AnyObject { // class로 타입 제한
     func didSelectedGoodsBtn(_ index: Int)
 }
 
-class GoodsPageTableViewCell: UITableViewCell {
+class GoodsPageImgTableViewCell: UITableViewCell {
 
     var delegate: GoodsImgDelegate?
     
-    static let identifier = "GoodsPageTableViewCell"
+    static let identifier = "GoodsPageImgTableViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: "GoodsPageTableViewCell", bundle: nil)
+        return UINib(nibName: "GoodsPageImgTableViewCell", bundle: nil)
     }
     
     @IBOutlet weak var goodsImgCollectionView: UICollectionView!
@@ -34,7 +34,6 @@ class GoodsPageTableViewCell: UITableViewCell {
     }
     
     var smallGoodsImgs = [btnImgModel]()
-    
     
     // CollectionViewCell에 사용될 dataSource 정의
     var dataSource: [MyCollectionViewModel] = []
@@ -79,7 +78,7 @@ class GoodsPageTableViewCell: UITableViewCell {
     // MARK: - CollectionViewCell에 사용될 dataSource 정의
     private func setupDataSource() {
         var k = 0
-        while let _ = UIImage(named: "main_banner\(k+1)") {
+        while let _ = UIImage(named: "goodsDummy\(k)") {
             let model = MyCollectionViewModel(title: k)
             dataSource += [model]
             k += 1
@@ -94,12 +93,18 @@ class GoodsPageTableViewCell: UITableViewCell {
             let vc = UIViewController()
             let imgBtn = UIButton()
             
-            imgBtn.setImage(UIImage(named: "main_banner\(i+1)"), for: .normal)
+            imgBtn.setImage(UIImage(named: "goodsDummy\(i)"), for: .normal)
+            imgBtn.contentMode = .scaleAspectFill
+            imgBtn.contentHorizontalAlignment = .fill
+            imgBtn.contentVerticalAlignment = .fill
+            imgBtn.heightAnchor.constraint(equalToConstant: 400).isActive = true
             vc.view.addSubview(imgBtn)
             i += 1
-
+            
             imgBtn.snp.makeConstraints { make in
-                make.top
+                make.top.equalToSuperview()
+                
+                
             }
             dataSourceVC += [vc]
         }
@@ -107,6 +112,8 @@ class GoodsPageTableViewCell: UITableViewCell {
     
     // MARK: - addSubviews()
     private func addSubviews() {
+//        pageView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        
         pageView.addSubview(pageViewController.view)
     }
     
@@ -114,7 +121,7 @@ class GoodsPageTableViewCell: UITableViewCell {
     private func configure() {
         // pageView 레이아웃
         pageViewController.view.snp.makeConstraints { make in
-            make.top.equalTo(pageView.snp.top)
+            make.bottom.equalTo(pageView.snp.bottom)
             make.leading.trailing.equalToSuperview()
         }
     }
@@ -158,7 +165,7 @@ class GoodsPageTableViewCell: UITableViewCell {
 }
 
 // MARK: - GoodsPageCollectionView delegate 구현
-extension GoodsPageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension GoodsPageImgTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //컬렉션뷰 개수 설정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -182,7 +189,7 @@ extension GoodsPageTableViewCell: UICollectionViewDelegate, UICollectionViewData
 }
 
 // MARK: - 페이지뷰 delegate 구현
-extension GoodsPageTableViewCell: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension GoodsPageImgTableViewCell: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let index = dataSourceVC.firstIndex(of: viewController) else { return nil }

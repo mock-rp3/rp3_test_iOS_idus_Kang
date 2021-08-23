@@ -18,7 +18,7 @@
                 <subviews>
                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVv-8o-iJV">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <state key="normal" title="Button" image="main_banner1"/>
+                        <state key="normal" title="Button" image="goodsDummy0"/>
                         <connections>
                             <action selector="clickGoodsImgBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ljs-xE-ZZw"/>
                         </connections>
@@ -39,6 +39,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="main_banner1" width="375" height="186"/>
+        <image name="goodsDummy0" width="373" height="374.5"/>
     </resources>
 </document>

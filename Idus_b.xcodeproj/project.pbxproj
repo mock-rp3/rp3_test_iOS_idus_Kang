@@ -112,8 +112,14 @@
 		ACCE61A626D33B9A007DF748 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE61A426D33B9A007DF748 /* CollectionViewCell.swift */; };
 		ACCE61A726D33B9A007DF748 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61A526D33B9A007DF748 /* CollectionViewCell.xib */; };
 		ACCE61AC26D39843007DF748 /* GoodsPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61AA26D39842007DF748 /* GoodsPageCollectionViewCell.xib */; };
-		ACCE61B026D3BD93007DF748 /* GoodsPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE61AE26D3BD92007DF748 /* GoodsPageTableViewCell.swift */; };
-		ACCE61B126D3BD93007DF748 /* GoodsPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61AF26D3BD92007DF748 /* GoodsPageTableViewCell.xib */; };
+		ACCE61B026D3BD93007DF748 /* GoodsPageImgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE61AE26D3BD92007DF748 /* GoodsPageImgTableViewCell.swift */; };
+		ACCE61B126D3BD93007DF748 /* GoodsPageImgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61AF26D3BD92007DF748 /* GoodsPageImgTableViewCell.xib */; };
+		ACCE61B426D4042B007DF748 /* GoodsPageMainInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE61B226D4042B007DF748 /* GoodsPageMainInfoTableViewCell.swift */; };
+		ACCE61B526D4042B007DF748 /* GoodsPageMainInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61B326D4042B007DF748 /* GoodsPageMainInfoTableViewCell.xib */; };
+		ACCE61B826D42A04007DF748 /* GoodsPageDeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE61B626D42A02007DF748 /* GoodsPageDeliveryTableViewCell.swift */; };
+		ACCE61B926D42A05007DF748 /* GoodsPageDeliveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61B726D42A03007DF748 /* GoodsPageDeliveryTableViewCell.xib */; };
+		ACCE61BC26D42E08007DF748 /* GoodsPageTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE61BA26D42E08007DF748 /* GoodsPageTextTableViewCell.swift */; };
+		ACCE61BD26D42E08007DF748 /* GoodsPageTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61BB26D42E08007DF748 /* GoodsPageTextTableViewCell.xib */; };
 		C29B0B7882D76C8082548C06 /* Pods_Idus_b.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB0D371C8E627B1D4D44BB /* Pods_Idus_b.framework */; };
 /* End PBXBuildFile section */
 
@@ -227,8 +233,14 @@
 		ACCE61A426D33B9A007DF748 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ACCE61A526D33B9A007DF748 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		ACCE61AA26D39842007DF748 /* GoodsPageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageCollectionViewCell.xib; sourceTree = "<group>"; };
-		ACCE61AE26D3BD92007DF748 /* GoodsPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageTableViewCell.swift; sourceTree = "<group>"; };
-		ACCE61AF26D3BD92007DF748 /* GoodsPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageTableViewCell.xib; sourceTree = "<group>"; };
+		ACCE61AE26D3BD92007DF748 /* GoodsPageImgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageImgTableViewCell.swift; sourceTree = "<group>"; };
+		ACCE61AF26D3BD92007DF748 /* GoodsPageImgTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageImgTableViewCell.xib; sourceTree = "<group>"; };
+		ACCE61B226D4042B007DF748 /* GoodsPageMainInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageMainInfoTableViewCell.swift; sourceTree = "<group>"; };
+		ACCE61B326D4042B007DF748 /* GoodsPageMainInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageMainInfoTableViewCell.xib; sourceTree = "<group>"; };
+		ACCE61B626D42A02007DF748 /* GoodsPageDeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageDeliveryTableViewCell.swift; sourceTree = "<group>"; };
+		ACCE61B726D42A03007DF748 /* GoodsPageDeliveryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageDeliveryTableViewCell.xib; sourceTree = "<group>"; };
+		ACCE61BA26D42E08007DF748 /* GoodsPageTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageTextTableViewCell.swift; sourceTree = "<group>"; };
+		ACCE61BB26D42E08007DF748 /* GoodsPageTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageTextTableViewCell.xib; sourceTree = "<group>"; };
 		D3FB9131987660A50F2E9E8B /* Pods-Idus_b.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus_b.release.xcconfig"; path = "Target Support Files/Pods-Idus_b/Pods-Idus_b.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -828,8 +840,14 @@
 		ACCE61AD26D3BD6C007DF748 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
-				ACCE61AE26D3BD92007DF748 /* GoodsPageTableViewCell.swift */,
-				ACCE61AF26D3BD92007DF748 /* GoodsPageTableViewCell.xib */,
+				ACCE61AE26D3BD92007DF748 /* GoodsPageImgTableViewCell.swift */,
+				ACCE61AF26D3BD92007DF748 /* GoodsPageImgTableViewCell.xib */,
+				ACCE61B226D4042B007DF748 /* GoodsPageMainInfoTableViewCell.swift */,
+				ACCE61B326D4042B007DF748 /* GoodsPageMainInfoTableViewCell.xib */,
+				ACCE61B626D42A02007DF748 /* GoodsPageDeliveryTableViewCell.swift */,
+				ACCE61B726D42A03007DF748 /* GoodsPageDeliveryTableViewCell.xib */,
+				ACCE61BA26D42E08007DF748 /* GoodsPageTextTableViewCell.swift */,
+				ACCE61BB26D42E08007DF748 /* GoodsPageTextTableViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -896,6 +914,7 @@
 				ACCE617B26D20D72007DF748 /* ThirdVCStoryboard.storyboard in Resources */,
 				ACCE617926D20D61007DF748 /* SecondVCStoryboard.storyboard in Resources */,
 				ACCE61AC26D39843007DF748 /* GoodsPageCollectionViewCell.xib in Resources */,
+				ACCE61B926D42A05007DF748 /* GoodsPageDeliveryTableViewCell.xib in Resources */,
 				ACCE618026D27EBE007DF748 /* TodayGoodsCell.xib in Resources */,
 				ACC5975526C9464600E2630B /* LaunchScreen.storyboard in Resources */,
 				AC6AD51626CFF952005538FC /* FirstVCTableCategoryCell.xib in Resources */,
@@ -904,7 +923,7 @@
 				ACCE619726D3351A007DF748 /* NowGoodsCollectionViewCell.xib in Resources */,
 				AC6AD52126D013F4005538FC /* FirstVCTableGoodsCell.xib in Resources */,
 				ACCE61A326D33B8B007DF748 /* TableViewCell.xib in Resources */,
-				ACCE61B126D3BD93007DF748 /* GoodsPageTableViewCell.xib in Resources */,
+				ACCE61B126D3BD93007DF748 /* GoodsPageImgTableViewCell.xib in Resources */,
 				ACCE616F26D12C4F007DF748 /* FirstVCStoryboard.storyboard in Resources */,
 				ACC597D626C94C2900E2630B /* NotoSansCJKkr-Regular.otf in Resources */,
 				AC6AD4C226CE88F5005538FC /* FocusView.xib in Resources */,
@@ -913,9 +932,11 @@
 				ACCE618526D27FC9007DF748 /* TodayGoodsTableViewCell.xib in Resources */,
 				ACC597F826C94C5800E2630B /* LoginStoryboard.storyboard in Resources */,
 				ACC6AA4126CA903E0048D22C /* MainStoryboard.storyboard in Resources */,
+				ACCE61BD26D42E08007DF748 /* GoodsPageTextTableViewCell.xib in Resources */,
 				ACC5980926C94C5800E2630B /* LoginedMainStoryboard.storyboard in Resources */,
 				ACC5980826C94C5800E2630B /* MainPageStoryboard.storyboard in Resources */,
 				ACCE619126D29BE2007DF748 /* NewGoodsCollectionViewCell.xib in Resources */,
+				ACCE61B526D4042B007DF748 /* GoodsPageMainInfoTableViewCell.xib in Resources */,
 				AC6AD4C026CE7C2D005538FC /* MenuCell.xib in Resources */,
 				AC6AD50D26CFEC98005538FC /* FirstVCTableBannerCell.xib in Resources */,
 				ACCE619B26D33532007DF748 /* NowGoodsTableViewCell.xib in Resources */,
@@ -983,7 +1004,7 @@
 				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
 				ACCE61A626D33B9A007DF748 /* CollectionViewCell.swift in Sources */,
 				AC6AD52326D0144C005538FC /* GoodsTableCellController.swift in Sources */,
-				ACCE61B026D3BD93007DF748 /* GoodsPageTableViewCell.swift in Sources */,
+				ACCE61B026D3BD93007DF748 /* GoodsPageImgTableViewCell.swift in Sources */,
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
 				AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,
@@ -1023,8 +1044,10 @@
 				ACC6AA3F26CA80BC0048D22C /* LoginedMypageViewController.swift in Sources */,
 				AC646E4A26D0F58900CFD01A /* GoodsCell.swift in Sources */,
 				ACCE61A226D33B8B007DF748 /* TableViewCell.swift in Sources */,
+				ACCE61BC26D42E08007DF748 /* GoodsPageTextTableViewCell.swift in Sources */,
 				ACC597FC26C94C5800E2630B /* SignInResponse.swift in Sources */,
 				ACC5980626C94C5800E2630B /* MainPageViewController.swift in Sources */,
+				ACCE61B826D42A04007DF748 /* GoodsPageDeliveryTableViewCell.swift in Sources */,
 				AC6AD51A26D01217005538FC /* BannerTableCellController.swift in Sources */,
 				ACC6AA3A26CA77AD0048D22C /* MypageViewController.swift in Sources */,
 				AC6AD51126CFF6F4005538FC /* CategoryScrollVeiw.swift in Sources */,
@@ -1049,6 +1072,7 @@
 				ACC597FB26C94C5800E2630B /* SignInDataManager.swift in Sources */,
 				AC6AD50C26CFEC98005538FC /* FirstVCTableBannerCell.swift in Sources */,
 				ACCE619626D3351A007DF748 /* NowGoodsCollectionViewCell.swift in Sources */,
+				ACCE61B426D4042B007DF748 /* GoodsPageMainInfoTableViewCell.swift in Sources */,
 				AC6AD51526CFF952005538FC /* FirstVCTableCategoryCell.swift in Sources */,
 				ACCE618C26D29A70007DF748 /* NewGoodsTableViewCell.swift in Sources */,
 				AC6AD4DE26CF9911005538FC /* BannerCell.swift in Sources */,

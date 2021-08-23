@@ -20,7 +20,7 @@ class FirstVC: BaseViewController {
     var categoryImgs = [btnImgModel]()
     var j = 1
     var GoodsImgs = [btnImgModel]()
-    var k = 1
+    var k = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +46,8 @@ class FirstVC: BaseViewController {
             j += 1
         }
         
-        while let _ = UIImage(named: "main_banner\(k)") {
-            GoodsImgs.append(btnImgModel(btnImageName: "main_banner\(k)"))
+        while let _ = UIImage(named: "goodsDummy\(k)") {
+            GoodsImgs.append(btnImgModel(btnImageName: "goodsDummy\(k)"))
             k += 1
         }
     }
@@ -138,13 +138,15 @@ extension FirstVC: CategoryDelegate {
 extension FirstVC: GoodsViewDelegate {
     func didSelectedGoodsBtn(_ index: Int) {
         
-        //nextVC : popover 될 뷰
-        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController")
+        //nextVC : push 될 뷰
+        let pushedVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController")
 
+        self.navigationController?.pushViewController(pushedVC, animated: true)
+        
+        // 모달 방식
 //        nextVC.modalTransitionStyle = .partialCurl
-        nextVC.modalPresentationStyle = .fullScreen
-
-        self.present(nextVC, animated: true, completion: nil)
+//        pushedVC.modalPresentationStyle = .fullScreen
+//        self.present(pushedVC, animated: true, completion: nil)
         
     }
 }
