@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adv-Ba-hlc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -223,7 +222,7 @@
         <scene sceneID="9cW-6e-lK6">
             <objects>
                 <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="adv-Ba-hlc" userLabel="Search Navigation" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tapBar_검색" id="CMY-Jf-IFy"/>
+                    <tabBarItem key="tabBarItem" title="" image="tapBar_검색" selectedImage="tapBar_" id="CMY-Jf-IFy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IyI-nh-H9C">
@@ -241,6 +240,7 @@
     </scenes>
     <resources>
         <image name="search_캡쳐" width="375" height="667"/>
+        <image name="tapBar_" width="128" height="128"/>
         <image name="tapBar_검색" width="32" height="49"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

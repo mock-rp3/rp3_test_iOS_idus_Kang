@@ -13,9 +13,12 @@ import RxCocoa
 class GoodsPageViewController: BaseViewController {
     
     @IBOutlet var table: UITableView!
+    @IBOutlet weak var heartBtn: UIButton!
         
     var smallGoodsImgs = [btnImgModel]()
     var k = 0
+    
+    var heartChecked: Bool = false
     
     // MARK: - 생명주기
     override func viewDidLoad() {
@@ -33,6 +36,20 @@ class GoodsPageViewController: BaseViewController {
     // MARK: - 전 화면으로 가기
     @IBAction func dismiss(_ sender: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    // MARK: - 하트 누르기
+    @IBAction func CheckHeartBtn(_ sender: UIButton) {
+        if heartChecked == false {
+            heartBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            heartBtn.setTitle("589", for: .normal)
+            
+            heartChecked = true
+        } else {
+            heartBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            heartBtn.setTitle("588", for: .normal)
+            heartChecked = false
+        }
     }
     // MARK: - CollectionViewCell에 사용될 dataSource 정의
     private func setupDataSource() {
