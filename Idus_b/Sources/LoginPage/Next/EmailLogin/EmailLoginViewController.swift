@@ -75,13 +75,8 @@ class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
         
         // Requst Login
         self.dismissKeyboard()
-        self.showIndicator()
         let input = EmailLoginRequest(email: email, password: password)
         dataManager.postLogin(input, delegate: self)
-        
-        // 로그인 메인화면으로 이동
-        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
-            self.changeRootViewController(loginedMainTabBarController)
     }
     
     // MARK: modal 내리기
@@ -93,7 +88,13 @@ class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
 
 extension EmailLoginViewController {
     func didSuccessLogin(_ result: LoginResult) {
-        self.presentAlert(title: "로그인에 성공하였습니다", message: result.jwt)
+        // 유저 디폴트로 userIdx와 jwt 저장
+        UserDefaults.standard.set(result.userIdx, forKey: "userIdxKey")
+        UserDefaults.standard.set(result.jwt, forKey: "jwtKey")
+        
+//         로그인 메인화면으로 이동
+        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+        self.changeRootViewController(loginedMainTabBarController)
     }
     
     func failedToRequest(message: String) {

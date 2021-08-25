@@ -39,6 +39,7 @@
 		AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52C26D03DE2005538FC /* CategoryCell.swift */; };
 		AC6AD52F26D03DE2005538FC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD52D26D03DE2005538FC /* CategoryCell.xib */; };
 		AC6AD53226D048BB005538FC /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD53126D048BB005538FC /* DataModels.swift */; };
+		ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */; };
 		ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974826C9463F00E2630B /* AppDelegate.swift */; };
 		ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974A26C9463F00E2630B /* SceneDelegate.swift */; };
 		ACC5975226C9464600E2630B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC5975126C9464600E2630B /* Assets.xcassets */; };
@@ -91,8 +92,7 @@
 		ACC6AA5726CB46990048D22C /* EmailLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5626CB46990048D22C /* EmailLoginResponse.swift */; };
 		ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5826CB46AA0048D22C /* EmailLoginRequest.swift */; };
 		ACCDFBFC26D472E80066DA44 /* LoginedMypageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFBFB26D472E80066DA44 /* LoginedMypageDataManager.swift */; };
-		ACCDFBFE26D4732D0066DA44 /* UsersInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFBFD26D4732D0066DA44 /* UsersInfoRequest.swift */; };
-		ACCDFC0026D473420066DA44 /* UserrsInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFBFF26D473420066DA44 /* UserrsInfoResponse.swift */; };
+		ACCDFC0026D473420066DA44 /* UsersInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFBFF26D473420066DA44 /* UsersInfoResponse.swift */; };
 		ACCDFC0726D481DE0066DA44 /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0626D481DE0066DA44 /* PurchaseVC.swift */; };
 		ACCDFC0926D484180066DA44 /* PurchaseOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0826D484180066DA44 /* PurchaseOptionVC.swift */; };
 		ACCDFC0D26D4995A0066DA44 /* PurchaseOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0B26D4995A0066DA44 /* PurchaseOptionTableViewCell.swift */; };
@@ -171,6 +171,7 @@
 		AC6AD52C26D03DE2005538FC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		AC6AD52D26D03DE2005538FC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		AC6AD53126D048BB005538FC /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginInfo.swift; sourceTree = "<group>"; };
 		ACC5974526C9463F00E2630B /* Idus_b.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idus_b.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC5974826C9463F00E2630B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC5974A26C9463F00E2630B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,8 +226,7 @@
 		ACC6AA5626CB46990048D22C /* EmailLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginResponse.swift; sourceTree = "<group>"; };
 		ACC6AA5826CB46AA0048D22C /* EmailLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginRequest.swift; sourceTree = "<group>"; };
 		ACCDFBFB26D472E80066DA44 /* LoginedMypageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginedMypageDataManager.swift; sourceTree = "<group>"; };
-		ACCDFBFD26D4732D0066DA44 /* UsersInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoRequest.swift; sourceTree = "<group>"; };
-		ACCDFBFF26D473420066DA44 /* UserrsInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserrsInfoResponse.swift; sourceTree = "<group>"; };
+		ACCDFBFF26D473420066DA44 /* UsersInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoResponse.swift; sourceTree = "<group>"; };
 		ACCDFC0626D481DE0066DA44 /* PurchaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
 		ACCDFC0826D484180066DA44 /* PurchaseOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOptionVC.swift; sourceTree = "<group>"; };
 		ACCDFC0B26D4995A0066DA44 /* PurchaseOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -569,6 +569,7 @@
 		ACC597C926C94C2900E2630B /* Certidicate */ = {
 			isa = PBXGroup;
 			children = (
+				ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */,
 			);
 			path = Certidicate;
 			sourceTree = "<group>";
@@ -772,8 +773,7 @@
 		ACCDFBFA26D472B10066DA44 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				ACCDFBFF26D473420066DA44 /* UserrsInfoResponse.swift */,
-				ACCDFBFD26D4732D0066DA44 /* UsersInfoRequest.swift */,
+				ACCDFBFF26D473420066DA44 /* UsersInfoResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1119,11 +1119,12 @@
 			files = (
 				AC646E4126D0E3A400CFD01A /* CellController.swift in Sources */,
 				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
-				ACCDFC0026D473420066DA44 /* UserrsInfoResponse.swift in Sources */,
+				ACCDFC0026D473420066DA44 /* UsersInfoResponse.swift in Sources */,
 				AC11BCAB26D5B54400637C32 /* PurchaseVCTableViewCell.swift in Sources */,
 				ACCE61A626D33B9A007DF748 /* CollectionViewCell.swift in Sources */,
 				AC6AD52326D0144C005538FC /* GoodsTableCellController.swift in Sources */,
 				ACCE61B026D3BD93007DF748 /* GoodsPageImgTableViewCell.swift in Sources */,
+				ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */,
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
 				AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,
@@ -1146,7 +1147,6 @@
 				ACC6AA4726CAD72A0048D22C /* EmailSignUpViewController.swift in Sources */,
 				ACCDFC0926D484180066DA44 /* PurchaseOptionVC.swift in Sources */,
 				AC6AD51C26D01280005538FC /* CategoryTableCellController.swift in Sources */,
-				ACCDFBFE26D4732D0066DA44 /* UsersInfoRequest.swift in Sources */,
 				AC646E4326D0E3DE00CFD01A /* ReusableCellHolder.swift in Sources */,
 				ACCE616526D124B5007DF748 /* GoodsPageCollectionViewCell.swift in Sources */,
 				ACC597CF26C94C2900E2630B /* UIButton.swift in Sources */,

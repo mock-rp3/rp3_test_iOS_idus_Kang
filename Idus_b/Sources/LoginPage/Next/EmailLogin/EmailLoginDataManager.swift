@@ -9,14 +9,18 @@ import Alamofire
 
 class EmailLoginDataManager {
     func postLogin(_ parameters: EmailLoginRequest, delegate: EmailLoginViewController) {
-        AF.request("\(Constant.BASE_URL)users/login", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+        
+        AF.request("\(Constant.BASE_URL)/users/login", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
             .validate()
-            .responseDecodable(of: EmailLoginResponse.self) { response in
+            .responseDecodable(of: EmailLoginResponse.self) {
+                response in
                 switch response.result {
+                
                 case .success(let response):
                     // 성공했을 때
                     if response.isSuccess, let result = response.result {
                         delegate.didSuccessLogin(result)
+                        
                     }
                     // 실패했을 때
                     else {
