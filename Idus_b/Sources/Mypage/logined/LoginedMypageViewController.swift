@@ -12,24 +12,80 @@ import NaverThirdPartyLogin
 import Alamofire
 
 class LoginedMypageViewController: BaseViewController {
+        
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var myLevel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var moneyNum: UILabel!
+    @IBOutlet weak var couponNum: UILabel!
     
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
-
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var profileImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loginInstance?.delegate = self
         getNaverUserInfo()
         if (AuthApi.hasToken()) {
             getKakaoUserInfo()
         }
-            
+        
+        // 프로필 이미지 원형으로 만들기
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.layer.borderWidth = 1
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.borderColor = UIColor.clear.cgColor  //원형 이미지의 테두리 제거
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func messageBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func noticeBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func cartBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func checkLebelBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func deliveryBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func likesBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func followsBtn(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func reviewsBtn(_ sender: UIButton) {
+    }
+    
+    // 로그아웃 버튼
+    @IBAction func logOutBtn(_ sender: UIButton) {
+        // 카카오 연결 끊기 (+ 로그아웃)
+        if (AuthApi.hasToken()) {
+            UserApi.shared.unlink {(error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("unlink() success.")
+                    
+                    let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
+                    self.changeRootViewController(loginViewController)
+                }
+            }
+        }
+        
+        // 네이버 소셜로그인 로그아웃(토큰 제거)
+        loginInstance?.requestDeleteToken()
+        
+    }
+    
     
     // MARK: - 이메일 가입 유저 정보 가져오기
     func getEmailUserInfo(_ parameters: EmailLoginRequest, delegate: EmailLoginViewController) {
@@ -76,12 +132,8 @@ class LoginedMypageViewController: BaseViewController {
                 //do something
                 _ = user
                 
-                // 이메일
-                self.emailLabel.text = user?.kakaoAccount?.email
-                // 실명
-                self.nameLabel.text = user?.kakaoAccount?.legalName
                 // 닉네임
-                self.nicknameLabel.text = user?.kakaoAccount?.profile?.nickname
+                self.nameLabel.text = user?.kakaoAccount?.profile?.nickname
                 
                 if let url = user?.kakaoAccount?.profile?.profileImageUrl,
                     let data = try? Data(contentsOf: url) {
@@ -115,17 +167,12 @@ class LoginedMypageViewController: BaseViewController {
         guard let object = result["response"] as? [String: Any] else { return }
         guard let name = object["name"] as? String else { return }
         guard let email = object["email"] as? String else { return }
-        guard let nickname = object["nickname"] as? String else { return }
         guard let profile_image = object["profile_image"] as? String else { return }
         
         print(email)
         
-        // 이메일
-        self.emailLabel.text = "\(email)"
         // 이름
         self.nameLabel.text = "\(name)"
-        // 닉네임
-        self.nicknameLabel.text = "\(nickname)"
         // 프로필 이미지
         let url = URL(string: "\(profile_image)")
         do {
@@ -135,44 +182,6 @@ class LoginedMypageViewController: BaseViewController {
         catch { }
         
       }
-    }
-    
-    // MARK: - 로그아웃 버튼
-    @IBAction func logOutBtn(_ sender: UIButton) {
-        
-        // 카카오 로그아웃
-//        if (AuthApi.hasToken()) {
-//            UserApi.shared.logout {(error) in
-//                if let error = error {
-//                    print(error)
-//                }
-//                else {
-//                    print("logout() success.")
-//
-//                    let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
-//                    self.changeRootViewController(loginViewController)
-//                }
-//            }
-//        }
-        
-        // 카카오 연결 끊기 (+ 로그아웃)
-        if (AuthApi.hasToken()) {
-            UserApi.shared.unlink {(error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("unlink() success.")
-                    
-                    let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
-                    self.changeRootViewController(loginViewController)
-                }
-            }
-        }
-        
-        // 네이버 소셜로그인 로그아웃(토큰 제거)
-        loginInstance?.requestDeleteToken()
-        
     }
     
 }

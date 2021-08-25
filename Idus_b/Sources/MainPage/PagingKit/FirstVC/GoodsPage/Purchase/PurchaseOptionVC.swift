@@ -25,6 +25,14 @@ class PurchaseOptionVC: BaseViewController {
     
     @IBAction func cancleBtn() {
         self.dismiss(animated: true, completion: nil)
+        
+//        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController")
+//        self.navigationController?.pushViewController(nextVC, animated: false)
+//        nextVC.modalPresentationStyle = .overFullScreen
+//        nextVC.modalPresentationStyle = .fullScreen
+//        self.present(nextVC, animated: false, completion: nil)
+//
+//        changeRootViewController(nextVC)
     }
     
     //MARK: - Helper
@@ -37,8 +45,6 @@ class PurchaseOptionVC: BaseViewController {
     
     private func registerCell() {
         table.register(PurchaseOptionTableViewCell.nib(), forCellReuseIdentifier: PurchaseOptionTableViewCell.identifier)
-//        table.tableFooterView = UIView()
-//        table.separatorStyle = .none
     }
     
 }
@@ -94,12 +100,12 @@ extension PurchaseOptionVC: UITableViewDelegate, UITableViewDataSource {
 
             let numberOfItems = viewModel.itemAt(index: indexPath.row).shoppingItem.count
             
-            cellHeight = (numberOfItems + 1) * 55
+            cellHeight = (numberOfItems + 1) * 50
             return CGFloat(cellHeight)
             
         } else {
             
-            cellHeight = 55
+            cellHeight = 50
             return CGFloat(cellHeight)
         }
     }
@@ -113,5 +119,12 @@ extension PurchaseOptionVC: MainTableViewCellDidTapDelegate {
     func InsideCellDidTap(dateIndex: Int, itemIndex: Int) {
         viewModel.setCompletionState(dateIndex: dateIndex, itemIndex: itemIndex)
         table.reloadData()
+        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PurchaseVC")
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: false, completion: nil)
+        
     }
+
 }
+
+

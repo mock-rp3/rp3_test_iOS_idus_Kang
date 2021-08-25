@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC11BCAB26D5B54400637C32 /* PurchaseVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11BCA926D5B54400637C32 /* PurchaseVCTableViewCell.swift */; };
+		AC11BCAC26D5B54400637C32 /* PurchaseVCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC11BCAA26D5B54400637C32 /* PurchaseVCTableViewCell.xib */; };
 		AC646E4126D0E3A400CFD01A /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646E4026D0E3A400CFD01A /* CellController.swift */; };
 		AC646E4326D0E3DE00CFD01A /* ReusableCellHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646E4226D0E3DE00CFD01A /* ReusableCellHolder.swift */; };
 		AC646E4526D0E5B900CFD01A /* GenericCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646E4426D0E5B900CFD01A /* GenericCellController.swift */; };
@@ -137,6 +139,8 @@
 /* Begin PBXFileReference section */
 		6D5B05F8A193EEE8E520B79A /* Pods-Idus_b.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus_b.debug.xcconfig"; path = "Target Support Files/Pods-Idus_b/Pods-Idus_b.debug.xcconfig"; sourceTree = "<group>"; };
 		70AB0D371C8E627B1D4D44BB /* Pods_Idus_b.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Idus_b.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC11BCA926D5B54400637C32 /* PurchaseVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseVCTableViewCell.swift; sourceTree = "<group>"; };
+		AC11BCAA26D5B54400637C32 /* PurchaseVCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseVCTableViewCell.xib; sourceTree = "<group>"; };
 		AC646E4026D0E3A400CFD01A /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 		AC646E4226D0E3DE00CFD01A /* ReusableCellHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCellHolder.swift; sourceTree = "<group>"; };
 		AC646E4426D0E5B900CFD01A /* GenericCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellController.swift; sourceTree = "<group>"; };
@@ -798,9 +802,9 @@
 		ACCDFC0426D4797D0066DA44 /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
-				ACCDFC0A26D499240066DA44 /* TableCell */,
 				ACCDFC0826D484180066DA44 /* PurchaseOptionVC.swift */,
 				ACCDFC0626D481DE0066DA44 /* PurchaseVC.swift */,
+				ACCDFC0A26D499240066DA44 /* TableCell */,
 			);
 			path = Purchase;
 			sourceTree = "<group>";
@@ -819,6 +823,8 @@
 				ACCDFC0B26D4995A0066DA44 /* PurchaseOptionTableViewCell.swift */,
 				ACCDFC0C26D4995A0066DA44 /* PurchaseOptionTableViewCell.xib */,
 				ACCDFC1826D4EC4B0066DA44 /* InsideTableCell */,
+				AC11BCA926D5B54400637C32 /* PurchaseVCTableViewCell.swift */,
+				AC11BCAA26D5B54400637C32 /* PurchaseVCTableViewCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -1054,6 +1060,7 @@
 				ACC6AA3826CA778F0048D22C /* MypageStoryboard.storyboard in Resources */,
 				AC6AD4DF26CF9911005538FC /* BannerCell.xib in Resources */,
 				ACC6AA3D26CA80A50048D22C /* LoginedMypageStoryboard.storyboard in Resources */,
+				AC11BCAC26D5B54400637C32 /* PurchaseVCTableViewCell.xib in Resources */,
 				ACC597FA26C94C5800E2630B /* SearchStoryboard.storyboard in Resources */,
 				AC6AD52F26D03DE2005538FC /* CategoryCell.xib in Resources */,
 				ACCE616D26D12BA6007DF748 /* GoodsPageStoryboard.storyboard in Resources */,
@@ -1113,6 +1120,7 @@
 				AC646E4126D0E3A400CFD01A /* CellController.swift in Sources */,
 				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
 				ACCDFC0026D473420066DA44 /* UserrsInfoResponse.swift in Sources */,
+				AC11BCAB26D5B54400637C32 /* PurchaseVCTableViewCell.swift in Sources */,
 				ACCE61A626D33B9A007DF748 /* CollectionViewCell.swift in Sources */,
 				AC6AD52326D0144C005538FC /* GoodsTableCellController.swift in Sources */,
 				ACCE61B026D3BD93007DF748 /* GoodsPageImgTableViewCell.swift in Sources */,

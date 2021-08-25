@@ -75,9 +75,7 @@ extension PurchaseOptionTableViewCell: UITableViewDelegate, UITableViewDataSourc
         cell.titleLabel.text = dataArr.shoppingItem[indexPath.row]
 
         if dataArr.isSelected[indexPath.row] {
-            cell.backgroundColor = .yellow
-        } else {
-            cell.backgroundColor = .white
+            // 셀 선택 이벤트
         }
         
         return cell

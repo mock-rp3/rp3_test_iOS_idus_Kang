@@ -36,6 +36,12 @@ class GoodsPageViewController: BaseViewController {
     // MARK: - 전 화면으로 가기
     @IBAction func dismiss(_ sender: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
+//        let prevVC = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MainPageViewController")
+//        prevVC.modalTransitionStyle = .crossDissolve
+//        prevVC.modalPresentationStyle = .overFullScreen
+//        prevVC.modalPresentationStyle = .fullScreen
+//        self.present(prevVC, animated: true, completion: nil)
+//        changeRootViewController(prevVC)
     }
     
     // MARK: - 하트 누르기
@@ -51,6 +57,16 @@ class GoodsPageViewController: BaseViewController {
             heartChecked = false
         }
     }
+    
+    // MARK: - 구매하기    
+    @IBAction func purchaseBtn(_ sender: UIButton) {
+         // 화면 전환
+        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PurchaseOptionVC")
+        nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
     // MARK: - CollectionViewCell에 사용될 dataSource 정의
     private func setupDataSource() {
         while let _ = UIImage(named: "goodsDummy\(k)") {
