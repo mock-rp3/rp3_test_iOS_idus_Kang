@@ -5,7 +5,9 @@
 //  Created by 강성수 on 2021/08/24.
 //
 
-// MARK: - Welcome
+import Foundation
+
+// MARK: - UsersInfoResponse
 struct UsersInfoResponse: Codable {
     let isSuccess: Bool
     let code: Int
@@ -20,6 +22,7 @@ struct GetUserInfoResult: Codable {
     let token: JSONNull?
     let profileImg: String
     let grage: String
+    let grageName: String
     let birthday, gender, holder, number: JSONNull?
     let bankingName: JSONNull?
     let reserves, coupon: Int
@@ -74,56 +77,3 @@ class JSONNull: Codable, Hashable {
     }
 }
 
-
-/*
-struct UsersInfoResponse: Decodable {
-    var isSuccess: Bool
-    var code: Int
-    var message: String
-    var result: GetUserInfoResult?
-}
-
-struct GetUserInfoResult: Decodable {
-    var userIndex: Int
-    var email: String
-    var name: String
-    var tel: String
-    var token: String?
-    var profileImg: String
-    var grade: String
-    var birthday: String?
-    var gender: String?
-    var holder: String?
-    var number: String?
-    var bankingName: String?
-    var reserves: Int
-    var coupon: Int
-    var notice: Notice
-    var shippingAddresses: [ShippingAddresses?]
-    var lastLoginAt: String
-    var statusAt: String
-}
-
-struct Notice: Decodable {
-    var message: String
-    var riview: String
-    var app: String
-    var sms: String
-    var email: String
-    var followDiscount: String
-    var followStory: String
-    var wish: String
-    var work: String
-    
-}
-
-struct ShippingAddresses: Decodable {
-    var addressIndex: Int
-    var name: String?
-    var tel: String?
-    var zipcode: String?
-    var address: String?
-    var detailAddress: String?
-    var number: Int
-}
-*/

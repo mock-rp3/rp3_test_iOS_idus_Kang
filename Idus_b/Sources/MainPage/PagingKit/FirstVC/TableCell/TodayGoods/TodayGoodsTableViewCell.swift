@@ -13,21 +13,19 @@ protocol TodayGoodsViewDelegate: AnyObject { // class로 타입 제한
 
 class TodayGoodsTableViewCell: UITableViewCell {
     
+    // MARK: - 프로퍼티
     var delegate: TodayGoodsViewDelegate? // 의존성 주입할 프로퍼티 선언
-
+    
+    @IBOutlet weak var todayGoodsCollectionView: UICollectionView!
+    
+    var todayGoodsResult = [TodayGoodsResult]()
+    
     static let identifier = "TodayGoodsTableViewCell"
     static func nib() -> UINib {
         return UINib(nibName: "TodayGoodsTableViewCell", bundle: nil)
     }
     
-    @IBOutlet weak var todayGoodsCollectionView: UICollectionView!
-    var models = [btnImgModel]()
-    
-    func configure4(with models: [btnImgModel]) {
-        self.models = models
-        todayGoodsCollectionView.reloadData()
-    }
-    
+    // MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -43,6 +41,12 @@ class TodayGoodsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Helper
+    func configure4(with models: [TodayGoodsResult]) {
+        self.todayGoodsResult = models
+        todayGoodsCollectionView.reloadData()
+    }
+    
 }
 
 // MARK: - TodayGoodsCollectionView
@@ -50,13 +54,13 @@ extension TodayGoodsTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     
     //컬렉션뷰 개수 설정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
+        return todayGoodsResult.count
     }
     
     //컬렉션뷰 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = todayGoodsCollectionView.dequeueReusableCell(withReuseIdentifier: TodayGoodsCell.identifier, for: indexPath) as! TodayGoodsCell
-        cell.configure4(with: models[indexPath.row])
+        cell.configure4(with: todayGoodsResult[indexPath.row])
         cell.click = { [unowned self] in
             if let delegate = delegate {
                 delegate.didSelectedGoodsBtn(indexPath.item)
@@ -68,7 +72,7 @@ extension TodayGoodsTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     // UICollectionViewDelegateFlowLayout 상속
     //컬렉션뷰 사이즈 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: todayGoodsCollectionView.frame.size.width, height:  todayGoodsCollectionView.frame.height)
+        return CGSize(width: todayGoodsCollectionView.frame.size.width - 50, height:  90)
     }
     
 }

@@ -19,7 +19,6 @@ class LoginedMypageViewController: BaseViewController {
     var loadedUserIdx = UserDefaults.standard.value(forKey: "userIdxKey") as! Int
     var loadedJwt : String = UserDefaults.standard.value(forKey: "jwtKey") as! String
     
-
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var myLevel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -67,8 +66,14 @@ class LoginedMypageViewController: BaseViewController {
     @IBAction func followsBtn(_ sender: UIButton) {
     }
     
-    
     @IBAction func reviewsBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func settingBtn(_ sender: UIButton) {
+        let nextVC = UIStoryboard(name: "LoginedMypageStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMypageDetailViewController")
+        nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     // 로그아웃 버튼
@@ -201,18 +206,16 @@ extension LoginedMypageViewController: NaverThirdPartyLoginConnectionDelegate {
 extension LoginedMypageViewController {
     
     func successGetInfo(result: GetUserInfoResult) {
-        print("정보 조회 성공!!!!")
         
         // 이메일 가입 유저 정보 가져오기
         // 프로필 이미지
-//        profileImageView.image = UIImage(data: result.profileImg)
         let url = URL(string: result.profileImg)
         DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async { self.profileImageView.image = UIImage(data: data!)
             }
         }
         
-        myLevel.text = result.grage
+        myLevel.text = result.grageName
         nameLabel.text = result.name
         moneyNum.text = "\(result.reserves)"
         couponNum.text = "\(result.coupon)"

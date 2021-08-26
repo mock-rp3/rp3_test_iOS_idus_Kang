@@ -162,7 +162,7 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     
     // 접근 토큰 갱신
     @objc func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        loginInstance?.accessToken
+//        loginInstance?.accessToken
     }
     
     // 로그아웃

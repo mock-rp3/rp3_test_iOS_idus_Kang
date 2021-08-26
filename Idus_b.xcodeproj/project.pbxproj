@@ -28,11 +28,11 @@
 		AC6AD51526CFF952005538FC /* FirstVCTableCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51326CFF952005538FC /* FirstVCTableCategoryCell.swift */; };
 		AC6AD51626CFF952005538FC /* FirstVCTableCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD51426CFF952005538FC /* FirstVCTableCategoryCell.xib */; };
 		AC6AD51826D00AEE005538FC /* MyCellControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51726D00AED005538FC /* MyCellControllerFactory.swift */; };
-		AC6AD51A26D01217005538FC /* BannerTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51926D01217005538FC /* BannerTableCellController.swift */; };
-		AC6AD51C26D01280005538FC /* CategoryTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51B26D01280005538FC /* CategoryTableCellController.swift */; };
+		AC6AD51A26D01217005538FC /* (보류)BannerTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51926D01217005538FC /* (보류)BannerTableCellController.swift */; };
+		AC6AD51C26D01280005538FC /* (보류)CategoryTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51B26D01280005538FC /* (보류)CategoryTableCellController.swift */; };
 		AC6AD52026D013F4005538FC /* FirstVCTableGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD51E26D013F4005538FC /* FirstVCTableGoodsCell.swift */; };
 		AC6AD52126D013F4005538FC /* FirstVCTableGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD51F26D013F4005538FC /* FirstVCTableGoodsCell.xib */; };
-		AC6AD52326D0144C005538FC /* GoodsTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52226D0144C005538FC /* GoodsTableCellController.swift */; };
+		AC6AD52326D0144C005538FC /* (보류)GoodsTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52226D0144C005538FC /* (보류)GoodsTableCellController.swift */; };
 		AC6AD52626D03B2F005538FC /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52526D03B2F005538FC /* BaseScrollView.swift */; };
 		AC6AD52826D03B4C005538FC /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52726D03B4B005538FC /* HorizontalScrollView.swift */; };
 		AC6AD52A26D03B8F005538FC /* SomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52926D03B8F005538FC /* SomeDataModel.swift */; };
@@ -40,6 +40,10 @@
 		AC6AD52F26D03DE2005538FC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD52D26D03DE2005538FC /* CategoryCell.xib */; };
 		AC6AD53226D048BB005538FC /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD53126D048BB005538FC /* DataModels.swift */; };
 		ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */; };
+		ACBC318426D6D79000F7DE05 /* RelatedGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */; };
+		ACBC318626D6D87800F7DE05 /* RelatedGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */; };
+		ACBC318926D7427A00F7DE05 /* TodayGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318826D7427A00F7DE05 /* TodayGoodsDataManager.swift */; };
+		ACBC318B26D7428B00F7DE05 /* TodayGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318A26D7428B00F7DE05 /* TodayGoodsResponse.swift */; };
 		ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974826C9463F00E2630B /* AppDelegate.swift */; };
 		ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974A26C9463F00E2630B /* SceneDelegate.swift */; };
 		ACC5975226C9464600E2630B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC5975126C9464600E2630B /* Assets.xcassets */; };
@@ -160,11 +164,11 @@
 		AC6AD51326CFF952005538FC /* FirstVCTableCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVCTableCategoryCell.swift; sourceTree = "<group>"; };
 		AC6AD51426CFF952005538FC /* FirstVCTableCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVCTableCategoryCell.xib; sourceTree = "<group>"; };
 		AC6AD51726D00AED005538FC /* MyCellControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellControllerFactory.swift; sourceTree = "<group>"; };
-		AC6AD51926D01217005538FC /* BannerTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableCellController.swift; sourceTree = "<group>"; };
-		AC6AD51B26D01280005538FC /* CategoryTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableCellController.swift; sourceTree = "<group>"; };
+		AC6AD51926D01217005538FC /* (보류)BannerTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "(보류)BannerTableCellController.swift"; sourceTree = "<group>"; };
+		AC6AD51B26D01280005538FC /* (보류)CategoryTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "(보류)CategoryTableCellController.swift"; sourceTree = "<group>"; };
 		AC6AD51E26D013F4005538FC /* FirstVCTableGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVCTableGoodsCell.swift; sourceTree = "<group>"; };
 		AC6AD51F26D013F4005538FC /* FirstVCTableGoodsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVCTableGoodsCell.xib; sourceTree = "<group>"; };
-		AC6AD52226D0144C005538FC /* GoodsTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsTableCellController.swift; sourceTree = "<group>"; };
+		AC6AD52226D0144C005538FC /* (보류)GoodsTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "(보류)GoodsTableCellController.swift"; sourceTree = "<group>"; };
 		AC6AD52526D03B2F005538FC /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
 		AC6AD52726D03B4B005538FC /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
 		AC6AD52926D03B8F005538FC /* SomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeDataModel.swift; sourceTree = "<group>"; };
@@ -172,6 +176,10 @@
 		AC6AD52D26D03DE2005538FC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		AC6AD53126D048BB005538FC /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginInfo.swift; sourceTree = "<group>"; };
+		ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsDataManager.swift; sourceTree = "<group>"; };
+		ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsResponse.swift; sourceTree = "<group>"; };
+		ACBC318826D7427A00F7DE05 /* TodayGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGoodsDataManager.swift; sourceTree = "<group>"; };
+		ACBC318A26D7428B00F7DE05 /* TodayGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGoodsResponse.swift; sourceTree = "<group>"; };
 		ACC5974526C9463F00E2630B /* Idus_b.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idus_b.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC5974826C9463F00E2630B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC5974A26C9463F00E2630B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -299,13 +307,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AC3D9BF726CE427B00E94F21 /* BannerCollectionCell */ = {
+		AC3D9BF726CE427B00E94F21 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
 				AC6AD4DC26CF9911005538FC /* BannerCell.swift */,
 				AC6AD4DD26CF9911005538FC /* BannerCell.xib */,
 			);
-			path = BannerCollectionCell;
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		AC646E3F26D0E38B00CFD01A /* (보류)CellController */ = {
@@ -320,13 +328,15 @@
 			path = "(보류)CellController";
 			sourceTree = "<group>";
 		};
-		AC646E4726D0F4BE00CFD01A /* GoodsColletionCell */ = {
+		AC646E4726D0F4BE00CFD01A /* RelatedGoods */ = {
 			isa = PBXGroup;
 			children = (
+				ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */,
+				ACBC318226D6D77300F7DE05 /* Entity */,
 				AC646E4826D0F58900CFD01A /* GoodsCell.swift */,
 				AC646E4926D0F58900CFD01A /* GoodsCell.xib */,
 			);
-			path = GoodsColletionCell;
+			path = RelatedGoods;
 			sourceTree = "<group>";
 		};
 		AC6AD4BC26CE770F005538FC /* PagingKit */ = {
@@ -394,7 +404,7 @@
 			children = (
 				AC6AD50F26CFF68A005538FC /* Banner */,
 				AC6AD51226CFF90B005538FC /* Category */,
-				AC6AD51D26D013C2005538FC /* Goods */,
+				AC6AD51D26D013C2005538FC /* RelatedGoods */,
 				ACCE618126D27F84007DF748 /* TodayGoods */,
 			);
 			path = TableCell;
@@ -413,7 +423,7 @@
 		AC6AD50F26CFF68A005538FC /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				AC6AD51926D01217005538FC /* BannerTableCellController.swift */,
+				AC6AD51926D01217005538FC /* (보류)BannerTableCellController.swift */,
 				AC6AD50A26CFEC98005538FC /* FirstVCTableBannerCell.swift */,
 				AC6AD50B26CFEC98005538FC /* FirstVCTableBannerCell.xib */,
 			);
@@ -423,21 +433,21 @@
 		AC6AD51226CFF90B005538FC /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				AC6AD51B26D01280005538FC /* CategoryTableCellController.swift */,
+				AC6AD51B26D01280005538FC /* (보류)CategoryTableCellController.swift */,
 				AC6AD51326CFF952005538FC /* FirstVCTableCategoryCell.swift */,
 				AC6AD51426CFF952005538FC /* FirstVCTableCategoryCell.xib */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		AC6AD51D26D013C2005538FC /* Goods */ = {
+		AC6AD51D26D013C2005538FC /* RelatedGoods */ = {
 			isa = PBXGroup;
 			children = (
-				AC6AD52226D0144C005538FC /* GoodsTableCellController.swift */,
+				AC6AD52226D0144C005538FC /* (보류)GoodsTableCellController.swift */,
 				AC6AD51E26D013F4005538FC /* FirstVCTableGoodsCell.swift */,
 				AC6AD51F26D013F4005538FC /* FirstVCTableGoodsCell.xib */,
 			);
-			path = Goods;
+			path = RelatedGoods;
 			sourceTree = "<group>";
 		};
 		AC6AD52426D03B0F005538FC /* Components */ = {
@@ -450,13 +460,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		AC6AD52B26D03D6A005538FC /* CategoryColletionCell */ = {
+		AC6AD52B26D03D6A005538FC /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				AC6AD52C26D03DE2005538FC /* CategoryCell.swift */,
 				AC6AD52D26D03DE2005538FC /* CategoryCell.xib */,
 			);
-			path = CategoryColletionCell;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		AC6AD53026D04898005538FC /* DataModel */ = {
@@ -466,6 +476,22 @@
 				ACCDFC1326D4E05A0066DA44 /* ShoppingList.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		ACBC318226D6D77300F7DE05 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		ACBC318726D7425400F7DE05 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				ACBC318A26D7428B00F7DE05 /* TodayGoodsResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		ACC5973C26C9463F00E2630B = {
@@ -849,10 +875,10 @@
 		ACCE615F26D121D0007DF748 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				AC3D9BF726CE427B00E94F21 /* BannerCollectionCell */,
-				AC6AD52B26D03D6A005538FC /* CategoryColletionCell */,
-				AC646E4726D0F4BE00CFD01A /* GoodsColletionCell */,
-				ACCE617C26D27E78007DF748 /* TodayGoodsCollectionCell */,
+				AC3D9BF726CE427B00E94F21 /* Banner */,
+				AC6AD52B26D03D6A005538FC /* Category */,
+				AC646E4726D0F4BE00CFD01A /* RelatedGoods */,
+				ACCE617C26D27E78007DF748 /* TodayGoods */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -870,13 +896,15 @@
 			path = GoodsPage;
 			sourceTree = "<group>";
 		};
-		ACCE617C26D27E78007DF748 /* TodayGoodsCollectionCell */ = {
+		ACCE617C26D27E78007DF748 /* TodayGoods */ = {
 			isa = PBXGroup;
 			children = (
+				ACBC318826D7427A00F7DE05 /* TodayGoodsDataManager.swift */,
+				ACBC318726D7425400F7DE05 /* Entity */,
 				ACCE617D26D27EBE007DF748 /* TodayGoodsCell.swift */,
 				ACCE617E26D27EBE007DF748 /* TodayGoodsCell.xib */,
 			);
-			path = TodayGoodsCollectionCell;
+			path = TodayGoods;
 			sourceTree = "<group>";
 		};
 		ACCE618126D27F84007DF748 /* TodayGoods */ = {
@@ -1122,10 +1150,11 @@
 				ACCDFC0026D473420066DA44 /* UsersInfoResponse.swift in Sources */,
 				AC11BCAB26D5B54400637C32 /* PurchaseVCTableViewCell.swift in Sources */,
 				ACCE61A626D33B9A007DF748 /* CollectionViewCell.swift in Sources */,
-				AC6AD52326D0144C005538FC /* GoodsTableCellController.swift in Sources */,
+				AC6AD52326D0144C005538FC /* (보류)GoodsTableCellController.swift in Sources */,
 				ACCE61B026D3BD93007DF748 /* GoodsPageImgTableViewCell.swift in Sources */,
 				ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */,
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
+				ACBC318B26D7428B00F7DE05 /* TodayGoodsResponse.swift in Sources */,
 				AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,
 				ACCE619D26D33B19007DF748 /* SearchVC.swift in Sources */,
@@ -1135,6 +1164,7 @@
 				ACCDFBFC26D472E80066DA44 /* LoginedMypageDataManager.swift in Sources */,
 				AC6AD52026D013F4005538FC /* FirstVCTableGoodsCell.swift in Sources */,
 				AC6AD4C626CE90BC005538FC /* SecondVC.swift in Sources */,
+				ACBC318926D7427A00F7DE05 /* TodayGoodsDataManager.swift in Sources */,
 				ACC597CD26C94C2900E2630B /* Date.swift in Sources */,
 				ACCDFC2526D56C0A0066DA44 /* InsideTableViewCell.swift in Sources */,
 				AC6AD52A26D03B8F005538FC /* SomeDataModel.swift in Sources */,
@@ -1146,7 +1176,7 @@
 				ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */,
 				ACC6AA4726CAD72A0048D22C /* EmailSignUpViewController.swift in Sources */,
 				ACCDFC0926D484180066DA44 /* PurchaseOptionVC.swift in Sources */,
-				AC6AD51C26D01280005538FC /* CategoryTableCellController.swift in Sources */,
+				AC6AD51C26D01280005538FC /* (보류)CategoryTableCellController.swift in Sources */,
 				AC646E4326D0E3DE00CFD01A /* ReusableCellHolder.swift in Sources */,
 				ACCE616526D124B5007DF748 /* GoodsPageCollectionViewCell.swift in Sources */,
 				ACC597CF26C94C2900E2630B /* UIButton.swift in Sources */,
@@ -1158,6 +1188,7 @@
 				ACCDFC1426D4E05B0066DA44 /* ShoppingList.swift in Sources */,
 				ACC597CB26C94C2900E2630B /* IndicatorView.swift in Sources */,
 				ACC597FE26C94C5800E2630B /* SignInViewController.swift in Sources */,
+				ACBC318626D6D87800F7DE05 /* RelatedGoodsResponse.swift in Sources */,
 				ACC6AA5726CB46990048D22C /* EmailLoginResponse.swift in Sources */,
 				AC6AD51826D00AEE005538FC /* MyCellControllerFactory.swift in Sources */,
 				ACC6AA5126CB46020048D22C /* EmailSignUpRequest.swift in Sources */,
@@ -1172,13 +1203,14 @@
 				ACC597FC26C94C5800E2630B /* SignInResponse.swift in Sources */,
 				ACC5980626C94C5800E2630B /* MainPageViewController.swift in Sources */,
 				ACCE61B826D42A04007DF748 /* GoodsPageDeliveryTableViewCell.swift in Sources */,
-				AC6AD51A26D01217005538FC /* BannerTableCellController.swift in Sources */,
+				AC6AD51A26D01217005538FC /* (보류)BannerTableCellController.swift in Sources */,
 				ACC6AA3A26CA77AD0048D22C /* MypageViewController.swift in Sources */,
 				AC6AD51126CFF6F4005538FC /* CategoryScrollVeiw.swift in Sources */,
 				AC6AD4C826CE90DE005538FC /* ThirdVC.swift in Sources */,
 				ACC597F926C94C5800E2630B /* LoginViewController.swift in Sources */,
 				ACCE617F26D27EBE007DF748 /* TodayGoodsCell.swift in Sources */,
 				ACC6AA4326CA948F0048D22C /* LoginedMypageDetailViewController.swift in Sources */,
+				ACBC318426D6D79000F7DE05 /* RelatedGoodsDataManager.swift in Sources */,
 				AC6AD52626D03B2F005538FC /* BaseScrollView.swift in Sources */,
 				ACC597CE26C94C2900E2630B /* String.swift in Sources */,
 				ACCE617726D153D9007DF748 /* GoodsPageViewController.swift in Sources */,

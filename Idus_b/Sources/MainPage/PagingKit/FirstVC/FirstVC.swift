@@ -9,7 +9,12 @@ import UIKit
 
 class FirstVC: BaseViewController {
     
-    // 셀 컨트롤러
+    // MARK: - 프로퍼티
+    
+    lazy var relatedGoodsDataManager: RelatedGoodsDataManager = RelatedGoodsDataManager()
+    lazy var todayGoodsDataManager: TodayGoodsDataManager = TodayGoodsDataManager()
+    
+    // (보류) 셀 컨트롤러
 //    fileprivate var cellControllers = [CellController<UITableView>]() // 축약형
 //    fileprivate var cellControllers = [TableCellController]() // 원본
 //    fileprivate let cellControllerFactory = MyCellControllerFactory()
@@ -19,22 +24,33 @@ class FirstVC: BaseViewController {
     var i = 1
     var categoryImgs = [btnImgModel]()
     var j = 1
-    var GoodsImgs = [btnImgModel]()
-    var k = 0
+    var goods = [RelatedGoodsResult]()
+    var todayGoods = [TodayGoodsResult]()
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         setDataSource()
         registTableCell()
         
         table.delegate = self
         table.dataSource = self
         
-        // 셀 컨트롤러 셀 등록
+        //(보류) 셀 컨트롤러 셀 등록
 //        cellControllerFactory.registerCells(on: table)
+        
+        relatedGoodsDataManager.getRelatedGoodsData(delegate: self)
+        todayGoodsDataManager.getTodayGoodsData(delegate: self)
+        
+        // 인디케이터 (로딩)
+        showIndicator()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.dismissIndicator()
+        }
     }
     
+    // MARK: - Helper
     private func setDataSource() {
         while let _ = UIImage(named: "main_banner\(i)") {
             bannerImgs.append(imgModel(imageName: "main_banner\(i)"))
@@ -44,11 +60,6 @@ class FirstVC: BaseViewController {
         while let _ = UIImage(named: "main_category\(j)") {
             categoryImgs.append(btnImgModel(btnImageName: "main_category\(j)"))
             j += 1
-        }
-        
-        while let _ = UIImage(named: "goodsDummy\(k)") {
-            GoodsImgs.append(btnImgModel(btnImageName: "goodsDummy\(k)"))
-            k += 1
         }
     }
     
@@ -84,25 +95,25 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 2{
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableGoodsCell.identifier, for: indexPath) as! FirstVCTableGoodsCell
-            cell.configure3(with: GoodsImgs)
+            cell.configure3(with: goods)
             cell.delegate = self
             return cell
         } else {
             let cell = table.dequeueReusableCell(withIdentifier: TodayGoodsTableViewCell.identifier, for: indexPath) as! TodayGoodsTableViewCell
-            cell.configure4(with: categoryImgs)
+            cell.configure4(with: todayGoods)
             cell.delegate = self
             return cell
         }
 
-        // 셀 컨트롤러 활용 축약형
+        // (보류) 셀 컨트롤러 활용 축약형
 //        return cellControllers[indexPath.row].cellFromReusableCellHolder(table, forIndexPath: indexPath)
       
-        // 셀 컨트롤러 활용 원본
+        // (보류) 셀 컨트롤러 활용 원본
 //        return cellControllers[indexPath.row].cellFromTableView(table, forIndexPath: indexPath)
 
     }
     
-    // 셀 컨트롤러 활용
+    // (보류) 셀 컨트롤러 활용
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        cellControllers[indexPath.row].didSelectCell()
 //    }
@@ -113,8 +124,10 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
             return 190
         } else if indexPath.row == 1 {
             return 84
+        } else if indexPath.row == 2 {
+            return 380
         } else {
-            return 150
+            return 520
         }
     }
     
@@ -123,14 +136,14 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - 배너 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: BannerDelegate {
     func didSelectedBanner(_ index: Int) {
-        print("\(index)번째 셀")
+        self.presentAlert(title: "\(index)번째 배너입니다.")
     }
 }
 
 // MARK: - 카테고리 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: CategoryDelegate {
     func didSelectedCategory(_ index: Int) {
-        print("\(index)번째 셀")
+        self.presentAlert(title: "\(index)번째 카테고리입니다.")
     }
 }
 
@@ -154,7 +167,28 @@ extension FirstVC: GoodsViewDelegate {
 // MARK: - 오늘의 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: TodayGoodsViewDelegate {
     func didSelectedGoods(_ index: Int) {
-        
-        print("\(index)번째 셀")
+        self.presentAlert(title: "\(index)번째 작품입니다.")
+    }
+}
+
+// MARK: - DataManager
+
+// RelatedGoodsResult
+extension FirstVC {
+    func successGetRelatedGoodsData(result: [RelatedGoodsResult]) {
+        for index in 0...5 {
+            self.goods.append(result[index])
+        }
+        print(self.goods)
+    }
+}
+
+// TodayGoodsResult
+extension FirstVC {
+    func successTodayGoodsData(result: [TodayGoodsResult]) {
+        for index in 0...11 {
+            self.todayGoods.append(result[index])
+        }
+        print(self.todayGoods)
     }
 }
