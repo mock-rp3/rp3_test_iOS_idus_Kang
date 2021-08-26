@@ -15,6 +15,9 @@
 + tableView에서 dequeuing 과정에서 업로드가 되는 문제 발생
   - 네트워킹 이후에 수동으로 tableView.reloadData()와 collectionView.reloadData() 해줘서 해결함 
 + 결제 페이지 UI 구현중..
++ 연동한 API 개수 중간 체크
+  - 이메일 회원가입 POST, 이메일 로그인 POST, 회원정보 GET, 연관된 작품정보 GET, 키워드 작품정보 GET, 작품 상세페이지 정보 GET
+  - 총 6개
 
 ***
 
