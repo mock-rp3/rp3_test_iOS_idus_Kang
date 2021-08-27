@@ -54,6 +54,22 @@ class MainPageViewController: BaseViewController {
         
     }
     
+    // MARK: - Actions
+    
+    @IBAction func goToCart(_ sender: UIButton) {
+        
+        let nextVC = UIStoryboard(name: "CartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
+        
+        nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .fullScreen
+
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func searchBtn(_ sender: UIButton) {
+        self.presentAlert(title: "검색에 성공하셨습니다!!")
+    }
+    
     // MARK: - Paging Kit 세그웨이 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PagingMenuViewController {

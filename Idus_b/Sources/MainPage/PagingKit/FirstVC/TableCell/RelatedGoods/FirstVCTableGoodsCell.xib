@@ -33,7 +33,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqK-2n-j1A">
                         <rect key="frame" x="0.0" y="30" width="320" height="60"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xqf-H0-9zo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goodsDummy0" translatesAutoresizingMaskIntoConstraints="NO" id="Xqf-H0-9zo">
                                 <rect key="frame" x="10" y="5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2f6-BK-zz3"/>
@@ -84,6 +84,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="goodsDummy0" width="373" height="374.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

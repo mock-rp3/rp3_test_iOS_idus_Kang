@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dXG-aE-yaA">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="클래스 캡쳐" translatesAutoresizingMaskIntoConstraints="NO" id="0FM-a4-eeT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0FM-a4-eeT" secondAttribute="trailing" id="OeO-04-tKH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0FM-a4-eeT" secondAttribute="bottom" id="Sw5-Hw-sdE"/>
+                            <constraint firstItem="0FM-a4-eeT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VRW-GW-28X"/>
+                            <constraint firstItem="0FM-a4-eeT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vDw-to-oIx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BKI-PN-Gd4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002.8985507246377" y="39.508928571428569"/>
+        </scene>
+        <!--ClassNavigationController-->
+        <scene sceneID="zpf-QW-6K7">
+            <objects>
+                <navigationController storyboardIdentifier="ClassNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dXG-aE-yaA" userLabel="ClassNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="tapbar_클래스" selectedImage="tapbar_클래스_선택" id="JTj-oQ-ntW">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rYO-JZ-8Tm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Y9K-YE-7cP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRa-MD-5vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="39.508928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tapbar_클래스" width="32" height="49"/>
+        <image name="tapbar_클래스_선택" width="58" height="46.5"/>
+        <image name="클래스 캡쳐" width="373" height="597.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

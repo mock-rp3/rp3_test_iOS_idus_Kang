@@ -39,11 +39,30 @@
 		AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD52C26D03DE2005538FC /* CategoryCell.swift */; };
 		AC6AD52F26D03DE2005538FC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6AD52D26D03DE2005538FC /* CategoryCell.xib */; };
 		AC6AD53226D048BB005538FC /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6AD53126D048BB005538FC /* DataModels.swift */; };
+		AC6DE6A626D84F76001B91B7 /* PayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE6A526D84F76001B91B7 /* PayDataManager.swift */; };
+		AC6DE6A826D84F87001B91B7 /* PayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE6A726D84F87001B91B7 /* PayResponse.swift */; };
+		AC6DE6AA26D84FAB001B91B7 /* PayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE6A926D84FAB001B91B7 /* PayRequest.swift */; };
+		AC6DE6AD26D85B79001B91B7 /* ClassStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE6AC26D85B79001B91B7 /* ClassStoryboard.storyboard */; };
+		AC6DE6AF26D85B8B001B91B7 /* ClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE6AE26D85B8B001B91B7 /* ClassVC.swift */; };
+		AC6DE6B226D85FD1001B91B7 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE6B126D85FD1001B91B7 /* CategoryVC.swift */; };
+		AC6DE6B426D85FDD001B91B7 /* CategoryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE6B326D85FDD001B91B7 /* CategoryStoryboard.storyboard */; };
+		AC6DE6B726D87728001B91B7 /* PayTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE6B526D87727001B91B7 /* PayTableViewCell2.swift */; };
+		AC6DE6B826D87728001B91B7 /* PayTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE6B626D87727001B91B7 /* PayTableViewCell2.xib */; };
 		ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */; };
 		ACBC318426D6D79000F7DE05 /* RelatedGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */; };
 		ACBC318626D6D87800F7DE05 /* RelatedGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */; };
 		ACBC318926D7427A00F7DE05 /* TodayGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318826D7427A00F7DE05 /* TodayGoodsDataManager.swift */; };
 		ACBC318B26D7428B00F7DE05 /* TodayGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318A26D7428B00F7DE05 /* TodayGoodsResponse.swift */; };
+		ACBC318E26D7A59D00F7DE05 /* GoodsPageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318D26D7A59D00F7DE05 /* GoodsPageDataManager.swift */; };
+		ACBC319026D7A65500F7DE05 /* GoodsPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318F26D7A65500F7DE05 /* GoodsPageResponse.swift */; };
+		ACBC319326D7B82700F7DE05 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC319226D7B82600F7DE05 /* CartVC.swift */; };
+		ACBC319526D7B8BB00F7DE05 /* CartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBC319426D7B8BB00F7DE05 /* CartStoryboard.storyboard */; };
+		ACBC319726D7E34900F7DE05 /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC319626D7E34900F7DE05 /* PayVC.swift */; };
+		ACBC319926D7E35800F7DE05 /* PayStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBC319826D7E35800F7DE05 /* PayStoryboard.storyboard */; };
+		ACBC319D26D7EE8B00F7DE05 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC319B26D7EE8B00F7DE05 /* CartTableViewCell.swift */; };
+		ACBC319E26D7EE8B00F7DE05 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBC319C26D7EE8B00F7DE05 /* CartTableViewCell.xib */; };
+		ACBC31A626D8046800F7DE05 /* PayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC31A426D8046800F7DE05 /* PayTableViewCell.swift */; };
+		ACBC31A726D8046800F7DE05 /* PayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBC31A526D8046800F7DE05 /* PayTableViewCell.xib */; };
 		ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974826C9463F00E2630B /* AppDelegate.swift */; };
 		ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5974A26C9463F00E2630B /* SceneDelegate.swift */; };
 		ACC5975226C9464600E2630B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC5975126C9464600E2630B /* Assets.xcassets */; };
@@ -97,8 +116,8 @@
 		ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6AA5826CB46AA0048D22C /* EmailLoginRequest.swift */; };
 		ACCDFBFC26D472E80066DA44 /* LoginedMypageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFBFB26D472E80066DA44 /* LoginedMypageDataManager.swift */; };
 		ACCDFC0026D473420066DA44 /* UsersInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFBFF26D473420066DA44 /* UsersInfoResponse.swift */; };
-		ACCDFC0726D481DE0066DA44 /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0626D481DE0066DA44 /* PurchaseVC.swift */; };
-		ACCDFC0926D484180066DA44 /* PurchaseOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0826D484180066DA44 /* PurchaseOptionVC.swift */; };
+		ACCDFC0726D481DE0066DA44 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0626D481DE0066DA44 /* OrderVC.swift */; };
+		ACCDFC0926D484180066DA44 /* OrderOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0826D484180066DA44 /* OrderOptionVC.swift */; };
 		ACCDFC0D26D4995A0066DA44 /* PurchaseOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC0B26D4995A0066DA44 /* PurchaseOptionTableViewCell.swift */; };
 		ACCDFC0E26D4995A0066DA44 /* PurchaseOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCDFC0C26D4995A0066DA44 /* PurchaseOptionTableViewCell.xib */; };
 		ACCDFC1426D4E05B0066DA44 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDFC1326D4E05A0066DA44 /* ShoppingList.swift */; };
@@ -175,11 +194,30 @@
 		AC6AD52C26D03DE2005538FC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		AC6AD52D26D03DE2005538FC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		AC6AD53126D048BB005538FC /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		AC6DE6A526D84F76001B91B7 /* PayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDataManager.swift; sourceTree = "<group>"; };
+		AC6DE6A726D84F87001B91B7 /* PayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResponse.swift; sourceTree = "<group>"; };
+		AC6DE6A926D84FAB001B91B7 /* PayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRequest.swift; sourceTree = "<group>"; };
+		AC6DE6AC26D85B79001B91B7 /* ClassStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClassStoryboard.storyboard; sourceTree = "<group>"; };
+		AC6DE6AE26D85B8B001B91B7 /* ClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassVC.swift; sourceTree = "<group>"; };
+		AC6DE6B126D85FD1001B91B7 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		AC6DE6B326D85FDD001B91B7 /* CategoryStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryStoryboard.storyboard; sourceTree = "<group>"; };
+		AC6DE6B526D87727001B91B7 /* PayTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTableViewCell2.swift; sourceTree = "<group>"; };
+		AC6DE6B626D87727001B91B7 /* PayTableViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayTableViewCell2.xib; sourceTree = "<group>"; };
 		ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginInfo.swift; sourceTree = "<group>"; };
 		ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsDataManager.swift; sourceTree = "<group>"; };
 		ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsResponse.swift; sourceTree = "<group>"; };
 		ACBC318826D7427A00F7DE05 /* TodayGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGoodsDataManager.swift; sourceTree = "<group>"; };
 		ACBC318A26D7428B00F7DE05 /* TodayGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGoodsResponse.swift; sourceTree = "<group>"; };
+		ACBC318D26D7A59D00F7DE05 /* GoodsPageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageDataManager.swift; sourceTree = "<group>"; };
+		ACBC318F26D7A65500F7DE05 /* GoodsPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageResponse.swift; sourceTree = "<group>"; };
+		ACBC319226D7B82600F7DE05 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		ACBC319426D7B8BB00F7DE05 /* CartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CartStoryboard.storyboard; sourceTree = "<group>"; };
+		ACBC319626D7E34900F7DE05 /* PayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
+		ACBC319826D7E35800F7DE05 /* PayStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayStoryboard.storyboard; sourceTree = "<group>"; };
+		ACBC319B26D7EE8B00F7DE05 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		ACBC319C26D7EE8B00F7DE05 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		ACBC31A426D8046800F7DE05 /* PayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTableViewCell.swift; sourceTree = "<group>"; };
+		ACBC31A526D8046800F7DE05 /* PayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayTableViewCell.xib; sourceTree = "<group>"; };
 		ACC5974526C9463F00E2630B /* Idus_b.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idus_b.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC5974826C9463F00E2630B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC5974A26C9463F00E2630B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,8 +273,8 @@
 		ACC6AA5826CB46AA0048D22C /* EmailLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginRequest.swift; sourceTree = "<group>"; };
 		ACCDFBFB26D472E80066DA44 /* LoginedMypageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginedMypageDataManager.swift; sourceTree = "<group>"; };
 		ACCDFBFF26D473420066DA44 /* UsersInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoResponse.swift; sourceTree = "<group>"; };
-		ACCDFC0626D481DE0066DA44 /* PurchaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
-		ACCDFC0826D484180066DA44 /* PurchaseOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOptionVC.swift; sourceTree = "<group>"; };
+		ACCDFC0626D481DE0066DA44 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
+		ACCDFC0826D484180066DA44 /* OrderOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderOptionVC.swift; sourceTree = "<group>"; };
 		ACCDFC0B26D4995A0066DA44 /* PurchaseOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOptionTableViewCell.swift; sourceTree = "<group>"; };
 		ACCDFC0C26D4995A0066DA44 /* PurchaseOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseOptionTableViewCell.xib; sourceTree = "<group>"; };
 		ACCDFC1326D4E05A0066DA44 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
@@ -359,8 +397,7 @@
 				AC6AD4CF26CEB507005538FC /* TableCell */,
 				ACCE615F26D121D0007DF748 /* CollectionCell */,
 				ACCE616026D1226B007DF748 /* GoodsPage */,
-				ACCDFC0326D478680066DA44 /* CartPage */,
-				ACCDFC0226D4785D0066DA44 /* OrderPage */,
+				ACCDFC0226D4785D0066DA44 /* CartPage */,
 				ACCDFC0126D477F40066DA44 /* PayPage */,
 				AC6AD50E26CFF636005538FC /* (보류)CategoryScrollVeiw */,
 			);
@@ -478,6 +515,33 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		AC6DE6A426D84F5C001B91B7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AC6DE6A726D84F87001B91B7 /* PayResponse.swift */,
+				AC6DE6A926D84FAB001B91B7 /* PayRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AC6DE6AB26D85B5D001B91B7 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				AC6DE6AC26D85B79001B91B7 /* ClassStoryboard.storyboard */,
+				AC6DE6AE26D85B8B001B91B7 /* ClassVC.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		AC6DE6B026D85FB8001B91B7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AC6DE6B326D85FDD001B91B7 /* CategoryStoryboard.storyboard */,
+				AC6DE6B126D85FD1001B91B7 /* CategoryVC.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		ACBC318226D6D77300F7DE05 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +556,34 @@
 				ACBC318A26D7428B00F7DE05 /* TodayGoodsResponse.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		ACBC318C26D7A58200F7DE05 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				ACBC318F26D7A65500F7DE05 /* GoodsPageResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		ACBC319A26D7EE6C00F7DE05 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACBC319B26D7EE8B00F7DE05 /* CartTableViewCell.swift */,
+				ACBC319C26D7EE8B00F7DE05 /* CartTableViewCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		ACBC319F26D8039000F7DE05 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACBC31A426D8046800F7DE05 /* PayTableViewCell.swift */,
+				ACBC31A526D8046800F7DE05 /* PayTableViewCell.xib */,
+				AC6DE6B526D87727001B91B7 /* PayTableViewCell2.swift */,
+				AC6DE6B626D87727001B91B7 /* PayTableViewCell2.xib */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 		ACC5973C26C9463F00E2630B = {
@@ -607,7 +699,9 @@
 				ACC6AA4026CA903E0048D22C /* MainStoryboard.storyboard */,
 				ACC597DA26C94C5700E2630B /* LoginPage */,
 				ACC597EE26C94C5700E2630B /* MainPage */,
+				AC6DE6AB26D85B5D001B91B7 /* Class */,
 				ACC597DD26C94C5700E2630B /* Search */,
+				AC6DE6B026D85FB8001B91B7 /* Category */,
 				ACC6AA3626CA77640048D22C /* Mypage */,
 			);
 			path = Sources;
@@ -807,32 +901,33 @@
 		ACCDFC0126D477F40066DA44 /* PayPage */ = {
 			isa = PBXGroup;
 			children = (
+				AC6DE6A526D84F76001B91B7 /* PayDataManager.swift */,
+				AC6DE6A426D84F5C001B91B7 /* Entity */,
+				ACBC319826D7E35800F7DE05 /* PayStoryboard.storyboard */,
+				ACBC319626D7E34900F7DE05 /* PayVC.swift */,
+				ACBC319F26D8039000F7DE05 /* TableCell */,
 			);
 			path = PayPage;
 			sourceTree = "<group>";
 		};
-		ACCDFC0226D4785D0066DA44 /* OrderPage */ = {
+		ACCDFC0226D4785D0066DA44 /* CartPage */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = OrderPage;
-			sourceTree = "<group>";
-		};
-		ACCDFC0326D478680066DA44 /* CartPage */ = {
-			isa = PBXGroup;
-			children = (
+				ACBC319426D7B8BB00F7DE05 /* CartStoryboard.storyboard */,
+				ACBC319226D7B82600F7DE05 /* CartVC.swift */,
+				ACBC319A26D7EE6C00F7DE05 /* TableCell */,
 			);
 			path = CartPage;
 			sourceTree = "<group>";
 		};
-		ACCDFC0426D4797D0066DA44 /* Purchase */ = {
+		ACCDFC0426D4797D0066DA44 /* OrderPage */ = {
 			isa = PBXGroup;
 			children = (
-				ACCDFC0826D484180066DA44 /* PurchaseOptionVC.swift */,
-				ACCDFC0626D481DE0066DA44 /* PurchaseVC.swift */,
+				ACCDFC0826D484180066DA44 /* OrderOptionVC.swift */,
+				ACCDFC0626D481DE0066DA44 /* OrderVC.swift */,
 				ACCDFC0A26D499240066DA44 /* TableCell */,
 			);
-			path = Purchase;
+			path = OrderPage;
 			sourceTree = "<group>";
 		};
 		ACCDFC0526D479900066DA44 /* (보류)Present */ = {
@@ -886,11 +981,13 @@
 		ACCE616026D1226B007DF748 /* GoodsPage */ = {
 			isa = PBXGroup;
 			children = (
+				ACBC318D26D7A59D00F7DE05 /* GoodsPageDataManager.swift */,
+				ACBC318C26D7A58200F7DE05 /* Entity */,
 				ACCE616C26D12BA6007DF748 /* GoodsPageStoryboard.storyboard */,
 				ACCE617626D153D9007DF748 /* GoodsPageViewController.swift */,
 				ACCE61AD26D3BD6C007DF748 /* TableCell */,
 				ACCE61A826D36B62007DF748 /* CollectionCell */,
-				ACCDFC0426D4797D0066DA44 /* Purchase */,
+				ACCDFC0426D4797D0066DA44 /* OrderPage */,
 				ACCDFC0526D479900066DA44 /* (보류)Present */,
 			);
 			path = GoodsPage;
@@ -1059,7 +1156,9 @@
 				ACCE61B926D42A05007DF748 /* GoodsPageDeliveryTableViewCell.xib in Resources */,
 				ACCE618026D27EBE007DF748 /* TodayGoodsCell.xib in Resources */,
 				ACC5975526C9464600E2630B /* LaunchScreen.storyboard in Resources */,
+				ACBC319926D7E35800F7DE05 /* PayStoryboard.storyboard in Resources */,
 				AC6AD51626CFF952005538FC /* FirstVCTableCategoryCell.xib in Resources */,
+				ACBC319526D7B8BB00F7DE05 /* CartStoryboard.storyboard in Resources */,
 				AC646E4B26D0F58900CFD01A /* GoodsCell.xib in Resources */,
 				ACC597D726C94C2900E2630B /* NotoSansCJKkr-Bold.otf in Resources */,
 				ACCE619726D3351A007DF748 /* NowGoodsCollectionViewCell.xib in Resources */,
@@ -1072,22 +1171,27 @@
 				AC6AD4C226CE88F5005538FC /* FocusView.xib in Resources */,
 				ACC5975226C9464600E2630B /* Assets.xcassets in Resources */,
 				ACCDFC0E26D4995A0066DA44 /* PurchaseOptionTableViewCell.xib in Resources */,
+				AC6DE6B426D85FDD001B91B7 /* CategoryStoryboard.storyboard in Resources */,
 				ACCE61A726D33B9A007DF748 /* CollectionViewCell.xib in Resources */,
 				ACCE618526D27FC9007DF748 /* TodayGoodsTableViewCell.xib in Resources */,
 				ACC597F826C94C5800E2630B /* LoginStoryboard.storyboard in Resources */,
 				ACC6AA4126CA903E0048D22C /* MainStoryboard.storyboard in Resources */,
 				ACCE61BD26D42E08007DF748 /* GoodsPageTextTableViewCell.xib in Resources */,
+				ACBC31A726D8046800F7DE05 /* PayTableViewCell.xib in Resources */,
 				ACC5980926C94C5800E2630B /* LoginedMainStoryboard.storyboard in Resources */,
 				ACC5980826C94C5800E2630B /* MainPageStoryboard.storyboard in Resources */,
 				ACCE619126D29BE2007DF748 /* NewGoodsCollectionViewCell.xib in Resources */,
+				ACBC319E26D7EE8B00F7DE05 /* CartTableViewCell.xib in Resources */,
 				ACCE61B526D4042B007DF748 /* GoodsPageMainInfoTableViewCell.xib in Resources */,
 				AC6AD4C026CE7C2D005538FC /* MenuCell.xib in Resources */,
 				AC6AD50D26CFEC98005538FC /* FirstVCTableBannerCell.xib in Resources */,
 				ACCE619B26D33532007DF748 /* NowGoodsTableViewCell.xib in Resources */,
 				ACC597D526C94C2900E2630B /* NotoSansCJKkr-Medium.otf in Resources */,
+				AC6DE6B826D87728001B91B7 /* PayTableViewCell2.xib in Resources */,
 				ACC6AA3826CA778F0048D22C /* MypageStoryboard.storyboard in Resources */,
 				AC6AD4DF26CF9911005538FC /* BannerCell.xib in Resources */,
 				ACC6AA3D26CA80A50048D22C /* LoginedMypageStoryboard.storyboard in Resources */,
+				AC6DE6AD26D85B79001B91B7 /* ClassStoryboard.storyboard in Resources */,
 				AC11BCAC26D5B54400637C32 /* PurchaseVCTableViewCell.xib in Resources */,
 				ACC597FA26C94C5800E2630B /* SearchStoryboard.storyboard in Resources */,
 				AC6AD52F26D03DE2005538FC /* CategoryCell.xib in Resources */,
@@ -1147,17 +1251,21 @@
 			files = (
 				AC646E4126D0E3A400CFD01A /* CellController.swift in Sources */,
 				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
+				ACBC319026D7A65500F7DE05 /* GoodsPageResponse.swift in Sources */,
 				ACCDFC0026D473420066DA44 /* UsersInfoResponse.swift in Sources */,
 				AC11BCAB26D5B54400637C32 /* PurchaseVCTableViewCell.swift in Sources */,
 				ACCE61A626D33B9A007DF748 /* CollectionViewCell.swift in Sources */,
 				AC6AD52326D0144C005538FC /* (보류)GoodsTableCellController.swift in Sources */,
 				ACCE61B026D3BD93007DF748 /* GoodsPageImgTableViewCell.swift in Sources */,
 				ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */,
+				ACBC319326D7B82700F7DE05 /* CartVC.swift in Sources */,
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
 				ACBC318B26D7428B00F7DE05 /* TodayGoodsResponse.swift in Sources */,
+				AC6DE6B226D85FD1001B91B7 /* CategoryVC.swift in Sources */,
 				AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,
 				ACCE619D26D33B19007DF748 /* SearchVC.swift in Sources */,
+				ACBC319726D7E34900F7DE05 /* PayVC.swift in Sources */,
 				ACC6AA5326CB46660048D22C /* EmailSignUpDataManager.swift in Sources */,
 				ACC5980226C94C5800E2630B /* BoxOfficeDataManager.swift in Sources */,
 				ACC6AA4F26CB45E80048D22C /* EmailSignUpResponse.swift in Sources */,
@@ -1174,8 +1282,10 @@
 				ACC597D026C94C2900E2630B /* UIViewController.swift in Sources */,
 				AC646E4526D0E5B900CFD01A /* GenericCellController.swift in Sources */,
 				ACC5974B26C9463F00E2630B /* SceneDelegate.swift in Sources */,
+				ACBC319D26D7EE8B00F7DE05 /* CartTableViewCell.swift in Sources */,
+				AC6DE6A826D84F87001B91B7 /* PayResponse.swift in Sources */,
 				ACC6AA4726CAD72A0048D22C /* EmailSignUpViewController.swift in Sources */,
-				ACCDFC0926D484180066DA44 /* PurchaseOptionVC.swift in Sources */,
+				ACCDFC0926D484180066DA44 /* OrderOptionVC.swift in Sources */,
 				AC6AD51C26D01280005538FC /* (보류)CategoryTableCellController.swift in Sources */,
 				AC646E4326D0E3DE00CFD01A /* ReusableCellHolder.swift in Sources */,
 				ACCE616526D124B5007DF748 /* GoodsPageCollectionViewCell.swift in Sources */,
@@ -1192,6 +1302,7 @@
 				ACC6AA5726CB46990048D22C /* EmailLoginResponse.swift in Sources */,
 				AC6AD51826D00AEE005538FC /* MyCellControllerFactory.swift in Sources */,
 				ACC6AA5126CB46020048D22C /* EmailSignUpRequest.swift in Sources */,
+				AC6DE6A626D84F76001B91B7 /* PayDataManager.swift in Sources */,
 				AC6AD53226D048BB005538FC /* DataModels.swift in Sources */,
 				AC6AD52826D03B4C005538FC /* HorizontalScrollView.swift in Sources */,
 				ACC597D226C94C2900E2630B /* UIFont.swift in Sources */,
@@ -1205,6 +1316,7 @@
 				ACCE61B826D42A04007DF748 /* GoodsPageDeliveryTableViewCell.swift in Sources */,
 				AC6AD51A26D01217005538FC /* (보류)BannerTableCellController.swift in Sources */,
 				ACC6AA3A26CA77AD0048D22C /* MypageViewController.swift in Sources */,
+				AC6DE6B726D87728001B91B7 /* PayTableViewCell2.swift in Sources */,
 				AC6AD51126CFF6F4005538FC /* CategoryScrollVeiw.swift in Sources */,
 				AC6AD4C826CE90DE005538FC /* ThirdVC.swift in Sources */,
 				ACC597F926C94C5800E2630B /* LoginViewController.swift in Sources */,
@@ -1219,22 +1331,26 @@
 				AC6AD4C426CE907C005538FC /* FirstVC.swift in Sources */,
 				ACC597CA26C94C2900E2630B /* Constant.swift in Sources */,
 				AC6AD4BE26CE7732005538FC /* MenuCell.swift in Sources */,
-				ACCDFC0726D481DE0066DA44 /* PurchaseVC.swift in Sources */,
+				ACCDFC0726D481DE0066DA44 /* OrderVC.swift in Sources */,
 				ACC597CC26C94C2900E2630B /* Device.swift in Sources */,
 				ACC5980026C94C5800E2630B /* BoxOfficeViewController.swift in Sources */,
 				ACC5980726C94C5800E2630B /* AlertViewController.swift in Sources */,
 				ACC597D126C94C2900E2630B /* UINavigationBar.swift in Sources */,
 				ACC6AA3526CA39F60048D22C /* UIView.swift in Sources */,
+				ACBC318E26D7A59D00F7DE05 /* GoodsPageDataManager.swift in Sources */,
 				ACC597D426C94C2900E2630B /* KobisKey.swift in Sources */,
 				ACC5980426C94C5800E2630B /* TransitionNextViewController.swift in Sources */,
 				ACC597FB26C94C5800E2630B /* SignInDataManager.swift in Sources */,
 				AC6AD50C26CFEC98005538FC /* FirstVCTableBannerCell.swift in Sources */,
+				AC6DE6AF26D85B8B001B91B7 /* ClassVC.swift in Sources */,
 				ACCE619626D3351A007DF748 /* NowGoodsCollectionViewCell.swift in Sources */,
 				ACCE61B426D4042B007DF748 /* GoodsPageMainInfoTableViewCell.swift in Sources */,
 				AC6AD51526CFF952005538FC /* FirstVCTableCategoryCell.swift in Sources */,
 				ACCE618C26D29A70007DF748 /* NewGoodsTableViewCell.swift in Sources */,
 				AC6AD4DE26CF9911005538FC /* BannerCell.swift in Sources */,
+				ACBC31A626D8046800F7DE05 /* PayTableViewCell.swift in Sources */,
 				ACCDFC1726D4E1880066DA44 /* ShoppingListViewModel.swift in Sources */,
+				AC6DE6AA26D84FAB001B91B7 /* PayRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

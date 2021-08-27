@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MKz-A3-ATa">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,6 +37,26 @@
             </objects>
             <point key="canvasLocation" x="766" y="114"/>
         </scene>
+        <!--ClassNavigationController-->
+        <scene sceneID="gjg-iT-Cez">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ClassStoryboard" referencedIdentifier="ClassNavigationController" id="hRF-Rn-SDZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="OfC-mb-S9m"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKv-JN-4IK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="-4"/>
+        </scene>
+        <!--CategoryNavigationController-->
+        <scene sceneID="75D-TY-gGh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CategoryStoryboard" referencedIdentifier="CategoryNavigationController" id="RCs-n2-xmq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UA2-JE-t9H"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8L-9g-TDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="164"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7uv-RX-De5">
             <objects>
@@ -47,11 +66,20 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aBP-N1-zR3">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="fFm-Mo-BWf" kind="relationship" relationship="viewControllers" id="mb7-pb-kFw"/>
+                        <segue destination="hRF-Rn-SDZ" kind="relationship" relationship="viewControllers" id="Ns2-Lb-OQU"/>
                         <segue destination="Vch-ct-uAZ" kind="relationship" relationship="viewControllers" id="udy-5Y-tYy"/>
+                        <segue destination="RCs-n2-xmq" kind="relationship" relationship="viewControllers" id="IkC-WX-OQd"/>
                         <segue destination="We4-py-bzw" kind="relationship" relationship="viewControllers" id="IXz-kh-4ve"/>
                     </connections>
                 </tabBarController>

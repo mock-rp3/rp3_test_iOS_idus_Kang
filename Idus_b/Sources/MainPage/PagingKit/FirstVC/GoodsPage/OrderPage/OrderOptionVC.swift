@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PurchaseOptionVC: BaseViewController {
+class OrderOptionVC: BaseViewController {
 
     //MARK: - Prperty
     @IBOutlet var table: UITableView!
@@ -50,7 +50,7 @@ class PurchaseOptionVC: BaseViewController {
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
-extension PurchaseOptionVC: UITableViewDelegate, UITableViewDataSource {
+extension OrderOptionVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.count
     }
@@ -113,13 +113,13 @@ extension PurchaseOptionVC: UITableViewDelegate, UITableViewDataSource {
 
 
 //MARK: - MainTableViewCellDidTapDelegate
-extension PurchaseOptionVC: MainTableViewCellDidTapDelegate {
+extension OrderOptionVC: MainTableViewCellDidTapDelegate {
     
     /// "MainTableview" 내부에 있는 "InsideTableViewCell"을 클릭했을 때, 호출되는 메소드
     func InsideCellDidTap(dateIndex: Int, itemIndex: Int) {
         viewModel.setCompletionState(dateIndex: dateIndex, itemIndex: itemIndex)
         table.reloadData()
-        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PurchaseVC")
+        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "OrderVC")
         nextVC.modalPresentationStyle = .overFullScreen
         self.present(nextVC, animated: false, completion: nil)
         

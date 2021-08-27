@@ -21,7 +21,7 @@ class BannerCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    public func configure(with model: imgModel) {
+    public func configureBannerCell(with model: imgModel) {
         self.imgView.image = UIImage(named: model.imageName)
         self.imgView.contentMode = .scaleToFill
     }

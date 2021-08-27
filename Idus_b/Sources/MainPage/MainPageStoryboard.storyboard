@@ -30,28 +30,34 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99n-Us-GfU">
                                         <rect key="frame" x="312" y="43" width="26" height="25.5"/>
                                         <state key="normal" title="Button" image="main_검색"/>
+                                        <connections>
+                                            <action selector="searchBtn:" destination="YLU-QT-GuU" eventType="touchUpInside" id="xDK-I9-Xud"/>
+                                        </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" image="main_cart" translatesAutoresizingMaskIntoConstraints="NO" id="Hy4-Kk-bKz">
-                                        <rect key="frame" x="310" y="2" width="28" height="32.5"/>
-                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgz-3q-vWu">
+                                        <rect key="frame" x="310" y="6.5" width="28" height="28"/>
+                                        <state key="normal" image="main_cart"/>
+                                        <connections>
+                                            <action selector="goToCart:" destination="YLU-QT-GuU" eventType="touchUpInside" id="dds-i5-k1X"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Hy4-Kk-bKz" firstAttribute="trailing" secondItem="lbq-Xu-s30" secondAttribute="trailing" constant="-5" id="AOd-vo-DVZ"/>
+                                    <constraint firstItem="lbq-Xu-s30" firstAttribute="top" secondItem="Kgz-3q-vWu" secondAttribute="bottom" constant="5" id="4Mh-kQ-SUc"/>
                                     <constraint firstItem="lbq-Xu-s30" firstAttribute="leading" secondItem="UcH-qs-VVT" secondAttribute="leadingMargin" constant="-8" id="AfK-xd-L3O"/>
                                     <constraint firstItem="VkA-Lw-Om6" firstAttribute="centerX" secondItem="lbq-Xu-s30" secondAttribute="centerX" constant="-8" id="Bwa-9B-7a1"/>
                                     <constraint firstItem="99n-Us-GfU" firstAttribute="height" secondItem="UcH-qs-VVT" secondAttribute="height" multiplier="0.035982" constant="22.783358320839582" id="Dcg-Lx-Epa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kgz-3q-vWu" secondAttribute="trailing" constant="5" id="Ki9-MM-l8v"/>
+                                    <constraint firstItem="Kgz-3q-vWu" firstAttribute="top" secondItem="UcH-qs-VVT" secondAttribute="top" constant="6.5" id="L1W-3a-zeT"/>
                                     <constraint firstItem="lbq-Xu-s30" firstAttribute="top" secondItem="VkA-Lw-Om6" secondAttribute="bottom" constant="7.5" id="LyL-yN-cM1"/>
-                                    <constraint firstItem="lbq-Xu-s30" firstAttribute="top" secondItem="Hy4-Kk-bKz" secondAttribute="bottom" constant="5" id="Shc-hU-Lb0"/>
                                     <constraint firstItem="lbq-Xu-s30" firstAttribute="height" secondItem="UcH-qs-VVT" secondAttribute="height" multiplier="0.0509745" constant="32.651424287856074" id="UlD-Yp-qp0"/>
-                                    <constraint firstItem="Hy4-Kk-bKz" firstAttribute="height" secondItem="UcH-qs-VVT" secondAttribute="height" multiplier="0.0449775" constant="28.604197901049474" id="a0j-sX-erk"/>
                                     <constraint firstItem="99n-Us-GfU" firstAttribute="width" secondItem="UcH-qs-VVT" secondAttribute="width" multiplier="0.0693333" constant="2.2186666666666675" id="csw-eA-YkX"/>
                                     <constraint firstItem="VkA-Lw-Om6" firstAttribute="width" secondItem="UcH-qs-VVT" secondAttribute="width" multiplier="0.194667" constant="6.2293333333333436" id="gZw-NC-oJY"/>
+                                    <constraint firstItem="VkA-Lw-Om6" firstAttribute="top" secondItem="UcH-qs-VVT" secondAttribute="top" id="j5h-MN-i2Z"/>
                                     <constraint firstItem="lbq-Xu-s30" firstAttribute="width" secondItem="UcH-qs-VVT" secondAttribute="width" multiplier="0.914667" constant="29.26933333333335" id="jXN-KG-wjH"/>
                                     <constraint firstAttribute="trailing" secondItem="99n-Us-GfU" secondAttribute="trailing" constant="5" id="oWP-wb-yNf"/>
                                     <constraint firstItem="lbq-Xu-s30" firstAttribute="centerY" secondItem="99n-Us-GfU" secondAttribute="centerY" constant="2" id="ptT-Xj-L9j"/>
-                                    <constraint firstItem="Hy4-Kk-bKz" firstAttribute="top" secondItem="UcH-qs-VVT" secondAttribute="top" constant="2" id="qWw-ng-RZm"/>
-                                    <constraint firstItem="Hy4-Kk-bKz" firstAttribute="width" secondItem="UcH-qs-VVT" secondAttribute="width" multiplier="0.0746667" constant="2.3893333333333295" id="rDg-M2-VHg"/>
                                     <constraint firstItem="VkA-Lw-Om6" firstAttribute="height" secondItem="UcH-qs-VVT" secondAttribute="height" multiplier="0.0442279" constant="28.160794602698651" id="uhS-i2-IOT"/>
                                 </constraints>
                             </view>

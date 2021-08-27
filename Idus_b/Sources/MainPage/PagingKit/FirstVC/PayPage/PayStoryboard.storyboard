@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PayVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PayVC" id="Y6W-OH-hqX" customClass="PayVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="kgd-cd-eKu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HU1-LE-c33">
+                                        <rect key="frame" x="20" y="11" width="101" height="22"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="   주문 결제" image="arrow.backward" catalog="system">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zha-Rw-7st"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="sie-PP-wFc"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="HU1-LE-c33" firstAttribute="top" secondItem="sie-PP-wFc" secondAttribute="top" constant="11" id="RxX-KJ-Rec"/>
+                                    <constraint firstItem="HU1-LE-c33" firstAttribute="centerY" secondItem="kgd-cd-eKu" secondAttribute="centerY" id="edf-kG-h6B"/>
+                                    <constraint firstItem="HU1-LE-c33" firstAttribute="leading" secondItem="sie-PP-wFc" secondAttribute="leading" constant="20" id="xhl-mb-h1g"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rF5-wA-tL8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="W81-yX-UN0">
+                                <rect key="frame" x="0.0" y="578" width="375" height="69"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28,000원 간편하게 카드 결제" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLf-ty-fxN">
+                                        <rect key="frame" x="95.5" y="10" width="204" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예상 적립금 : 250p" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO8-9P-x0Z">
+                                        <rect key="frame" x="138.5" y="41" width="118" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstItem="eLf-ty-fxN" firstAttribute="centerX" secondItem="YO8-9P-x0Z" secondAttribute="centerX" id="2bl-6A-IZ9"/>
+                                    <constraint firstItem="eLf-ty-fxN" firstAttribute="centerX" secondItem="W81-yX-UN0" secondAttribute="centerX" constant="10" id="K5Z-zh-Un3"/>
+                                    <constraint firstAttribute="bottom" secondItem="YO8-9P-x0Z" secondAttribute="bottom" constant="10" id="r8d-8y-86n"/>
+                                    <constraint firstItem="eLf-ty-fxN" firstAttribute="top" secondItem="W81-yX-UN0" secondAttribute="top" constant="10" id="y2o-rQ-a3G"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.050000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3i-4P-BRb">
+                                <rect key="frame" x="0.0" y="578" width="375" height="69"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.050000000000000003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ICD-4h-N8q">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="payBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hBS-jw-IGG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s3i-4P-BRb" firstAttribute="width" secondItem="W81-yX-UN0" secondAttribute="width" id="9QQ-Ld-Lqq"/>
+                            <constraint firstItem="kgd-cd-eKu" firstAttribute="trailing" secondItem="rF5-wA-tL8" secondAttribute="trailing" id="9b7-bO-7tj"/>
+                            <constraint firstItem="kgd-cd-eKu" firstAttribute="leading" secondItem="s3i-4P-BRb" secondAttribute="leading" id="H2D-gD-aGz"/>
+                            <constraint firstItem="s3i-4P-BRb" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="578" id="HJJ-wt-Pms"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rF5-wA-tL8" secondAttribute="bottom" id="Ipq-jr-Hlx"/>
+                            <constraint firstItem="rF5-wA-tL8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LFR-bv-SS7"/>
+                            <constraint firstItem="rF5-wA-tL8" firstAttribute="top" secondItem="kgd-cd-eKu" secondAttribute="bottom" id="Mnm-Sm-cDo"/>
+                            <constraint firstItem="kgd-cd-eKu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VJp-VK-Dbk"/>
+                            <constraint firstItem="s3i-4P-BRb" firstAttribute="top" secondItem="W81-yX-UN0" secondAttribute="top" id="XMs-P8-bS0"/>
+                            <constraint firstItem="s3i-4P-BRb" firstAttribute="height" secondItem="W81-yX-UN0" secondAttribute="height" id="ZwA-8s-eOo"/>
+                            <constraint firstAttribute="bottom" secondItem="W81-yX-UN0" secondAttribute="bottom" constant="20" symbolic="YES" id="fEh-RF-ODw"/>
+                            <constraint firstItem="rF5-wA-tL8" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="iZB-cb-gJk"/>
+                            <constraint firstItem="kgd-cd-eKu" firstAttribute="leading" secondItem="rF5-wA-tL8" secondAttribute="leading" id="qS8-ZB-OIx"/>
+                            <constraint firstItem="s3i-4P-BRb" firstAttribute="centerX" secondItem="W81-yX-UN0" secondAttribute="centerX" id="tzd-Ur-u2a"/>
+                            <constraint firstItem="kgd-cd-eKu" firstAttribute="trailing" secondItem="s3i-4P-BRb" secondAttribute="trailing" id="xPP-o6-DnQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="rF5-wA-tL8" id="io0-vo-TZp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.399999999999999" y="67.916041979010501"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

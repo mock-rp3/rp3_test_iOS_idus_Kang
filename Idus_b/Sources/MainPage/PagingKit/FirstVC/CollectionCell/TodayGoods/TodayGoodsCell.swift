@@ -34,10 +34,13 @@ class TodayGoodsCell: UICollectionViewCell {
     }
     
     // MARK: - Helper
-    public func configure4(with model: TodayGoodsResult) {
-//        self.todayGoodsBtn.setImage(UIImage(named: model.btnImageName), for: .normal)
+    public func configureTodayGoodsResult(with model: TodayGoodsResult) {
+
         // 작품 이미지
         let url = URL(string: model.image)
+//        let data = try? Data(contentsOf: url!)
+//        self.todayGoodsBtn.setImage(UIImage(data: data!), for: .normal)
+        // 비동기 처리
         DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async { self.todayGoodsBtn.setImage(UIImage(data: data!), for: .normal)
             }

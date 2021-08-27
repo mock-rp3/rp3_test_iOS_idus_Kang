@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayTableViewCell" rowHeight="487" id="KGk-i7-Jjw" customClass="PayTableViewCell" customModule="Idus_b" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="487"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="487"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="결제 캡처2" translatesAutoresizingMaskIntoConstraints="NO" id="H7N-cQ-Hx8">
+                        <rect key="frame" x="16" y="11" width="288" height="465"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="H7N-cQ-Hx8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ZtD-RF-9Za"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="H7N-cQ-Hx8" secondAttribute="trailing" id="eUE-ct-gc2"/>
+                    <constraint firstItem="H7N-cQ-Hx8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jCq-20-i7u"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="H7N-cQ-Hx8" secondAttribute="bottom" id="oJ2-5z-1RL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="137.68115942028987" y="62.611607142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="결제 캡처2" width="361" height="408"/>
+    </resources>
+</document>

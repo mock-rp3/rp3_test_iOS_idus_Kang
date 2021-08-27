@@ -12,13 +12,16 @@ import RxCocoa
 
 class GoodsPageViewController: BaseViewController {
     
+    // MARK: - 프로퍼티
+    lazy var goodsPageDataManager: GoodsPageDataManager = GoodsPageDataManager()
+    
     @IBOutlet var table: UITableView!
     @IBOutlet weak var heartBtn: UIButton!
         
     var smallGoodsImgs = [btnImgModel]()
     var k = 0
-    
     var heartChecked: Bool = false
+    var goods = [GoodsPageResponseResult]()
     
     // MARK: - 생명주기
     override func viewDidLoad() {
@@ -27,6 +30,8 @@ class GoodsPageViewController: BaseViewController {
         setupDataSource()
         setupDelegate()
         registerCell()
+        
+        goodsPageDataManager.getTodayGoodsPageData(index: 1, delegate: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,10 +63,10 @@ class GoodsPageViewController: BaseViewController {
         }
     }
     
-    // MARK: - 구매하기    
-    @IBAction func purchaseBtn(_ sender: UIButton) {
+    // MARK: - 주문하기
+    @IBAction func orderBtn(_ sender: UIButton) {
          // 화면 전환
-        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PurchaseOptionVC")
+        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "OrderOptionVC")
         nextVC.modalTransitionStyle = .coverVertical
         nextVC.modalPresentationStyle = .overFullScreen
         self.present(nextVC, animated: true, completion: nil)
@@ -100,6 +105,8 @@ extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageImgTableViewCell.identifier, for: indexPath) as? GoodsPageImgTableViewCell else { return UITableViewCell()}
             cell.configureGoodsPageImg(with: smallGoodsImgs)
+//            cell.configureGoodsPageImg(with: goods)
+//            cell.configurePageVCImg(with: goods, idx: indexPath.row)
             cell.delegate = self
             return cell
         } else if indexPath.row == 1 {
@@ -132,5 +139,15 @@ extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
 extension GoodsPageViewController: GoodsImgDelegate {
     func didSelectedGoodsBtn(_ index: Int) {
         print("\(index)번째 셀")
+    }
+}
+
+// MARK: - DataManager
+
+// RelatedGoodsResult
+extension GoodsPageViewController {
+    func successTodayGoodsPageData(result: GoodsPageResponseResult) {
+        self.goods.append(result)
+        print(goods[0].workImage[5])
     }
 }

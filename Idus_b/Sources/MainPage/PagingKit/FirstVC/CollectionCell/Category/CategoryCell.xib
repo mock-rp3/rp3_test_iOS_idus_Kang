@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,6 +23,9 @@
                             <constraint firstAttribute="width" constant="76" id="d0D-nS-bSV"/>
                         </constraints>
                         <state key="normal" title="Button" image="main_category1"/>
+                        <connections>
+                            <action selector="clickGoodsBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TKx-hD-aw1"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

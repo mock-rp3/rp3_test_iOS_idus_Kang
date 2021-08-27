@@ -16,7 +16,7 @@ class LoginedMypageViewController: BaseViewController {
     lazy var dataManager: LoginedMypageDataManager = LoginedMypageDataManager()
     
     // UserDefault
-    var loadedUserIdx = UserDefaults.standard.value(forKey: "userIdxKey") as! Int
+    var loadedUserIdx = UserDefaults.standard.value(forKey: "userIdxKey") as? Int
     var loadedJwt : String = UserDefaults.standard.value(forKey: "jwtKey") as! String
     
     @IBOutlet weak var profileImageView: UIImageView!
@@ -39,7 +39,7 @@ class LoginedMypageViewController: BaseViewController {
         makeCircleImg()
         
         // Request UserLoginInfo
-        dataManager.getUserInfo(userIdx: loadedUserIdx, jwt: loadedJwt, delegate: self)
+        dataManager.getUserInfo(userIdx: loadedUserIdx ?? 17, jwt: loadedJwt, delegate: self)
         
     }
     
@@ -87,6 +87,10 @@ class LoginedMypageViewController: BaseViewController {
                 else {
                     print("unlink() success.")
                     
+                    // 유저 디폴트로 userIdx와 jwt에 빈 값 저장
+//                    UserDefaults.standard.set(0, forKey: "userIdxKey")
+//                    UserDefaults.standard.set("", forKey: "jwtKey")
+                    
                     let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
                     self.changeRootViewController(loginViewController)
                 }
@@ -99,6 +103,10 @@ class LoginedMypageViewController: BaseViewController {
         if loadedJwt != "" {
             let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
             self.changeRootViewController(loginViewController)
+        } else {
+            // 유저 디폴트로 userIdx와 jwt 빈 값 저장
+//            UserDefaults.standard.set(0, forKey: "userIdxKey")
+//            UserDefaults.standard.set("", forKey: "jwtKey")
         }
     }
     
@@ -192,6 +200,11 @@ extension LoginedMypageViewController: NaverThirdPartyLoginConnectionDelegate {
     // 로그아웃
     @objc func oauth20ConnectionDidFinishDeleteToken() {
         print("log out")
+        
+        // 유저 디폴트로 userIdx와 jwt에 빈 값 저장
+//        UserDefaults.standard.set(0, forKey: "userIdxKey")
+//        UserDefaults.standard.set("", forKey: "jwtKey")
+        
         let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
         self.changeRootViewController(loginViewController)
     }
@@ -214,7 +227,7 @@ extension LoginedMypageViewController {
             DispatchQueue.main.async { self.profileImageView.image = UIImage(data: data!)
             }
         }
-        
+        print(result.grageName)
         myLevel.text = result.grageName
         nameLabel.text = result.name
         moneyNum.text = "\(result.reserves)"

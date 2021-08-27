@@ -31,23 +31,20 @@ class FirstVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        registDatamanager()
         setDataSource()
         registTableCell()
-        
-        table.delegate = self
-        table.dataSource = self
         
         //(보류) 셀 컨트롤러 셀 등록
 //        cellControllerFactory.registerCells(on: table)
         
-        relatedGoodsDataManager.getRelatedGoodsData(delegate: self)
-        todayGoodsDataManager.getTodayGoodsData(delegate: self)
-        
         // 인디케이터 (로딩)
         showIndicator()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.table.reloadData()
             self.dismissIndicator()
         }
+        
     }
     
     // MARK: - Helper
@@ -64,6 +61,8 @@ class FirstVC: BaseViewController {
     }
     
     private func registTableCell() {
+        table.delegate = self
+        table.dataSource = self
         table.register(FirstVCTableBannerCell.nib(), forCellReuseIdentifier: FirstVCTableBannerCell.identifier)
 
         table.register(FirstVCTableCategoryCell.nib(), forCellReuseIdentifier: FirstVCTableCategoryCell.identifier)
@@ -71,6 +70,11 @@ class FirstVC: BaseViewController {
         table.register(FirstVCTableGoodsCell.nib(), forCellReuseIdentifier: FirstVCTableGoodsCell.identifier)
         
         table.register(TodayGoodsTableViewCell.nib(), forCellReuseIdentifier: TodayGoodsTableViewCell.identifier)
+    }
+    
+    func registDatamanager() {
+        relatedGoodsDataManager.getRelatedGoodsData(delegate: self)
+        todayGoodsDataManager.getTodayGoodsData(delegate: self)
     }
     
 }
@@ -95,8 +99,8 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 2{
             let cell = table.dequeueReusableCell(withIdentifier: FirstVCTableGoodsCell.identifier, for: indexPath) as! FirstVCTableGoodsCell
-            cell.configure3(with: goods)
             cell.delegate = self
+            cell.configure3(with: goods)
             return cell
         } else {
             let cell = table.dequeueReusableCell(withIdentifier: TodayGoodsTableViewCell.identifier, for: indexPath) as! TodayGoodsTableViewCell
@@ -136,6 +140,7 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - 배너 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: BannerDelegate {
     func didSelectedBanner(_ index: Int) {
+        print("\(index)번째 배너입니다.")
         self.presentAlert(title: "\(index)번째 배너입니다.")
     }
 }
@@ -143,6 +148,7 @@ extension FirstVC: BannerDelegate {
 // MARK: - 카테고리 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: CategoryDelegate {
     func didSelectedCategory(_ index: Int) {
+        print("\(index)번째 배너입니다.")
         self.presentAlert(title: "\(index)번째 카테고리입니다.")
     }
 }
@@ -167,6 +173,7 @@ extension FirstVC: GoodsViewDelegate {
 // MARK: - 오늘의 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: TodayGoodsViewDelegate {
     func didSelectedGoods(_ index: Int) {
+        print("\(index)번째 배너입니다.")
         self.presentAlert(title: "\(index)번째 작품입니다.")
     }
 }

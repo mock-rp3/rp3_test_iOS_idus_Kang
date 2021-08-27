@@ -36,11 +36,22 @@ class CategoryCell: UICollectionViewCell {
 //        CategoryBtn.setImage(image, for: .normal)
 //    }
     
+    var click : (() -> ()) = {}
+    
+    
+    // MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
-    public func configure2(with model: btnImgModel) {
+    // MARK: - Action
+    @IBAction func clickGoodsBtn(_ sender: UIButton) {
+       //Call your closure here
+        click()
+    }
+    
+    public func configureCategoryCell(with model: btnImgModel) {
         self.CategoryBtn.setImage(UIImage(named: model.btnImageName), for: .normal)
     }
     

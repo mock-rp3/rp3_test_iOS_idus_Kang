@@ -95,7 +95,12 @@ extension FirstVCTableCategoryCell: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as! CategoryCell
-        cell.configure2(with: models[indexPath.row])
+        cell.configureCategoryCell(with: models[indexPath.row])
+        cell.click = { [unowned self] in
+            if let delegate = delegate {
+                delegate.didSelectedCategory(indexPath.item)
+            }
+        }
         return cell
     }
     
@@ -103,10 +108,5 @@ extension FirstVCTableCategoryCell: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 84, height: categoryCollectionView.frame.height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let delegate = delegate {
-            delegate.didSelectedCategory(indexPath.item)
-        }
-    }
+
 }

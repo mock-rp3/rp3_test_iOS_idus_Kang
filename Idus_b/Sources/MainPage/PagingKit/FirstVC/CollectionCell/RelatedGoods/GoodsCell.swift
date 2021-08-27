@@ -41,8 +41,12 @@ class GoodsCell: UICollectionViewCell {
         
         // 작품 이미지
         let url = URL(string: model.image)
+//        let data = try? Data(contentsOf: url!)
+//        self.goodsBtn.setImage(UIImage(data: data!), for: .normal)
+        // 비동기 처리
         DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async { self.goodsBtn.setImage(UIImage(data: data!), for: .normal)
+            DispatchQueue.main.async {
+                self.goodsBtn.setImage(UIImage(data: data!), for: .normal)
             }
         }
         

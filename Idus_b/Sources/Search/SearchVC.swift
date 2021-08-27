@@ -9,34 +9,37 @@ import UIKit
 
 class SearchVC: BaseViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    var loadedJwt : String = UserDefaults.standard.value(forKey: "jwtKey") as? String ?? ""
     
+    @IBOutlet weak var searchTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tableViewNib = UINib(nibName: "TableViewCell", bundle: nil)
-        tableView.register(tableViewNib, forCellReuseIdentifier: "TableViewCell")
-        
-        tableView.dataSource = self
     }
     
-}
-extension SearchVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier) as? TableViewCell else {
-            return UITableViewCell()
+    // MARK: - Actions
+    @IBAction func bactToMain(_ sender: UIButton) {
+        
+        if loadedJwt != "" {
+            let mainPage = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+            changeRootViewController(mainPage)
+        } else {
+            let mainPage = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "MainTabBarController")
+            changeRootViewController(mainPage)
         }
-        cell.setCell()
-        cell.delegate = self
-        return cell
+        
+    }
+    
+    @IBAction func searchBtn(_ sender: UIButton) {
+        self.presentAlert(title: "검색에 성공하셨습니다!!")
     }
 }
-extension SearchVC: SearchCVCellDelegate {
-    func selectedCVCell(_ index: Int) {
-        print("\(index)번째 셀")
+
+// 텍스트필드 키보드 관리
+extension SearchVC: UITextFieldDelegate {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.searchTF.becomeFirstResponder()
     }
+
 }

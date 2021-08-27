@@ -60,7 +60,7 @@ extension TodayGoodsTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     //컬렉션뷰 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = todayGoodsCollectionView.dequeueReusableCell(withReuseIdentifier: TodayGoodsCell.identifier, for: indexPath) as! TodayGoodsCell
-        cell.configure4(with: todayGoodsResult[indexPath.row])
+        cell.configureTodayGoodsResult(with: todayGoodsResult[indexPath.row])
         cell.click = { [unowned self] in
             if let delegate = delegate {
                 delegate.didSelectedGoodsBtn(indexPath.item)

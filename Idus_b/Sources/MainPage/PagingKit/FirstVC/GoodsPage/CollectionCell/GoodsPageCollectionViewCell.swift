@@ -31,7 +31,23 @@ class GoodsPageCollectionViewCell: UICollectionViewCell {
         }
     }    
     
-    public func configureGoodsPageImg(with model: btnImgModel) {
+    public func configuresmallGoodsPageImg(with model: btnImgModel) {
         self.smallImgBtn.setImage(UIImage(named: model.btnImageName), for: .normal)
     }
+    
+    
+    
+    public func goodsPageResponseResult(with model: [GoodsPageResponseResult], idx: Int, index: Int) {
+    
+        let url = URL(string: model[index].workImage[idx])
+        let data = try? Data(contentsOf: url!)
+        self.smallImgBtn.setImage(UIImage(data: data!), for: .normal)
+        DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                self.smallImgBtn.setImage(UIImage(data: data!), for: .normal)
+            }
+        }
+        
+    }
+    
 }

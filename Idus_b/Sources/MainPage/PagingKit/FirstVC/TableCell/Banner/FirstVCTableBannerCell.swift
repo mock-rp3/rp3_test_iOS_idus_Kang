@@ -87,7 +87,7 @@ extension FirstVCTableBannerCell: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = bannerCollectionView.dequeueReusableCell(withReuseIdentifier: BannerCell.identifier, for: indexPath) as! BannerCell
 //        cell.imgView.image = images[indexPath.row]
-        cell.configure(with: models[indexPath.row])
+        cell.configureBannerCell(with: models[indexPath.row])
         return cell
     }
     

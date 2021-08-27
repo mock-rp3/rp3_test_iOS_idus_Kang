@@ -35,6 +35,7 @@ class FirstVCTableGoodsCell: UITableViewCell {
         goodsCollectionView.dataSource = self
  
         goodsCollectionView.register(GoodsCell.nib(), forCellWithReuseIdentifier: GoodsCell.identifier)
+        goodsCollectionView.reloadData()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
