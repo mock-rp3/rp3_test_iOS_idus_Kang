@@ -30,7 +30,7 @@ class LoginedMypageDetailViewController: BaseViewController {
     
     // MARK: - Actions
     @IBAction func backBtn(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

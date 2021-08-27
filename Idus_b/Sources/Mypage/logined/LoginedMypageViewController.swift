@@ -70,10 +70,8 @@ class LoginedMypageViewController: BaseViewController {
     }
     
     @IBAction func settingBtn(_ sender: UIButton) {
-        let nextVC = UIStoryboard(name: "LoginedMypageStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMypageDetailViewController")
-        nextVC.modalTransitionStyle = .coverVertical
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        let pushedVC = UIStoryboard(name: "LoginedMypageStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMypageDetailViewController")
+        self.navigationController?.pushViewController(pushedVC, animated: true)
     }
     
     // 로그아웃 버튼

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// 구매 옵션 더미데이터
 class ShoppingListViewModel {
     
     // Storage

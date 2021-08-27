@@ -93,7 +93,6 @@
 		ACC5980026C94C5800E2630B /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597E826C94C5700E2630B /* BoxOfficeViewController.swift */; };
 		ACC5980126C94C5800E2630B /* BoxOfficeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597EA26C94C5700E2630B /* BoxOfficeResponse.swift */; };
 		ACC5980226C94C5800E2630B /* BoxOfficeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597EB26C94C5700E2630B /* BoxOfficeDataManager.swift */; };
-		ACC5980426C94C5800E2630B /* TransitionNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F126C94C5800E2630B /* TransitionNextViewController.swift */; };
 		ACC5980526C94C5800E2630B /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F226C94C5800E2630B /* TransitionViewController.swift */; };
 		ACC5980626C94C5800E2630B /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F326C94C5800E2630B /* MainPageViewController.swift */; };
 		ACC5980726C94C5800E2630B /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC597F526C94C5800E2630B /* AlertViewController.swift */; };
@@ -250,7 +249,6 @@
 		ACC597E826C94C5700E2630B /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
 		ACC597EA26C94C5700E2630B /* BoxOfficeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeResponse.swift; sourceTree = "<group>"; };
 		ACC597EB26C94C5700E2630B /* BoxOfficeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeDataManager.swift; sourceTree = "<group>"; };
-		ACC597F126C94C5800E2630B /* TransitionNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionNextViewController.swift; sourceTree = "<group>"; };
 		ACC597F226C94C5800E2630B /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		ACC597F326C94C5800E2630B /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		ACC597F526C94C5800E2630B /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -380,15 +378,15 @@
 		AC6AD4BC26CE770F005538FC /* PagingKit */ = {
 			isa = PBXGroup;
 			children = (
-				AC6AD4CE26CEB48B005538FC /* Menu */,
-				AC6AD4CB26CEB465005538FC /* FirstVC */,
-				AC6AD4CC26CEB470005538FC /* SecondVC */,
-				AC6AD4CD26CEB479005538FC /* ThirdVC */,
+				AC6AD4CE26CEB48B005538FC /* MenuTabDesign */,
+				AC6AD4CB26CEB465005538FC /* FirstVC(투데이 탭) */,
+				AC6AD4CC26CEB470005538FC /* SecondVC(실시간 탭) */,
+				AC6AD4CD26CEB479005538FC /* ThirdVC(NEW 탭) */,
 			);
 			path = PagingKit;
 			sourceTree = "<group>";
 		};
-		AC6AD4CB26CEB465005538FC /* FirstVC */ = {
+		AC6AD4CB26CEB465005538FC /* FirstVC(투데이 탭) */ = {
 			isa = PBXGroup;
 			children = (
 				ACCE616E26D12C4F007DF748 /* FirstVCStoryboard.storyboard */,
@@ -401,10 +399,11 @@
 				ACCDFC0126D477F40066DA44 /* PayPage */,
 				AC6AD50E26CFF636005538FC /* (보류)CategoryScrollVeiw */,
 			);
-			path = FirstVC;
+			name = "FirstVC(투데이 탭)";
+			path = "FirstVC(투데이)";
 			sourceTree = "<group>";
 		};
-		AC6AD4CC26CEB470005538FC /* SecondVC */ = {
+		AC6AD4CC26CEB470005538FC /* SecondVC(실시간 탭) */ = {
 			isa = PBXGroup;
 			children = (
 				ACCE617826D20D61007DF748 /* SecondVCStoryboard.storyboard */,
@@ -412,10 +411,11 @@
 				ACCE619226D334E8007DF748 /* TableCell */,
 				ACCE619326D334EE007DF748 /* CollectionCell */,
 			);
-			path = SecondVC;
+			name = "SecondVC(실시간 탭)";
+			path = "SecondVC(실시간)";
 			sourceTree = "<group>";
 		};
-		AC6AD4CD26CEB479005538FC /* ThirdVC */ = {
+		AC6AD4CD26CEB479005538FC /* ThirdVC(NEW 탭) */ = {
 			isa = PBXGroup;
 			children = (
 				ACCE617A26D20D72007DF748 /* ThirdVCStoryboard.storyboard */,
@@ -423,17 +423,19 @@
 				ACCE618826D29A2B007DF748 /* TableCell */,
 				ACCE618926D29A32007DF748 /* CollectionCell */,
 			);
-			path = ThirdVC;
+			name = "ThirdVC(NEW 탭)";
+			path = "ThirdVC(NEW 탭)";
 			sourceTree = "<group>";
 		};
-		AC6AD4CE26CEB48B005538FC /* Menu */ = {
+		AC6AD4CE26CEB48B005538FC /* MenuTabDesign */ = {
 			isa = PBXGroup;
 			children = (
 				AC6AD4BD26CE7732005538FC /* MenuCell.swift */,
 				AC6AD4BF26CE7C2D005538FC /* MenuCell.xib */,
 				AC6AD4C126CE88F5005538FC /* FocusView.xib */,
 			);
-			path = Menu;
+			name = MenuTabDesign;
+			path = "Menu(탭 커스텀)";
 			sourceTree = "<group>";
 		};
 		AC6AD4CF26CEB507005538FC /* TableCell */ = {
@@ -630,6 +632,8 @@
 				ACC597C326C94C2900E2630B /* Font */,
 				ACC597C726C94C2900E2630B /* Base */,
 				ACC597C926C94C2900E2630B /* Certidicate */,
+				ACC597EF26C94C5800E2630B /* Transition */,
+				ACC597F426C94C5800E2630B /* Alert */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -782,8 +786,6 @@
 				ACC597F626C94C5800E2630B /* MainPageStoryboard.storyboard */,
 				ACC597F326C94C5800E2630B /* MainPageViewController.swift */,
 				AC6AD4BC26CE770F005538FC /* PagingKit */,
-				ACC597EF26C94C5800E2630B /* Transition */,
-				ACC597F426C94C5800E2630B /* Alert */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -791,18 +793,9 @@
 		ACC597EF26C94C5800E2630B /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				ACC597F026C94C5800E2630B /* Next */,
 				ACC597F226C94C5800E2630B /* TransitionViewController.swift */,
 			);
 			path = Transition;
-			sourceTree = "<group>";
-		};
-		ACC597F026C94C5800E2630B /* Next */ = {
-			isa = PBXGroup;
-			children = (
-				ACC597F126C94C5800E2630B /* TransitionNextViewController.swift */,
-			);
-			path = Next;
 			sourceTree = "<group>";
 		};
 		ACC597F426C94C5800E2630B /* Alert */ = {
@@ -1339,7 +1332,6 @@
 				ACC6AA3526CA39F60048D22C /* UIView.swift in Sources */,
 				ACBC318E26D7A59D00F7DE05 /* GoodsPageDataManager.swift in Sources */,
 				ACC597D426C94C2900E2630B /* KobisKey.swift in Sources */,
-				ACC5980426C94C5800E2630B /* TransitionNextViewController.swift in Sources */,
 				ACC597FB26C94C5800E2630B /* SignInDataManager.swift in Sources */,
 				AC6AD50C26CFEC98005538FC /* FirstVCTableBannerCell.swift in Sources */,
 				AC6DE6AF26D85B8B001B91B7 /* ClassVC.swift in Sources */,

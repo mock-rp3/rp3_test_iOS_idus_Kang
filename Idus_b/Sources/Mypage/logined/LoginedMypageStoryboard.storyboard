@@ -77,14 +77,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9t-wv-GvR">
                                 <rect key="frame" x="0.0" y="48.5" width="375" height="301"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iaw-aw-gJs">
-                                        <rect key="frame" x="20" y="24" width="95" height="95"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Iaw-aw-gJs">
+                                        <rect key="frame" x="20" y="25.5" width="95" height="92"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwX-Py-QOL">
                                         <rect key="frame" x="327" y="52.5" width="28" height="36"/>
                                         <state key="normal" image="mypage_설정"/>
                                         <connections>
-                                            <action selector="settingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z3G-0F-uPC"/>
+                                            <action selector="settingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wvO-Jy-uUQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHx-1p-K7e">
@@ -675,6 +676,7 @@
         <image name="mypage_message" width="41" height="38.5"/>
         <image name="mypage_notice" width="35" height="38.5"/>
         <image name="mypage_설정" width="28" height="24"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="tapBar_내정보" width="36" height="48.5"/>
         <image name="tapbar_내정보_선택" width="41.5" height="47.5"/>
         <image name="나의 구매후기" width="38" height="34"/>

@@ -28,13 +28,5 @@ class TransitionNextViewController: BaseViewController {
         self.view.backgroundColor = .green
     }
     
-    // MARK: 네비게이션 컨트롤러를 이용한 뒤로가기
-    @IBAction func navigationPopButtonTouchUpInside(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    // MARK: modal 내리기
-    @IBAction func dismissModalButtonTouchUpInside(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
 }

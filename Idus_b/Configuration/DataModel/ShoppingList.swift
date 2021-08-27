@@ -7,6 +7,7 @@
 
 import Foundation
 
+// 구매 옵션 더미데이터
 struct ShoppingList {
     
     var shoppingOptionName: String    // "1. 쇼핑백"
