@@ -48,6 +48,12 @@
 		AC6DE6B426D85FDD001B91B7 /* CategoryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE6B326D85FDD001B91B7 /* CategoryStoryboard.storyboard */; };
 		AC6DE6B726D87728001B91B7 /* PayTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6DE6B526D87727001B91B7 /* PayTableViewCell2.swift */; };
 		AC6DE6B826D87728001B91B7 /* PayTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6DE6B626D87727001B91B7 /* PayTableViewCell2.xib */; };
+		AC7DA73126DA8F1F008D1614 /* KakaoSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73026DA8F1F008D1614 /* KakaoSignUpDataManager.swift */; };
+		AC7DA73326DA8F40008D1614 /* KakaoSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73226DA8F40008D1614 /* KakaoSignUpResponse.swift */; };
+		AC7DA73526DA8F5D008D1614 /* KaKaoSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73426DA8F5D008D1614 /* KaKaoSignUpRequest.swift */; };
+		AC7DA73A26DA99AA008D1614 /* NaverSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73926DA99AA008D1614 /* NaverSignUpResponse.swift */; };
+		AC7DA73C26DA99CA008D1614 /* NaverSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73B26DA99CA008D1614 /* NaverSignUpRequest.swift */; };
+		AC7DA73E26DA9A76008D1614 /* NaverSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73D26DA9A76008D1614 /* NaverSignUpDataManager.swift */; };
 		ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */; };
 		ACBC318426D6D79000F7DE05 /* RelatedGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */; };
 		ACBC318626D6D87800F7DE05 /* RelatedGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */; };
@@ -202,6 +208,12 @@
 		AC6DE6B326D85FDD001B91B7 /* CategoryStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryStoryboard.storyboard; sourceTree = "<group>"; };
 		AC6DE6B526D87727001B91B7 /* PayTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTableViewCell2.swift; sourceTree = "<group>"; };
 		AC6DE6B626D87727001B91B7 /* PayTableViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayTableViewCell2.xib; sourceTree = "<group>"; };
+		AC7DA73026DA8F1F008D1614 /* KakaoSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoSignUpDataManager.swift; sourceTree = "<group>"; };
+		AC7DA73226DA8F40008D1614 /* KakaoSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoSignUpResponse.swift; sourceTree = "<group>"; };
+		AC7DA73426DA8F5D008D1614 /* KaKaoSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoSignUpRequest.swift; sourceTree = "<group>"; };
+		AC7DA73926DA99AA008D1614 /* NaverSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSignUpResponse.swift; sourceTree = "<group>"; };
+		AC7DA73B26DA99CA008D1614 /* NaverSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSignUpRequest.swift; sourceTree = "<group>"; };
+		AC7DA73D26DA9A76008D1614 /* NaverSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSignUpDataManager.swift; sourceTree = "<group>"; };
 		ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginInfo.swift; sourceTree = "<group>"; };
 		ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsDataManager.swift; sourceTree = "<group>"; };
 		ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsResponse.swift; sourceTree = "<group>"; };
@@ -544,6 +556,42 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		AC7DA72D26DA8EB0008D1614 /* KakaoSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AC7DA73026DA8F1F008D1614 /* KakaoSignUpDataManager.swift */,
+				AC7DA72F26DA8EFB008D1614 /* Entity */,
+			);
+			path = KakaoSignUp;
+			sourceTree = "<group>";
+		};
+		AC7DA72E26DA8EBC008D1614 /* NaverSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AC7DA73D26DA9A76008D1614 /* NaverSignUpDataManager.swift */,
+				AC7DA73826DA9990008D1614 /* Entity */,
+			);
+			path = NaverSignUp;
+			sourceTree = "<group>";
+		};
+		AC7DA72F26DA8EFB008D1614 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AC7DA73226DA8F40008D1614 /* KakaoSignUpResponse.swift */,
+				AC7DA73426DA8F5D008D1614 /* KaKaoSignUpRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AC7DA73826DA9990008D1614 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AC7DA73926DA99AA008D1614 /* NaverSignUpResponse.swift */,
+				AC7DA73B26DA99CA008D1614 /* NaverSignUpRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		ACBC318226D6D77300F7DE05 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,6 +764,8 @@
 			children = (
 				ACC597DB26C94C5700E2630B /* LoginStoryboard.storyboard */,
 				ACC597DC26C94C5700E2630B /* LoginViewController.swift */,
+				AC7DA72D26DA8EB0008D1614 /* KakaoSignUp */,
+				AC7DA72E26DA8EBC008D1614 /* NaverSignUp */,
 				ACC6AA4526CAD6F60048D22C /* Next */,
 			);
 			path = LoginPage;
@@ -1243,6 +1293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC646E4126D0E3A400CFD01A /* CellController.swift in Sources */,
+				AC7DA73526DA8F5D008D1614 /* KaKaoSignUpRequest.swift in Sources */,
 				ACC6AA4926CAD7450048D22C /* EmailLoginViewController.swift in Sources */,
 				ACBC319026D7A65500F7DE05 /* GoodsPageResponse.swift in Sources */,
 				ACCDFC0026D473420066DA44 /* UsersInfoResponse.swift in Sources */,
@@ -1255,6 +1306,7 @@
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
 				ACBC318B26D7428B00F7DE05 /* TodayGoodsResponse.swift in Sources */,
 				AC6DE6B226D85FD1001B91B7 /* CategoryVC.swift in Sources */,
+				AC7DA73A26DA99AA008D1614 /* NaverSignUpResponse.swift in Sources */,
 				AC6AD52E26D03DE2005538FC /* CategoryCell.swift in Sources */,
 				ACC5974926C9463F00E2630B /* AppDelegate.swift in Sources */,
 				ACCE619D26D33B19007DF748 /* SearchVC.swift in Sources */,
@@ -1262,10 +1314,12 @@
 				ACC6AA5326CB46660048D22C /* EmailSignUpDataManager.swift in Sources */,
 				ACC5980226C94C5800E2630B /* BoxOfficeDataManager.swift in Sources */,
 				ACC6AA4F26CB45E80048D22C /* EmailSignUpResponse.swift in Sources */,
+				AC7DA73E26DA9A76008D1614 /* NaverSignUpDataManager.swift in Sources */,
 				ACCDFBFC26D472E80066DA44 /* LoginedMypageDataManager.swift in Sources */,
 				AC6AD52026D013F4005538FC /* FirstVCTableGoodsCell.swift in Sources */,
 				AC6AD4C626CE90BC005538FC /* SecondVC.swift in Sources */,
 				ACBC318926D7427A00F7DE05 /* TodayGoodsDataManager.swift in Sources */,
+				AC7DA73C26DA99CA008D1614 /* NaverSignUpRequest.swift in Sources */,
 				ACC597CD26C94C2900E2630B /* Date.swift in Sources */,
 				ACCDFC2526D56C0A0066DA44 /* InsideTableViewCell.swift in Sources */,
 				AC6AD52A26D03B8F005538FC /* SomeDataModel.swift in Sources */,
@@ -1294,6 +1348,7 @@
 				ACBC318626D6D87800F7DE05 /* RelatedGoodsResponse.swift in Sources */,
 				ACC6AA5726CB46990048D22C /* EmailLoginResponse.swift in Sources */,
 				AC6AD51826D00AEE005538FC /* MyCellControllerFactory.swift in Sources */,
+				AC7DA73326DA8F40008D1614 /* KakaoSignUpResponse.swift in Sources */,
 				ACC6AA5126CB46020048D22C /* EmailSignUpRequest.swift in Sources */,
 				AC6DE6A626D84F76001B91B7 /* PayDataManager.swift in Sources */,
 				AC6AD53226D048BB005538FC /* DataModels.swift in Sources */,
@@ -1341,6 +1396,7 @@
 				ACCE618C26D29A70007DF748 /* NewGoodsTableViewCell.swift in Sources */,
 				AC6AD4DE26CF9911005538FC /* BannerCell.swift in Sources */,
 				ACBC31A626D8046800F7DE05 /* PayTableViewCell.swift in Sources */,
+				AC7DA73126DA8F1F008D1614 /* KakaoSignUpDataManager.swift in Sources */,
 				ACCDFC1726D4E1880066DA44 /* ShoppingListViewModel.swift in Sources */,
 				AC6DE6AA26D84FAB001B91B7 /* PayRequest.swift in Sources */,
 			);

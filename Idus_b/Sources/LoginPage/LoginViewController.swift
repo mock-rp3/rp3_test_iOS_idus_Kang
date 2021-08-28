@@ -13,7 +13,13 @@ import Alamofire
 
 class LoginViewController: BaseViewController {
     
+    // MARK: - Property
+    
+    lazy var kakaoDataManager: KakaoSignUpDataManager = KakaoSignUpDataManager()
+    lazy var naverDataManager: NaverSignUpDataManager = NaverSignUpDataManager()
+    
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    
     let timeSelector: Selector = #selector(LoginViewController.updateTime)
     var index = 0
     var i = 0
@@ -26,9 +32,17 @@ class LoginViewController: BaseViewController {
         return true
     }
     
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        setBackImg()
+    }
+    
+    // MARK: - 배경 애니메이션 이미지 세팅
+    
+    func setBackImg(){
         // 배경 이미지 배열
         while let image = UIImage(named: "login&SIgnupPage_background\(i)") {
             images.append(image)
@@ -40,6 +54,7 @@ class LoginViewController: BaseViewController {
     }
     
     // MARK: - 배경 애니메이션 초별 업데이트
+    
     @objc func updateTime(){
         self.index += 1
         if index >= images.count {
@@ -57,22 +72,7 @@ class LoginViewController: BaseViewController {
     // MARK: - 카카오 로그인
     
     @IBAction func kakaoLoginBtn(_ sender: UIButton) {
-        
-        // 카카오톡 설치 여부 확인
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-//            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                }
-//                else {
-//                    print("loginWithKakaoTalk() success.")
-//
-//                    //do something
-//                    _ = oauthToken
-//                }
-//            }
-//        }
-        
+                
         // 시뮬레이터 웹 브라우저를 통해 로그인
         // 기존 로그인 여부와 상관없이 로그인 요청(웹 브라우저에서 이미 카카오계정으로 로그인한 상태에도 로그인 화면을 출력)
         // 카카오톡 로그인 api 호출 결과를 클로저로 전달.
@@ -84,23 +84,35 @@ class LoginViewController: BaseViewController {
             else {
                 print("loginWithKakaoAccount() success.")
             
-            //do something
-                _ = oauthToken
-                
-            // 엑세스토큰
-//            let accessToken = oauthToken?.accessToken
-                
-            //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
-//            self.
-            
-            // 로그인 메인화면으로 이동
-            let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
-                self.changeRootViewController(loginedMainTabBarController)
+                // KakaoSignUp Check
+                UserApi.shared.me() {(user, error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        print("KakaoSignUp success.")
+                        
+                        // 엑세스토큰
+                        let accessToken = oauthToken?.accessToken
+                        
+                        // 유저 디폴트로 엑세스토큰 값 저장
+                        UserDefaults.standard.set(accessToken, forKey: "accessToken")
+                        
+                        let email = user!.kakaoAccount!.email
+                        let nickname = user?.kakaoAccount?.profile?.nickname
+                        
+                        // KakaoSignUp
+                        let input = KakaoSignUpRequest(email: email!, name: nickname ?? "nickName", password: "password1!", tel: "010-0000-0000", pushAgreement: "N")
+                        self.kakaoDataManager.postKakaoSignUp(input, delegate: self)
+                    }
+                }
             }
         }
+        
     }
     
     // MARK: - 다른 방법으로 가입하기:
+    
     // 커스텀 UIAlertAction들이 있는 Action Sheet
     @IBAction func actionSheetWithCustomActionsButtonTouchUpInside(_ sender: UIButton) {
         let actionR = UIAlertAction(title: "이메일", style: .default) { action in
@@ -121,7 +133,7 @@ class LoginViewController: BaseViewController {
         }
         
         let cancelAction = UIAlertAction(title: "취소", style: .cancel) { action in
-            
+            //
         }
         
         self.presentAlert(
@@ -136,6 +148,35 @@ class LoginViewController: BaseViewController {
     @IBAction func naverLoginBtn(_ sender: UIButton) {
         loginInstance?.delegate = self
         loginInstance?.requestThirdPartyLogin()
+        
+        // 네이버 RESTful API, id가져오기
+        guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
+        
+        if !isValidAccessToken {
+          return
+        }
+        
+        guard let tokenType = loginInstance?.tokenType else { return }
+        guard let accessToken = loginInstance?.accessToken else { return }
+          
+        let urlStr = "https://openapi.naver.com/v1/nid/me"
+        let url = URL(string: urlStr)!
+        
+        let authorization = "\(tokenType) \(accessToken)"
+        
+        let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
+        
+        req.responseJSON { response in
+          guard let result = response.value as? [String: Any] else { return }
+          guard let object = result["response"] as? [String: Any] else { return }
+          guard let naverName = object["name"] as? String else { return }
+          guard let naverEmail = object["email"] as? String else { return }
+            
+            // NaverSignUp Check
+            let naverInput = NaverSignUpRequest(email: naverEmail, name: naverName, password: "password1!", tel: "010-0000-0000", pushAgreement: "N")
+            self.naverDataManager.postNaverSignUp(naverInput, delegate: self)
+        }
+        
     }
     
     // MARK: - 회원가입 없이 둘러보기
@@ -148,7 +189,34 @@ class LoginViewController: BaseViewController {
     }
 }
 
-// MARK: - 네이버 로그인 프로토콜 채택
+// MARK: - KakaoSignUp Delegate
+extension LoginViewController {
+    func didSuccessKakaoSignUp(message: String) {
+        print(message)
+    
+        // 로그인 메인화면으로 이동
+        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+            self.changeRootViewController(loginedMainTabBarController)
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+    
+}
+
+// MARK: - NaverSignUp Delegate
+extension LoginViewController {
+    func didSuccessNaverSignUp(message: String) {
+        print(message)
+    }
+    
+    func failedNaverSignUpToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+}
+
+// MARK: - 네이버 로그인 델리게이트
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     
     // 로그인에 성공한 경우 호출
@@ -160,14 +228,17 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
         print("Success login")
     }
     
-    // 접근 토큰 갱신
+    // 엑세스 토큰 갱신 - 유저 디폴트로 저장
     @objc func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-//        loginInstance?.accessToken
+        let accessToken = loginInstance?.accessToken
+        UserDefaults.standard.set(accessToken, forKey: "accessToken")
     }
     
-    // 로그아웃
+    // 로그아웃 - 토큰 삭제
     @objc func oauth20ConnectionDidFinishDeleteToken() {
-        print("log out")
+        loginInstance?.requestDeleteToken()
+        print("Naver User log out")
+        UserDefaults.standard.removeObject(forKey: "accessToken")
     }
     
     // 모든 error

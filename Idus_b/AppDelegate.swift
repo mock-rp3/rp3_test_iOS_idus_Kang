@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
         
         // 네이버앱으로 인증하는 방식 활성화
-        instance?.isNaverAppOauthEnable = true
+        instance?.isNaverAppOauthEnable = false
         
         // 사파리(웹 브라우저)로 인증하는 방식 활성화
         instance?.isInAppOauthEnable = true

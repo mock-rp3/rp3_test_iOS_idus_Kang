@@ -10,6 +10,7 @@ import SnapKit
 
 class EmailSignUpViewController: BaseViewController {
   
+    // MARK: - Property
     lazy var dataManager: EmailSignUpDataManager = EmailSignUpDataManager()
 
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -41,18 +42,27 @@ class EmailSignUpViewController: BaseViewController {
         return true
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Dismiss Keyboard When Tapped Arround
         self.dismissKeyboardWhenTappedAround()
 
-        // 약관 태그
+        tags()
+        setBackImg()
+    }
+    
+    // MARK: - 약관 태그
+    func tags() {
         AllCheckBtn.tag = 1
         agreeBtn2.tag = 2
         agreeBtn3.tag = 3
         agreeBtn4.tag = 4
-        
+    }
+    
+    // MARK: - 배경 애니메이션 이미지 세팅
+    func setBackImg(){
         // 배경 이미지 배열
         while let image = UIImage(named: "login&SIgnupPage_background\(i)") {
             images.append(image)
@@ -202,15 +212,14 @@ class EmailSignUpViewController: BaseViewController {
             self.presentAlert(title: "필수 약관에 동의해주세요")
             return
         }
-       
     }
     
 }
 
-// 이메일 회원가입 성공 메시지
+// MARK: - 이메일 회원가입 델리게이트
 extension EmailSignUpViewController {
-    func didSuccessSignUp(_ result: String) {
-        self.presentAlert(title: "회원가입에 성공하였습니다", message: result) { action in
+    func didSuccessSignUp() {
+        self.presentAlert(title: "회원가입에 성공하였습니다") { action in
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -220,7 +229,7 @@ extension EmailSignUpViewController {
     }
 }
 
-// 텍스트필드 키보드 관리
+// MARK: - 텍스트필드 키보드 관리
 extension EmailSignUpViewController: UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {

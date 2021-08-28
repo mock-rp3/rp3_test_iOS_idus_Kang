@@ -10,8 +10,11 @@ import SnapKit
 
 class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
       
+    // MARK: - Property
+    
     lazy var dataManager: EmailLoginDataManager = EmailLoginDataManager()
     
+//    let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     let timeSelector: Selector = #selector(LoginViewController.updateTime)
     var index = 0
     var i = 0
@@ -21,12 +24,12 @@ class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
-
     // status bar 숨겨 풀스크린 만들기
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +37,11 @@ class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
         self.dismissKeyboardWhenTappedAround()
         setKeyboardEvent()
         
+        setBackImg()
+    }
+    
+    // MARK: - 배경 애니메이션 이미지 세팅
+    func setBackImg(){
         // 배경 이미지 배열
         while let image = UIImage(named: "login&SIgnupPage_background\(i)") {
             images.append(image)
@@ -86,13 +94,16 @@ class EmailLoginViewController: BaseViewController, UITextFieldDelegate {
  
 }
 
+// MARK: -  이메일 로그인 델리게이트
 extension EmailLoginViewController {
+    
     func didSuccessLogin(_ result: LoginResult) {
+        
         // 유저 디폴트로 userIdx와 jwt 저장
         UserDefaults.standard.set(result.userIdx, forKey: "userIdxKey")
         UserDefaults.standard.set(result.jwt, forKey: "jwtKey")
         
-//         로그인 메인화면으로 이동
+        // 로그인 메인화면으로 이동
         let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
         self.changeRootViewController(loginedMainTabBarController)
     }
@@ -102,7 +113,7 @@ extension EmailLoginViewController {
     }
 }
 
-// 텍스트필드 키보드 관리
+// MARK: - 텍스트필드 키보드 관리 델리게이트
 extension EmailLoginViewController {
     
     func setKeyboardEvent() {

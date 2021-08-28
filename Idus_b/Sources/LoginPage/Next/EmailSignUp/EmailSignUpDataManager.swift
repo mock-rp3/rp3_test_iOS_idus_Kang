@@ -9,15 +9,19 @@ import Alamofire
 
 class EmailSignUpDataManager {
     func postSignUp(_ parameters: EmailSignUpRequest, delegate: EmailSignUpViewController) {
-        AF.request("\(Constant.BASE_URL)/users", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+        
+        AF.request("\(Constant.BASE_URL)/users",
+                   method: .post,
+                   parameters: parameters,
+                   encoder: JSONParameterEncoder(),
+                   headers: nil)
             .validate()
             .responseDecodable(of: EmailSignUpResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     // 성공했을 때
                     if response.isSuccess {
-                        let result = response.result
-                        delegate.didSuccessSignUp(result)
+                        delegate.didSuccessSignUp()
                     }
                     // 실패했을 때
                     else {

@@ -11,3 +11,9 @@ struct userLoginInfo {
     var userIdx: Int
     var jwt: String
 }
+
+struct userDefault {
+    var userIdxKey: Int
+    var jwtKey: String
+    var accessToken: String
+}

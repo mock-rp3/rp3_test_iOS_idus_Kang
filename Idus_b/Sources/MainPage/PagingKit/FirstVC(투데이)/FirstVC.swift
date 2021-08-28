@@ -140,7 +140,6 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - 배너 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: BannerDelegate {
     func didSelectedBanner(_ index: Int) {
-        print("\(index)번째 배너입니다.")
         self.presentAlert(title: "\(index)번째 배너입니다.")
     }
 }
@@ -148,7 +147,6 @@ extension FirstVC: BannerDelegate {
 // MARK: - 카테고리 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: CategoryDelegate {
     func didSelectedCategory(_ index: Int) {
-        print("\(index)번째 배너입니다.")
         self.presentAlert(title: "\(index)번째 카테고리입니다.")
     }
 }
@@ -173,7 +171,6 @@ extension FirstVC: GoodsViewDelegate {
 // MARK: - 오늘의 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: TodayGoodsViewDelegate {
     func didSelectedGoods(_ index: Int) {
-        print("\(index)번째 배너입니다.")
         self.presentAlert(title: "\(index)번째 작품입니다.")
     }
 }
@@ -186,7 +183,6 @@ extension FirstVC {
         for index in 0...5 {
             self.goods.append(result[index])
         }
-        print(self.goods)
     }
 }
 
@@ -196,6 +192,5 @@ extension FirstVC {
         for index in 0...11 {
             self.todayGoods.append(result[index])
         }
-        print(self.todayGoods)
     }
 }

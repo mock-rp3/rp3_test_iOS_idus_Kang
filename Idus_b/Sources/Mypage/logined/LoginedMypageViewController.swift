@@ -16,8 +16,8 @@ class LoginedMypageViewController: BaseViewController {
     lazy var dataManager: LoginedMypageDataManager = LoginedMypageDataManager()
     
     // UserDefault
-    var loadedUserIdx = UserDefaults.standard.value(forKey: "userIdxKey") as? Int
-    var loadedJwt : String = UserDefaults.standard.value(forKey: "jwtKey") as! String
+    var loadedUserIdx = UserDefaults.standard.value(forKey: "userIdxKey") as? Int ?? nil
+    var loadedJwt : String = UserDefaults.standard.value(forKey: "jwtKey") as? String ?? ""
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var myLevel: UILabel!
@@ -39,7 +39,9 @@ class LoginedMypageViewController: BaseViewController {
         makeCircleImg()
         
         // Request UserLoginInfo
-        dataManager.getUserInfo(userIdx: loadedUserIdx ?? 17, jwt: loadedJwt, delegate: self)
+        if loadedUserIdx != nil {
+            dataManager.getUserInfo(userIdx: loadedUserIdx!, jwt: loadedJwt, delegate: self)
+        }
         
     }
     
