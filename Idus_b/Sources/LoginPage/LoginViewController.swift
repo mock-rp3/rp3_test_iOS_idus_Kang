@@ -36,7 +36,7 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        loginInstance?.delegate = self
         setBackImg()
     }
     
@@ -146,37 +146,7 @@ class LoginViewController: BaseViewController {
     // MARK: - 네이버 로그인
     
     @IBAction func naverLoginBtn(_ sender: UIButton) {
-        loginInstance?.delegate = self
         loginInstance?.requestThirdPartyLogin()
-        
-        // 네이버 RESTful API, id가져오기
-        guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
-        
-        if !isValidAccessToken {
-          return
-        }
-        
-        guard let tokenType = loginInstance?.tokenType else { return }
-        guard let accessToken = loginInstance?.accessToken else { return }
-          
-        let urlStr = "https://openapi.naver.com/v1/nid/me"
-        let url = URL(string: urlStr)!
-        
-        let authorization = "\(tokenType) \(accessToken)"
-        
-        let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
-        
-        req.responseJSON { response in
-          guard let result = response.value as? [String: Any] else { return }
-          guard let object = result["response"] as? [String: Any] else { return }
-          guard let naverName = object["name"] as? String else { return }
-          guard let naverEmail = object["email"] as? String else { return }
-            
-            // NaverSignUp Check
-            let naverInput = NaverSignUpRequest(email: naverEmail, name: naverName, password: "password1!", tel: "010-0000-0000", pushAgreement: "N")
-            self.naverDataManager.postNaverSignUp(naverInput, delegate: self)
-        }
-        
     }
     
     // MARK: - 회원가입 없이 둘러보기
@@ -205,38 +175,55 @@ extension LoginViewController {
     
 }
 
-// MARK: - NaverSignUp Delegate
-extension LoginViewController {
-    func didSuccessNaverSignUp(message: String) {
-        print(message)
-    }
-    
-    func failedNaverSignUpToRequest(message: String) {
-        self.presentAlert(title: message)
-    }
-}
-
 // MARK: - 네이버 로그인 델리게이트
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     
     // 로그인에 성공한 경우 호출
     @objc func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        print("Success Naver login")
+        getInfo()
+    }
+    
+    func getInfo() {
+        // 네이버 RESTful API, id가져오기
+        guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
         
-        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
-        changeRootViewController(loginedMainTabBarController)
+        if !isValidAccessToken {
+          return
+        }
         
-        print("Success login")
+        guard let tokenType = loginInstance?.tokenType else { return }
+        guard let accessToken = loginInstance?.accessToken else { return }
+          
+        // 엑세스 토큰 유저 디폴트로 저장
+        UserDefaults.standard.set(accessToken, forKey: "accessToken")
+        
+        let urlStr = "https://openapi.naver.com/v1/nid/me"
+        let url = URL(string: urlStr)!
+        
+        let authorization = "\(tokenType) \(accessToken)"
+        
+        let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
+        
+        req.responseJSON { response in
+          guard let result = response.value as? [String: Any] else { return }
+          guard let object = result["response"] as? [String: Any] else { return }
+          guard let naverName = object["name"] as? String else { return }
+          guard let naverEmail = object["email"] as? String else { return }
+            
+            // NaverSignUp Check
+            let naverInput = NaverSignUpRequest(email: naverEmail, name: naverName, password: "password1!", tel: "010-0000-0000", pushAgreement: "N")
+            self.naverDataManager.postNaverSignUp(naverInput, delegate: self)
+        }
     }
     
     // 엑세스 토큰 갱신 - 유저 디폴트로 저장
     @objc func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        let accessToken = loginInstance?.accessToken
-        UserDefaults.standard.set(accessToken, forKey: "accessToken")
+//        let accessToken = loginInstance?.accessToken
     }
     
     // 로그아웃 - 토큰 삭제
     @objc func oauth20ConnectionDidFinishDeleteToken() {
-        loginInstance?.requestDeleteToken()
         print("Naver User log out")
         UserDefaults.standard.removeObject(forKey: "accessToken")
     }
@@ -244,5 +231,18 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     // 모든 error
     @objc func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
         print("error = \(error.localizedDescription)")
+    }
+}
+
+// MARK: - NaverSignUp Delegate
+extension LoginViewController {
+    func didSuccessNaverSignUp(message: String) {
+        print(message)
+        let loginedMainTabBarController = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+        changeRootViewController(loginedMainTabBarController)
+    }
+    
+    func failedNaverSignUpToRequest(message: String) {
+        self.presentAlert(title: message)
     }
 }

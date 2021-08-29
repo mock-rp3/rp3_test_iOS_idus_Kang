@@ -32,6 +32,7 @@ class LoginedMypageViewController: BaseViewController {
         
         loginInstance?.delegate = self
         getNaverUserInfo()
+        
         if (AuthApi.hasToken()) {
             getKakaoUserInfo()
         }
@@ -85,28 +86,23 @@ class LoginedMypageViewController: BaseViewController {
                     print(error)
                 }
                 else {
-                    print("unlink() success.")
+                    print("unlink kakao success.")
                     
-                    // 유저 디폴트로 userIdx와 jwt에 빈 값 저장
-//                    UserDefaults.standard.set(0, forKey: "userIdxKey")
-//                    UserDefaults.standard.set("", forKey: "jwtKey")
+                    // 유저 디폴트로 엑세스토큰 삭제
+                    UserDefaults.standard.removeObject(forKey: "accessToken")
                     
                     let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
                     self.changeRootViewController(loginViewController)
                 }
             }
-        }
-        
-        // 네이버 소셜로그인 로그아웃(토큰 제거)
-        loginInstance?.requestDeleteToken()
-        
-        if loadedJwt != "" {
+        } else if UserDefaults.standard.value(forKey: "accessToken") as! String != "" {
+            // 네이버 소셜로그인 로그아웃(토큰 제거)
+            loginInstance?.requestDeleteToken()
+        } else if loadedJwt != "" {
+            print("email user logout success.")
+            UserDefaults.standard.removeObject(forKey: "loadedJwt")
             let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
             self.changeRootViewController(loginViewController)
-        } else {
-            // 유저 디폴트로 userIdx와 jwt 빈 값 저장
-//            UserDefaults.standard.set(0, forKey: "userIdxKey")
-//            UserDefaults.standard.set("", forKey: "jwtKey")
         }
     }
     
@@ -144,11 +140,6 @@ class LoginedMypageViewController: BaseViewController {
     
     // MARK: - 네이버 RESTful API, id가져오기
     func getNaverUserInfo() {
-      guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
-      
-      if !isValidAccessToken {
-        return
-      }
       
       guard let tokenType = loginInstance?.tokenType else { return }
       guard let accessToken = loginInstance?.accessToken else { return }
@@ -164,10 +155,7 @@ class LoginedMypageViewController: BaseViewController {
         guard let result = response.value as? [String: Any] else { return }
         guard let object = result["response"] as? [String: Any] else { return }
         guard let name = object["name"] as? String else { return }
-        guard let email = object["email"] as? String else { return }
         guard let profile_image = object["profile_image"] as? String else { return }
-        
-        print(email)
         
         // 이름
         self.nameLabel.text = "\(name)"
@@ -199,12 +187,8 @@ extension LoginedMypageViewController: NaverThirdPartyLoginConnectionDelegate {
 
     // 로그아웃
     @objc func oauth20ConnectionDidFinishDeleteToken() {
-        print("log out")
-        
-        // 유저 디폴트로 userIdx와 jwt에 빈 값 저장
-//        UserDefaults.standard.set(0, forKey: "userIdxKey")
-//        UserDefaults.standard.set("", forKey: "jwtKey")
-        
+        print("네이버 log out")
+        UserDefaults.standard.removeObject(forKey: "accessToken")
         let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
         self.changeRootViewController(loginViewController)
     }
@@ -227,7 +211,6 @@ extension LoginedMypageViewController {
             DispatchQueue.main.async { self.profileImageView.image = UIImage(data: data!)
             }
         }
-        print(result.grageName)
         myLevel.text = result.grageName
         nameLabel.text = result.name
         moneyNum.text = "\(result.reserves)"

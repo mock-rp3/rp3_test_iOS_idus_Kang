@@ -33,7 +33,7 @@ class NaverSignUpDataManager {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    delegate.failedNaverSignUpToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                    delegate.didSuccessNaverSignUp(message: "서버와의 연결이 원활하지 않습니다")
                 }
             }
     }
