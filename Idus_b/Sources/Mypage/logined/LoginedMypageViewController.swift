@@ -100,7 +100,7 @@ class LoginedMypageViewController: BaseViewController {
             loginInstance?.requestDeleteToken()
         } else if loadedJwt != "" {
             print("email user logout success.")
-            UserDefaults.standard.removeObject(forKey: "loadedJwt")
+            UserDefaults.standard.removeObject(forKey: "userIdxKey")
             let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
             self.changeRootViewController(loginViewController)
         }

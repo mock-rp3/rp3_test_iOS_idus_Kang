@@ -65,11 +65,20 @@ class GoodsPageViewController: BaseViewController {
     
     // MARK: - 주문하기
     @IBAction func orderBtn(_ sender: UIButton) {
-         // 화면 전환
-        let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "OrderOptionVC")
-        nextVC.modalTransitionStyle = .coverVertical
-        nextVC.modalPresentationStyle = .overFullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        
+        if UserDefaults.standard.value(forKey: "accessToken") as? String == nil || UserDefaults.standard.value(forKey: "userIdxKey") as? String == nil {
+            self.presentAlert(title: "로그인해주세요", message: nil, isCancelActionIncluded: true) { action in
+                let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
+                self.changeRootViewController(loginViewController)
+            }
+        } else {
+            // 화면 전환
+            let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "OrderOptionVC")
+            nextVC.modalTransitionStyle = .coverVertical
+            nextVC.modalPresentationStyle = .overFullScreen
+            self.present(nextVC, animated: true, completion: nil)
+        }
+        
     }
     
     // MARK: - CollectionViewCell에 사용될 dataSource 정의

@@ -23,6 +23,7 @@ class SearchVC: BaseViewController {
         if loadedJwt != "" {
             let mainPage = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
             changeRootViewController(mainPage)
+            
         } else {
             let mainPage = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "MainTabBarController")
             changeRootViewController(mainPage)

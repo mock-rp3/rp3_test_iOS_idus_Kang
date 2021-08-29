@@ -11,7 +11,7 @@
         <!--Network 메인-->
         <scene sceneID="1lM-KP-8vA">
             <objects>
-                <viewController storyboardIdentifier="SearchVC" id="WCo-pE-iNd" customClass="SearchVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" modalPresentationStyle="fullScreen" id="WCo-pE-iNd" customClass="SearchVC" customModule="Idus_b" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CAS-lL-ZXB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
         <!--Search Navigation-->
         <scene sceneID="9cW-6e-lK6">
             <objects>
-                <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="adv-Ba-hlc" userLabel="Search Navigation" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="adv-Ba-hlc" userLabel="Search Navigation" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tapBar_검색" selectedImage="tapBar_검색" id="CMY-Jf-IFy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -101,7 +101,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WCo-pE-iNd" kind="relationship" relationship="rootViewController" id="dDl-OL-buf"/>
+                        <segue destination="WCo-pE-iNd" kind="relationship" relationship="rootViewController" destinationCreationSelector="searchSegue" id="dDl-OL-buf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jgy-zx-2Sh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
