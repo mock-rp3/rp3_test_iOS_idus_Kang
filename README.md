@@ -4,6 +4,8 @@
 + 소셜로그인 로직 변경 후, 자꾸 아래 에러 발생함
   - canOpenURL: failed for URL: "naversearchapp://" - error: "The operation couldn’t be completed. (OSStatus error -10814.)"
   - 원인은 로그아웃을 안해주고 앱 껐다 키면서 자꾸 로그인 시도 해서 그런 거였음. 앱 꺼지면 무조건 로그아웃되게 생명주기에 추가함.
++ 비회원 상태에서 상품 상세 페이지에서 구매하기 버튼 누르면 로그인하라는 알림창 뜨게 함.
+  - 확인 버튼 누르면 로그인 창으로 화면 이동함
 
 ***
 
