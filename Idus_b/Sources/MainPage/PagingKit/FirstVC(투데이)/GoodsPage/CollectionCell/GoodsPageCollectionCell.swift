@@ -48,8 +48,6 @@ class GoodsPageCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-//            smallImgBtn.alpha = isSelected ? 1.0 : 0.5
-//            smallImage.alpha = isSelected ? 1.0 : 0.5
             contentsView.alpha = isSelected ? 1.0 : 0.5
         }
     }
@@ -72,13 +70,16 @@ class GoodsPageCollectionViewCell: UICollectionViewCell {
     
     private func configure() {
         contentsView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview()
         }
 
         smallImg.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
         }
+        
+        contentsView.alpha = 0.5
     }
     
 //    public func configuresmallGoodsPageImg(with model: btnImgModel) {
@@ -87,14 +88,15 @@ class GoodsPageCollectionViewCell: UICollectionViewCell {
     
     
     public func configuresmallGoodsImg(with model: String) {
-//        self.smallImgBtn.setImage(UIImage(named: model), for: .normal)
-        
+
         let url = URL(string: model)
         DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
 //                self.smallImgBtn.setImage(UIImage(data: data!), for: .normal)
-                self.smallImage.image = UIImage(data: data!)
+//                self.smallImage?.image = UIImage(data: data!)
+                self.smallImg.image = UIImage(data: data!)
             }
+            
         }
     }
     

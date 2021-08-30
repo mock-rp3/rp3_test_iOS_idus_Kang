@@ -15,30 +15,9 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVv-8o-iJV">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <state key="normal" title="Button" image="goodsDummy0"/>
-                        <connections>
-                            <action selector="clickGoodsImgBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ljs-xE-ZZw"/>
-                        </connections>
-                    </button>
-                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstItem="TVv-8o-iJV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DIT-sj-gOY"/>
-                <constraint firstAttribute="bottom" secondItem="TVv-8o-iJV" secondAttribute="bottom" id="XL1-2s-LXp"/>
-                <constraint firstAttribute="trailing" secondItem="TVv-8o-iJV" secondAttribute="trailing" id="juh-yZ-key"/>
-                <constraint firstItem="TVv-8o-iJV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wSV-dq-aSo"/>
-            </constraints>
-            <connections>
-                <outlet property="smallImgBtn" destination="TVv-8o-iJV" id="azx-ic-1p1"/>
-            </connections>
-            <point key="canvasLocation" x="-25" y="79"/>
+            <point key="canvasLocation" x="-26.086956521739133" y="78.348214285714278"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="goodsDummy0" width="373" height="374.5"/>
-    </resources>
 </document>

@@ -10,14 +10,14 @@ import RxGesture // collectionView의 cell내부 contentsView tapGesture() rx �
 import RxSwift
 import RxCocoa
 
-protocol GoodsImgDelegate: AnyObject { // class로 타입 제한
-    func didSelectedGoodsBtn(_ index: Int)
-}
+//protocol GoodsImgDelegate: AnyObject { // class로 타입 제한
+//    func didSelectedGoodsPageBtn(_ index: Int)
+//}
 
 class GoodsPageImgTableViewCell: UITableViewCell {
 
     // MARK: - 프로퍼티
-    var delegate: GoodsImgDelegate?
+//    var delegate: GoodsImgDelegate?
     
     static let identifier = "GoodsPageImgTableViewCell"
     static func nib() -> UINib {
@@ -27,22 +27,11 @@ class GoodsPageImgTableViewCell: UITableViewCell {
     @IBOutlet weak var goodsImgCollectionView: UICollectionView!
     @IBOutlet weak var pageView: UIView!
     
-    // currentPage 정의: 현재 페이지가 collectionView나 pageViewController 둘 중 하나로 바뀌면 싱크를 맞추는 옵저버 프로퍼티
-    var currentPage: Int = 0 {
-        didSet {
-            bind(oldValue: oldValue, newValue: currentPage)
-        }
-    }
-    
-    var smallGoodsImgs = [btnImgModel]()
-//    var smallGoodsImgs = [GoodsPageResponseResult]()
-//    var smallGoodsImgs = [String]()
-//    var bigGoodsImgs = [GoodsPageResponseResult]()
-    
+    var smallGoodsImgs = [String]()
+    var bigGoodsImgs : [String] = UserDefaults.standard.value(forKey: "bigGoodsImgs") as! [String]
     
     // CollectionViewCell에 사용될 dataSource 정의
     var dataSource: [MyCollectionViewModel] = []
-    
     
     // PageViewController에 사용되는 dataSourceVC 정의
     var dataSourceVC: [UIViewController] = []
@@ -54,22 +43,26 @@ class GoodsPageImgTableViewCell: UITableViewCell {
         return vc
     }()
     
+    // currentPage 정의: 현재 페이지가 collectionView나 pageViewController 둘 중 하나로 바뀌면 싱크를 맞추는 옵저버 프로퍼티
+    var currentPage: Int = 0 {
+        didSet {
+            bind(oldValue: oldValue, newValue: currentPage)
+        }
+    }
+    
     // MARK: - LifeCycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        goodsImgCollectionView.delegate = self
-        goodsImgCollectionView.dataSource = self
-        
         setupDataSource()
+        configurePageVCImg()
+        addSubviews()
+        configure()
         setupDelegate()
         registerCell()
-        setupViewControllers()
-        addSubviews()
-//        configure()
         setViewControllersInPageVC()
-//        goodsImgCollectionView.reloadData()
+        pageViewController.reloadInputViews()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -80,71 +73,53 @@ class GoodsPageImgTableViewCell: UITableViewCell {
     }
     
     // MARK: - Helper
-
-    func configureGoodsPageImg(with models: [btnImgModel]) {
-        self.smallGoodsImgs = models
+    
+    func configureGoodsImg(with models: [String]) {
+        for index in 0...8 {
+            self.smallGoodsImgs.append(models[index])
+        }
         goodsImgCollectionView.reloadData()
     }
-//    func configureGoodsPageImg(with models: [GoodsPageResponseResult]) {
-//        self.smallGoodsImgs = models
-//        goodsImgCollectionView.reloadData()
-//    }
     
     // MARK: - CollectionViewCell에 사용될 dataSource 정의
+    
     private func setupDataSource() {
-        var k = 0
-        while let _ = UIImage(named: "goodsDummy\(k)") {
-//        for k in 0...8 {
+        for k in 0...8 {
             let model = MyCollectionViewModel(title: k)
             dataSource += [model]
-            k += 1
         }
     }
     
-    // MARK: - PageViewController 데이터 정의
-    func configurePageVCImg(with models: [GoodsPageResponseResult], idx: Int) {
-//        self.bigGoodsImgs = models
-        
-        let vc = UIViewController()
-        let imgBtn = UIButton()
+    // MARK: - PageViewController 및 데이터 정의
+    func configurePageVCImg() {
 
-        let url = URL(string: models[0].workImage[idx])
-        DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                imgBtn.setImage(UIImage(data: data!), for: .normal)
-            }
-        }
-        imgBtn.contentMode = .scaleAspectFill
-        imgBtn.contentHorizontalAlignment = .fill
-        imgBtn.contentVerticalAlignment = .fill
-        imgBtn.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        vc.view.addSubview(imgBtn)
-
-        imgBtn.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-        }
-
-        dataSourceVC += [vc]
-    }
-    
-    // MARK: - PageViewController 추가
-    private func setupViewControllers() {
-
-         var index = 0
-         dataSource.forEach { _ in
+        var index = 0
+        dataSource.forEach { _ in
             let vc = UIViewController()
-            let imgBtn = UIButton()
-
-            imgBtn.setImage(UIImage(named: "goodsDummy\(index)"), for: .normal)
-            imgBtn.contentMode = .scaleAspectFill
-            imgBtn.contentHorizontalAlignment = .fill
-            imgBtn.contentVerticalAlignment = .fill
+//            let imgBtn = UIButton()
+            let imgBtn = UIImageView()
+            let url = URL(string: bigGoodsImgs[index])
+            DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
+                DispatchQueue.main.async {
+//                    imgBtn.setImage(UIImage(data: data!), for: .normal)
+                    imgBtn.image = UIImage(data: data!)!
+                }
+            }
+            
+            imgBtn.contentMode = .scaleAspectFit
+//            imgBtn.contentMode = .scaleToFill
+//            imgBtn.contentMode = .scaleAspectFill
+//            imgBtn.contentHorizontalAlignment = .fill
+//            imgBtn.contentVerticalAlignment = .fill
             imgBtn.heightAnchor.constraint(equalToConstant: 400).isActive = true
+            
             index += 1
+            
             vc.view.addSubview(imgBtn)
 
             imgBtn.snp.makeConstraints { make in
-                make.top.equalToSuperview()
+//                make.top.equalToSuperview()
+                make.center.equalToSuperview()
             }
 
             dataSourceVC += [vc]
@@ -160,10 +135,21 @@ class GoodsPageImgTableViewCell: UITableViewCell {
     
     // MARK: - 레이아웃 설정
     private func configure() {
+                
         // pageView 레이아웃
         pageViewController.view.snp.makeConstraints { make in
-            make.bottom.equalTo(pageView.snp.bottom)
+//            make.top.equalTo(self.safeAreaLayoutGuide)
+            make.top.equalToSuperview()
+            make.bottom.equalTo(goodsImgCollectionView.snp.top)
             make.leading.trailing.equalToSuperview()
+//            make.height.equalTo(400)
+        }
+        
+        // collectionView 레이아웃
+        goodsImgCollectionView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(50)
+//            make.width.equalTo(50)
         }
     }
     
@@ -178,7 +164,8 @@ class GoodsPageImgTableViewCell: UITableViewCell {
     }
     
     private func registerCell() {
-        goodsImgCollectionView.register(GoodsPageCollectionViewCell.nib(), forCellWithReuseIdentifier: GoodsPageCollectionViewCell.identifier)
+//        goodsImgCollectionView.register(GoodsPageCollectionViewCell.nib(), forCellWithReuseIdentifier: GoodsPageCollectionViewCell.identifier)
+        goodsImgCollectionView.register(GoodsPageCollectionViewCell.self, forCellWithReuseIdentifier: GoodsPageCollectionViewCell.identifier)
     }
     
     // MARK: - firstViewController 설정
@@ -204,33 +191,6 @@ class GoodsPageImgTableViewCell: UITableViewCell {
         currentPage = indexPath.item
     }
     
-}
-
-// MARK: - GoodsPageCollectionView delegate 구현
-extension GoodsPageImgTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    //컬렉션뷰 개수 설정
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
-//        return 9
-//        return smallGoodsImgs.count
-    }
-
-    //컬렉션뷰 셀 설정
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = goodsImgCollectionView.dequeueReusableCell(withReuseIdentifier: GoodsPageCollectionViewCell.identifier, for: indexPath) as! GoodsPageCollectionViewCell
-//        cell.goodsPageResponseResult(with: smallGoodsImgs, idx: indexPath.row, index: 0)
-        cell.configuresmallGoodsPageImg(with: smallGoodsImgs[indexPath.row])
-        cell.click = { [unowned self] in
-            delegate?.didSelectedGoodsBtn(indexPath.item)
-        }
-        return cell
-    }
-    
-    // 높이 설정: 수평 스크롤이 되도록 height를 collectionView의 height와 동일하도록 설정
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: collectionView.frame.height)
-    }
 }
 
 // MARK: - 페이지뷰 delegate 구현
@@ -259,5 +219,39 @@ extension GoodsPageImgTableViewCell: UIPageViewControllerDataSource, UIPageViewC
         guard let currentVC = pageViewController.viewControllers?.first,
               let currentIndex = dataSourceVC.firstIndex(of: currentVC) else { return }
         currentPage = currentIndex
+    }
+}
+
+// MARK: - GoodsPageCollectionView delegate 구현
+extension GoodsPageImgTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    //컬렉션뷰 개수 설정
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+
+    //컬렉션뷰 셀 설정
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = goodsImgCollectionView.dequeueReusableCell(withReuseIdentifier: GoodsPageCollectionViewCell.identifier, for: indexPath)
+        if let cell = cell as? GoodsPageCollectionViewCell {
+            
+            cell.configuresmallGoodsImg(with: smallGoodsImgs[indexPath.row])
+            
+            cell.contentsView.rx.tapGesture(configuration: .none)
+                .when(.recognized)
+                .asDriver { _ in .never() }
+                .drive(onNext: { [weak self] _ in
+                    self?.didTapCell(at: indexPath)
+                }).disposed(by: cell.bag)
+    //        cell.click = { [unowned self] in
+    //            delegate?.didSelectedGoodsPageBtn(indexPath.item)
+    //        }
+        }
+        return cell
+    }
+    
+    // 높이 설정: 수평 스크롤이 되도록 height를 collectionView의 height와 동일하도록 설정
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: collectionView.frame.height) // collectionView.frame.height
     }
 }

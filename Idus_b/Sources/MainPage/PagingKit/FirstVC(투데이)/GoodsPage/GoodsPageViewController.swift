@@ -13,30 +13,39 @@ import RxCocoa
 class GoodsPageViewController: BaseViewController {
     
     // MARK: - 프로퍼티
-    lazy var goodsPageDataManager: GoodsPageDataManager = GoodsPageDataManager()
+    let goodsPageDataManager: GoodsPageDataManager = GoodsPageDataManager()
     
     @IBOutlet var table: UITableView!
     @IBOutlet weak var heartBtn: UIButton!
-        
-    var smallGoodsImgs = [btnImgModel]()
-    var k = 0
     var heartChecked: Bool = false
+    
+    //    var smallGoodsImgs = [btnImgModel]()
+//    var k = 0
     var goods = [GoodsPageResponseResult]()
+    var smallGoodsImgs = [String]()
+    var bigGoodsImgs = [String]()
     
     // MARK: - 생명주기
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupDataSource()
-        setupDelegate()
-        registerCell()
+        goodsPageDataManager.getTodayGoodsPageData(delegate: self)
         
-        goodsPageDataManager.getTodayGoodsPageData(index: 1, delegate: self)
+//        setupDataSource()
+//        self.setupDelegate()
+//        self.registerCell()
+        // 인디케이터 (로딩)
+        showIndicator()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.table.reloadData()
+            self.dismissIndicator()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       super.viewDidAppear(animated)
+        super.viewDidAppear(animated)
    }
+
     
     // MARK: - 전 화면으로 가기
     @IBAction func dismiss(_ sender: UIBarButtonItem) {
@@ -82,12 +91,12 @@ class GoodsPageViewController: BaseViewController {
     }
     
     // MARK: - CollectionViewCell에 사용될 dataSource 정의
-    private func setupDataSource() {
-        while let _ = UIImage(named: "goodsDummy\(k)") {
-            smallGoodsImgs.append(btnImgModel(btnImageName: "goodsDummy\(k)"))
-            k += 1
-        }
-    }
+//    private func setupDataSource() {
+//        while let _ = UIImage(named: "goodsDummy\(k)") {
+//            smallGoodsImgs.append(btnImgModel(btnImageName: "goodsDummy\(k)"))
+//            k += 1
+//        }
+//    }
 
     // MARK: -delegate 설정, cell 등록
     private func setupDelegate() {
@@ -105,6 +114,24 @@ class GoodsPageViewController: BaseViewController {
         
 }
 
+// MARK: - DataManager
+
+// RelatedGoodsResult
+extension GoodsPageViewController {
+    func successTodayGoodsPageData(result: GoodsPageResponseResult, imgResult: [String]) {
+        self.goods.append(result)
+        for index in 0...8{
+            self.smallGoodsImgs.append(imgResult[index])
+            self.bigGoodsImgs.append(imgResult[index])
+        }
+        UserDefaults.standard.set(bigGoodsImgs, forKey: "bigGoodsImgs")
+        self.setupDelegate()
+        self.registerCell()
+    }
+}
+
+// MARK: - TableViewDelegate
+
 extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -113,10 +140,10 @@ extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageImgTableViewCell.identifier, for: indexPath) as? GoodsPageImgTableViewCell else { return UITableViewCell()}
-            cell.configureGoodsPageImg(with: smallGoodsImgs)
+            
 //            cell.configureGoodsPageImg(with: goods)
-//            cell.configurePageVCImg(with: goods, idx: indexPath.row)
-            cell.delegate = self
+            cell.configureGoodsImg(with: smallGoodsImgs)
+//            cell.delegate = self
             return cell
         } else if indexPath.row == 1 {
             guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageMainInfoTableViewCell.identifier, for: indexPath) as? GoodsPageMainInfoTableViewCell else { return UITableViewCell()}
@@ -144,19 +171,9 @@ extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - 오늘의 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
-extension GoodsPageViewController: GoodsImgDelegate {
-    func didSelectedGoodsBtn(_ index: Int) {
-        print("\(index)번째 셀")
-    }
-}
-
-// MARK: - DataManager
-
-// RelatedGoodsResult
-extension GoodsPageViewController {
-    func successTodayGoodsPageData(result: GoodsPageResponseResult) {
-        self.goods.append(result)
-        print(goods[0].workImage[5])
-    }
-}
+// MARK: - 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
+//extension GoodsPageViewController: GoodsImgDelegate {
+//    func didSelectedGoodsPageBtn(_ index: Int) {
+//        print("\(index)번째 작품 이미지")
+//    }
+//}

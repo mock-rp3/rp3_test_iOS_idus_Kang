@@ -8,11 +8,11 @@
 import Alamofire
 
 class GoodsPageDataManager {
-    func getTodayGoodsPageData(index: Int, delegate: GoodsPageViewController) {
+    func getTodayGoodsPageData(delegate: GoodsPageViewController) {
 
         // GET
         // /works/:workIndex    path variable(:workIndex 부분은 그냥 숫자 넣어줘도 됨)
-        AF.request("\(Constant.BASE_URL)/works/\(index)",
+        AF.request("\(Constant.BASE_URL)/works/1",
                    method: .get,
                    parameters: nil,
 //                   encoding: URLEncoding.queryString,
@@ -25,7 +25,7 @@ class GoodsPageDataManager {
                 case .success(let response):
                     print("DEBUG>> 작품 정보 가져오기 성공 ")
                     if response.isSuccess, let todayGoodsPageData = response.result {
-                        delegate.successTodayGoodsPageData(result: todayGoodsPageData)
+                        delegate.successTodayGoodsPageData(result: todayGoodsPageData, imgResult: todayGoodsPageData.workImage)
                     }
                 
                 case .failure(let error):
