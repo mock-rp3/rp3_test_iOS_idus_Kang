@@ -4,6 +4,12 @@
 
 # **rp3_test_iOS_idus_Kang 개발일지**
 
+## 21.08.30
++ 작품 상세페이지에서 페이저로 구현한 작품이미지들 중, 컬렉션뷰는 REST API 잘 받아와서 처리했는데, 페이지 컨트롤러를 코드로 구현했더니, 코드 실행순서가 API보다 앞이어서 이미지가 매핑안돼 곤란했음.
+  - 싱크 처리해야하나 싶다가, 그냥 유저디폴트로 앞에서 먼저 저장해놓고 사용함
+
+***
+
 ## 21.08.29
 + 소셜로그인 로직 변경 후, 자꾸 아래 에러 발생함
   - canOpenURL: failed for URL: "naversearchapp://" - error: "The operation couldn’t be completed. (OSStatus error -10814.)"
