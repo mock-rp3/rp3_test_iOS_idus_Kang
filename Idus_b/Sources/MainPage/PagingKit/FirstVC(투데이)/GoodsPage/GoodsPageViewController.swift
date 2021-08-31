@@ -19,8 +19,6 @@ class GoodsPageViewController: BaseViewController {
     @IBOutlet weak var heartBtn: UIButton!
     var heartChecked: Bool = false
     
-    //    var smallGoodsImgs = [btnImgModel]()
-//    var k = 0
     var goods = [GoodsPageResponseResult]()
     var smallGoodsImgs = [String]()
     var bigGoodsImgs = [String]()
@@ -31,9 +29,6 @@ class GoodsPageViewController: BaseViewController {
         super.viewDidLoad()
         goodsPageDataManager.getTodayGoodsPageData(delegate: self)
         
-//        setupDataSource()
-//        self.setupDelegate()
-//        self.registerCell()
         // 인디케이터 (로딩)
         showIndicator()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -50,12 +45,6 @@ class GoodsPageViewController: BaseViewController {
     // MARK: - 전 화면으로 가기
     @IBAction func dismiss(_ sender: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
-//        let prevVC = UIStoryboard(name: "MainPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MainPageViewController")
-//        prevVC.modalTransitionStyle = .crossDissolve
-//        prevVC.modalPresentationStyle = .overFullScreen
-//        prevVC.modalPresentationStyle = .fullScreen
-//        self.present(prevVC, animated: true, completion: nil)
-//        changeRootViewController(prevVC)
     }
     
     // MARK: - 하트 누르기
@@ -75,7 +64,7 @@ class GoodsPageViewController: BaseViewController {
     // MARK: - 주문하기
     @IBAction func orderBtn(_ sender: UIButton) {
         
-        if UserDefaults.standard.value(forKey: "accessToken") as? String == nil || UserDefaults.standard.value(forKey: "userIdxKey") as? String == nil {
+        if UserDefaults.standard.value(forKey: "accessToken") as? String == nil && UserDefaults.standard.value(forKey: "userIdxKey") as? String == nil {
             self.presentAlert(title: "로그인해주세요", message: nil, isCancelActionIncluded: true) { action in
                 let loginViewController = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(identifier: "LoginStoryboard")
                 self.changeRootViewController(loginViewController)
@@ -89,14 +78,6 @@ class GoodsPageViewController: BaseViewController {
         }
         
     }
-    
-    // MARK: - CollectionViewCell에 사용될 dataSource 정의
-//    private func setupDataSource() {
-//        while let _ = UIImage(named: "goodsDummy\(k)") {
-//            smallGoodsImgs.append(btnImgModel(btnImageName: "goodsDummy\(k)"))
-//            k += 1
-//        }
-//    }
 
     // MARK: -delegate 설정, cell 등록
     private func setupDelegate() {
@@ -140,13 +121,11 @@ extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageImgTableViewCell.identifier, for: indexPath) as? GoodsPageImgTableViewCell else { return UITableViewCell()}
-            
-//            cell.configureGoodsPageImg(with: goods)
             cell.configureGoodsImg(with: smallGoodsImgs)
-//            cell.delegate = self
             return cell
         } else if indexPath.row == 1 {
             guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageMainInfoTableViewCell.identifier, for: indexPath) as? GoodsPageMainInfoTableViewCell else { return UITableViewCell()}
+            cell.configureAuthor(with: goods)
             return cell
         } else if indexPath.row == 2 {
             guard let cell = table.dequeueReusableCell(withIdentifier: GoodsPageDeliveryTableViewCell.identifier, for: indexPath) as? GoodsPageDeliveryTableViewCell else { return UITableViewCell()}
@@ -170,10 +149,3 @@ extension GoodsPageViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-// MARK: - 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
-//extension GoodsPageViewController: GoodsImgDelegate {
-//    func didSelectedGoodsPageBtn(_ index: Int) {
-//        print("\(index)번째 작품 이미지")
-//    }
-//}

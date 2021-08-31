@@ -10,16 +10,15 @@ import Foundation
 // 구매 옵션 더미데이터
 class ShoppingListViewModel {
     
+    // MARK: - 프로퍼티
+    let shoppingListDataManager: ShoppingListDataManager = ShoppingListDataManager()
+    var goods = [GoodsPageResponseResult]()
+    
     // Storage
     private var items = [ShoppingList]()
     
     init() {
-        // dummy data
-        for index in 0...5 {
-            self.items.append(ShoppingList(shoppingOptionName: "   \(index). 쇼핑백",
-                                           shoppingItem: ["쇼핑백 : 미포함 구매", "쇼핑백 : 포함 구매(개당500원추가) (+500원)"],
-                                           isSelected: [false, false]))
-        }
+        shoppingListDataManager.getShoppinListData(delegate: self)
     }
     
     
@@ -50,5 +49,19 @@ class ShoppingListViewModel {
     public func updateIsFoldingState(dateIndex: Int) {
         
         items[dateIndex].isFolding = !items[dateIndex].isFolding
+    }
+}
+
+// MARK: - DataManager
+
+// RelatedGoodsResult
+extension ShoppingListViewModel {
+    func successShoppingListData(result: GoodsPageResponseResult) {
+        self.goods.append(result)
+        for index in 0...1 {
+            self.items.append(ShoppingList(shoppingOptionName: "   \(index). \(goods[0].options[index].optionName)",
+                                           shoppingItem: [goods[0].options[0].optionDetailList[0].optionDetailName, goods[0].options[0].optionDetailList[1].optionDetailName],
+                                           isSelected: [false, false]))
+        }
     }
 }

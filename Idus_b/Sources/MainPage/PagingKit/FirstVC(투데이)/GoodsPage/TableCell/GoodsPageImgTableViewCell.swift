@@ -10,14 +10,9 @@ import RxGesture // collectionView의 cell내부 contentsView tapGesture() rx �
 import RxSwift
 import RxCocoa
 
-//protocol GoodsImgDelegate: AnyObject { // class로 타입 제한
-//    func didSelectedGoodsPageBtn(_ index: Int)
-//}
-
 class GoodsPageImgTableViewCell: UITableViewCell {
 
     // MARK: - 프로퍼티
-//    var delegate: GoodsImgDelegate?
     
     static let identifier = "GoodsPageImgTableViewCell"
     static func nib() -> UINib {
@@ -97,27 +92,22 @@ class GoodsPageImgTableViewCell: UITableViewCell {
         dataSource.forEach { _ in
             let vc = UIViewController()
 //            let imgBtn = UIButton()
-            let imgBtn = UIImageView()
+            let imgView = UIImageView()
             let url = URL(string: bigGoodsImgs[index])
             DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
                 DispatchQueue.main.async {
-//                    imgBtn.setImage(UIImage(data: data!), for: .normal)
-                    imgBtn.image = UIImage(data: data!)!
+                    imgView.image = UIImage(data: data!)!
                 }
             }
             
-            imgBtn.contentMode = .scaleAspectFit
-//            imgBtn.contentMode = .scaleToFill
-//            imgBtn.contentMode = .scaleAspectFill
-//            imgBtn.contentHorizontalAlignment = .fill
-//            imgBtn.contentVerticalAlignment = .fill
-            imgBtn.heightAnchor.constraint(equalToConstant: 400).isActive = true
+            imgView.contentMode = .scaleAspectFit
+            imgView.heightAnchor.constraint(equalToConstant: 400).isActive = true
             
             index += 1
             
-            vc.view.addSubview(imgBtn)
+            vc.view.addSubview(imgView)
 
-            imgBtn.snp.makeConstraints { make in
+            imgView.snp.makeConstraints { make in
 //                make.top.equalToSuperview()
                 make.center.equalToSuperview()
             }
@@ -138,18 +128,15 @@ class GoodsPageImgTableViewCell: UITableViewCell {
                 
         // pageView 레이아웃
         pageViewController.view.snp.makeConstraints { make in
-//            make.top.equalTo(self.safeAreaLayoutGuide)
             make.top.equalToSuperview()
             make.bottom.equalTo(goodsImgCollectionView.snp.top)
             make.leading.trailing.equalToSuperview()
-//            make.height.equalTo(400)
         }
         
         // collectionView 레이아웃
         goodsImgCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(50)
-//            make.width.equalTo(50)
         }
     }
     
@@ -164,7 +151,6 @@ class GoodsPageImgTableViewCell: UITableViewCell {
     }
     
     private func registerCell() {
-//        goodsImgCollectionView.register(GoodsPageCollectionViewCell.nib(), forCellWithReuseIdentifier: GoodsPageCollectionViewCell.identifier)
         goodsImgCollectionView.register(GoodsPageCollectionViewCell.self, forCellWithReuseIdentifier: GoodsPageCollectionViewCell.identifier)
     }
     
@@ -243,15 +229,12 @@ extension GoodsPageImgTableViewCell: UICollectionViewDelegate, UICollectionViewD
                 .drive(onNext: { [weak self] _ in
                     self?.didTapCell(at: indexPath)
                 }).disposed(by: cell.bag)
-    //        cell.click = { [unowned self] in
-    //            delegate?.didSelectedGoodsPageBtn(indexPath.item)
-    //        }
         }
         return cell
     }
     
     // 높이 설정: 수평 스크롤이 되도록 height를 collectionView의 height와 동일하도록 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: collectionView.frame.height) // collectionView.frame.height
+        return CGSize(width: 50, height: collectionView.frame.height)
     }
 }

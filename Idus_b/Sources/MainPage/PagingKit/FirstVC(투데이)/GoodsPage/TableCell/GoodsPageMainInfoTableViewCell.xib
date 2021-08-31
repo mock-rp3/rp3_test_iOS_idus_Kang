@@ -130,6 +130,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8lr-rE-2oK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haC-aC-KY2">
                                 <rect key="frame" x="183.5" y="10" width="163.5" height="40"/>
@@ -198,6 +201,9 @@
             <connections>
                 <outlet property="firstSellNum" destination="ahG-iV-ncp" id="7uA-By-ZL2"/>
                 <outlet property="goodsTitle" destination="VZD-gz-Uh5" id="xLK-JS-aAj"/>
+                <outlet property="likeBtnNum" destination="XlB-lr-U3x" id="2DN-mZ-AoJ"/>
+                <outlet property="orderUserNum" destination="fWN-zX-DjC" id="Fgh-Zb-SuY"/>
+                <outlet property="reviewNum" destination="wXW-X7-XGl" id="jfx-h1-CNQ"/>
                 <outlet property="saleNum" destination="28P-ud-P9K" id="XzI-Lk-y6u"/>
                 <outlet property="sellNum" destination="qXo-Nm-RFW" id="Ujb-jx-7aD"/>
                 <outlet property="sellerImg" destination="yCP-H4-Q6e" id="hIU-7c-cuG"/>
