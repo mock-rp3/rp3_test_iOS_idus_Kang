@@ -127,19 +127,10 @@ extension GoodsPageViewController {
             self.items0.append(ShoppingList(shoppingOptionName: shoppingOptionNames[index],
                                            shoppingItem: shoppingItems,
                                            isSelected: isSelecteds))
+            UserDefaults.standard.set(shoppingOptionNames[index], forKey: "shoppingOptionNames\(index)")
+            UserDefaults.standard.set(shoppingItems, forKey: "shoppingItems\(index)")
+            UserDefaults.standard.set(isSelecteds, forKey: "isSelecteds\(index)")
         }
-        UserDefaults.standard.set(items0, forKey: "items")
-        
-//        let data = NSKeyedArchiver.archivedData(withRootObject: items0)
-//        let data = NSKeyedArchiver.archivedData(withRootObject: items0, requiringSecureCoding: true)
-//        do {
-//            let data = try NSKeyedArchiver.archivedData(withRootObject: items0, requiringSecureCoding: true)
-//           try UserDefaults.standard.set(data, forKey: "items")
-//        }
-//        catch {
-//           print(error)
-//        }
-        
     }
 }
 

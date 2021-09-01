@@ -16,12 +16,11 @@ class ShoppingListViewModel {
     private var items = [ShoppingList]()
     
     init() {
-        items = UserDefaults.standard.array(forKey: "items") as! [ShoppingList]
-//        if let data = UserDefaults.standard.object(forKey: "items") as? Data {
-//            let someDictionary = NSKeyedUnarchiver.unarchiveObject(with: data) as? [ShoppingList]
-//            items = someDictionary!
-//        }
-        
+        var index = 0
+        while let _ = UserDefaults.standard.value(forKey: "shoppingOptionNames\(index)") as? String {
+            items.append(ShoppingList(shoppingOptionName: UserDefaults.standard.value(forKey: "shoppingOptionNames\(index)") as! String, shoppingItem: UserDefaults.standard.array(forKey: "shoppingItems\(index)") as! [String], isSelected: UserDefaults.standard.array(forKey: "isSelecteds\(index)") as! [Bool]))
+            index += 1
+        }
     }
     
     public var count: Int {
