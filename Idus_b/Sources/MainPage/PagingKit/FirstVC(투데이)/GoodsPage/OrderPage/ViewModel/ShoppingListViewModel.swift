@@ -11,16 +11,18 @@ import Foundation
 class ShoppingListViewModel {
     
     // MARK: - 프로퍼티
-    let shoppingListDataManager: ShoppingListDataManager = ShoppingListDataManager()
-    var goods = [GoodsPageResponseResult]()
     
     // Storage
     private var items = [ShoppingList]()
     
     init() {
-        shoppingListDataManager.getShoppinListData(delegate: self)
+        items = UserDefaults.standard.array(forKey: "items") as! [ShoppingList]
+//        if let data = UserDefaults.standard.object(forKey: "items") as? Data {
+//            let someDictionary = NSKeyedUnarchiver.unarchiveObject(with: data) as? [ShoppingList]
+//            items = someDictionary!
+//        }
+        
     }
-    
     
     public var count: Int {
         return items.count
@@ -52,16 +54,3 @@ class ShoppingListViewModel {
     }
 }
 
-// MARK: - DataManager
-
-// RelatedGoodsResult
-extension ShoppingListViewModel {
-    func successShoppingListData(result: GoodsPageResponseResult) {
-        self.goods.append(result)
-        for index in 0...1 {
-            self.items.append(ShoppingList(shoppingOptionName: "   \(index). \(goods[0].options[index].optionName)",
-                                           shoppingItem: [goods[0].options[0].optionDetailList[0].optionDetailName, goods[0].options[0].optionDetailList[1].optionDetailName],
-                                           isSelected: [false, false]))
-        }
-    }
-}

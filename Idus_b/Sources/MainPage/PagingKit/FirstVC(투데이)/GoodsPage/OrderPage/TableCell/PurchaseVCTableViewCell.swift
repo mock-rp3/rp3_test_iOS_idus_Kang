@@ -10,7 +10,7 @@ import UIKit
 class PurchaseVCTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var itemNum: UILabel!
     @IBOutlet weak var CountCost: UILabel!
     @IBOutlet weak var cancleBtn: UIButton!

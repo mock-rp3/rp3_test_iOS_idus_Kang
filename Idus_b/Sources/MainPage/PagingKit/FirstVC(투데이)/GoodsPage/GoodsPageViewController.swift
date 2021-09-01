@@ -13,7 +13,8 @@ import RxCocoa
 class GoodsPageViewController: BaseViewController {
     
     // MARK: - 프로퍼티
-    let goodsPageDataManager: GoodsPageDataManager = GoodsPageDataManager()
+    lazy var goodsPageDataManager: GoodsPageDataManager = GoodsPageDataManager()
+    private var items0 = [ShoppingList]()
     
     @IBOutlet var table: UITableView!
     @IBOutlet weak var heartBtn: UIButton!
@@ -100,6 +101,8 @@ class GoodsPageViewController: BaseViewController {
 // RelatedGoodsResult
 extension GoodsPageViewController {
     func successTodayGoodsPageData(result: GoodsPageResponseResult, imgResult: [String]) {
+        
+        // 상품 상세페이지 이미지 세팅
         self.goods.append(result)
         for index in 0...8{
             self.smallGoodsImgs.append(imgResult[index])
@@ -108,6 +111,35 @@ extension GoodsPageViewController {
         UserDefaults.standard.set(bigGoodsImgs, forKey: "bigGoodsImgs")
         self.setupDelegate()
         self.registerCell()
+
+        // 주문 옵션 세팅
+        var shoppingOptionNames = [String]()
+        for index in 0...goods[0].options.count-1 {
+            shoppingOptionNames.append("   \(index+1). \(goods[0].options[index].optionName)")
+            var shoppingItems = [String]()
+            var isSelecteds = [Bool]()
+            
+            for index2 in 0...goods[0].options[index].optionDetailList.count-1 {
+                shoppingItems.append(goods[0].options[index].optionDetailList[index2].optionDetailName)
+                isSelecteds.append(false)
+            }
+
+            self.items0.append(ShoppingList(shoppingOptionName: shoppingOptionNames[index],
+                                           shoppingItem: shoppingItems,
+                                           isSelected: isSelecteds))
+        }
+        UserDefaults.standard.set(items0, forKey: "items")
+        
+//        let data = NSKeyedArchiver.archivedData(withRootObject: items0)
+//        let data = NSKeyedArchiver.archivedData(withRootObject: items0, requiringSecureCoding: true)
+//        do {
+//            let data = try NSKeyedArchiver.archivedData(withRootObject: items0, requiringSecureCoding: true)
+//           try UserDefaults.standard.set(data, forKey: "items")
+//        }
+//        catch {
+//           print(error)
+//        }
+        
     }
 }
 

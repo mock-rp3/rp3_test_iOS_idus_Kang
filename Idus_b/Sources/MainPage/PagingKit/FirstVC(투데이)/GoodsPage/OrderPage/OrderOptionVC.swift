@@ -121,10 +121,9 @@ extension OrderOptionVC: MainTableViewCellDidTapDelegate {
         table.reloadData()
         let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "OrderVC")
         nextVC.modalPresentationStyle = .overFullScreen
+//        nextVC.
         self.present(nextVC, animated: false, completion: nil)
         
     }
 
 }
-
-

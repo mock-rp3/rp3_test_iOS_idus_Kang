@@ -8,7 +8,7 @@
 import Alamofire
 
 class ShoppingListDataManager {
-    func getShoppinListData(delegate: ShoppingListViewModel) {
+    func getShoppinListData(delegate: GoodsPageViewController) {
 
         // GET
         // /works/:workIndex    path variable(:workIndex 부분은 그냥 숫자 넣어줘도 됨)

@@ -123,8 +123,8 @@
             <connections>
                 <outlet property="CountCost" destination="RjG-ax-f9Z" id="2eG-g0-zQO"/>
                 <outlet property="cancleBtn" destination="yEd-tc-52O" id="YZP-9e-rUv"/>
+                <outlet property="itemLabel" destination="P8P-Xo-9pi" id="DH3-7I-1Ar"/>
                 <outlet property="itemNum" destination="sZe-Ni-l0B" id="RYY-x6-1f9"/>
-                <outlet property="titleLabel" destination="P8P-Xo-9pi" id="DH3-7I-1Ar"/>
             </connections>
             <point key="canvasLocation" x="31.884057971014496" y="99.441964285714278"/>
         </tableViewCell>

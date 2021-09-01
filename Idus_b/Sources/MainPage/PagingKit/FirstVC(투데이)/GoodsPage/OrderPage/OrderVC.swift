@@ -92,7 +92,7 @@ extension OrderVC: UITableViewDelegate, UITableViewDataSource {
         currentDateIndex = indexPath.row
         
         // cell의 UI에 값을 할당한다. (viewModel 혹은 구조체를 전달하는 방법으로 해도 된다.)
-        cell.titleLabel.text = viewModel.itemAt(index: indexPath.row).shoppingOptionName
+        cell.itemLabel.text = viewModel.itemAt(index: indexPath.row).shoppingOptionName
         
         // if cell.cancleBtn 누르면 데이터 셀 취소
         // if cell.minustBtn 누르면 cell.itemNum -1
