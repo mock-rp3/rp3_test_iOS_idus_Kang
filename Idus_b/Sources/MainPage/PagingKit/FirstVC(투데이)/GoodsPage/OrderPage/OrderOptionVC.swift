@@ -87,8 +87,8 @@ extension OrderOptionVC: UITableViewDelegate, UITableViewDataSource {
     // (현재 그냥 전체를 변경하고 있고, 추후에 클릭한 cell의 사이즈만 변경하도록 구현)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.updateIsFoldingState(dateIndex: indexPath.row)
-        tableView.reloadRows(at: [indexPath], with: .automatic)
-//        tableView.reloadData()
+//        tableView.reloadRows(at: [indexPath], with: .automatic)
+        tableView.reloadData()
     }
     
     // 테이블뷰 셀 높이 지정
@@ -121,7 +121,6 @@ extension OrderOptionVC: MainTableViewCellDidTapDelegate {
         table.reloadData()
         let nextVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "OrderVC")
         nextVC.modalPresentationStyle = .overFullScreen
-//        nextVC.
         self.present(nextVC, animated: false, completion: nil)
         
     }

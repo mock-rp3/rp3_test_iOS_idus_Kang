@@ -61,6 +61,7 @@ extension PurchaseOptionTableViewCell: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let dataArr = self.dataArr else { return 0 }
+        print(dataArr.shoppingItem.count)
         return dataArr.shoppingItem.count
     }
     
@@ -76,11 +77,13 @@ extension PurchaseOptionTableViewCell: UITableViewDelegate, UITableViewDataSourc
 
         if dataArr.isSelected[indexPath.row] {
             // 셀 선택 이벤트
+            
         }
         
         return cell
     }
     
+    // 테이블(옵션명) 클릭했을 때 액션
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        dataArr.setCompletionState(index: indexPath.row)
         

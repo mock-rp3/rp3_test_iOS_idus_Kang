@@ -14,11 +14,13 @@ class ShoppingListViewModel {
     
     // Storage
     private var items = [ShoppingList]()
+    var index = 0
     
     init() {
-        var index = 0
-        while let _ = UserDefaults.standard.value(forKey: "shoppingOptionNames\(index)") as? String {
-            items.append(ShoppingList(shoppingOptionName: UserDefaults.standard.value(forKey: "shoppingOptionNames\(index)") as! String, shoppingItem: UserDefaults.standard.array(forKey: "shoppingItems\(index)") as! [String], isSelected: UserDefaults.standard.array(forKey: "isSelecteds\(index)") as! [Bool]))
+        while let shoppingOptionNames = UserDefaults.standard.value(forKey: "shoppingOptionNames\(index)") as? String {
+            items.append(ShoppingList(shoppingOptionName: shoppingOptionNames,
+                                      shoppingItem: UserDefaults.standard.array(forKey: "shoppingItems\(index)") as! [String],
+                                      isSelected: UserDefaults.standard.array(forKey: "isSelecteds\(index)") as! [Bool]))
             index += 1
         }
     }
@@ -33,8 +35,8 @@ class ShoppingListViewModel {
     
     public func setCompletionState(dateIndex: Int, itemIndex: Int) {
         
-        // 첫 번째 "index"는 어떤 날짜에 있는지에 대한 인덱스이다.
-        // 두 번째 "index"는 어떤 식재료인지 알려주는 인덱스이다.
+        // 첫 번째 "index"는 어떤 옵션명에 있는지에 대한 인덱스이다.
+        // 두 번째 "index"는 어떤 옵션내용인지 알려주는 인덱스이다.
         items[dateIndex].isSelected[itemIndex] = !(items[dateIndex].isSelected[itemIndex])
     }
     
