@@ -77,7 +77,7 @@ extension PurchaseOptionTableViewCell: UITableViewDelegate, UITableViewDataSourc
 
         if dataArr.isSelected[indexPath.row] {
             // 셀 선택 이벤트
-            
+            cell.backgroundColor = .lightGray
         }
         
         return cell

@@ -57,7 +57,10 @@ class GoodsPageMainInfoTableViewCell: UITableViewCell {
         goodsTitle.text = models[0].workInfo.title
         saleNum.text = "\(models[0].workDiscount)%"
         firstSellNum.text = "\(models[0].workInfo.price)원"
-        sellNum.text = "\(models[0].workInfo.price - (models[0].workInfo.price * models[0].workDiscount))원"
+        
+        let sellNum0 = models[0].workInfo.price - models[0].workInfo.price * models[0].workDiscount
+        UserDefaults.standard.set(sellNum0, forKey: "sellNum")
+        sellNum.text = "\(sellNum0)원"
         reviewNum.setTitle("(\(models[0].review.reviewCount))", for: .normal)
         orderUserNum.text = "\(models[0].orderUserCount)명의 고객들이 구매했어요."
         

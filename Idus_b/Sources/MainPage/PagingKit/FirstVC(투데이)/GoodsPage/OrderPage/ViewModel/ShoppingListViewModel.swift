@@ -15,6 +15,7 @@ class ShoppingListViewModel {
     // Storage
     private var items = [ShoppingList]()
     var index = 0
+    var plusSelectedItem = ""
     
     init() {
         while let shoppingOptionNames = UserDefaults.standard.value(forKey: "shoppingOptionNames\(index)") as? String {
@@ -38,6 +39,21 @@ class ShoppingListViewModel {
         // 첫 번째 "index"는 어떤 옵션명에 있는지에 대한 인덱스이다.
         // 두 번째 "index"는 어떤 옵션내용인지 알려주는 인덱스이다.
         items[dateIndex].isSelected[itemIndex] = !(items[dateIndex].isSelected[itemIndex])
+        
+        // 선택한 옵션 아이템 정보 유저디폴트로 저장
+        let selectedOptionName = items[dateIndex].shoppingOptionName
+        let selectedItem = items[dateIndex].shoppingItem[itemIndex]
+        
+        if items.count != dateIndex + 1 {
+            let plusSelectedItem0 = "\(selectedOptionName) : \(selectedItem) / "
+            UserDefaults.standard.set(plusSelectedItem0, forKey: "plusSelectedItem\(dateIndex)")
+        } else {
+            let plusSelectedItem0 = "\(selectedOptionName) : \(selectedItem)"
+            UserDefaults.standard.set(plusSelectedItem0, forKey: "plusSelectedItem\(dateIndex)")
+        }
+        plusSelectedItem += UserDefaults.standard.value(forKey: "plusSelectedItem\(dateIndex)") as! String
+        UserDefaults.standard.set(plusSelectedItem, forKey: "plusSelectedItem")
+        
     }
     
     public func updateShoppingItem(dateIndex: Int, itemIndex: Int, newValue: String) {
@@ -51,7 +67,11 @@ class ShoppingListViewModel {
     
     public func updateIsFoldingState(dateIndex: Int) {
         
-        items[dateIndex].isFolding = !items[dateIndex].isFolding
+        if items.count == dateIndex {
+            return
+        } else {
+            items[dateIndex].isFolding = !items[dateIndex].isFolding
+        }
     }
 }
 

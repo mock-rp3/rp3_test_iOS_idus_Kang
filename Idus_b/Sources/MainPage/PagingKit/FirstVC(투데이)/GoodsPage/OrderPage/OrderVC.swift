@@ -10,9 +10,6 @@ import UIKit
 class OrderVC: BaseViewController {
 
     //MARK: - Prperty
-    var currentDateIndex: Int = 0
-    var dataArr: ShoppingList?
-    var viewModel = ShoppingListViewModel()
     
     @IBOutlet weak var table: UITableView!
     
@@ -78,26 +75,19 @@ class OrderVC: BaseViewController {
 extension OrderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let dataArr = self.dataArr else { return 0 }
-        return dataArr.shoppingItem.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PurchaseVCTableViewCell.identifier, for: indexPath) as? PurchaseVCTableViewCell else { return UITableViewCell()}
-
-        // UI를 구성할 데이터를 넘겨준다.
-        dataArr = viewModel.itemAt(index: indexPath.row)
         
-        // 최상위 Tableview의 indexPathRow를 넘겨준다.
-        currentDateIndex = indexPath.row
-        
-        // cell의 UI에 값을 할당한다. (viewModel 혹은 구조체를 전달하는 방법으로 해도 된다.)
-        cell.itemLabel.text = viewModel.itemAt(index: indexPath.row).shoppingOptionName
-        
+        cell.itemLabel.text = UserDefaults.standard.value(forKey: "plusSelectedItem") as? String
+                                                  
         // if cell.cancleBtn 누르면 데이터 셀 취소
         // if cell.minustBtn 누르면 cell.itemNum -1
         // if cell.plnustBtn 누르면 cell.itemNum +1
-        
+        let sellNum = UserDefaults.standard.value(forKey: "sellNum") as! Int
+        cell.CountCost.text = "\(sellNum)원"
         cell.selectionStyle = .none
         
         return cell
@@ -105,6 +95,6 @@ extension OrderVC: UITableViewDelegate, UITableViewDataSource {
     
     // 테이블뷰 셀 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 80
     }
 }

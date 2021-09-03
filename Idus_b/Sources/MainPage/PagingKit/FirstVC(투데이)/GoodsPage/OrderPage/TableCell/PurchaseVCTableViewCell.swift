@@ -15,6 +15,8 @@ class PurchaseVCTableViewCell: UITableViewCell {
     @IBOutlet weak var CountCost: UILabel!
     @IBOutlet weak var cancleBtn: UIButton!
     
+    let sellNum = UserDefaults.standard.value(forKey: "sellNum") as! Int
+    
     static let identifier = "PurchaseVCTableViewCell"
     static func nib() -> UINib {
         return UINib(nibName: "PurchaseVCTableViewCell", bundle: nil)
@@ -47,9 +49,13 @@ class PurchaseVCTableViewCell: UITableViewCell {
     }
     
     @IBAction func minusBtn(_ sender: UIButton) {
+        itemNum.text = "\(Int(itemNum.text!)! - 1)"
+        CountCost.text = "\(sellNum * Int(itemNum.text!)!)원"
     }
     
     @IBAction func plusBtn(_ sender: UIButton) {
+        itemNum.text = "\(Int(itemNum.text!)! + 1)"
+        CountCost.text = "\(sellNum * Int(itemNum.text!)!)원"
     }
     
     // MARK: - Helpers
