@@ -376,6 +376,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="costNum" destination="f9e-yw-AXF" id="XiE-EW-vsp"/>
                         <outlet property="table" destination="JZo-5F-Qrn" id="ZsM-nt-wrW"/>
                     </connections>
                 </viewController>

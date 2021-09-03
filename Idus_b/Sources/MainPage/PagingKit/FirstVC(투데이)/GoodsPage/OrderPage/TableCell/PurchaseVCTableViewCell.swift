@@ -16,6 +16,7 @@ class PurchaseVCTableViewCell: UITableViewCell {
     @IBOutlet weak var cancleBtn: UIButton!
     
     let sellNum = UserDefaults.standard.value(forKey: "sellNum") as! Int
+    let numberFormatter = NumberFormatter()
     
     static let identifier = "PurchaseVCTableViewCell"
     static func nib() -> UINib {
@@ -25,6 +26,8 @@ class PurchaseVCTableViewCell: UITableViewCell {
     // MARK: - Lifecylce
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        numberFormatter.numberStyle = .decimal
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,12 +53,14 @@ class PurchaseVCTableViewCell: UITableViewCell {
     
     @IBAction func minusBtn(_ sender: UIButton) {
         itemNum.text = "\(Int(itemNum.text!)! - 1)"
-        CountCost.text = "\(sellNum * Int(itemNum.text!)!)원"
+        let result = numberFormatter.string(from: NSNumber(value: sellNum * Int(itemNum.text!)!))! + "원"
+        CountCost.text = result
     }
     
     @IBAction func plusBtn(_ sender: UIButton) {
         itemNum.text = "\(Int(itemNum.text!)! + 1)"
-        CountCost.text = "\(sellNum * Int(itemNum.text!)!)원"
+        let result = numberFormatter.string(from: NSNumber(value: sellNum * Int(itemNum.text!)!))! + "원"
+        CountCost.text = result
     }
     
     // MARK: - Helpers

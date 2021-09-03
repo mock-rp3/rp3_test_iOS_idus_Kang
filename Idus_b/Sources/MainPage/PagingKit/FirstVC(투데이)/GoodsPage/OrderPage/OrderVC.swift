@@ -12,6 +12,7 @@ class OrderVC: BaseViewController {
     //MARK: - Prperty
     
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var costNum: UILabel!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -87,9 +88,14 @@ extension OrderVC: UITableViewDelegate, UITableViewDataSource {
         // if cell.minustBtn 누르면 cell.itemNum -1
         // if cell.plnustBtn 누르면 cell.itemNum +1
         let sellNum = UserDefaults.standard.value(forKey: "sellNum") as! Int
-        cell.CountCost.text = "\(sellNum)원"
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: sellNum))! + "원"
+        cell.CountCost.text = result
         cell.selectionStyle = .none
         
+        let sumResult = numberFormatter.string(from: NSNumber(value: 3000+sellNum))! + "원"
+        costNum.text = sumResult
         return cell
     }
     

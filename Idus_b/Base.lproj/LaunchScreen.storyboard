@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,7 +25,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Oec-w8-CMc" secondAttribute="bottom" id="9ms-dr-1yG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oec-w8-CMc" secondAttribute="trailing" id="SUX-Pc-fq7"/>
-                            <constraint firstItem="Oec-w8-CMc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="haQ-3t-s3v"/>
+                            <constraint firstItem="Oec-w8-CMc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="haQ-3t-s3v"/>
                             <constraint firstItem="Oec-w8-CMc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lWa-ba-qaU"/>
                         </constraints>
                     </view>
