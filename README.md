@@ -13,6 +13,7 @@
   - 넘겨받은 String을 map으로 Int로 형 변환해 보기도 하고, 그냥 Int(Stirng)으로 계산 처리함
   - NumberFormatter().numberStyle = .decimal 로 금액 숫자 세자리마다 콤마도 넣어줌
 + 런치스크린 safe area로 돼있어서 풀스크린 안되던거 super view로 바꿔서 풀스크린으로 만듬
+  - info.plist에서 Status bar is initially hidden까지 true로 해줘서 status bar도 
 + 앱 아이콘 설정 완료
   - https://appicon.co/ 사이트에서 1024x1024만 있으면 앱 아이콘 폴더 쉽게 만들 수 있음
 
