@@ -13,6 +13,10 @@ class OrderVC: BaseViewController {
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var costNum: UILabel!
+    @IBOutlet weak var deliveryNum: UILabel!
+    var dataArr = [String]()
+    let sellNum = UserDefaults.standard.value(forKey: "sellNum") as! Int
+    let numberFormatter = NumberFormatter()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -20,6 +24,8 @@ class OrderVC: BaseViewController {
         
         setupDelegate()
         registerCell()
+        numberFormatter.numberStyle = .decimal
+        dataArr.append(UserDefaults.standard.value(forKey: "plusSelectedItem") as? String ?? "")
     }
     
     //MARK: - Action
@@ -76,26 +82,55 @@ class OrderVC: BaseViewController {
 extension OrderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dataArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PurchaseVCTableViewCell.identifier, for: indexPath) as? PurchaseVCTableViewCell else { return UITableViewCell()}
         
         cell.itemLabel.text = UserDefaults.standard.value(forKey: "plusSelectedItem") as? String
-                                                  
-        // if cell.cancleBtn 누르면 데이터 셀 취소
-        // if cell.minustBtn 누르면 cell.itemNum -1
-        // if cell.plnustBtn 누르면 cell.itemNum +1
-        let sellNum = UserDefaults.standard.value(forKey: "sellNum") as! Int
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let result = numberFormatter.string(from: NSNumber(value: sellNum))! + "원"
-        cell.CountCost.text = result
+        
+        let resultCountCost = numberFormatter.string(from: NSNumber(value: sellNum))! + "원"
+        cell.CountCost.text = resultCountCost
         cell.selectionStyle = .none
         
         let sumResult = numberFormatter.string(from: NSNumber(value: 3000+sellNum))! + "원"
         costNum.text = sumResult
+        
+//        deliveryNum.text = ""
+//        let deliveryNumResult = numberFormatter.string(from: NSNumber(value: Int(deliveryNum.text)))! + "원"
+        
+        cell.clickMinusBtn = { [unowned self] in
+            cell.itemNum.text = "\(Int(cell.itemNum.text!)! - 1)"
+            UserDefaults.standard.set(Int(cell.itemNum.text!)! - 1, forKey: "finalItemNum")
+            let resultMinusCountCost = numberFormatter.string(from: NSNumber(value: sellNum * Int(cell.itemNum.text!)!))! + "원"
+            cell.CountCost.text = resultMinusCountCost
+            
+            let sumResult = numberFormatter.string(from: NSNumber(value: 3000+sellNum * Int(cell.itemNum.text!)!))! + "원"
+            costNum.text = sumResult
+            UserDefaults.standard.set(3000+sellNum * Int(cell.itemNum.text!)!, forKey: "finalCostNum")
+            
+        }
+        
+        cell.clickPlusBtn = { [unowned self] in
+            cell.itemNum.text = "\(Int(cell.itemNum.text!)! + 1)"
+            UserDefaults.standard.set(Int(cell.itemNum.text!)! + 1, forKey: "finalItemNum")
+            let resultPlusCountCost = numberFormatter.string(from: NSNumber(value: sellNum * Int(cell.itemNum.text!)!))! + "원"
+            cell.CountCost.text = resultPlusCountCost
+            
+            let sumResult = numberFormatter.string(from: NSNumber(value: 3000+sellNum * Int(cell.itemNum.text!)!))! + "원"
+            costNum.text = sumResult
+            UserDefaults.standard.set(3000+sellNum * Int(cell.itemNum.text!)!, forKey: "finalCostNum")
+        }
+        
+        // if cell.cancleBtn 누르면 데이터 셀 취소
+        cell.clickCancleBtn = { [unowned self] in
+            dataArr.remove(at: indexPath.row)
+            table.deleteRows(at: [indexPath], with: .automatic)
+//            table.deleteSections([indexPath.section], with: .fade)
+            table.reloadData()
+        }
+        
         return cell
     }
     

@@ -15,8 +15,10 @@ class PurchaseVCTableViewCell: UITableViewCell {
     @IBOutlet weak var CountCost: UILabel!
     @IBOutlet weak var cancleBtn: UIButton!
     
-    let sellNum = UserDefaults.standard.value(forKey: "sellNum") as! Int
-    let numberFormatter = NumberFormatter()
+    // 셀 버튼 클릭 이벤트 넘겨주기 위한 클로저 소스 코드
+    var clickCancleBtn : (() -> ()) = {}
+    var clickMinusBtn : (() -> ()) = {}
+    var clickPlusBtn : (() -> ()) = {}
     
     static let identifier = "PurchaseVCTableViewCell"
     static func nib() -> UINib {
@@ -26,8 +28,6 @@ class PurchaseVCTableViewCell: UITableViewCell {
     // MARK: - Lifecylce
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        numberFormatter.numberStyle = .decimal
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,30 +37,26 @@ class PurchaseVCTableViewCell: UITableViewCell {
     }
     // MARK: - Actions
     
-    func cancleBtn2() {
-        cancleBtn.addTarget(self,
-                         action: #selector(buttonDidTap(_:)),
-                         for: .touchUpInside)
-    }
-    
-    @objc func buttonDidTap(_ sender: UIButton) {
-        
-    }
+//    func cancleBtn2() {
+//        cancleBtn.addTarget(self,
+//                         action: #selector(buttonDidTap(_:)),
+//                         for: .touchUpInside)
+//    }
+//
+//    @objc func buttonDidTap(_ sender: UIButton) {
+//
+//    }
     
     @IBAction func cancleBtn(_ sender: UIButton) {
-        
+        clickCancleBtn()
     }
     
     @IBAction func minusBtn(_ sender: UIButton) {
-        itemNum.text = "\(Int(itemNum.text!)! - 1)"
-        let result = numberFormatter.string(from: NSNumber(value: sellNum * Int(itemNum.text!)!))! + "원"
-        CountCost.text = result
+        clickMinusBtn()
     }
     
     @IBAction func plusBtn(_ sender: UIButton) {
-        itemNum.text = "\(Int(itemNum.text!)! + 1)"
-        let result = numberFormatter.string(from: NSNumber(value: sellNum * Int(itemNum.text!)!))! + "원"
-        CountCost.text = result
+        clickPlusBtn()
     }
     
     // MARK: - Helpers
