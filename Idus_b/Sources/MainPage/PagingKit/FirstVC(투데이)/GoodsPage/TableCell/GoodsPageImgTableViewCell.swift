@@ -94,6 +94,7 @@ class GoodsPageImgTableViewCell: UITableViewCell {
 //            let imgBtn = UIButton()
             let imgView = UIImageView()
             let url = URL(string: bigGoodsImgs[index])
+                UserDefaults.standard.set(bigGoodsImgs[0], forKey: "itemImageUrl")
             DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
                 DispatchQueue.main.async {
                     imgView.image = UIImage(data: data!)!

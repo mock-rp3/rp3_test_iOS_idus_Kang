@@ -108,7 +108,7 @@ extension OrderVC: UITableViewDelegate, UITableViewDataSource {
             
             let sumResult = numberFormatter.string(from: NSNumber(value: 3000+sellNum * Int(cell.itemNum.text!)!))! + "원"
             costNum.text = sumResult
-            UserDefaults.standard.set(3000+sellNum * Int(cell.itemNum.text!)!, forKey: "finalCostNum")
+            UserDefaults.standard.set(sellNum * Int(cell.itemNum.text!)!, forKey: "finalCostNum")
             
         }
         
@@ -120,7 +120,7 @@ extension OrderVC: UITableViewDelegate, UITableViewDataSource {
             
             let sumResult = numberFormatter.string(from: NSNumber(value: 3000+sellNum * Int(cell.itemNum.text!)!))! + "원"
             costNum.text = sumResult
-            UserDefaults.standard.set(3000+sellNum * Int(cell.itemNum.text!)!, forKey: "finalCostNum")
+            UserDefaults.standard.set(sellNum * Int(cell.itemNum.text!)!, forKey: "finalCostNum")
         }
         
         // if cell.cancleBtn 누르면 데이터 셀 취소
@@ -129,6 +129,7 @@ extension OrderVC: UITableViewDelegate, UITableViewDataSource {
             table.deleteRows(at: [indexPath], with: .automatic)
 //            table.deleteSections([indexPath.section], with: .fade)
             table.reloadData()
+            costNum.text = "3000" + "원"
         }
         
         return cell

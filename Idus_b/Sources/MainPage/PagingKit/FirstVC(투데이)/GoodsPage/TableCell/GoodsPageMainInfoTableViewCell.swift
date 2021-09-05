@@ -54,7 +54,9 @@ class GoodsPageMainInfoTableViewCell: UITableViewCell {
             }
         }
         sellerName.setTitle(models[0].author.authorName, for: .normal)
+        UserDefaults.standard.set(models[0].author.authorName, forKey: "sellerName")
         goodsTitle.text = models[0].workInfo.title
+        UserDefaults.standard.set(goodsTitle.text, forKey: "goodsTitle")
         saleNum.text = "\(models[0].workDiscount)%"
         
         let numberFormatter = NumberFormatter()

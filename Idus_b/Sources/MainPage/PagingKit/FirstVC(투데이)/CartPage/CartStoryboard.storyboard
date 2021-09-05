@@ -179,6 +179,7 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="finalCostNum" destination="2vv-Zl-s0L" id="ek8-ad-F3u"/>
                         <outlet property="table" destination="L4b-LS-yFj" id="dPX-jh-gZM"/>
                     </connections>
                 </viewController>

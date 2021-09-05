@@ -12,12 +12,23 @@ class CartVC: BaseViewController {
     // MARK: - property
     
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var finalCostNum: UILabel!
     
     // MARK: - 생명주기
     override func viewDidLoad() {
         super.viewDidLoad()
 
         registerCell()
+        setFinalItemNum()
+    }
+    
+    // MARK: - Helper
+    
+    func setFinalItemNum() {
+        let numberFormatter = NumberFormatter()
+        let sellNum = UserDefaults.standard.value(forKey: "finalCostNum") as! Int
+        let sumResult = numberFormatter.string(from: NSNumber(value: sellNum))! + "원"
+        finalCostNum.text = sumResult
     }
     
     
@@ -38,15 +49,6 @@ class CartVC: BaseViewController {
     
     
     @IBAction func addCartBtn(_ sender: UIButton) {
-    }
-    
-    @IBAction func numPlusBtn(_ sender: UIButton) {
-    }
-    
-    @IBAction func itemOptionBtn(_ sender: UIButton) {
-    }
-    
-    @IBAction func itemCancleBtn(_ sender: UIButton) {
     }
     
     @IBAction func deliveryCostBtn(_ sender: UIButton) {
