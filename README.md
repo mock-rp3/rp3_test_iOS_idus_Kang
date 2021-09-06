@@ -9,6 +9,7 @@
 ## 21.09.05
 + 결제 페이지 작업 완료
   - reques에 필요한 정보들 유저디폴트로 이전 페이지들에서 저장 후, Post API
+    - 주문 옵션&상세옵션 튜플 형태로 저장하느라, 따로 Codable 구조체 선언 후, UserDefaults.standard.data로 받아서 decode 해줌.
 
 ***
 
