@@ -16,6 +16,8 @@ class ShoppingListViewModel {
     private var items = [ShoppingList]()
     var index = 0
     var plusSelectedItem = ""
+//    var selectedOptionIndex = [(Int,Int)]()
+    var selectedOptionIndex0 = [SelectedOptionIndex]()
     
     init() {
         while let shoppingOptionNames = UserDefaults.standard.value(forKey: "shoppingOptionNames\(index)") as? String {
@@ -34,24 +36,30 @@ class ShoppingListViewModel {
         return self.items[index]
     }
     
-    public func setCompletionState(dateIndex: Int, itemIndex: Int) {
+    public func setCompletionState(optionIndex: Int, itemIndex: Int) {
         
         // 첫 번째 "index"는 어떤 옵션명에 있는지에 대한 인덱스이다.
         // 두 번째 "index"는 어떤 옵션내용인지 알려주는 인덱스이다.
-        items[dateIndex].isSelected[itemIndex] = !(items[dateIndex].isSelected[itemIndex])
+        items[optionIndex].isSelected[itemIndex] = !(items[optionIndex].isSelected[itemIndex])
         
         // 선택한 옵션 아이템 정보 유저디폴트로 저장
-        let selectedOptionName = items[dateIndex].shoppingOptionName
-        let selectedItem = items[dateIndex].shoppingItem[itemIndex]
+        let selectedOptionName = items[optionIndex].shoppingOptionName
+        let selectedItem = items[optionIndex].shoppingItem[itemIndex]
         
-        if items.count != dateIndex + 1 {
+            // 결제 페이지에 보낼 선택한 옵션&아이템 인덱스 값 저장
+
+            selectedOptionIndex0.append(SelectedOptionIndex(selectedOptionIndex: optionIndex, selectedItemIndex: itemIndex))
+            let selectedOptionIndex = try! PropertyListEncoder().encode(selectedOptionIndex0)
+            UserDefaults.standard.set(selectedOptionIndex, forKey: "selectedOptionIndex")
+        
+        if items.count != optionIndex + 1 {
             let plusSelectedItem0 = "\(selectedOptionName) : \(selectedItem) / "
-            UserDefaults.standard.set(plusSelectedItem0, forKey: "plusSelectedItem\(dateIndex)")
+            UserDefaults.standard.set(plusSelectedItem0, forKey: "plusSelectedItem\(optionIndex)")
         } else {
             let plusSelectedItem0 = "\(selectedOptionName) : \(selectedItem)"
-            UserDefaults.standard.set(plusSelectedItem0, forKey: "plusSelectedItem\(dateIndex)")
+            UserDefaults.standard.set(plusSelectedItem0, forKey: "plusSelectedItem\(optionIndex)")
         }
-        plusSelectedItem += UserDefaults.standard.value(forKey: "plusSelectedItem\(dateIndex)") as! String
+        plusSelectedItem += UserDefaults.standard.value(forKey: "plusSelectedItem\(optionIndex)") as! String
         UserDefaults.standard.set(plusSelectedItem, forKey: "plusSelectedItem")
         
     }

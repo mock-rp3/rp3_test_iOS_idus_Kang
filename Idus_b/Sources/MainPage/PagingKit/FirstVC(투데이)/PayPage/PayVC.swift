@@ -31,34 +31,27 @@ class PayVC: BaseViewController {
     @IBAction func payBtn(_ sender: UIButton) {
         
         // Requst Payment
-//        let orderDetail: OrderDetail = [
-//            "workIndex" : 1,
-//            "workNumber" : 2,
-//            "workPrice" : 100,
-//            "workfee" : 0,
-//            "requests" : "배송전 미리연락주세요.",
-//            "detailOptionList" : [
-//                {
-//                "workOptionIndex":1,
-//                "workOptionDetailIndex":3
-//                },
-//                {
-//                    "workOptionIndex":2,
-//                    "workOptionDetailIndex":1
-//                }
-//        ] as [String : Any]
+        var detailOptionList = [DetailOptionList]()
+        let selectedOptionIndex0 = UserDefaults.standard.data(forKey: "selectedOptionIndex")! 
+        let selectedOptionIndex = try! PropertyListDecoder().decode([SelectedOptionIndex].self, from: selectedOptionIndex0)
+        for i in selectedOptionIndex {
+            detailOptionList.append(DetailOptionList(workOptionIndex: i.selectedOptionIndex, workOptionDetailIndex: i.selectedItemIndex))
+        }
         
-//        let input = PayRequest(userIndex: 15, addressIndex: 1, totalPrice: 1000000, orderDetails: [orderDetail])
-//        dataManager.postPayment(input, jwt: "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4IjoxNSwiaWF0IjoxNjMwMDE3ODAwLCJleHAiOjE2MzE0ODkwMjl9.oyLEMoGUc27Oe2oomPBPCLTF3pmWniNOiQxoixU3xKA", delegate: self)
+        let workNumber = UserDefaults.standard.value(forKey: "finalItemNum") as! Int
+        let workPrice = UserDefaults.standard.value(forKey: "sellNum") as! Int
+        let orderDetail = [OrderDetail(workIndex: 1, workNumber: workNumber, workPrice: workPrice, workfee: 3000, requests: "배송전 미리연락주세요.", detailOptionList: detailOptionList)]
+        
+        let userIdx = UserDefaults.standard.value(forKey: "userIdxKey") as! Int
+        let totalPrice = UserDefaults.standard.value(forKey: "finalCostNum") as! Int
+        let input = PayRequest(userIndex: userIdx, addressIndex: 1, totalPrice: totalPrice, orderDetails: orderDetail)
+        dataManager.postPayment(input, delegate: self)
         
         self.showIndicator()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.dismissIndicator()
         }
-        let mainPage = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
-        self.presentAlert(title: "결제 완료됐습니다!", message: nil, isCancelActionIncluded: false) { action in
-            self.changeRootViewController(mainPage)
-        }
+        
     }
     
     // 전 화면 돌아가기
@@ -109,17 +102,17 @@ extension PayVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - 성공/실패 데이터 메니저
     
-//extension PayVC {
-//
-//    func didSuccessPayment(_ result: String) {
-//        self.presentAlert(title: "구매에 성공하였습니다", message: result) { action in
-//            self.dismiss(animated: true, completion: nil)
-//        }
-//    }
-//
-//    func failedToRequestPayment(message: String) {
-//        self.presentAlert(title: message)
-//    }
-//
-//}
+extension PayVC {
 
+    func didSuccessPayment(_ result: String) {
+        let mainPage = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
+        self.presentAlert(title: "결제 완료됐습니다!", message: result, isCancelActionIncluded: false) { action in
+            self.changeRootViewController(mainPage)
+        }
+    }
+
+    func failedToRequestPayment(message: String) {
+        self.presentAlert(title: message)
+    }
+
+}

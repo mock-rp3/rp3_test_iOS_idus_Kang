@@ -15,3 +15,8 @@ struct ShoppingList {
     var shoppingItem: [String]  // ["쇼핑백 : 미포함 구매", "쇼핑백 : 포함 구매(개당500원추가) (+500원)", "기부"]
     var isSelected: [Bool]      // [true, false, true]
 }
+
+struct SelectedOptionIndex: Codable {
+    var selectedOptionIndex: Int
+    var selectedItemIndex: Int
+}

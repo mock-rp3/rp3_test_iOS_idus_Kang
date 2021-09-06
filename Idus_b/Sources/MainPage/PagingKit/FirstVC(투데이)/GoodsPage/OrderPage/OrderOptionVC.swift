@@ -117,7 +117,7 @@ extension OrderOptionVC: MainTableViewCellDidTapDelegate {
     
     /// "MainTableview" 내부에 있는 "InsideTableViewCell"을 클릭했을 때, 호출되는 메소드
     func InsideCellDidTap(dateIndex: Int, itemIndex: Int) {
-        viewModel.setCompletionState(dateIndex: dateIndex, itemIndex: itemIndex)
+        viewModel.setCompletionState(optionIndex: dateIndex, itemIndex: itemIndex)
         viewModel.updateIsFoldingState(dateIndex: dateIndex)
         viewModel.updateIsFoldingState(dateIndex: dateIndex+1)
         table.reloadData()
