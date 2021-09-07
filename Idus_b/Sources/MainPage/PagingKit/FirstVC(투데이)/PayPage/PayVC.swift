@@ -12,17 +12,38 @@ class PayVC: BaseViewController {
     // MARK: - property
     
     lazy var dataManager: PayDataManager = PayDataManager()
+    let numberFormatter = NumberFormatter()
     
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var payNum: UILabel!
+    @IBOutlet weak var mileageNum: UILabel!
     
     // MARK: - 생명주기
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        numberFormatter.numberStyle = .decimal
         registTableCell()
+        setPayNum()
     }
     
+    // MARK: - Helper
+    
+    private func registTableCell() {
+        table.delegate = self
+        table.dataSource = self
+        table.register(PayTableViewCell.nib(), forCellReuseIdentifier: PayTableViewCell.identifier)
+        table.register(PayTableViewCell2.nib(), forCellReuseIdentifier: PayTableViewCell2.identifier)
+    }
+    
+    func setPayNum() {
+        let payNumber0 = UserDefaults.standard.value(forKey: "sellNum") as! Int
+        let payNumber = numberFormatter.string(from: NSNumber(value: 3000+payNumber0))! + "원 간편하게 카드 결제"
+        payNum.text = payNumber
+        let mileageNumber = "예상 적립금 : " + numberFormatter.string(from: NSNumber(value: payNumber0/100))! + "p"
+        mileageNum.text = mileageNumber
+    }
     
     // MARK: - Actions
     
@@ -59,15 +80,6 @@ class PayVC: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Helper
-    
-    private func registTableCell() {
-        table.delegate = self
-        table.dataSource = self
-        table.register(PayTableViewCell.nib(), forCellReuseIdentifier: PayTableViewCell.identifier)
-        table.register(PayTableViewCell2.nib(), forCellReuseIdentifier: PayTableViewCell2.identifier)
-    }
-    
 }
 
 
@@ -84,6 +96,13 @@ extension PayVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = table.dequeueReusableCell(withIdentifier: PayTableViewCell2.identifier, for: indexPath) as! PayTableViewCell2
+            
+            let payNumber0 = UserDefaults.standard.value(forKey: "sellNum") as! Int
+            let itemNumber = numberFormatter.string(from: NSNumber(value: payNumber0))! + "원"
+            let payNumber = numberFormatter.string(from: NSNumber(value: 3000+payNumber0))! + "원"
+            cell.itemNum.text = itemNumber
+            cell.payNum.text = payNumber
+            
             return cell
         }
     }
@@ -104,9 +123,9 @@ extension PayVC: UITableViewDelegate, UITableViewDataSource {
     
 extension PayVC {
 
-    func didSuccessPayment(_ result: String) {
+    func didSuccessPayment(_ message: String) {
         let mainPage = UIStoryboard(name: "LoginedMainStoryboard", bundle: nil).instantiateViewController(identifier: "LoginedMainTabBarController")
-        self.presentAlert(title: "결제 완료됐습니다!", message: result, isCancelActionIncluded: false) { action in
+        self.presentAlert(title: "결제 완료됐습니다!", message: message, isCancelActionIncluded: false) { action in
             self.changeRootViewController(mainPage)
         }
     }

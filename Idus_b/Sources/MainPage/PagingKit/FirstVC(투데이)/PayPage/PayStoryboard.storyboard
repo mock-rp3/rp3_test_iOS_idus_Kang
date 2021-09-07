@@ -110,6 +110,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mileageNum" destination="YO8-9P-x0Z" id="vNL-re-oGX"/>
+                        <outlet property="payNum" destination="eLf-ty-fxN" id="Nds-BR-qtF"/>
                         <outlet property="table" destination="rF5-wA-tL8" id="io0-vo-TZp"/>
                     </connections>
                 </viewController>

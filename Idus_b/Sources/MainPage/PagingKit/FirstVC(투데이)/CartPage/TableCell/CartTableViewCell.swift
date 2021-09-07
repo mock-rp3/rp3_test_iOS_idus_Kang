@@ -18,7 +18,7 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var finalCostNum: UILabel!
     @IBOutlet weak var deliveryNum: UILabel!
     
-    
+    let numberFormatter = NumberFormatter()
     static let identifier = "CartTableViewCell"
     static func nib() -> UINib {
         return UINib(nibName: "CartTableViewCell", bundle: nil)
@@ -27,6 +27,7 @@ class CartTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        numberFormatter.numberStyle = .decimal
         setFinalItem()
     }
 
@@ -49,7 +50,6 @@ class CartTableViewCell: UITableViewCell {
         
         optionName1.text = UserDefaults.standard.value(forKey: "plusSelectedItem") as? String
         
-        let numberFormatter = NumberFormatter()
         let sellNum = UserDefaults.standard.value(forKey: "finalCostNum") as! Int
         let sumResult = numberFormatter.string(from: NSNumber(value: sellNum))! + "원"
         costNum.text = sumResult

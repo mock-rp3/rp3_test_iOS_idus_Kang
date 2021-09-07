@@ -11,7 +11,7 @@ class PayDataManager {
     func postPayment(_ parameters: PayRequest, delegate: PayVC) {
 
         let jwtKey = UserDefaults.standard.value(forKey: "jwtKey") as! String
-        
+        print(jwtKey)
         let header: HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtKey
         ]
@@ -22,13 +22,13 @@ class PayDataManager {
                    encoder: JSONParameterEncoder(),
                    headers: header)
             .validate()
-            .responseDecodable(of: EmailSignUpResponse.self) { response in
+            .responseDecodable(of: PayResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     // 성공했을 때
                     if response.isSuccess {
-                        let result = response.result
-                        delegate.didSuccessPayment(result)
+                        let message = response.message
+                        delegate.didSuccessPayment(message)
                     }
                     // 실패했을 때
                     else {

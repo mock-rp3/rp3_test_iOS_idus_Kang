@@ -26,6 +26,7 @@ class CartVC: BaseViewController {
     
     func setFinalItemNum() {
         let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
         let sellNum = UserDefaults.standard.value(forKey: "finalCostNum") as! Int
         let sumResult = numberFormatter.string(from: NSNumber(value: sellNum))! + "원"
         finalCostNum.text = sumResult

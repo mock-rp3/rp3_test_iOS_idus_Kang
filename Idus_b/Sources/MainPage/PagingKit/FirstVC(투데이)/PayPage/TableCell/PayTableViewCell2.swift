@@ -9,11 +9,16 @@ import UIKit
 
 class PayTableViewCell2: UITableViewCell {
     
+    // MARK: - Property
+    @IBOutlet weak var itemNum: UILabel!
+    @IBOutlet weak var payNum: UILabel!
+    
     static let identifier = "PayTableViewCell2"
     static func nib() -> UINib {
         return UINib(nibName: "PayTableViewCell2", bundle: nil)
     }
-
+    
+    // MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
