@@ -110,9 +110,9 @@ extension PayVC: UITableViewDelegate, UITableViewDataSource {
     // 테이블뷰 셀 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 500
+            return 350
         } else {
-            return 500
+            return 400
         }
     }
     
