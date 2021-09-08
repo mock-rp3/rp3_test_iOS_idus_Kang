@@ -55,6 +55,7 @@
 		AC7DA73C26DA99CA008D1614 /* NaverSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73B26DA99CA008D1614 /* NaverSignUpRequest.swift */; };
 		AC7DA73E26DA9A76008D1614 /* NaverSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73D26DA9A76008D1614 /* NaverSignUpDataManager.swift */; };
 		AC7DA74226DCD2AD008D1614 /* GoodsPageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA74126DCD2AD008D1614 /* GoodsPageCollectionCell.swift */; };
+		AC7DA74B26E86E94008D1614 /* GetPayUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA74A26E86E91008D1614 /* GetPayUserInfoDataManager.swift */; };
 		ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */; };
 		ACBC318426D6D79000F7DE05 /* RelatedGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */; };
 		ACBC318626D6D87800F7DE05 /* RelatedGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */; };
@@ -214,6 +215,7 @@
 		AC7DA73B26DA99CA008D1614 /* NaverSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSignUpRequest.swift; sourceTree = "<group>"; };
 		AC7DA73D26DA9A76008D1614 /* NaverSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSignUpDataManager.swift; sourceTree = "<group>"; };
 		AC7DA74126DCD2AD008D1614 /* GoodsPageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageCollectionCell.swift; sourceTree = "<group>"; };
+		AC7DA74A26E86E91008D1614 /* GetPayUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPayUserInfoDataManager.swift; sourceTree = "<group>"; };
 		ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginInfo.swift; sourceTree = "<group>"; };
 		ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsDataManager.swift; sourceTree = "<group>"; };
 		ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsResponse.swift; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 		ACBC319F26D8039000F7DE05 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				AC7DA74A26E86E91008D1614 /* GetPayUserInfoDataManager.swift */,
 				ACBC31A426D8046800F7DE05 /* PayTableViewCell.swift */,
 				ACBC31A526D8046800F7DE05 /* PayTableViewCell.xib */,
 				AC6DE6B526D87727001B91B7 /* PayTableViewCell2.swift */,
@@ -1387,6 +1390,7 @@
 				ACC5980026C94C5800E2630B /* BoxOfficeViewController.swift in Sources */,
 				ACC5980726C94C5800E2630B /* AlertViewController.swift in Sources */,
 				ACC597D126C94C2900E2630B /* UINavigationBar.swift in Sources */,
+				AC7DA74B26E86E94008D1614 /* GetPayUserInfoDataManager.swift in Sources */,
 				ACC6AA3526CA39F60048D22C /* UIView.swift in Sources */,
 				ACBC318E26D7A59D00F7DE05 /* GoodsPageDataManager.swift in Sources */,
 				ACC597D426C94C2900E2630B /* KobisKey.swift in Sources */,

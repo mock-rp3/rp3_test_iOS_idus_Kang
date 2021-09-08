@@ -9,6 +9,7 @@ import UIKit
 
 class FirstVC: BaseViewController {
     
+    
     // MARK: - 프로퍼티
     
     lazy var relatedGoodsDataManager: RelatedGoodsDataManager = RelatedGoodsDataManager()
@@ -156,8 +157,10 @@ extension FirstVC: GoodsViewDelegate {
     func didSelectedGoodsBtn(_ index: Int) {
         
         //nextVC : push 될 뷰
-        let pushedVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController")
+        let pushedVC = UIStoryboard(name: "GoodsPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "GoodsPageViewController") as! GoodsPageViewController
 
+        pushedVC.goodsIndexNum = index+1
+         
         self.navigationController?.pushViewController(pushedVC, animated: true)
         
         // 모달 방식
@@ -167,6 +170,7 @@ extension FirstVC: GoodsViewDelegate {
         
     }
 }
+
 
 // MARK: - 오늘의 작품 컬렉션뷰 이미지 클릭 이벤트 델리게이트 채택
 extension FirstVC: TodayGoodsViewDelegate {

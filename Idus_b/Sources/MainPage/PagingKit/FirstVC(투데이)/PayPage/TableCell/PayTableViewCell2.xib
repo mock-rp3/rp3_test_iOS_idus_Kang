@@ -81,7 +81,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpw-tY-JXh">
-                        <rect key="frame" x="0.0" y="156" width="320" height="164"/>
+                        <rect key="frame" x="0.0" y="156" width="320" height="184"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18,000원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vec-ZJ-bBS">
                                 <rect key="frame" x="254.5" y="47" width="55.5" height="16"/>
@@ -165,7 +165,7 @@
                 <constraints>
                     <constraint firstItem="Bl2-M6-xfB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9jD-qF-YPM"/>
                     <constraint firstItem="Bl2-M6-xfB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CQP-6t-7b4"/>
-                    <constraint firstAttribute="bottom" secondItem="qpw-tY-JXh" secondAttribute="bottom" constant="70" id="RRn-4v-SYQ"/>
+                    <constraint firstAttribute="bottom" secondItem="qpw-tY-JXh" secondAttribute="bottom" constant="50" id="RRn-4v-SYQ"/>
                     <constraint firstAttribute="trailing" secondItem="Bl2-M6-xfB" secondAttribute="trailing" id="bGD-8O-YaI"/>
                     <constraint firstItem="qpw-tY-JXh" firstAttribute="top" secondItem="Bl2-M6-xfB" secondAttribute="bottom" constant="10" id="qyv-oG-gkl"/>
                     <constraint firstItem="qpw-tY-JXh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uKC-U3-e31"/>

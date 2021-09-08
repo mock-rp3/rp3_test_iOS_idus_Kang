@@ -70,8 +70,8 @@ class GoodsPageImgTableViewCell: UITableViewCell {
     // MARK: - Helper
     
     func configureGoodsImg(with models: [String]) {
-        for index in 0...8 {
-            self.smallGoodsImgs.append(models[index])
+        for smallImgUrl in models {
+            self.smallGoodsImgs.append(smallImgUrl)
         }
         goodsImgCollectionView.reloadData()
     }
@@ -79,9 +79,11 @@ class GoodsPageImgTableViewCell: UITableViewCell {
     // MARK: - CollectionViewCell에 사용될 dataSource 정의
     
     private func setupDataSource() {
-        for k in 0...8 {
+        var k = 0
+        for _ in bigGoodsImgs {
             let model = MyCollectionViewModel(title: k)
             dataSource += [model]
+            k += 1
         }
     }
     

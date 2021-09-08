@@ -13,22 +13,24 @@ import RxCocoa
 class GoodsPageViewController: BaseViewController {
     
     // MARK: - 프로퍼티
+    
     lazy var goodsPageDataManager: GoodsPageDataManager = GoodsPageDataManager()
     private var items0 = [ShoppingList]()
-    
+
     @IBOutlet var table: UITableView!
     @IBOutlet weak var heartBtn: UIButton!
     var heartChecked: Bool = false
-    
+
     var goods = [GoodsPageResponseResult]()
     var smallGoodsImgs = [String]()
     var bigGoodsImgs = [String]()
+    var goodsIndexNum = 0
     
     // MARK: - 생명주기
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        goodsPageDataManager.getTodayGoodsPageData(delegate: self)
+        goodsPageDataManager.getTodayGoodsPageData(idx: goodsIndexNum, delegate: self)
         
         // 인디케이터 (로딩)
         showIndicator()
@@ -104,33 +106,57 @@ extension GoodsPageViewController {
         
         // 상품 상세페이지 이미지 세팅
         self.goods.append(result)
-        for index in 0...8{
-            self.smallGoodsImgs.append(imgResult[index])
-            self.bigGoodsImgs.append(imgResult[index])
+
+        for imgUrl in imgResult {
+            self.smallGoodsImgs.append(imgUrl)
+            self.bigGoodsImgs.append(imgUrl)
         }
+
         UserDefaults.standard.set(bigGoodsImgs, forKey: "bigGoodsImgs")
         self.setupDelegate()
         self.registerCell()
 
         // 주문 옵션 세팅
         var shoppingOptionNames = [String]()
-        for index in 0...goods[0].options.count-1 {
-            shoppingOptionNames.append("   \(index+1). \(goods[0].options[index].optionName)")
+        var idx = 0
+        for goodsOptions in goods[0].options {
+            shoppingOptionNames.append("   \(idx+1). \(goodsOptions.optionName)")
+            
             var shoppingItems = [String]()
             var isSelecteds = [Bool]()
             
-            for index2 in 0...goods[0].options[index].optionDetailList.count-1 {
-                shoppingItems.append(goods[0].options[index].optionDetailList[index2].optionDetailName)
+            for optionDetailList in goodsOptions.optionDetailList {
+                shoppingItems.append(optionDetailList.optionDetailName)
                 isSelecteds.append(false)
             }
-
-            self.items0.append(ShoppingList(shoppingOptionName: shoppingOptionNames[index],
+            
+            self.items0.append(ShoppingList(shoppingOptionName: shoppingOptionNames[idx],
                                            shoppingItem: shoppingItems,
                                            isSelected: isSelecteds))
-            UserDefaults.standard.set(shoppingOptionNames[index], forKey: "shoppingOptionNames\(index)")
-            UserDefaults.standard.set(shoppingItems, forKey: "shoppingItems\(index)")
-            UserDefaults.standard.set(isSelecteds, forKey: "isSelecteds\(index)")
+            UserDefaults.standard.set(shoppingOptionNames[idx], forKey: "shoppingOptionNames\(idx)")
+            UserDefaults.standard.set(shoppingItems, forKey: "shoppingItems\(idx)")
+            UserDefaults.standard.set(isSelecteds, forKey: "isSelecteds\(idx)")
+            idx += 1
         }
+        
+//        for index in 0...goods[0].options.count-1 {
+//            shoppingOptionNames.append("   \(index+1). \(goods[0].options[index].optionName)")
+//            var shoppingItems = [String]()
+//            var isSelecteds = [Bool]()
+//
+//            for index2 in 0...goods[0].options[index].optionDetailList.count-1 {
+//                shoppingItems.append(goods[0].options[index].optionDetailList[index2].optionDetailName)
+//                isSelecteds.append(false)
+//            }
+//
+//            self.items0.append(ShoppingList(shoppingOptionName: shoppingOptionNames[index],
+//                                           shoppingItem: shoppingItems,
+//                                           isSelected: isSelecteds))
+//            UserDefaults.standard.set(shoppingOptionNames[index], forKey: "shoppingOptionNames\(index)")
+//            UserDefaults.standard.set(shoppingItems, forKey: "shoppingItems\(index)")
+//            UserDefaults.standard.set(isSelecteds, forKey: "isSelecteds\(index)")
+//        }
+        
     }
 }
 
