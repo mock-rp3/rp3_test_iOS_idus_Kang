@@ -9,13 +9,15 @@ import UIKit
 
 class NowGoodsCollectionViewCell: UICollectionViewCell {
     
-//    static let identifier = "NowGoodsCollectionViewCell"
-//
-    @IBOutlet weak var rectangle: UIView!
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // 원래 여기다 안쓰고 따로 func 두는데 그냥 이렇게 하겠음
-//        rectangle.layer.cornerRadius = 10
-//    }
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var heartBtn: UIButton!
+    @IBOutlet weak var sellerName: UILabel!
+    @IBOutlet weak var goodsName: UILabel!
+    
+    static let identifier = "NowGoodsCollectionViewCell"
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    
+    }
 }

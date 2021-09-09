@@ -56,6 +56,8 @@
 		AC7DA73E26DA9A76008D1614 /* NaverSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA73D26DA9A76008D1614 /* NaverSignUpDataManager.swift */; };
 		AC7DA74226DCD2AD008D1614 /* GoodsPageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA74126DCD2AD008D1614 /* GoodsPageCollectionCell.swift */; };
 		AC7DA74B26E86E94008D1614 /* GetPayUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA74A26E86E91008D1614 /* GetPayUserInfoDataManager.swift */; };
+		AC7DA75026EA20A4008D1614 /* NowGoodsTopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7DA74E26EA20A3008D1614 /* NowGoodsTopTableViewCell.swift */; };
+		AC7DA75126EA20A4008D1614 /* NowGoodsTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC7DA74F26EA20A3008D1614 /* NowGoodsTopTableViewCell.xib */; };
 		ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */; };
 		ACBC318426D6D79000F7DE05 /* RelatedGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */; };
 		ACBC318626D6D87800F7DE05 /* RelatedGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */; };
@@ -216,6 +218,8 @@
 		AC7DA73D26DA9A76008D1614 /* NaverSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSignUpDataManager.swift; sourceTree = "<group>"; };
 		AC7DA74126DCD2AD008D1614 /* GoodsPageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageCollectionCell.swift; sourceTree = "<group>"; };
 		AC7DA74A26E86E91008D1614 /* GetPayUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPayUserInfoDataManager.swift; sourceTree = "<group>"; };
+		AC7DA74E26EA20A3008D1614 /* NowGoodsTopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowGoodsTopTableViewCell.swift; sourceTree = "<group>"; };
+		AC7DA74F26EA20A3008D1614 /* NowGoodsTopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowGoodsTopTableViewCell.xib; sourceTree = "<group>"; };
 		ACBC316D26D641E200F7DE05 /* UserLoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginInfo.swift; sourceTree = "<group>"; };
 		ACBC318326D6D78F00F7DE05 /* RelatedGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsDataManager.swift; sourceTree = "<group>"; };
 		ACBC318526D6D87800F7DE05 /* RelatedGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGoodsResponse.swift; sourceTree = "<group>"; };
@@ -1086,6 +1090,8 @@
 		ACCE619226D334E8007DF748 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				AC7DA74E26EA20A3008D1614 /* NowGoodsTopTableViewCell.swift */,
+				AC7DA74F26EA20A3008D1614 /* NowGoodsTopTableViewCell.xib */,
 				ACCE619826D33532007DF748 /* NowGoodsTableViewCell.swift */,
 				ACCE619926D33532007DF748 /* NowGoodsTableViewCell.xib */,
 			);
@@ -1203,6 +1209,7 @@
 			files = (
 				ACCE617B26D20D72007DF748 /* ThirdVCStoryboard.storyboard in Resources */,
 				ACCE617926D20D61007DF748 /* SecondVCStoryboard.storyboard in Resources */,
+				AC7DA75126EA20A4008D1614 /* NowGoodsTopTableViewCell.xib in Resources */,
 				ACCE61B926D42A05007DF748 /* GoodsPageDeliveryTableViewCell.xib in Resources */,
 				ACCE618026D27EBE007DF748 /* TodayGoodsCell.xib in Resources */,
 				ACC5975526C9464600E2630B /* LaunchScreen.storyboard in Resources */,
@@ -1311,6 +1318,7 @@
 				ACBC316E26D641E200F7DE05 /* UserLoginInfo.swift in Sources */,
 				ACBC319326D7B82700F7DE05 /* CartVC.swift in Sources */,
 				ACC6AA5926CB46AA0048D22C /* EmailLoginRequest.swift in Sources */,
+				AC7DA75026EA20A4008D1614 /* NowGoodsTopTableViewCell.swift in Sources */,
 				ACBC318B26D7428B00F7DE05 /* TodayGoodsResponse.swift in Sources */,
 				AC6DE6B226D85FD1001B91B7 /* CategoryVC.swift in Sources */,
 				AC7DA73A26DA99AA008D1614 /* NaverSignUpResponse.swift in Sources */,
