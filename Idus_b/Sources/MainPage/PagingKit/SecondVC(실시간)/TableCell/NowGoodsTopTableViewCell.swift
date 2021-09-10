@@ -9,17 +9,31 @@ import UIKit
 
 class NowGoodsTopTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var atDayTime: UILabel!
+    
     static let identifier = "NowGoodsTopTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
+    // MARK: - Action
+    
+    
+    @IBAction func onlyImageBtn(_ sender: Any) {
+    }
+    
+    
+    @IBAction func nowBtn(_ sender: Any) {
+    }
+    
+    
+    @IBAction func commentBtn(_ sender: Any) {
+    }
 }

@@ -139,24 +139,6 @@ extension GoodsPageViewController {
             idx += 1
         }
         
-//        for index in 0...goods[0].options.count-1 {
-//            shoppingOptionNames.append("   \(index+1). \(goods[0].options[index].optionName)")
-//            var shoppingItems = [String]()
-//            var isSelecteds = [Bool]()
-//
-//            for index2 in 0...goods[0].options[index].optionDetailList.count-1 {
-//                shoppingItems.append(goods[0].options[index].optionDetailList[index2].optionDetailName)
-//                isSelecteds.append(false)
-//            }
-//
-//            self.items0.append(ShoppingList(shoppingOptionName: shoppingOptionNames[index],
-//                                           shoppingItem: shoppingItems,
-//                                           isSelected: isSelecteds))
-//            UserDefaults.standard.set(shoppingOptionNames[index], forKey: "shoppingOptionNames\(index)")
-//            UserDefaults.standard.set(shoppingItems, forKey: "shoppingItems\(index)")
-//            UserDefaults.standard.set(isSelecteds, forKey: "isSelecteds\(index)")
-//        }
-        
     }
 }
 

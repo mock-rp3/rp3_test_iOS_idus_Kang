@@ -13,17 +13,23 @@ protocol CVCellDelegate {
 
 class NowGoodsTableViewCell: UITableViewCell {
 
+    // MARK: - 프로퍼티
+    
     static let identifier = "NowGoodsTableViewCell"
 
     var delegate: CVCellDelegate?
 
     let horizonInset: CGFloat = 20
     let lineSpacing: CGFloat = 10
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    // MARK: - 생명주기
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,6 +53,16 @@ extension NowGoodsTableViewCell: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NowGoodsCollectionViewCell.identifier, for: indexPath) as? NowGoodsCollectionViewCell else {
             return UICollectionViewCell()
         }
+
+        let url = URL(string: UserDefaults.standard.value(forKey: "nowGoodsImage\(indexPath.row)") as! String)
+        DispatchQueue.global().async { let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                cell.imgView.image = UIImage(data: data!)!
+            }
+        }
+        
+        cell.sellerName.text = UserDefaults.standard.value(forKey: "nowGoodsSellerName\(indexPath.row)") as? String
+        cell.goodsName.text = UserDefaults.standard.value(forKey: "nowGoodsName\(indexPath.row)") as? String
         return cell
     }
 }

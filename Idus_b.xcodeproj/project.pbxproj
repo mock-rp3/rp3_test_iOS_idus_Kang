@@ -163,6 +163,8 @@
 		ACCE61B926D42A05007DF748 /* GoodsPageDeliveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61B726D42A03007DF748 /* GoodsPageDeliveryTableViewCell.xib */; };
 		ACCE61BC26D42E08007DF748 /* GoodsPageTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE61BA26D42E08007DF748 /* GoodsPageTextTableViewCell.swift */; };
 		ACCE61BD26D42E08007DF748 /* GoodsPageTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCE61BB26D42E08007DF748 /* GoodsPageTextTableViewCell.xib */; };
+		ACFEABE326EB366500E952E7 /* NowGoodsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEABE226EB366500E952E7 /* NowGoodsDataManager.swift */; };
+		ACFEABE526EB367A00E952E7 /* NowGoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEABE426EB367A00E952E7 /* NowGoodsResponse.swift */; };
 		C29B0B7882D76C8082548C06 /* Pods_Idus_b.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB0D371C8E627B1D4D44BB /* Pods_Idus_b.framework */; };
 /* End PBXBuildFile section */
 
@@ -327,6 +329,8 @@
 		ACCE61B726D42A03007DF748 /* GoodsPageDeliveryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageDeliveryTableViewCell.xib; sourceTree = "<group>"; };
 		ACCE61BA26D42E08007DF748 /* GoodsPageTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsPageTextTableViewCell.swift; sourceTree = "<group>"; };
 		ACCE61BB26D42E08007DF748 /* GoodsPageTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsPageTextTableViewCell.xib; sourceTree = "<group>"; };
+		ACFEABE226EB366500E952E7 /* NowGoodsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowGoodsDataManager.swift; sourceTree = "<group>"; };
+		ACFEABE426EB367A00E952E7 /* NowGoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowGoodsResponse.swift; sourceTree = "<group>"; };
 		D3FB9131987660A50F2E9E8B /* Pods-Idus_b.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Idus_b.release.xcconfig"; path = "Target Support Files/Pods-Idus_b/Pods-Idus_b.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -424,6 +428,8 @@
 			isa = PBXGroup;
 			children = (
 				ACCE617826D20D61007DF748 /* SecondVCStoryboard.storyboard */,
+				ACFEABE226EB366500E952E7 /* NowGoodsDataManager.swift */,
+				ACFEABE126EB364A00E952E7 /* Entity */,
 				AC6AD4C526CE90BC005538FC /* SecondVC.swift */,
 				ACCE619226D334E8007DF748 /* TableCell */,
 				ACCE619326D334EE007DF748 /* CollectionCell */,
@@ -1148,6 +1154,14 @@
 			path = TableCell;
 			sourceTree = "<group>";
 		};
+		ACFEABE126EB364A00E952E7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				ACFEABE426EB367A00E952E7 /* NowGoodsResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1348,11 +1362,13 @@
 				AC6DE6A826D84F87001B91B7 /* PayResponse.swift in Sources */,
 				ACC6AA4726CAD72A0048D22C /* EmailSignUpViewController.swift in Sources */,
 				ACCDFC0926D484180066DA44 /* OrderOptionVC.swift in Sources */,
+				ACFEABE526EB367A00E952E7 /* NowGoodsResponse.swift in Sources */,
 				AC6AD51C26D01280005538FC /* (보류)CategoryTableCellController.swift in Sources */,
 				AC646E4326D0E3DE00CFD01A /* ReusableCellHolder.swift in Sources */,
 				ACC597CF26C94C2900E2630B /* UIButton.swift in Sources */,
 				ACC597D826C94C2900E2630B /* BaseViewController.swift in Sources */,
 				ACC5980126C94C5800E2630B /* BoxOfficeResponse.swift in Sources */,
+				ACFEABE326EB366500E952E7 /* NowGoodsDataManager.swift in Sources */,
 				ACCE619026D29BE2007DF748 /* NewGoodsCollectionViewCell.swift in Sources */,
 				ACC597D326C94C2900E2630B /* Color.swift in Sources */,
 				ACC597FD26C94C5800E2630B /* SignInRequest.swift in Sources */,

@@ -4,34 +4,114 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="402" id="KGk-i7-Jjw" customClass="NowGoodsTopTableViewCell" customModule="Idus_b" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="402"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="NowGoodsTopTableViewCell" customModule="Idus_b" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="94"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="402"/>
+                <rect key="frame" x="0.0" y="0.0" width="420" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nowPage" translatesAutoresizingMaskIntoConstraints="NO" id="ZTN-u6-tmZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="402"/>
-                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H66-NZ-Taf">
+                        <rect key="frame" x="10" y="10" width="114.5" height="18.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="이미지만 볼래요" image="square" catalog="system">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="onlyImageBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MgD-gX-uGp"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qm-zI-vLb">
+                        <rect key="frame" x="210" y="10" width="93" height="19"/>
+                        <color key="backgroundColor" red="0.99576812979999996" green="0.94566041229999998" blue="0.91765099760000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <state key="normal" title="실시간 구매" image="arrowshape.zigzag.right.fill" catalog="system">
+                            <color key="titleColor" systemColor="systemOrangeColor"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="nowBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oKQ-Xa-cGf"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBW-fW-kdY">
+                        <rect key="frame" x="318" y="10" width="92" height="20"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="실시간 후기" image="text.bubble" catalog="system">
+                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="commentBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Z2-HA-mu5"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금! 다른 사람들이 구매하는 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24W-vn-wc3">
+                        <rect key="frame" x="10" y="48.5" width="202.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9월 10일 15:36 기준" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYa-uc-U3a">
+                        <rect key="frame" x="282" y="48.5" width="128" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ZTN-u6-tmZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EEG-4V-kuz"/>
-                    <constraint firstAttribute="trailing" secondItem="ZTN-u6-tmZ" secondAttribute="trailing" id="RFA-GA-GZi"/>
-                    <constraint firstAttribute="bottom" secondItem="ZTN-u6-tmZ" secondAttribute="bottom" id="Ytr-tt-FNy"/>
-                    <constraint firstItem="ZTN-u6-tmZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yz3-Uj-YAv"/>
+                    <constraint firstItem="MBW-fW-kdY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="5xW-p7-hS6"/>
+                    <constraint firstItem="H66-NZ-Taf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="C8b-jI-0VI"/>
+                    <constraint firstAttribute="trailing" secondItem="MBW-fW-kdY" secondAttribute="trailing" constant="10" id="Dtf-hr-au8"/>
+                    <constraint firstItem="H66-NZ-Taf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="FL8-ml-eA1"/>
+                    <constraint firstItem="24W-vn-wc3" firstAttribute="top" secondItem="H66-NZ-Taf" secondAttribute="bottom" constant="20" id="Oou-Qd-bTu"/>
+                    <constraint firstItem="RYa-uc-U3a" firstAttribute="trailing" secondItem="MBW-fW-kdY" secondAttribute="trailing" id="TFe-Ud-LGm"/>
+                    <constraint firstItem="24W-vn-wc3" firstAttribute="leading" secondItem="H66-NZ-Taf" secondAttribute="leading" id="c7s-Wd-nVW"/>
+                    <constraint firstItem="MBW-fW-kdY" firstAttribute="leading" secondItem="6Qm-zI-vLb" secondAttribute="trailing" constant="15" id="gWb-Gw-hjp"/>
+                    <constraint firstItem="RYa-uc-U3a" firstAttribute="centerY" secondItem="24W-vn-wc3" secondAttribute="centerY" id="ii5-FC-OuF"/>
+                    <constraint firstItem="6Qm-zI-vLb" firstAttribute="centerY" secondItem="H66-NZ-Taf" secondAttribute="centerY" id="sny-C2-AB5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="131.8840579710145" y="202.23214285714286"/>
+            <connections>
+                <outlet property="atDayTime" destination="RYa-uc-U3a" id="bMy-El-OnR"/>
+            </connections>
+            <point key="canvasLocation" x="204.34782608695653" y="99.107142857142847"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="nowPage" width="365" height="70.5"/>
+        <image name="arrowshape.zigzag.right.fill" catalog="system" width="128" height="93"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

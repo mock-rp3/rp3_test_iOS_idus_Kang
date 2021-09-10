@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4W-2e-L6R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="397"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="efg-A4-HKX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goodsDummy0" translatesAutoresizingMaskIntoConstraints="NO" id="efg-A4-HKX">
                                 <rect key="frame" x="10" y="10" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="efg-A4-HKX" secondAttribute="height" multiplier="1:1" id="mS3-Lk-mMh"/>
@@ -87,6 +87,7 @@
         </viewController>
     </objects>
     <resources>
+        <image name="goodsDummy0" width="373" height="374.5"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
